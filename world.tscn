@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
+albedo_color = Color(0.1872, 0.24576001, 0.48, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fj7yv"]
+size = Vector3(20, 10, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tlwt5"]
+size = Vector3(10, 8, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gv5m4"]
+size = Vector3(6, 6, 6)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_f3sb7"]
+flip_faces = true
+top_radius = 3.0
+bottom_radius = 5.0
+height = 30.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fj7yv"]
+top_radius = 3.5
+bottom_radius = 5.5
+height = 30.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tlwt5"]
+top_radius = 5.0
+bottom_radius = 4.0
+height = 6.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_aqk2v"]
+top_radius = 3.0
+bottom_radius = 3.0
+height = 4.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_036b0"]
+height = 3.0
+
+[node name="World" type="Node3D" unique_id=691108467]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=886325403]
+transform = Transform3D(1, 0, 0, 0, 0.9787244, -0.20517935, 0, 0.20517935, 0.9787244, -2.1156616, 12.693245, 33.249912)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
+transform = Transform3D(0.99967533, -0.020964395, -0.014480197, 0.02547905, 0.822542, 0.56813323, 0, -0.5683178, 0.82280916, 0, 19.727184, 13.390049)
+sky_mode = 1
+
+[node name="Island" type="Node3D" parent="." unique_id=1904178162]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Island" unique_id=162288658]
+mesh = SubResource("PlaneMesh_gv5m4")
+surface_material_override/0 = SubResource("StandardMaterial3D_f3sb7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Island" unique_id=454822726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.289606, 0)
+mesh = SubResource("BoxMesh_fj7yv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Island" unique_id=881354204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.569071, 3.289607, 13.435338)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Island" unique_id=672109510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6799316, 2.7142897, 9.985959)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Island" unique_id=2061288359]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9090726, 3.0434442, 17.021408)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Island" unique_id=370841843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.420185, 2.0837045, 14.505166)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Island" unique_id=1802947310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.067587, 2.4217572, 11.800815)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Island" unique_id=841395498]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.017284, 1.4049459, 6.5104685)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Island" unique_id=1282021061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.492496, 3.1816602, 1.3304896)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Island" unique_id=1701875104]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.357369, 2.2759414, -4.4780006)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Island" unique_id=1176274690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2032175, 2.6513991, -10.010822)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Island" unique_id=101472581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.167181, 1.5978875, -13.715664)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Island" unique_id=28832076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5676336, 2.6514, -13.436114)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="Island" unique_id=579245389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37296438, 1.3097224, -14.950044)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="Island" unique_id=1507445062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2081323, 2.1428256, -13.649248)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D23" type="MeshInstance3D" parent="Island" unique_id=439906670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.804954, 2.6513972, -12.61356)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D24" type="MeshInstance3D" parent="Island" unique_id=1462644659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.224311, 3.1088061, -10.73888)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="Island" unique_id=781399438]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.905557, 2.6513982, -5.5619235)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="Island" unique_id=191707112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.4161415, 1.679873, -0.70244217)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D27" type="MeshInstance3D" parent="Island" unique_id=1632699858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.608416, 0.5984292, 4.83308)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D28" type="MeshInstance3D" parent="Island" unique_id=1181084373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.664082, 1.9899411, 9.713653)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D29" type="MeshInstance3D" parent="Island" unique_id=1484259840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.366194, 1.2704902, 13.210483)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D30" type="MeshInstance3D" parent="Island" unique_id=919142371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5224295, 2.6514, 17.09153)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D31" type="MeshInstance3D" parent="Island" unique_id=693345548]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2457294, 1.6244626, 19.283981)
+mesh = SubResource("BoxMesh_gv5m4")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Island" unique_id=883601676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.225817, 3.289607, 6.6492023)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Island" unique_id=507696758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.233625, 3.7585497, -1.2188497)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Island" unique_id=2058022470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.099646, 3.289607, -9.116524)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Island" unique_id=1207354771]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6492052, 2.6235495, -9.995832)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Island" unique_id=889462937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.787854, 4.1988897, -8.082651)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Island" unique_id=1554545401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.865093, 3.289607, 0.61315155)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Island" unique_id=91094070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.458813, 2.6107492, 8.659388)
+mesh = SubResource("BoxMesh_tlwt5")
+
+[node name="Lighthouse" type="Node3D" parent="." unique_id=1021921955]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lighthouse" unique_id=971559345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.180063, 0)
+mesh = SubResource("CylinderMesh_f3sb7")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lighthouse" unique_id=1360881997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.180063, 0)
+mesh = SubResource("CylinderMesh_fj7yv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lighthouse" unique_id=163029971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 39.94279, 0)
+mesh = SubResource("CylinderMesh_tlwt5")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lighthouse" unique_id=2036920921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.66325, 0)
+mesh = SubResource("CylinderMesh_aqk2v")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lighthouse" unique_id=1934085992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.77694, 0)
+mesh = SubResource("CylinderMesh_036b0")
