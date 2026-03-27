@@ -1,10 +1,26 @@
 [gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_gv5m4"]
-size = Vector2(100, 100)
+[sub_resource type="Environment" id="Environment_gv5m4"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.028900003, 0.08533998, 0.17, 1)
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.4332, 0.48564, 0.57, 1)
+fog_sun_scatter = 0.11
+fog_density = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 500.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gv5m4"]
+top_radius = 1000.0
+bottom_radius = 1000.0
+height = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
-albedo_color = Color(0.1872, 0.24576001, 0.48, 1)
+shading_mode = 2
+albedo_color = Color(0.0736, 0.12288002, 0.32, 1)
+metallic_specular = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_fj7yv"]
 size = Vector3(20, 10, 20)
@@ -21,37 +37,56 @@ top_radius = 3.0
 bottom_radius = 5.0
 height = 30.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gv5m4"]
+albedo_color = Color(1, 0.89516664, 0.83, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_fj7yv"]
+material = SubResource("StandardMaterial3D_gv5m4")
 top_radius = 3.5
 bottom_radius = 5.5
 height = 30.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+albedo_color = Color(0.54, 0.44550005, 0.31320003, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_tlwt5"]
+material = SubResource("StandardMaterial3D_fj7yv")
 top_radius = 5.0
 bottom_radius = 4.0
 height = 6.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
+albedo_color = Color(0.54, 0.44550005, 0.31320003, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_aqk2v"]
+material = SubResource("StandardMaterial3D_tlwt5")
 top_radius = 3.0
 bottom_radius = 3.0
 height = 4.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+albedo_color = Color(0.49, 0.49, 0.49, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_036b0"]
+material = SubResource("StandardMaterial3D_aqk2v")
 height = 3.0
 
 [node name="World" type="Node3D" unique_id=691108467]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=886325403]
-transform = Transform3D(1, 0, 0, 0, 0.9787244, -0.20517935, 0, 0.20517935, 0.9787244, -2.1156616, 12.693245, 33.249912)
+transform = Transform3D(1, 0, 0, 0, 0.9787244, -0.20517935, 0, 0.20517935, 0.9787244, -2.1156616, 12.693245, 36.249912)
+environment = SubResource("Environment_gv5m4")
+fov = 90.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
-transform = Transform3D(0.99967533, -0.020964395, -0.014480197, 0.02547905, 0.822542, 0.56813323, 0, -0.5683178, 0.82280916, 0, 19.727184, 13.390049)
+transform = Transform3D(-0.8562053, 0.31130692, -0.41231117, 0.02547905, 0.82254183, 0.56813323, 0.51600707, 0.47593355, -0.7121966, 0, 19.727184, 13.390049)
+shadow_enabled = true
 sky_mode = 1
 
 [node name="Island" type="Node3D" parent="." unique_id=1904178162]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Island" unique_id=162288658]
-mesh = SubResource("PlaneMesh_gv5m4")
+mesh = SubResource("CylinderMesh_gv5m4")
 surface_material_override/0 = SubResource("StandardMaterial3D_f3sb7")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Island" unique_id=454822726]
