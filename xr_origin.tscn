@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnx4hithcij6y" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_L.gltf" id="1_jw5w6"]
 [ext_resource type="PackedScene" uid="uid://csgsp0wuw8ucy" path="res://addons/godot-xr-tools/hands/model/Hand_Glove_low_R.gltf" id="2_rturn"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="3_rturn"]
 
 [node name="XROrigin3D" type="XROrigin3D" unique_id=1094588076]
 
@@ -16,3 +17,6 @@ tracker = &"left_hand"
 tracker = &"right_hand"
 
 [node name="Hand_Glove_low_R" parent="RightHand" unique_id=954698560 instance=ExtResource("2_rturn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+
+[node name="MovementTurn" parent="RightHand" unique_id=541275098 instance=ExtResource("3_rturn")]

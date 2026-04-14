@@ -21,7 +21,7 @@ enum TurnMode {
 @export var order : int = 5
 
 ## Movement mode property
-@export var turn_mode : TurnMode = TurnMode.DEFAULT
+@export var turn_mode : TurnMode = TurnMode.SNAP
 
 ## Smooth turn speed in radians per second
 @export var smooth_turn_speed : float = 2.0
@@ -30,7 +30,7 @@ enum TurnMode {
 @export var step_turn_delay : float = 0.2
 
 ## Step turn angle in degrees
-@export var step_turn_angle : float = 20.0
+@export var step_turn_angle : float = 45.0
 
 ## Our directional input
 @export var input_action : String = "primary"
