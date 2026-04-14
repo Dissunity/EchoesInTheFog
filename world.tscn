@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
 
 [ext_resource type="Script" uid="uid://cgmruux5twss5" path="res://player.gd" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://cxe65unukchl6" path="res://world.gd" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://dk5741xnwqnjw" path="res://xr_origin.tscn" id="3_aqk2v"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_gv5m4"]
 top_radius = 1000.0
@@ -82,6 +84,7 @@ fog_depth_end = 50.0
 volumetric_fog_density = 0.01
 
 [node name="World" type="Node3D" unique_id=691108467]
+script = ExtResource("1_tlwt5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
 transform = Transform3D(-0.8562053, 0.31130692, -0.41231117, 0.02547905, 0.82254183, 0.56813323, 0.51600707, 0.47593355, -0.7121966, 0, 19.727184, 13.390049)
@@ -262,3 +265,5 @@ mesh = SubResource("CapsuleMesh_f3sb7")
 transform = Transform3D(1, 0, 0, 0, 0.99715894, -0.07532677, 0, 0.07532677, 0.99715894, -0.3600936, 6.1511803, 25.173069)
 environment = SubResource("Environment_gv5m4")
 fov = 90.0
+
+[node name="XROrigin3D" parent="." unique_id=1094588076 instance=ExtResource("3_aqk2v")]
