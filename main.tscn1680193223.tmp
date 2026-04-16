@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://xgp5028p37q6"]
+
+[ext_resource type="Script" uid="uid://bgh4hksglksr4" path="res://main.gd" id="1_ig7tw"]
+
+[node name="Main" type="Node3D" unique_id=1727937391]
+script = ExtResource("1_ig7tw")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=2021617588]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2109057917]
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1021593067]
+transform = Transform3D(0.9998083, 0.0088775, 0.01745174, -0.008726203, 0.9999238, -0.008726535, -0.017527882, 0.008572575, 0.9998096, -0.5, 1, -0.5)
+tracker = &"left_hand"
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1202475045]
+tracker = &"right_hand"
