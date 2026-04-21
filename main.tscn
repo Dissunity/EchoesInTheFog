@@ -5,12 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_5vw27"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_272bh"]
-[ext_resource type="PackedScene" uid="uid://bsxlry0jsfhsa" path="res://Lighthouse.glb" id="7_4c57u"]
-[ext_resource type="PackedScene" uid="uid://c1rh5xomnr2ly" path="res://chair.glb" id="7_efxa6"]
-[ext_resource type="PackedScene" uid="uid://do4jm6veov2ve" path="res://crowbar.glb" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://b7iu070gec501" path="res://cubes.tscn" id="9_kek77"]
-[ext_resource type="PackedScene" uid="uid://d4ka0dyksf3ew" path="res://table.glb" id="10_dg77c"]
-[ext_resource type="PackedScene" uid="uid://to5ih32lqibe" path="res://chair_broken.glb" id="11_ycdy4"]
 
 [sub_resource type="Environment" id="Environment_0xm2m"]
 background_mode = 2
@@ -27,9 +22,6 @@ material = SubResource("StandardMaterial3D_4c57u")
 
 [node name="Main" type="Node3D" unique_id=1727937391]
 script = ExtResource("1_ig7tw")
-
-[node name="chair" parent="." unique_id=2027573943 instance=ExtResource("7_efxa6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, -2)
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=2021617588]
 script = ExtResource("2_h2yge")
@@ -53,18 +45,6 @@ tracker = &"right_hand"
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="XROrigin3D" unique_id=1359242720]
 
-[node name="CUBES" parent="XROrigin3D" unique_id=1651432502 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
-
-[node name="CUBES2" parent="XROrigin3D" unique_id=1375434563 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24240497, 0.91607815, -1.1133597)
-
-[node name="CUBES3" parent="XROrigin3D" unique_id=1446608888 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24240497, 0.91607815, -0.7843787)
-
-[node name="CUBES4" parent="XROrigin3D" unique_id=1393085229 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51714456, 0.91607815, -0.7843787)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=812943472]
 environment = SubResource("Environment_0xm2m")
 
@@ -81,17 +61,14 @@ mesh = SubResource("PlaneMesh_0xm2m")
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
 shape = SubResource("BoxShape3D_5vw27")
 
-[node name="crowbar" parent="." unique_id=410887547 instance=ExtResource("8_5vw27")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.0005455017, 0.9833007, -0.35710382)
+[node name="CUBES" parent="." unique_id=1651432502 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -1)
 
-[node name="table" parent="." unique_id=1749143038 instance=ExtResource("10_dg77c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3952174, 0, -2.0529056)
+[node name="CUBES2" parent="." unique_id=1375434563 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24240497, 0.91607815, -7.1133595)
 
-[node name="chair_broken" parent="." unique_id=620281233 instance=ExtResource("11_ycdy4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.424017, 0, 0.71869993)
+[node name="CUBES3" parent="." unique_id=1446608888 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2424049, 0.91607815, -2.7843788)
 
-[node name="table2" parent="." unique_id=1788306654 instance=ExtResource("10_dg77c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2866719, 0, 0.03259611)
-
-[node name="Lighthouse" parent="." unique_id=1769341666 instance=ExtResource("7_4c57u")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12.186561, -3.5248775, -6.858473)
+[node name="CUBES4" parent="." unique_id=1393085229 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5171446, -0.08392185, -0.7843787)

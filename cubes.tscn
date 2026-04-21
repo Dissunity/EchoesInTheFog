@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b7iu070gec501"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_r4ci3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r4ci3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_knch6"]
+margin = 0.01
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4ci3"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4i2v4"]
+material = SubResource("StandardMaterial3D_r4ci3")
+size = Vector3(0.1, 0.1, 0.1)
+
+[node name="CUBES" unique_id=1651432502 instance=ExtResource("1_r4ci3")]
+physics_material_override = SubResource("PhysicsMaterial_r4ci3")
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("BoxShape3D_knch6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=529568660]
+mesh = SubResource("BoxMesh_4i2v4")

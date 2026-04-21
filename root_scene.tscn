@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bv4m0tl7vcja5"]
+
+[ext_resource type="PackedScene" uid="uid://vls587ktdtoh" path="res://Sword.glb" id="1_itajj"]
+
+[node name="Root Scene" unique_id=1658793598 instance=ExtResource("1_itajj")]

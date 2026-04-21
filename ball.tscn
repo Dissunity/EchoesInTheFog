@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_x8fbi"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_41u45"]
-radius = 0.001
+[sub_resource type="BoxShape3D" id="BoxShape3D_x8fbi"]
+size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="MeshTexture" id="MeshTexture_x8fbi"]
 
@@ -14,7 +14,6 @@ albedo_texture = SubResource("MeshTexture_x8fbi")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41u45"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktgx5"]
-albedo_color = Color(0.36862746, 0.58431375, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_x8fbi"]
 material = SubResource("StandardMaterial3D_ktgx5")
@@ -22,7 +21,7 @@ material = SubResource("StandardMaterial3D_ktgx5")
 [node name="PickableObject" unique_id=1172713315 instance=ExtResource("1_x8fbi")]
 
 [node name="CollisionShape3D" parent="." index="0"]
-shape = SubResource("SphereShape3D_41u45")
+shape = SubResource("BoxShape3D_x8fbi")
 debug_color = Color(0.64474666, 0.42197528, 0.8047204, 0.41960785)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=766440517]
