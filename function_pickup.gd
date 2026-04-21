@@ -1,6 +1,6 @@
 @tool
 @icon("res://addons/godot-xr-tools/editor/icons/function.svg")
-class_name XRToolsFunctionPickup
+
 extends XRToolsHandPalmOffset
 
 

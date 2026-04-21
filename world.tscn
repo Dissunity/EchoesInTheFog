@@ -1,9 +1,44 @@
 [gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
 
-[ext_resource type="Script" uid="uid://cgmruux5twss5" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
+[ext_resource type="Script" uid="uid://ssf078nkditk" path="res://hand.gd" id="4_036b0"]
+[ext_resource type="Script" uid="uid://bimmnquip3jsn" path="res://xr_origin_3d.gd" id="4_dwbse"]
+[ext_resource type="Script" uid="uid://b0mhmrufyl0lt" path="res://function_pickup.gd" id="5_dwbse"]
+
+[sub_resource type="GDScript" id="GDScript_036b0"]
+script/source = "extends XROrigin3D
+ 
+@onready var camera = $XRCamera3D
+@onready var left_controller = $LeftHand
+@onready var right_controller = $RightHand
+ 
+var speed = 3.0   # movement speed (meters per second)
+ 
+func _physics_process(delta):
+	# 1. Get joystick input (Vector2)
+	var input_vec = left_controller.get_vector2(\"primary\")
+ 
+	if input_vec.length() < 0.1:
+		return
+ 
+	var forward = -camera.global_transform.basis.z
+	var right = camera.global_transform.basis.x
+ 
+	forward.y = 0
+	right.y = 0
+	forward = forward.normalized()
+	right = right.normalized()
+ 
+	var direction = forward * input_vec.y + right * input_vec.x
+ 
+	global_position += direction * speed * delta
+ 
+	var turn_input = right_controller.get_vector2(\"primary\").x
+	if abs(turn_input)>0.2:
+		rotate_y(-turn_input * 2.0 * delta)
+"
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -70,24 +105,8 @@ albedo_color = Color(0.49, 0.49, 0.49, 1)
 material = SubResource("StandardMaterial3D_aqk2v")
 height = 3.0
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gv5m4"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_f3sb7"]
-
-[sub_resource type="Environment" id="Environment_gv5m4"]
-background_color = Color(0.38507113, 0.38507116, 0.38507113, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.028900003, 0.08533998, 0.17, 1)
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.4332, 0.48564, 0.57, 1)
-fog_sun_scatter = 0.11
-fog_density = 1.0
-fog_depth_begin = 0.0
-fog_depth_end = 50.0
-volumetric_fog_density = 0.01
-
 [node name="World" type="Node3D" unique_id=691108467]
+script = SubResource("GDScript_036b0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
 transform = Transform3D(-0.8562053, 0.31130692, -0.41231117, 0.02547905, 0.82254183, 0.56813323, 0.51600707, 0.47593355, -0.7121966, 0, 19.727184, 13.390049)
@@ -254,19 +273,31 @@ mesh = SubResource("CylinderMesh_036b0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.55909, 0)
 omni_range = 167.034
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1708846250]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.755568, 11.708874, 7.604026)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-script = ExtResource("1_f3sb7")
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1812876656]
+script = ExtResource("4_dwbse")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1065334511]
-shape = SubResource("CapsuleShape3D_gv5m4")
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=920108780]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=2019052881]
-mesh = SubResource("CapsuleMesh_f3sb7")
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1793780894]
+tracker = &"left_hand"
 
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=886325403]
-transform = Transform3D(1, 0, 0, 0, 0.99715894, -0.07532677, 0, 0.07532677, 0.99715894, -0.3600936, 6.1511803, 25.173069)
-environment = SubResource("Environment_gv5m4")
-fov = 90.0
+[node name="XRToolsHand" type="Node3D" parent="XROrigin3D/LeftHand" unique_id=1856607056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0, 0.05)
+script = ExtResource("4_036b0")
+metadata/_custom_type_script = "uid://ssf078nkditk"
+
+[node name="FunctionsPickup" type="Node3D" parent="XROrigin3D/LeftHand" unique_id=1210444859]
+script = ExtResource("5_dwbse")
+metadata/_custom_type_script = "uid://b0mhmrufyl0lt"
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1635312350]
+tracker = &"right_hand"
+
+[node name="XRToolsHand" type="Node3D" parent="XROrigin3D/RightHand" unique_id=1981758050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0, 0.05)
+script = ExtResource("4_036b0")
+metadata/_custom_type_script = "uid://ssf078nkditk"
+
+[node name="FunctionsPickup" type="Node3D" parent="XROrigin3D/RightHand" unique_id=1392515288]
+script = ExtResource("5_dwbse")
+metadata/_custom_type_script = "uid://b0mhmrufyl0lt"
