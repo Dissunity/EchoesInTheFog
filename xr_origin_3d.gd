@@ -37,11 +37,11 @@ func _physics_process(delta):
 	# implements flying
 	var vertical = 0.0
 	
-	if left_controller.is_button_pressed("up_button"):
+	if left_controller.is_button_pressed("ax_touch"):
 		print("go up")
 		vertical += 1.0
 	
-	if left_controller.is_button_pressed("down_button"):
+	if left_controller.is_button_pressed("by_touch"):
 		print("go down")
 		vertical += -1.0
 	
