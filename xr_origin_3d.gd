@@ -38,9 +38,11 @@ func _physics_process(delta):
 	var vertical = 0.0
 	
 	if left_controller.is_button_pressed("up_button"):
+		print("go up")
 		vertical += 1.0
 	
 	if left_controller.is_button_pressed("down_button"):
+		print("go down")
 		vertical += -1.0
 	
 	global_position += Vector3.UP * vertical * speed * delta	
