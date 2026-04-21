@@ -33,3 +33,14 @@ func _physics_process(delta):
 	var turn_input = right_controller.get_vector2("primary").x
 	if abs(turn_input)>0.2:
 		rotate_y(-turn_input * 2.0 * delta)
+		
+	# implements flying
+	var vertical = 0.0
+	
+	if left_controller.is_button_pressed("up_button"):
+		vertical += 1.0
+	
+	if left_controller.is_button_pressed("down_button"):
+		vertical += -1.0
+	
+	global_position += Vector3.UP * vertical * speed * delta	
