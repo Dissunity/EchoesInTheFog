@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
 [ext_resource type="Script" uid="uid://bimmnquip3jsn" path="res://xr_origin_3d.gd" id="4_dwbse"]
+[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="5_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="7_ioo17"]
 
 [sub_resource type="GDScript" id="GDScript_036b0"]
 script/source = "extends Node3D
@@ -352,23 +355,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.55909, 0)
 omni_range = 167.034
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1812876656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.693703)
 script = ExtResource("4_dwbse")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=920108780]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.789383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.70554, 35.789383)
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1793780894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.202927)
 tracker = &"left_hand"
 
-[node name="FunctionsPickup" type="Node3D" parent="XROrigin3D/LeftHand" unique_id=1210444859]
-metadata/_custom_type_script = "uid://b0mhmrufyl0lt"
+[node name="LeftHand" parent="XROrigin3D/LeftHand" unique_id=1689163999 instance=ExtResource("5_pkg7o")]
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=139364757 instance=ExtResource("6_gbfbk")]
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1635312350]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 34.401287)
 tracker = &"right_hand"
 
-[node name="XRToolsHand" type="Node3D" parent="XROrigin3D/RightHand" unique_id=1981758050]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0, 0.05)
+[node name="RightHand" parent="XROrigin3D/RightHand" unique_id=94263823 instance=ExtResource("7_ioo17")]
 
-[node name="FunctionsPickup" type="Node3D" parent="XROrigin3D/RightHand" unique_id=1392515288]
+[node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1413331928 instance=ExtResource("6_gbfbk")]
