@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://88wua62ak7df"
-path.s3tc="res://.godot/imported/journal_431.jpg-2ec0bfd4754a3ba04eb5d2ebd074ed30.s3tc.ctex"
+path.s3tc="res://.godot/imported/journal_431.jpg-94a617d888940fbad30b4e7c0709a6a9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/present/journal_431.jpg"
-dest_files=["res://.godot/imported/journal_431.jpg-2ec0bfd4754a3ba04eb5d2ebd074ed30.s3tc.ctex"]
+source_file="res://models/present/journal/journal_431.jpg"
+dest_files=["res://.godot/imported/journal_431.jpg-94a617d888940fbad30b4e7c0709a6a9.s3tc.ctex"]
 
 [params]
 

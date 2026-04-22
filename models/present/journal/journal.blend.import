@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dk7adfy342kiu"
-path="res://.godot/imported/journal.blend-1680927a6e8581bcb26e1638661657a2.scn"
+uid="uid://cxkfqrpoe1buq"
+path="res://.godot/imported/journal.blend-9d121b168c3715cb31d7f73925830e08.scn"
 
 [deps]
 
-source_file="res://models/present/journal.blend"
-dest_files=["res://.godot/imported/journal.blend-1680927a6e8581bcb26e1638661657a2.scn"]
+source_file="res://models/present/journal/journal.blend"
+dest_files=["res://.godot/imported/journal.blend-9d121b168c3715cb31d7f73925830e08.scn"]
 
 [params]
 
@@ -37,7 +37,18 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Armature/Skeleton3D": {
+"rest_pose/load_pose": 1,
+"rest_pose/selected_animation": "ArmatureAction",
+"rest_pose/selected_timestamp": 0.01
+},
+"PATH:Light": {
+"import/skip_import": true
+}
+}
+}
 blender/nodes/visible=0
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=true

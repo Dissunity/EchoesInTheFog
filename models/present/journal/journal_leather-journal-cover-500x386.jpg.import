@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1nlwranxij11"
-path.s3tc="res://.godot/imported/journal_leather-journal-cover-500x386.jpg-07dfce74956a0441f02f95c5d864be2e.s3tc.ctex"
+path.s3tc="res://.godot/imported/journal_leather-journal-cover-500x386.jpg-14a810923b7f3c71a98053817d7d0be9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/present/journal_leather-journal-cover-500x386.jpg"
-dest_files=["res://.godot/imported/journal_leather-journal-cover-500x386.jpg-07dfce74956a0441f02f95c5d864be2e.s3tc.ctex"]
+source_file="res://models/present/journal/journal_leather-journal-cover-500x386.jpg"
+dest_files=["res://.godot/imported/journal_leather-journal-cover-500x386.jpg-14a810923b7f3c71a98053817d7d0be9.s3tc.ctex"]
 
 [params]
 
