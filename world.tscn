@@ -359,10 +359,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.693703)
 script = ExtResource("4_dwbse")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=920108780]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.70554, 35.789383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1793780894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.202927)
+transform = Transform3D(3.3522592, 0, 0, 0, 3.810185, 0, 0, 0, 1, 0, 0, 33)
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="XROrigin3D/LeftHand" unique_id=1689163999 instance=ExtResource("5_pkg7o")]
@@ -370,9 +370,10 @@ tracker = &"left_hand"
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=139364757 instance=ExtResource("6_gbfbk")]
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1635312350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 34.401287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
 tracker = &"right_hand"
 
 [node name="RightHand" parent="XROrigin3D/RightHand" unique_id=94263823 instance=ExtResource("7_ioo17")]
+transform = Transform3D(71.98014, 0, 0, 0, 51.919666, 0, 0, 0, 51.919666, 0, 0, 0)
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1413331928 instance=ExtResource("6_gbfbk")]
