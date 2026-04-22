@@ -214,6 +214,10 @@ points = PackedVector3Array(-5, -15, 0, -4.9765077, -15, -0.490407, -4.9765077, 
 radius = 0.2
 height = 3.5
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wse8f"]
+radius = 1.321
+height = 7.538
+
 [node name="World" type="Node3D" unique_id=691108467]
 script = SubResource("GDScript_036b0")
 
@@ -452,6 +456,10 @@ script = ExtResource("8_gbfbk")
 
 [node name="crowbar" parent="Crowbar" unique_id=1600755316 instance=ExtResource("9_ioo17")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Crowbar" unique_id=1636281109]
+[node name="long part" type="CollisionShape3D" parent="Crowbar" unique_id=1636281109]
 transform = Transform3D(9.999997, 0, 0, 0, 9.999996, -1.4901161e-08, 0, 1.4901161e-08, 9.999996, 0, 16.770275, 0.17471313)
 shape = SubResource("CapsuleShape3D_ioo17")
+
+[node name="edge one" type="CollisionShape3D" parent="Crowbar" unique_id=207012905]
+transform = Transform3D(0.7957545, -0.60557693, -0.0063101305, 0.60557693, 0.79577225, -0.0021279873, 0.0063101393, -0.002127966, 0.9999732, 1.704361, -2.411065, -0.07110596)
+shape = SubResource("CapsuleShape3D_wse8f")
