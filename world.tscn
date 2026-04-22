@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="5_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="7_ioo17"]
+[ext_resource type="PackedScene" uid="uid://6egh3t6hq3f1" path="res://addons/godot-xr-tools/objects/cube.tscn" id="8_gbfbk"]
 
 [sub_resource type="GDScript" id="GDScript_036b0"]
 script/source = "extends Node3D
@@ -377,3 +378,6 @@ tracker = &"right_hand"
 transform = Transform3D(71.98014, 0, 0, 0, 51.919666, 0, 0, 0, 51.919666, 0, 0, 0)
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1413331928 instance=ExtResource("6_gbfbk")]
+
+[node name="Cube" parent="XROrigin3D" unique_id=443842108 instance=ExtResource("8_gbfbk")]
+transform = Transform3D(-5.357476, 0, 0, 0, 1.3494065, 0, 0, 0, 0.04394746, 20, 50, 0)
