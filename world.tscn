@@ -222,7 +222,6 @@ sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Island" unique_id=162288658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
-visible = false
 mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
