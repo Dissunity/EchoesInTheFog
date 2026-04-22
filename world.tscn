@@ -218,6 +218,10 @@ height = 3.5
 radius = 1.321
 height = 7.538
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ic0uy"]
+radius = 1.152
+height = 5.637
+
 [node name="World" type="Node3D" unique_id=691108467]
 script = SubResource("GDScript_036b0")
 
@@ -463,3 +467,7 @@ shape = SubResource("CapsuleShape3D_ioo17")
 [node name="edge one" type="CollisionShape3D" parent="Crowbar" unique_id=207012905]
 transform = Transform3D(0.7957545, -0.60557693, -0.0063101305, 0.60557693, 0.79577225, -0.0021279873, 0.0063101393, -0.002127966, 0.9999732, 1.704361, -2.411065, -0.07110596)
 shape = SubResource("CapsuleShape3D_wse8f")
+
+[node name="ede two" type="CollisionShape3D" parent="Crowbar" unique_id=925366438]
+transform = Transform3D(0.4226022, -0.9062654, -0.009443308, 0.9062657, 0.42266482, -0.0060158405, 0.009443313, -0.006015838, 0.9999364, -1.1516304, 35.225487, 0.3670349)
+shape = SubResource("CapsuleShape3D_ic0uy")
