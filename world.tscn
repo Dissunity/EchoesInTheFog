@@ -208,6 +208,8 @@ points = PackedVector3Array(-5, -15, 0, -4.9765077, -15, -0.490407, -4.9765077, 
 [node name="World" type="Node3D" unique_id=691108467]
 script = SubResource("GDScript_036b0")
 
+[node name="Cube" parent="." unique_id=443842108 instance=ExtResource("8_gbfbk")]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
 transform = Transform3D(-0.8562053, 0.31130692, -0.41231117, 0.02547905, 0.82254183, 0.56813323, 0.51600707, 0.47593355, -0.7121966, 0, 19.727184, 13.390049)
 light_color = Color(1, 0.79721934, 0.72160006, 1)
@@ -407,7 +409,7 @@ script = ExtResource("4_dwbse")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1793780894]
-transform = Transform3D(3.3522592, 0, 0, 0, 3.810185, 0, 0, 0, 1, 0, 0, 33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
 tracker = &"left_hand"
 
 [node name="LeftHand" parent="XROrigin3D/LeftHand" unique_id=1689163999 instance=ExtResource("5_pkg7o")]
@@ -416,12 +418,10 @@ tracker = &"left_hand"
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1635312350]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
-tracker = &"right_hand"
-
-[node name="RightHand" parent="XROrigin3D/RightHand" unique_id=94263823 instance=ExtResource("7_ioo17")]
-transform = Transform3D(71.98014, 0, 0, 0, 51.919666, 0, 0, 0, 51.919666, 0, 0, 0)
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1413331928 instance=ExtResource("6_gbfbk")]
 
-[node name="Cube" parent="XROrigin3D" unique_id=443842108 instance=ExtResource("8_gbfbk")]
-transform = Transform3D(-1, -7.642742e-15, 8.742278e-08, 0, 1, 8.742278e-08, -8.742278e-08, 8.742278e-08, -1, 20, 47.777, 0)
+[node name="RightHand" parent="XROrigin3D/RightHand" unique_id=99512819 instance=ExtResource("7_ioo17")]
+
+[node name="Cube2" parent="." unique_id=411163400 instance=ExtResource("8_gbfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1.485476, -0.33350492, 8.97665, 19.927074)
