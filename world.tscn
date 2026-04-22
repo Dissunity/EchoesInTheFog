@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="7_ioo17"]
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="8_gbfbk"]
+[ext_resource type="PackedScene" uid="uid://do4jm6veov2ve" path="res://crowbar.glb" id="9_ioo17"]
 
 [sub_resource type="GDScript" id="GDScript_036b0"]
 script/source = "extends Node3D
@@ -209,6 +210,10 @@ points = PackedVector3Array(-5, -15, 0, -4.9765077, -15, -0.490407, -4.9765077, 
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ioo17"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ioo17"]
+radius = 0.2
+height = 3.5
+
 [node name="World" type="Node3D" unique_id=691108467]
 script = SubResource("GDScript_036b0")
 
@@ -222,6 +227,7 @@ sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Island" unique_id=162288658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
+visible = false
 mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
@@ -439,3 +445,13 @@ mesh = SubResource("BoxMesh_gbfbk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cube2" unique_id=1272699831]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Crowbar" type="RigidBody3D" parent="." unique_id=93306188]
+transform = Transform3D(0.1, 0, 0, 0, -0.0010419462, 0.09999457, 0, -0.09999457, -0.0010419462, 0.9518618, 47.013256, 0.66026306)
+script = ExtResource("8_gbfbk")
+
+[node name="crowbar" parent="Crowbar" unique_id=1600755316 instance=ExtResource("9_ioo17")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crowbar" unique_id=1636281109]
+transform = Transform3D(9.999997, 0, 0, 0, 9.999996, -1.4901161e-08, 0, 1.4901161e-08, 9.999996, 0, 16.770275, 0.17471313)
+shape = SubResource("CapsuleShape3D_ioo17")
