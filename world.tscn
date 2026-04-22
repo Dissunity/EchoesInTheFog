@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="7_ioo17"]
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="8_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://do4jm6veov2ve" path="res://crowbar.glb" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://bh2x7siy4pqn4" path="res://monster.glb" id="10_wse8f"]
 
 [sub_resource type="GDScript" id="GDScript_036b0"]
 script/source = "extends Node3D
@@ -471,3 +472,6 @@ shape = SubResource("CapsuleShape3D_wse8f")
 [node name="ede two" type="CollisionShape3D" parent="Crowbar" unique_id=925366438]
 transform = Transform3D(0.4226022, -0.9062654, -0.009443308, 0.9062657, 0.42266482, -0.0060158405, 0.009443313, -0.006015838, 0.9999364, -1.1516304, 35.225487, 0.3670349)
 shape = SubResource("CapsuleShape3D_ic0uy")
+
+[node name="monster" parent="." unique_id=1545999167 instance=ExtResource("10_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 49, 21)
