@@ -417,12 +417,14 @@ tracker = &"left_hand"
 [node name="LeftHand" parent="XROrigin3D/LeftHand" unique_id=1689163999 instance=ExtResource("5_pkg7o")]
 
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=139364757 instance=ExtResource("6_gbfbk")]
+grab_collision_mask = 327685
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1635312350]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
 tracker = &"right_hand"
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1413331928 instance=ExtResource("6_gbfbk")]
+grab_collision_mask = 327685
 
 [node name="RightHand" parent="XROrigin3D/RightHand" unique_id=99512819 instance=ExtResource("7_ioo17")]
 
