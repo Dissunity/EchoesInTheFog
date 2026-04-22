@@ -361,10 +361,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.789383)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35.202927)
 tracker = &"left_hand"
 
-[node name="XRToolsHand" type="Node3D" parent="XROrigin3D/LeftHand" unique_id=1856607056]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0, 0.05)
-metadata/_custom_type_script = "uid://ssf078nkditk"
-
 [node name="FunctionsPickup" type="Node3D" parent="XROrigin3D/LeftHand" unique_id=1210444859]
 metadata/_custom_type_script = "uid://b0mhmrufyl0lt"
 
@@ -374,7 +370,5 @@ tracker = &"right_hand"
 
 [node name="XRToolsHand" type="Node3D" parent="XROrigin3D/RightHand" unique_id=1981758050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0, 0.05)
-metadata/_custom_type_script = "uid://ssf078nkditk"
 
 [node name="FunctionsPickup" type="Node3D" parent="XROrigin3D/RightHand" unique_id=1392515288]
-metadata/_custom_type_script = "uid://b0mhmrufyl0lt"
