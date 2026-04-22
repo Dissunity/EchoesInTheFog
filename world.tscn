@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_gbfbk"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="7_ioo17"]
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="8_gbfbk"]
+[ext_resource type="AudioStream" uid="uid://3e7dbcag5506" path="res://output.ogg" id="8_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://do4jm6veov2ve" path="res://crowbar.glb" id="9_ioo17"]
 [ext_resource type="PackedScene" uid="uid://bh2x7siy4pqn4" path="res://monster.glb" id="10_wse8f"]
 
@@ -236,7 +237,6 @@ sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Island" unique_id=162288658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
-visible = false
 mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
@@ -441,6 +441,10 @@ tracker = &"right_hand"
 grab_collision_mask = 327685
 
 [node name="RightHand" parent="XROrigin3D/RightHand" unique_id=99512819 instance=ExtResource("7_ioo17")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D" unique_id=34151311]
+stream = ExtResource("8_ic0uy")
+parameters/looping = true
 
 [node name="Cube2" type="RigidBody3D" parent="." unique_id=1185667027]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.669178, 0)
