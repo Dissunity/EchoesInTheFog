@@ -265,7 +265,10 @@ shape = SubResource("CapsuleShape3D_gv5m4")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=2019052881]
 mesh = SubResource("CapsuleMesh_f3sb7")
 
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=886325403]
-transform = Transform3D(1, 0, 0, 0, 0.99715894, -0.07532677, 0, 0.07532677, 0.99715894, -0.3600936, 6.1511803, 25.173069)
+[node name="SpringArm3D" type="SpringArm3D" parent="Player" unique_id=584003843]
+spring_length = 3.0
+
+[node name="Camera3D" type="Camera3D" parent="Player/SpringArm3D" unique_id=886325403]
+transform = Transform3D(1, 0, 0, 0, 0.99715894, -0.07532677, 0, 0.07532677, 0.99715894, 0, 0, 0)
 environment = SubResource("Environment_gv5m4")
 fov = 90.0
