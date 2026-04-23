@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://3e7dbcag5506" path="res://output.ogg" id="8_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://do4jm6veov2ve" path="res://crowbar.glb" id="9_ioo17"]
 [ext_resource type="PackedScene" uid="uid://bh2x7siy4pqn4" path="res://monster.glb" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://iaq7yipqdftn" path="res://control.tscn" id="12_k3n1d"]
 
 [sub_resource type="GDScript" id="GDScript_036b0"]
 script/source = "extends Node3D
@@ -432,6 +433,7 @@ tracker = &"left_hand"
 
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=139364757 instance=ExtResource("6_gbfbk")]
 grab_collision_mask = 327685
+ranged_distance = 0.0
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1635312350]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
@@ -439,6 +441,7 @@ tracker = &"right_hand"
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1413331928 instance=ExtResource("6_gbfbk")]
 grab_collision_mask = 327685
+ranged_distance = 0.0
 
 [node name="RightHand" parent="XROrigin3D/RightHand" unique_id=99512819 instance=ExtResource("7_ioo17")]
 
@@ -479,3 +482,12 @@ shape = SubResource("CapsuleShape3D_ic0uy")
 
 [node name="monster" parent="." unique_id=1545999167 instance=ExtResource("10_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 49, 21)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1535977329]
+
+[node name="SubViewport" type="SubViewport" parent="Node3D" unique_id=1449095457]
+transparent_bg = true
+
+[node name="Control" parent="Node3D/SubViewport" unique_id=584559429 instance=ExtResource("12_k3n1d")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=1977283738]
