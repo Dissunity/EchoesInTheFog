@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://do4jm6veov2ve" path="res://crowbar.glb" id="9_ioo17"]
 [ext_resource type="PackedScene" uid="uid://bh2x7siy4pqn4" path="res://monster.glb" id="10_wse8f"]
 [ext_resource type="PackedScene" uid="uid://iaq7yipqdftn" path="res://control.tscn" id="12_k3n1d"]
+[ext_resource type="AudioStream" uid="uid://c4ji74lkii7is" path="res://monster_sounds.ogg" id="13_70uel"]
 
 [sub_resource type="GDScript" id="GDScript_036b0"]
 script/source = "extends Node3D
@@ -235,6 +236,7 @@ sky_mode = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Island" unique_id=162288658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
+visible = false
 mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
@@ -469,6 +471,10 @@ shape = SubResource("CapsuleShape3D_ic0uy")
 
 [node name="monster" parent="." unique_id=1545999167 instance=ExtResource("10_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 49, 21)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="monster" unique_id=132001484]
+stream = ExtResource("13_70uel")
+max_distance = 10.0
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1535977329]
 
