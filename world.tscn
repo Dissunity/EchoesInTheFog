@@ -240,6 +240,37 @@ visible = false
 mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
+[node name="z water sound" type="AudioStreamPlayer3D" parent="Island/MeshInstance3D" unique_id=1751433303]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040810585, 0, 47.20336)
+
+[node name="x water sound" type="AudioStreamPlayer3D" parent="Island/MeshInstance3D" unique_id=1922262139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.95025, 0, -0.45332146)
+stream = ExtResource("8_ic0uy")
+
+[node name="inverse z water sound" type="AudioStreamPlayer3D" parent="Island/MeshInstance3D" unique_id=663271858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3609228, 0, -35.418465)
+stream = ExtResource("8_ic0uy")
+
+[node name="inverse x wate sound" type="AudioStreamPlayer3D" parent="Island/MeshInstance3D" unique_id=1721942088]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.40052, 0, -1.0889263)
+stream = ExtResource("8_ic0uy")
+
+[node name="inverse x wate sound2" type="AudioStreamPlayer3D" parent="Island/MeshInstance3D" unique_id=1375842800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.40052, 0, 41.050865)
+stream = ExtResource("8_ic0uy")
+
+[node name="inverse x wate sound3" type="AudioStreamPlayer3D" parent="Island/MeshInstance3D" unique_id=1580985159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.581177, 0, -33.6725)
+stream = ExtResource("8_ic0uy")
+
+[node name="inverse x wate sound4" type="AudioStreamPlayer3D" parent="Island/MeshInstance3D" unique_id=1310694307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.74118, 0, -35.86904)
+stream = ExtResource("8_ic0uy")
+
+[node name="inverse x wate sound5" type="AudioStreamPlayer3D" parent="Island/MeshInstance3D" unique_id=1314709516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.642723, 0, 55.635933)
+stream = ExtResource("8_ic0uy")
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Island" unique_id=454822726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.289606, 0)
 mesh = SubResource("BoxMesh_fj7yv")
@@ -474,7 +505,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 49, 21)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="monster" unique_id=132001484]
 stream = ExtResource("13_70uel")
+autoplay = true
 max_distance = 10.0
+parameters/looping = true
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1535977329]
 
