@@ -3,14 +3,10 @@
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
-[ext_resource type="Script" uid="uid://bimmnquip3jsn" path="res://xr_origin_3d.gd" id="4_dwbse"]
-[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="5_pkg7o"]
-[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="6_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="7_ioo17"]
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="8_gbfbk"]
-[ext_resource type="AudioStream" uid="uid://3e7dbcag5506" path="res://output.ogg" id="8_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://bmhyv1ird7v70" path="res://cube.tscn" id="9_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://do4jm6veov2ve" path="res://crowbar.glb" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://bh2x7siy4pqn4" path="res://monster.glb" id="10_wse8f"]
 [ext_resource type="PackedScene" uid="uid://iaq7yipqdftn" path="res://control.tscn" id="12_k3n1d"]
 
@@ -52,78 +48,56 @@ func _ready():
 		xr_interface.session_stopping.connect(_on_openxr_stopping)
 		xr_interface.pose_recentered.connect(_on_openxr_pose_recentered)
 	else:
-		# We couldn't start OpenXR.
-		print(\"OpenXR not instantiated!\")
-		if xr_interface:
-			print(\"no interface\")
-		if xr_interface.initialize():
-			print(\"couldn't initalisze\")	
-		get_tree().quit()
+		# THE FIX: No more crashing! Just a friendly fallback message.
+		print(\"OpenXR not found or failed to initialize. Falling back to Desktop mode.\")
  
 # Handle OpenXR session ready
 func _on_openxr_session_begun() -> void:
-	# Get the reported refresh rate
 	var current_refresh_rate = xr_interface.get_display_refresh_rate()
 	if current_refresh_rate > 0:
 		print(\"OpenXR: Refresh rate reported as \", str(current_refresh_rate))
 	else:
 		print(\"OpenXR: No refresh rate given by XR runtime\")
  
-	# See if we have a better refresh rate available
 	var new_rate = current_refresh_rate
 	var available_rates : Array = xr_interface.get_available_display_refresh_rates()
 	if available_rates.size() == 0:
 		print(\"OpenXR: Target does not support refresh rate extension\")
 	elif available_rates.size() == 1:
-		# Only one available, so use it
 		new_rate = available_rates[0]
 	else:
 		for rate in available_rates:
 			if rate > new_rate and rate <= maximum_refresh_rate:
 				new_rate = rate
  
-	# Did we find a better rate?
 	if current_refresh_rate != new_rate:
 		print(\"OpenXR: Setting refresh rate to \", str(new_rate))
 		xr_interface.set_display_refresh_rate(new_rate)
 		current_refresh_rate = new_rate
  
-	# Now match our physics rate
 	Engine.physics_ticks_per_second = current_refresh_rate
  
 # Handle OpenXR visible state
 func _on_openxr_visible_state() -> void:
-	# We always pass this state at startup,
-	# but the second time we get this it means our player took off their headset
 	if xr_is_focussed:
 		print(\"OpenXR lost focus\")
- 
 		xr_is_focussed = false
- 
-		# pause our game
 		get_tree().paused = true
- 
 		emit_signal(\"focus_lost\")
  
 # Handle OpenXR focused state
 func _on_openxr_focused_state() -> void:
 	print(\"OpenXR gained focus\")
 	xr_is_focussed = true
- 
-	# unpause our game
 	get_tree().paused = false
- 
 	emit_signal(\"focus_gained\")
  
 # Handle OpenXR stopping state
 func _on_openxr_stopping() -> void:
-	# Our session is being stopped.
 	print(\"OpenXR is stopping\")
  
 # Handle OpenXR pose recentered signal
 func _on_openxr_pose_recentered() -> void:
-	# User recentered view, we have to react to this by recentering the view.
-	# This is game implementation dependent.
 	emit_signal(\"pose_recentered\")
 "
 
@@ -415,37 +389,6 @@ shape = SubResource("ConvexPolygonShape3D_k3n1d")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.180063, 0)
 shape = SubResource("ConvexPolygonShape3D_2o6r5")
 
-[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1812876656]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.693703)
-script = ExtResource("4_dwbse")
-
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=920108780]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
-
-[node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=1793780894]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
-tracker = &"left_hand"
-
-[node name="LeftHand" parent="XROrigin3D/LeftHand" unique_id=1689163999 instance=ExtResource("5_pkg7o")]
-
-[node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=139364757 instance=ExtResource("6_gbfbk")]
-grab_collision_mask = 327685
-ranged_distance = 0.0
-
-[node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1635312350]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33)
-tracker = &"right_hand"
-
-[node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1413331928 instance=ExtResource("6_gbfbk")]
-grab_collision_mask = 327685
-ranged_distance = 0.0
-
-[node name="RightHand" parent="XROrigin3D/RightHand" unique_id=99512819 instance=ExtResource("7_ioo17")]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D" unique_id=34151311]
-stream = ExtResource("8_ic0uy")
-parameters/looping = true
-
 [node name="Cube2" parent="." unique_id=1849178487 instance=ExtResource("9_2o6r5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.669178, 0)
 
@@ -487,3 +430,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6251869, 46.71325, -1.4947
 
 [node name="Cube5" parent="." unique_id=1202041061 instance=ExtResource("9_2o6r5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0386665, 46.71325, 1.2352633)
+
+[node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.456953, 11.162647, 2.8728929)
