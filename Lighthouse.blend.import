@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dq3dg17ih4kyn"
-path="res://.godot/imported/Lighthouse.blend-f073316abcbae25cf0c4e185924e54bf.scn"
+uid="uid://b2i7qgwfutpqx"
+path="res://.godot/imported/Lighthouse.blend-87af0cfcf792605feedbf58dbd6288f3.scn"
 
 [deps]
 
-source_file="res://models/Blender/general/Lighthouse.blend"
-dest_files=["res://.godot/imported/Lighthouse.blend-f073316abcbae25cf0c4e185924e54bf.scn"]
+source_file="res://Lighthouse.blend"
+dest_files=["res://.godot/imported/Lighthouse.blend-87af0cfcf792605feedbf58dbd6288f3.scn"]
 
 [params]
 
