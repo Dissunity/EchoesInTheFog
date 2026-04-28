@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_dw050"]
-[ext_resource type="AudioStream" uid="uid://3e7dbcag5506" path="res://output.ogg" id="5_b26j0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -43,7 +42,3 @@ grab_collision_mask = 327685
 ranged_distance = 0.0
 
 [node name="RightHand" parent="XROrigin3D/RightHand" unique_id=798714318 instance=ExtResource("4_dw050")]
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="XROrigin3D" unique_id=2050186710]
-stream = ExtResource("5_b26j0")
-parameters/looping = true
