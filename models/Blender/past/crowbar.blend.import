@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dlqjgcilirtkf"
-path="res://.godot/imported/crowbar.blend-331811719e0467d73e4ca284fddb88e1.scn"
+path="res://.godot/imported/crowbar.blend-7385d84550ee288e1ad8a0adbcb6456f.scn"
 
 [deps]
 
-source_file="res://models/past/crowbar.blend"
-dest_files=["res://.godot/imported/crowbar.blend-331811719e0467d73e4ca284fddb88e1.scn"]
+source_file="res://models/Blender/past/crowbar.blend"
+dest_files=["res://.godot/imported/crowbar.blend-7385d84550ee288e1ad8a0adbcb6456f.scn"]
 
 [params]
 
