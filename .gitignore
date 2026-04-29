@@ -1,6 +1,8 @@
 # Godot 4+ specific ignores
 .godot/
 .nomedia
+/android/
+/build/
 
 # Godot-specific ignores
 .import/
@@ -15,8 +17,6 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
-
-/android/
 
 # MacOS 
 .DS_Store
@@ -36,3 +36,8 @@ $RECYCLE.BIN/
 # Linux
 *~
 .nfs*
+
+export_credentials.cfg
+
+# Keep these to ensure project settings and import settings are synced
+!*.import
