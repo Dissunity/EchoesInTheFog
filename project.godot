@@ -13,7 +13,6 @@ config_version=5
 config/name="EchoesInTheFog"
 run/main_scene="uid://c4frtv7b1qxyc"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
 
 [physics]
 
