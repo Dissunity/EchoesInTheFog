@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
 
-[ext_resource type="Script" uid="uid://d7b7dn4reh42" path="res://world.gd" id="1_036b0"]
+[ext_resource type="Script" path="res://world.gd" id="1_036b0"]
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
@@ -173,4 +173,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.458813, 2.6107492, 8.659388
 mesh = SubResource("BoxMesh_tlwt5")
 
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.456953, 11.162647, 2.8728929)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.456953, 14.857021, -0.9153366)
