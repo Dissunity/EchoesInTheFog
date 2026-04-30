@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		# Apply joystick input to direction
 		direction = forward * input_vec.y + right * input_vec.x
 		
-		xr_origin.global_transform.origin = global_transform.origin
+		
 
 	# --- APPLY FINAL MOVEMENT ---
 	if direction:
