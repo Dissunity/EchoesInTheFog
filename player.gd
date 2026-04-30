@@ -5,11 +5,10 @@ const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.003 
 
 @onready var spring_arm = $SpringArm3D
-@onready var desktop_camera = $SpringArm3D/DesktopwaCamera
+@onready var desktop_camera = $SpringArm3D/DesktopCamera
 @onready var xr_origin = $XROrigin3D
 @onready var xr_camera = $XROrigin3D/XRCamera3D
 @onready var left_controller = $XROrigin3D/LeftHand
-@onready var right_controller = $XROrigin3D/RightHand
 
 var is_desktop_mode = false 
 
@@ -69,9 +68,6 @@ func _physics_process(delta: float) -> void:
 		# Apply joystick input to direction
 		direction = forward * input_vec.y + right * input_vec.x
 
-		var turn_input = right_controller.get_vector2("primary").x
-		if abs(turn_input)>0.2:
-			xr_camera.rotate_y(-turn_input * 2.0 * delta)
 	# --- APPLY FINAL MOVEMENT ---
 	if direction:
 		velocity.x = direction.x * SPEED
