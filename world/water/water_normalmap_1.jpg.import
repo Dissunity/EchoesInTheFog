@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bd4of45sgm3so"
-path.s3tc="res://.godot/imported/water_normalmap_1.jpg-a3bbab81e265a19435fb961bb3330639.s3tc.ctex"
+path.s3tc="res://.godot/imported/water_normalmap_1.jpg-b78614dc986482182e014fede0324674.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://world/water/water_normalmap_1.jpg"
-dest_files=["res://.godot/imported/water_normalmap_1.jpg-a3bbab81e265a19435fb961bb3330639.s3tc.ctex"]
+source_file="res://textures/water_normalmap_1.jpg"
+dest_files=["res://.godot/imported/water_normalmap_1.jpg-b78614dc986482182e014fede0324674.s3tc.ctex"]
 
 [params]
 

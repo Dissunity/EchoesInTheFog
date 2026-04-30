@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
 
-[ext_resource type="Shader" uid="uid://71443hwokrce" path="res://world/water/water.gdshader" id="1_ai45w"]
-[ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://world/water/water_normalmap_2.jpg" id="2_4papg"]
-[ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://world/water/water_normalmap_1.jpg" id="3_fyhu2"]
-[ext_resource type="Script" uid="uid://cgmruux5twss5" path="res://player/player.gd" id="4_ov2xu"]
-[ext_resource type="PackedScene" uid="uid://b4k74hto8gbg4" path="res://world/lighthouse/Lighthouse.glb" id="5_mad0u"]
-[ext_resource type="PackedScene" uid="uid://djppkl52m7dim" path="res://objects/chair/chair.glb" id="6_ocfjn"]
-[ext_resource type="PackedScene" uid="uid://myn24h2bip0w" path="res://world/monster/monster.glb" id="7_dqqhb"]
-[ext_resource type="PackedScene" uid="uid://ck8b5d8n8xu4v" path="res://objects/table/table.glb" id="8_b2suy"]
+[ext_resource type="Script" path="res://world.gd" id="1_036b0"]
+[ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
+[ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -34,24 +31,8 @@ size = Vector3(10, 8, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_gv5m4"]
 size = Vector3(6, 6, 6)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gv5m4"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_f3sb7"]
-
-[sub_resource type="Environment" id="Environment_gv5m4"]
-background_color = Color(0.38507113, 0.38507116, 0.38507113, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.028900003, 0.08533998, 0.17, 1)
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.4332, 0.48564, 0.57, 1)
-fog_sun_scatter = 0.11
-fog_density = 1.0
-fog_depth_begin = 0.0
-fog_depth_end = 50.0
-volumetric_fog_density = 0.01
-
 [node name="World" type="Node3D" unique_id=691108467]
+script = ExtResource("1_036b0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
 transform = Transform3D(-0.8562053, 0.31130692, -0.41231117, 0.02547905, 0.82254183, 0.56813323, 0.51600707, 0.47593355, -0.7121966, 0, 19.727184, 13.390049)
@@ -191,31 +172,5 @@ mesh = SubResource("BoxMesh_tlwt5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.458813, 2.6107492, 8.659388)
 mesh = SubResource("BoxMesh_tlwt5")
 
-[node name="Player" type="CharacterBody3D" parent="." unique_id=1708846250]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.755568, 11.708874, 7.604026)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-script = ExtResource("4_ov2xu")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1065334511]
-shape = SubResource("CapsuleShape3D_gv5m4")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=2019052881]
-mesh = SubResource("CapsuleMesh_f3sb7")
-
-[node name="Camera3D" type="Camera3D" parent="Player" unique_id=886325403]
-transform = Transform3D(1, 0, 0, 0, 0.99715894, -0.07532677, 0, 0.07532677, 0.99715894, -0.3600936, 6.1511803, 25.173069)
-environment = SubResource("Environment_gv5m4")
-fov = 90.0
-
-[node name="Lighthouse" parent="." unique_id=465583997 instance=ExtResource("5_mad0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013095856, -0.031726837, -0.03265381)
-
-[node name="chair" parent="." unique_id=1582868636 instance=ExtResource("6_ocfjn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.92102, 0)
-
-[node name="monster" parent="." unique_id=644936647 instance=ExtResource("7_dqqhb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 44.996277, 18.882082)
-
-[node name="table" parent="." unique_id=885470542 instance=ExtResource("8_b2suy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 43.106693, 2.0577636)
+[node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.456953, 14.857021, -0.9153366)
