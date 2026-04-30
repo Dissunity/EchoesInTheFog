@@ -18,6 +18,7 @@ func _ready() -> void:
 		print("VR Mode detected. Enabling XR Camera.")
 		is_desktop_mode = false
 		desktop_camera.current = false 
+		xr_camera.current = true
 	else:
 		print("Desktop Mode active.")
 		is_desktop_mode = true
