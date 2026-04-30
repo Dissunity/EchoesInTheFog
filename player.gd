@@ -19,6 +19,7 @@ func _ready() -> void:
 		is_desktop_mode = false
 		desktop_camera.current = false 
 		xr_camera.current = true
+		spring_arm.spring_length = 0.0
 	else:
 		print("Desktop Mode active.")
 		is_desktop_mode = true
