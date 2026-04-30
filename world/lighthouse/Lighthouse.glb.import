@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://xnli7fv4qoe0"
-path="res://.godot/imported/table_broken.glb-e144cd71d520d15a5cc6183c56fdc327.scn"
+uid="uid://drqkiyohnyyuh"
+path="res://.godot/imported/Lighthouse.glb-bae735c1aa5e2d1076585d4b5997d5fa.scn"
 
 [deps]
 
-source_file="res://models/GLTF/present/table_broken.glb"
-dest_files=["res://.godot/imported/table_broken.glb-e144cd71d520d15a5cc6183c56fdc327.scn"]
+source_file="res://world/lighthouse/Lighthouse.glb"
+dest_files=["res://.godot/imported/Lighthouse.glb-bae735c1aa5e2d1076585d4b5997d5fa.scn"]
 
 [params]
 
