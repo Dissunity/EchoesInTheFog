@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ck8b5d8n8xu4v"
-path="res://.godot/imported/table.glb-51967686ed722f81c670f680748fad5a.scn"
+uid="uid://c21g4lajakqf8"
+path="res://.godot/imported/chair_broken.glb-415cf08accd2b76486d82f796134b26d.scn"
 
 [deps]
 
-source_file="res://models/GLTF/past/table.glb"
-dest_files=["res://.godot/imported/table.glb-51967686ed722f81c670f680748fad5a.scn"]
+source_file="res://objects/chair/chair_broken.glb"
+dest_files=["res://.godot/imported/chair_broken.glb-415cf08accd2b76486d82f796134b26d.scn"]
 
 [params]
 

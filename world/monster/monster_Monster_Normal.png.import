@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://df0ip0ec0xs42"
-path.s3tc="res://.godot/imported/monster_Monster_Normal.png-e548755ba66aa3e903ddc4f8a1a19177.s3tc.ctex"
+uid="uid://h1kaxtkibins"
+path.s3tc="res://.godot/imported/monster_Monster_Normal.png-6f5cc3d628bc06e495be0735275d29f7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "970b58266f7b854b7fedfa59a0f5c090"
-}
 
 [deps]
 
-source_file="res://models/GLTF/past/monster_Monster_Normal.png"
-dest_files=["res://.godot/imported/monster_Monster_Normal.png-e548755ba66aa3e903ddc4f8a1a19177.s3tc.ctex"]
+source_file="res://world/monster/monster_Monster_Normal.png"
+dest_files=["res://.godot/imported/monster_Monster_Normal.png-6f5cc3d628bc06e495be0735275d29f7.s3tc.ctex"]
 
 [params]
 
@@ -30,7 +27,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://models/GLTF/past/monster_Monster_Normal.png"
+roughness/src_normal="res://world/monster/monster_Monster_Normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
