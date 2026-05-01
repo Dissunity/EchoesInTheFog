@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b4k74hto8gbg4"
-path="res://.godot/imported/Lighthouse.glb-8a6fb3dc1040c41db614f3904f45d02d.scn"
+uid="uid://dkwv2luonhqyo"
+path="res://.godot/imported/monster.glb-3e30c12adf6c2a67343b139a85413aa7.scn"
 
 [deps]
 
-source_file="res://models/GLTF/general/Lighthouse.glb"
-dest_files=["res://.godot/imported/Lighthouse.glb-8a6fb3dc1040c41db614f3904f45d02d.scn"]
+source_file="res://world/monster/monster.glb"
+dest_files=["res://.godot/imported/monster.glb-3e30c12adf6c2a67343b139a85413aa7.scn"]
 
 [params]
 
