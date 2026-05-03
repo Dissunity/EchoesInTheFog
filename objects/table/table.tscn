@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://htyyy5fjm3hf"]
+
+[ext_resource type="PackedScene" uid="uid://dnxvm2fi8rku2" path="res://objects/table/table.glb" id="1_frh0p"]
+[ext_resource type="PackedScene" uid="uid://bihwxoyu8u1vp" path="res://objects/table/table_broken.glb" id="2_26gxm"]
+
+[node name="Table" type="Node3D" unique_id=723022751]
+
+[node name="table" parent="." unique_id=2010079531 instance=ExtResource("1_frh0p")]
+
+[node name="table_broken" parent="." unique_id=1950040690 instance=ExtResource("2_26gxm")]
+visible = false
