@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bt68mf03qi51m"]
+
+[ext_resource type="PackedScene" uid="uid://d034xvtuvqrck" path="res://world/lighthouse/Lighthouseprocess.glb" id="1_fth5l"]
+[ext_resource type="PackedScene" uid="uid://dsc313c7ft7c6" path="res://world/lighthouse/MechanicalRoom.glb" id="2_yk8ew"]
+
+[node name="Lighthouseprocess" unique_id=787643463 instance=ExtResource("1_fth5l")]
+
+[node name="MechanicalRoom" parent="." index="18" unique_id=583447087 instance=ExtResource("2_yk8ew")]
