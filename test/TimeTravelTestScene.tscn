@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://6jhce84edv7f"]
+
+[ext_resource type="PackedScene" uid="uid://djppkl52m7dim" path="res://models/GLTF/past/chair.glb" id="1_dot80"]
+[ext_resource type="PackedScene" uid="uid://cg52qct3rr6mv" path="res://models/GLTF/present/chair_broken.glb" id="2_gwyxx"]
+[ext_resource type="Script" uid="uid://cner0ejyul4n3" path="res://mechanics/TimeTravelling/time_impacted_object.gd" id="3_b5nav"]
+[ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/TimeTravelling/time_travel_light.gd" id="4_gwyxx"]
+[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/TimeTravelling/time_travel_controller.gd" id="5_b5nav"]
+
+[sub_resource type="Environment" id="Environment_b5nav"]
+volumetric_fog_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_dot80"]
+size = Vector3(5, 0.2, 5)
+
+[node name="TimeTravelTestScene" type="Node3D" unique_id=637027800]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=232249860]
+transform = Transform3D(1, 0, 0, 0, 0.9719282, 0.23527783, 0, -0.23527783, 0.9719282, 1.0919397, 0.4460324, 3.5780244)
+environment = SubResource("Environment_b5nav")
+
+[node name="Chair" type="Node3D" parent="." unique_id=1593228014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2750912, -2.1531246, -1.1798073)
+
+[node name="chair" parent="Chair" unique_id=2134568184 instance=ExtResource("1_dot80")]
+visible = false
+
+[node name="chair_broken" parent="Chair" unique_id=1858114894 instance=ExtResource("2_gwyxx")]
+
+[node name="TimeImpactedObject" type="Node" parent="Chair" unique_id=737264732 node_paths=PackedStringArray("present_model", "past_model")]
+script = ExtResource("3_b5nav")
+present_model = NodePath("../chair_broken")
+past_model = NodePath("../chair")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=324492833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8697429, -2.294674, -1.8707728)
+mesh = SubResource("BoxMesh_dot80")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1122752708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8697429, 1.9492207, -1.8707728)
+mesh = SubResource("BoxMesh_dot80")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=746994631]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 3.3380647, -0.36670148, -1.8738202)
+mesh = SubResource("BoxMesh_dot80")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=513449532]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1.5314555, -0.36670148, -1.7886752)
+mesh = SubResource("BoxMesh_dot80")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=2073417759]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0.9059434, -0.36670148, -4.1795807)
+mesh = SubResource("BoxMesh_dot80")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1607958483]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.8827543, 1.8104153, -0.85507905)
+light_energy = 10.508
+spot_angle = 51.41644
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=247285513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2203746)
+light_energy = 2.318
+light_specular = 0.0
+shadow_enabled = true
+script = ExtResource("4_gwyxx")
+
+[node name="TimeTravelController" type="Node" parent="." unique_id=1171497928 node_paths=PackedStringArray("time_travel_light", "time_impacted_objects")]
+script = ExtResource("5_b5nav")
+time_travel_light = NodePath("../OmniLight3D")
+time_impacted_objects = [NodePath("../Chair/TimeImpactedObject")]
+test = true
