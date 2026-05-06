@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bshpnhwi223sb"]
+
+[ext_resource type="PackedScene" uid="uid://bhke66vd45pk7" path="res://objects/table/table_broken.tscn" id="1_tmakf"]
+[ext_resource type="PackedScene" uid="uid://bo4v62xnhippe" path="res://objects/table/table.tscn" id="4_oskf5"]
+
+[node name="Table" type="Node3D" unique_id=723022751]
+
+[node name="table_broken" parent="." unique_id=1649767253 instance=ExtResource("1_tmakf")]
+
+[node name="table" parent="." unique_id=572840458 instance=ExtResource("4_oskf5")]
