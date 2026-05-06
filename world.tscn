@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
 
-[ext_resource type="Script" uid="uid://d7b7dn4reh42" path="res://world.gd" id="1_036b0"]
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
@@ -25,7 +24,6 @@ shader_parameter/color_deep = Color(0.05, 0.07, 0.09, 1)
 shader_parameter/color_shallow = Color(0.15, 0.18, 0.2, 1)
 
 [node name="World" type="Node3D" unique_id=691108467]
-script = ExtResource("1_036b0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
 transform = Transform3D(-0.93742365, 0.3322854, 0.10403445, 0.09317458, -0.048497155, 0.99446785, 0.33549252, 0.9419311, 0.014501836, 0, 46.970318, -0.026504517)
@@ -44,6 +42,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24749339, 43.29696, 0.18090439)
 
 [node name="Lighthouseprocess" parent="." unique_id=787643463 instance=ExtResource("6_dwbse")]
+visible = false
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
@@ -54,5 +53,5 @@ transform = Transform3D(0.052667156, 0, 0.9986121, 0, 1, 0, -0.9986121, 0, 0.052
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 
-[node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
+[node name="Monster" parent="." unique_id=1622995198 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
