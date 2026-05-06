@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dkwv2luonhqyo" path="res://world/monster/monster.glb" id="1_wa7tq"]
 
-[node name="Monster" type="Node3D" unique_id=1644163713]
+[node name="monster" unique_id=1622995198 instance=ExtResource("1_wa7tq")]
 
-[node name="monster" parent="." unique_id=1881610555 instance=ExtResource("1_wa7tq")]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1655264695) index="0" unique_id=455256930]
+bones/66/enabled = false
+bones/66/rotation = Quaternion(0, 0, 20.485, -0.354291)
