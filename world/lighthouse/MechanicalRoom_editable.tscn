@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://cm8yxuqmt5o4a"]
-
-[ext_resource type="PackedScene" uid="uid://dsc313c7ft7c6" path="res://world/lighthouse/MechanicalRoom.glb" id="1_da4oq"]
-
-[node name="MechanicalRoom" unique_id=2091972817 instance=ExtResource("1_da4oq")]

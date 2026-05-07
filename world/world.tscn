@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
+
+[ext_resource type="Script" uid="uid://d7b7dn4reh42" path="res://world/world.gd" id="1_ocfjn"]
+[ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="2_dqqhb"]
+[ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_b2suy"]
+[ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="4_h8lre"]
+[ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player/player.tscn" id="5_ysn08"]
+[ext_resource type="PackedScene" uid="uid://bt68mf03qi51m" path="res://world/lighthouse/tscn/lighthouse.tscn" id="6_m0cxt"]
+[ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/tscn/foghorn_meta.tscn" id="7_j34ew"]
+[ext_resource type="PackedScene" uid="uid://bshpnhwi223sb" path="res://objects/table/tscn/table_meta.tscn" id="8_p2iis"]
+[ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="9_aysyn"]
+[ext_resource type="PackedScene" uid="uid://bo4v62xnhippe" path="res://objects/table/tscn/table.tscn" id="10_fyhu2"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
+size = Vector2(400, 400)
+subdivide_width = 400
+subdivide_depth = 400
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fj7yv"]
+render_priority = 0
+shader = ExtResource("2_dqqhb")
+shader_parameter/normal_map_1 = ExtResource("3_b2suy")
+shader_parameter/normal_map_2 = ExtResource("4_h8lre")
+shader_parameter/color_deep = Color(0.05, 0.07, 0.09, 1)
+shader_parameter/color_shallow = Color(0.15, 0.18, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wse8f"]
+size = Vector3(100, 0.5, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wse8f"]
+size = Vector3(100, 0.1, 100)
+
+[node name="World" type="Node3D" unique_id=691108467]
+script = ExtResource("1_ocfjn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
+transform = Transform3D(-0.93742365, 0.3322854, 0.10403445, 0.09317458, -0.048497155, 0.99446785, 0.33549252, 0.9419311, 0.014501836, 0, 46.970318, -0.026504517)
+light_color = Color(1, 0.79721934, 0.72160006, 1)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="Ocean" type="Node3D" parent="." unique_id=1904178162]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ocean" unique_id=162288658]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
+mesh = SubResource("PlaneMesh_tlwt5")
+surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
+
+[node name="Player" parent="." unique_id=1581452875 instance=ExtResource("5_ysn08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
+
+[node name="Lighthouseprocess" parent="." unique_id=235154909 instance=ExtResource("6_m0cxt")]
+
+[node name="Foghorn" parent="." unique_id=21213881 instance=ExtResource("7_j34ew")]
+transform = Transform3D(0.052667156, 0, 0.9986121, 0, 1, 0, -0.9986121, 0, 0.052667156, -1.7155997, 48.872997, 0)
+
+[node name="Table" parent="." unique_id=723022751 instance=ExtResource("8_p2iis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
+
+[node name="Plane StaticBody3D" type="StaticBody3D" parent="." unique_id=1606923843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
+
+[node name="Plane MeshInstance3D" type="MeshInstance3D" parent="Plane StaticBody3D" unique_id=1866014995]
+mesh = SubResource("BoxMesh_wse8f")
+
+[node name="Plane CollisionShape3D" type="CollisionShape3D" parent="Plane StaticBody3D" unique_id=203901720]
+shape = SubResource("BoxShape3D_wse8f")
+
+[node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("9_aysyn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -15)
+
+[node name="table" parent="." unique_id=2056452608 instance=ExtResource("10_fyhu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40394, 10.3199005, 2.8162842)

@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://c5uicvmmf2pce"]
-
-[ext_resource type="PackedScene" uid="uid://byqokurhp32q7" path="res://objects/foghorn/foghorn_lever.tscn" id="1_0ahe6"]
-
-[node name="Foghorn" type="Node3D" unique_id=21213881]
-
-[node name="foghorn_lever" parent="." unique_id=1973948058 instance=ExtResource("1_0ahe6")]
