@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
-[ext_resource type="PackedScene" uid="uid://bt68mf03qi51m" path="res://world/lighthouse/lighthouse.tscn" id="6_dwbse"]
+[ext_resource type="PackedScene" uid="uid://guvvi2xdnsb5" path="res://world/lighthouse/lighthouse.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
 [ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="8_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
@@ -44,7 +44,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24749339, 43.29696, 0.18090439)
 
-[node name="Lighthouseprocess" parent="." unique_id=787643463 instance=ExtResource("6_dwbse")]
+[node name="Lighthouse" parent="." unique_id=787643463 instance=ExtResource("6_dwbse")]
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
