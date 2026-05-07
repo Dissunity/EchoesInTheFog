@@ -34,6 +34,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="Ocean" type="Node3D" parent="." unique_id=1904178162]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ocean" unique_id=162288658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
