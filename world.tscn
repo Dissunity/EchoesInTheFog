@@ -41,9 +41,9 @@ mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24749339, 43.29696, 0.18090439)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24749339, 42.79255, 0.18090439)
 
-[node name="Lighthouseprocess" parent="." unique_id=787643463 instance=ExtResource("6_dwbse")]
+[node name="Lighthouse" parent="." unique_id=787643463 instance=ExtResource("6_dwbse")]
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
