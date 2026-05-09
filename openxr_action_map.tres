@@ -901,11 +901,8 @@ interaction_profile_path = "/interaction_profiles/ext/hand_interaction_ext"
 bindings = [SubResource("OpenXRIPBinding_rtqrf"), SubResource("OpenXRIPBinding_nq2u4"), SubResource("OpenXRIPBinding_p6lex"), SubResource("OpenXRIPBinding_rennt"), SubResource("OpenXRIPBinding_wsa7d"), SubResource("OpenXRIPBinding_syawb"), SubResource("OpenXRIPBinding_jt2cb"), SubResource("OpenXRIPBinding_nbvoy"), SubResource("OpenXRIPBinding_l1qei"), SubResource("OpenXRIPBinding_720kg"), SubResource("OpenXRIPBinding_e17n2"), SubResource("OpenXRIPBinding_gtuwc"), SubResource("OpenXRIPBinding_rdsma"), SubResource("OpenXRIPBinding_nvgd7"), SubResource("OpenXRIPBinding_tsx4r"), SubResource("OpenXRIPBinding_vhqpq"), SubResource("OpenXRIPBinding_mlte4"), SubResource("OpenXRIPBinding_c4sju"), SubResource("OpenXRIPBinding_eshhk"), SubResource("OpenXRIPBinding_arfvp")]
 
 [sub_resource type="OpenXRInteractionProfile" id="OpenXRInteractionProfile_6ivru"]
-interaction_profile_path = "/interaction_profiles/meta/touch_controller_quest_2"
-
-[sub_resource type="OpenXRInteractionProfile" id="OpenXRInteractionProfile_vfhwq"]
 interaction_profile_path = "/interaction_profiles/oculus/touch_controller"
 
 [resource]
 action_sets = [SubResource("OpenXRActionSet_ngwcy")]
-interaction_profiles = [SubResource("OpenXRInteractionProfile_ckeh6"), SubResource("OpenXRInteractionProfile_dad45"), SubResource("OpenXRInteractionProfile_lvl5r"), SubResource("OpenXRInteractionProfile_dnwvb"), SubResource("OpenXRInteractionProfile_oqlrv"), SubResource("OpenXRInteractionProfile_gqjp6"), SubResource("OpenXRInteractionProfile_ru5ja"), SubResource("OpenXRInteractionProfile_vwcd0")]
+interaction_profiles = [SubResource("OpenXRInteractionProfile_ckeh6"), SubResource("OpenXRInteractionProfile_dad45"), SubResource("OpenXRInteractionProfile_lvl5r"), SubResource("OpenXRInteractionProfile_dnwvb"), SubResource("OpenXRInteractionProfile_oqlrv"), SubResource("OpenXRInteractionProfile_gqjp6"), SubResource("OpenXRInteractionProfile_ru5ja"), SubResource("OpenXRInteractionProfile_vwcd0"), SubResource("OpenXRInteractionProfile_6ivru")]
