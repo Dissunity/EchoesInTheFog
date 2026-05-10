@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bw0ix17yhnlh2" path="res://world/lighthouse/interactable_door_1.gd" id="2_chmle"]
 [ext_resource type="Script" uid="uid://bwiklr5fivp4t" path="res://world/lighthouse/interactable_door_2.gd" id="3_7mocn"]
 [ext_resource type="Script" uid="uid://blsibwmen2jgv" path="res://world/lighthouse/interactable_machineroom_hinge.gd" id="4_r6o4a"]
+[ext_resource type="PackedScene" uid="uid://ctistm7u240a8" path="res://world/lighthouse/mechanical_room.tscn" id="5_ocld4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajw8i"]
 
@@ -1701,16 +1702,19 @@ transform = Transform3D(-0.97682106, 0, 0.21405803, 0, 1, 0, -0.21405803, 0, -0.
 
 [node name="Circle" type="MeshInstance3D" parent="Lighthouse" unique_id=1219544006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.496155, 1.7447814e-05)
+visible = false
 mesh = SubResource("ArrayMesh_g64to")
 skeleton = NodePath("")
 
 [node name="Circle_001" type="MeshInstance3D" parent="Lighthouse" unique_id=464314128]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.496155, 1.7447814e-05)
+visible = false
 mesh = SubResource("ArrayMesh_lr7b5")
 skeleton = NodePath("")
 
 [node name="Clockwork-cabinet" type="MeshInstance3D" parent="Lighthouse" unique_id=820012720]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.862755, 0)
+visible = false
 mesh = SubResource("ArrayMesh_1n4u2")
 skeleton = NodePath("")
 
@@ -1721,11 +1725,13 @@ shape = SubResource("ConcavePolygonShape3D_mt88w")
 
 [node name="Gear" type="MeshInstance3D" parent="Lighthouse" unique_id=153622498]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.524387, 0)
+visible = false
 mesh = SubResource("ArrayMesh_tsgwd")
 skeleton = NodePath("")
 
 [node name="Gear_006" type="MeshInstance3D" parent="Lighthouse" unique_id=1273474571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.524387, 0)
+visible = false
 mesh = SubResource("ArrayMesh_v0v01")
 skeleton = NodePath("")
 
@@ -1741,45 +1747,54 @@ shape = SubResource("ConcavePolygonShape3D_7apb0")
 
 [node name="Oil-lamp" type="MeshInstance3D" parent="Lighthouse" unique_id=1432670884]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.417976, 0)
+visible = false
 mesh = SubResource("ArrayMesh_al1sg")
 skeleton = NodePath("")
 
 [node name="Oil-lamp-flame" type="MeshInstance3D" parent="Lighthouse" unique_id=1633740097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.99478, 0)
+visible = false
 mesh = SubResource("ArrayMesh_iyr34")
 skeleton = NodePath("")
 
 [node name="Puzzle-bar" type="MeshInstance3D" parent="Lighthouse" unique_id=1696061188]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40.65277, 0)
+visible = false
 mesh = SubResource("ArrayMesh_f6p8q")
 skeleton = NodePath("")
 
 [node name="Puzzle-Gear_001" type="MeshInstance3D" parent="Lighthouse" unique_id=2051845558]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.15277, -0.07397684)
+visible = false
 mesh = SubResource("ArrayMesh_2vd1y")
 skeleton = NodePath("")
 
 [node name="Puzzle-Gear_002" type="MeshInstance3D" parent="Lighthouse" unique_id=774244878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.15277, -0.07397684)
+visible = false
 mesh = SubResource("ArrayMesh_p6w08")
 skeleton = NodePath("")
 
 [node name="Puzzle-Gear_003" type="MeshInstance3D" parent="Lighthouse" unique_id=739701490]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.15277, -0.07397684)
+visible = false
 mesh = SubResource("ArrayMesh_agcd4")
 skeleton = NodePath("")
 
 [node name="Puzzle-Gear_004" type="MeshInstance3D" parent="Lighthouse" unique_id=2067688768]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.15277, -0.07397684)
+visible = false
 mesh = SubResource("ArrayMesh_ee3ql")
 skeleton = NodePath("")
 
 [node name="Puzzle-holder" type="MeshInstance3D" parent="Lighthouse" unique_id=634468469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 47.129333, -0.07397684)
+visible = false
 mesh = SubResource("ArrayMesh_ropy2")
 skeleton = NodePath("")
 
 [node name="Door_1" parent="Lighthouse" unique_id=1132966763 instance=ExtResource("1_w0jev")]
+visible = false
 script = ExtResource("2_chmle")
 hinge_limit_min = -128.0
 hinge_limit_max = 0.0
@@ -1790,6 +1805,7 @@ mesh = SubResource("ArrayMesh_wfvt4")
 skeleton = NodePath("")
 
 [node name="Door_2" parent="Lighthouse" unique_id=1244327259 instance=ExtResource("1_w0jev")]
+visible = false
 script = ExtResource("3_7mocn")
 hinge_limit_min = -120.0
 hinge_limit_max = 0.0
@@ -1800,6 +1816,7 @@ mesh = SubResource("ArrayMesh_gjw2i")
 skeleton = NodePath("")
 
 [node name="Turning_lever" parent="Lighthouse" unique_id=407441209 instance=ExtResource("1_w0jev")]
+visible = false
 script = ExtResource("4_r6o4a")
 
 [node name="turning-lever" type="MeshInstance3D" parent="Lighthouse/Turning_lever" unique_id=1683288339]
@@ -1808,3 +1825,6 @@ mesh = SubResource("ArrayMesh_gf18d")
 skeleton = NodePath("")
 
 [node name="Colliders" type="Node3D" parent="Lighthouse" unique_id=1629282195]
+visible = false
+
+[node name="MechanicalRoom" parent="." unique_id=367583270 instance=ExtResource("5_ocld4")]

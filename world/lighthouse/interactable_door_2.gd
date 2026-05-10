@@ -56,10 +56,7 @@ func _ready():
 	super()
 
 	# Set the initial position to match the initial hinge position value
-	transform = Transform3D(
-		Basis.from_euler(Vector3(_hinge_position_rad, 0, 0)),
-		Vector3.ZERO
-	)
+	transform.basis = Basis.from_euler(Vector3(0, _hinge_position_rad, 0))
 
 	# Connect signals
 	if released.connect(_on_hinge_released):
@@ -148,7 +145,7 @@ func _do_move_hinge(pos: float) -> float:
 
 	# Move if necessary
 	if pos != _hinge_position_rad:
-		transform.basis = Basis.from_euler(Vector3(pos, 0.0, 0.0))
+		transform.basis = Basis.from_euler(Vector3(0.0, pos, 0.0))
 
 	# Return the updated position
 	return pos

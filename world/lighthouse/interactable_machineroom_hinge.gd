@@ -13,16 +13,8 @@ extends XRToolsInteractableHandleDriven
 ## The interactable hinge is not a [RigidBody3D], and as such will not react
 ## to any collisions.
 
-
 ## Signal for hinge moved
 signal hinge_moved(angle)
-
-
-## Hinge minimum limit
-@export var hinge_limit_min : float = -45.0: set = _set_hinge_limit_min
-
-## Hinge maximum limit
-@export var hinge_limit_max : float = 45.0: set = _set_hinge_limit_max
 
 ## Hinge step size (zero for no steps)
 @export var hinge_steps : float = 0.0: set = _set_hinge_steps
@@ -38,8 +30,6 @@ signal hinge_moved(angle)
 
 
 # Hinge values in radians
-@onready var _hinge_limit_min_rad : float = deg_to_rad(hinge_limit_min)
-@onready var _hinge_limit_max_rad : float = deg_to_rad(hinge_limit_max)
 @onready var _hinge_steps_rad : float = deg_to_rad(hinge_steps)
 @onready var _hinge_position_rad : float = deg_to_rad(hinge_position)
 @onready var _default_position_rad : float = deg_to_rad(default_position)
@@ -56,10 +46,7 @@ func _ready():
 	super()
 
 	# Set the initial position to match the initial hinge position value
-	transform = Transform3D(
-		Basis.from_euler(Vector3(_hinge_position_rad, 0, 0)),
-		Vector3.ZERO
-	)
+	transform.basis = Basis.from_euler(Vector3(_hinge_position_rad, 0, 0))
 
 	# Connect signals
 	if released.connect(_on_hinge_released):
@@ -106,18 +93,6 @@ func _on_hinge_released(_interactable: XRToolsInteractableHinge):
 		move_hinge(_default_position_rad)
 
 
-# Called when hinge_limit_min is set externally
-func _set_hinge_limit_min(value: float) -> void:
-	hinge_limit_min = value
-	_hinge_limit_min_rad = deg_to_rad(value)
-
-
-# Called when hinge_limit_max is set externally
-func _set_hinge_limit_max(value: float) -> void:
-	hinge_limit_max = value
-	_hinge_limit_max_rad = deg_to_rad(value)
-
-
 # Called when hinge_steps is set externally
 func _set_hinge_steps(value: float) -> void:
 	hinge_steps = value
@@ -142,9 +117,6 @@ func _do_move_hinge(pos: float) -> float:
 	# Apply hinge step-quantization
 	if _hinge_steps_rad:
 		pos = round(pos / _hinge_steps_rad) * _hinge_steps_rad
-
-	# Apply hinge limits
-	pos = clamp(pos, _hinge_limit_min_rad, _hinge_limit_max_rad)
 
 	# Move if necessary
 	if pos != _hinge_position_rad:

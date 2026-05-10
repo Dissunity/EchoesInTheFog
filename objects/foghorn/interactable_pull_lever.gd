@@ -56,10 +56,8 @@ func _ready():
 	super()
 
 	# Set the initial position to match the initial hinge position value
-	transform = Transform3D(
-		Basis.from_euler(Vector3(0, 0, _hinge_position_rad)),
-		Vector3.ZERO
-	)
+	transform.basis = Basis.from_euler(Vector3(0, 0, _hinge_position_rad))
+	
 
 	# Connect signals
 	if released.connect(_on_hinge_released):
