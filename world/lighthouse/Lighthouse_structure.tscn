@@ -1575,7 +1575,6 @@ shadow_mesh = SubResource("ArrayMesh_naj5n")
 [node name="LighthouseStructure" type="Node3D" unique_id=1498340944]
 
 [node name="Lighthouse" type="Node3D" parent="." unique_id=1007113173]
-visible = false
 
 [node name="Fresenlplaceholder2_001" type="MeshInstance3D" parent="Lighthouse" unique_id=308327002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50.290554, 0)
