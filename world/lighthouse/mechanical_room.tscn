@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnvxqb33lltmj" path="res://addons/godot-xr-tools/interactables/interactable_hinge.tscn" id="1_ba73e"]
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_nc57i"]
+[ext_resource type="Script" uid="uid://cquqe4f1m1sw6" path="res://addons/godot-xr-tools/objects/snap_zone.gd" id="1_ujpo1"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="2_4dyds"]
 [ext_resource type="Script" uid="uid://bw0ix17yhnlh2" path="res://world/lighthouse/interactable_door_1.gd" id="2_adbr0"]
 [ext_resource type="Script" uid="uid://bwiklr5fivp4t" path="res://world/lighthouse/interactable_door_2.gd" id="3_adbr0"]
@@ -435,6 +436,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tf3by")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh2n6"]
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_axhbv"]
 _surfaces = [{
 "aabb": AABB(-0.22500001, 34.15111, -0.09897684, 0.45000002, 13.003319, 0.050000012),
@@ -716,6 +719,9 @@ metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgpin"]
 size = Vector3(0.03957215, 0.16524354, 0.080574036)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w63ex"]
+size = Vector3(0.4307251, 0.5546875, 0.09780884)
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_27cn6"]
 _surfaces = [{
 "aabb": AABB(-0.37274295, -0.26156998, -0.07082111, 0.3459177, 0.52313995, 0.06519173),
@@ -797,10 +803,8 @@ shadow_mesh = SubResource("ArrayMesh_27cn6")
 [sub_resource type="Resource" id="Resource_ujpo1"]
 script = ExtResource("5_ujpo1")
 open_pose = ExtResource("10_y7eq8")
+closed_pose = ExtResource("10_y7eq8")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_w63ex"]
-size = Vector3(0.4307251, 0.5546875, 0.09780884)
 
 [sub_resource type="Resource" id="Resource_w63ex"]
 script = ExtResource("5_ujpo1")
@@ -1075,7 +1079,21 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_74cpq")
 skeleton = NodePath("")
 
-[node name="Puzzle-holder" type="MeshInstance3D" parent="MechanicalRoom" unique_id=858689615]
+[node name="SnapZone" type="Area3D" parent="MechanicalRoom" unique_id=971470962]
+collision_layer = 4
+collision_mask = 65540
+script = ExtResource("1_ujpo1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/SnapZone" unique_id=528894543]
+shape = SubResource("BoxShape3D_jh2n6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MechanicalRoom/SnapZone" unique_id=775312164]
+visible = false
+unit_size = 3.0
+max_db = 1.0
+max_distance = 100.0
+
+[node name="Puzzle-holder" type="MeshInstance3D" parent="MechanicalRoom/SnapZone" unique_id=858689615]
 mesh = SubResource("ArrayMesh_55wpa")
 skeleton = NodePath("")
 
@@ -1149,11 +1167,15 @@ hinge_position = -20.0
 [node name="StaticBody3D" type="StaticBody3D" parent="MechanicalRoom/InteractableDoor1" unique_id=1147965315]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 0
 
 [node name="CollisionShape3D_knob" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=645065764]
 transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, -0.38222802, 0.0020523071, -0.036312103)
 shape = SubResource("BoxShape3D_vgpin")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=2094410996]
+transform = Transform3D(0.9999998, 0, 5.9604645e-08, -2.9802322e-08, 1, 2.9802322e-08, 2.9802322e-08, 0, 0.9999999, -0.20157006, -0.016601563, 0.43238974)
+shape = SubResource("BoxShape3D_w63ex")
 
 [node name="Turn mechanism_door 1" type="MeshInstance3D" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=1906103205]
 transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 0, 0, 0)
@@ -1166,10 +1188,6 @@ snap_hand = false
 hand_pose = SubResource("Resource_ujpo1")
 editor_preview_mode = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=2094410996]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2015686, -0.016601563, 0.4323883)
-shape = SubResource("BoxShape3D_w63ex")
-
 [node name="InteractableDoor2" parent="MechanicalRoom" unique_id=913902736 instance=ExtResource("1_ba73e")]
 transform = Transform3D(0.99026805, 0, -0.1391731, 0, 1, 0, 0.1391731, 0, 0.99026805, -0.2, 47.264, 0.2)
 script = ExtResource("3_adbr0")
@@ -1179,7 +1197,7 @@ hinge_position = -8.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MechanicalRoom/InteractableDoor2" unique_id=1753958753]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 0
 
 [node name="GrabPointHandLeft" parent="MechanicalRoom/InteractableDoor2/StaticBody3D" unique_id=201772623 instance=ExtResource("3_vgpin")]
 transform = Transform3D(-0.7316638, 0.65911853, 0.17387065, -0.23559453, -0.005161268, -0.9718379, -0.6396585, -0.75202155, 0.15906091, 0.4198247, 0.070858, 0.009089246)
@@ -1209,7 +1227,7 @@ default_on_release = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MechanicalRoom/InteractableTurnLever" unique_id=1438341284]
 collision_layer = 4
-collision_mask = 50178
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/InteractableTurnLever/StaticBody3D" unique_id=144351545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21704102, -0.0041656494, -0.08499527)
@@ -1230,3 +1248,6 @@ transform = Transform3D(0.09652329, 0.9947783, -0.033156574, 0.20124495, 0.01311
 snap_hand = false
 hand_pose = SubResource("Resource_og3yr")
 editor_preview_mode = 1
+
+[connection signal="body_entered" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_entered"]
+[connection signal="body_exited" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_exited"]
