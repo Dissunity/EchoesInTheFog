@@ -1066,7 +1066,6 @@ skeleton = NodePath("")
 
 [node name="Puzzle-Gear_003" type="MeshInstance3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=1964656213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.074)
-visible = false
 mesh = SubResource("ArrayMesh_3ikhb")
 skeleton = NodePath("")
 
