@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://6jhce84edv7f"]
 
-[ext_resource type="PackedScene" uid="uid://djppkl52m7dim" path="res://models/GLTF/past/chair.glb" id="1_dot80"]
-[ext_resource type="PackedScene" uid="uid://cg52qct3rr6mv" path="res://models/GLTF/present/chair_broken.glb" id="2_gwyxx"]
-[ext_resource type="Script" uid="uid://cner0ejyul4n3" path="res://mechanics/TimeTravelling/time_impacted_object.gd" id="3_b5nav"]
-[ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/TimeTravelling/time_travel_light.gd" id="4_gwyxx"]
-[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/TimeTravelling/time_travel_controller.gd" id="5_b5nav"]
+[ext_resource type="PackedScene" path="res://models/GLTF/past/chair.glb" id="1_dot80"]
+[ext_resource type="PackedScene" path="res://models/GLTF/present/chair_broken.glb" id="2_gwyxx"]
+[ext_resource type="Script" uid="uid://cner0ejyul4n3" path="res://mechanics/time_travelling/time_impacted_object.gd" id="3_b5nav"]
+[ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/time_travelling/time_travel_light.gd" id="4_gwyxx"]
+[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="5_b5nav"]
 
 [sub_resource type="Environment" id="Environment_b5nav"]
 volumetric_fog_enabled = true
