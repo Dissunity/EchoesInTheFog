@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b5edpgebynxxd"]
+
+[ext_resource type="PackedScene" uid="uid://olna8e0xvgap" path="res://objects/chair/chair.glb" id="1_apyn3"]
+[ext_resource type="PackedScene" uid="uid://c21g4lajakqf8" path="res://objects/chair/chair_broken.glb" id="2_densx"]
+
+[node name="Chair_tscn" type="Node3D" unique_id=858333585]
+
+[node name="chair" parent="." unique_id=934903067 instance=ExtResource("1_apyn3")]
+
+[node name="chair_broken" parent="." unique_id=1397308486 instance=ExtResource("2_densx")]
+visible = false
