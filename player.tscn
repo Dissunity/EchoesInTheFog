@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://o40u2gao0u2l"]
 
 [ext_resource type="Script" uid="uid://bjhmtatp6cmyv" path="res://player.gd" id="1_2hs0m"]
-[ext_resource type="PackedScene" uid="uid://njx823gyk04n" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_hand.tscn" id="2_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_2hs0m"]
-[ext_resource type="PackedScene" uid="uid://raeeicvvindd" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_hand.tscn" id="4_dw050"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_1jxqw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
@@ -32,11 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.5)
 tracker = &"left_hand"
 
-[node name="LeftHand" parent="XROrigin3D/LeftHand" unique_id=1220316962 instance=ExtResource("2_2hs0m")]
-visible = false
-
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=678520256 instance=ExtResource("3_1jxqw")]
-grab_collision_mask = 327685
+grab_collision_mask = 327940
 ranged_distance = 0.0
 
 [node name="LeftGlove" parent="XROrigin3D/LeftHand" unique_id=238805430 instance=ExtResource("4_2hs0m")]
@@ -46,10 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.5)
 tracker = &"right_hand"
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1277105623 instance=ExtResource("3_1jxqw")]
-grab_collision_mask = 327685
+grab_collision_mask = 327940
 ranged_distance = 0.0
-
-[node name="RightHand" parent="XROrigin3D/RightHand" unique_id=798714318 instance=ExtResource("4_dw050")]
-visible = false
 
 [node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
