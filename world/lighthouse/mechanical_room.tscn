@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_w63ex"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="7_kqbvg"]
 [ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="10_y7eq8"]
-[ext_resource type="Script" uid="uid://e7gdpxabj45k" path="res://addons/godot-xr-tools/objects/interactable_area.gd" id="11_w63ex"]
+[ext_resource type="Script" uid="uid://b8uwrf51jd5xm" path="res://addons/godot-xr-tools/objects/grab_points/grab_point.gd" id="11_w63ex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ejoc"]
 resource_name = "Copper"
@@ -1191,7 +1191,6 @@ shape = SubResource("BoxShape3D_vgpin")
 
 [node name="GrabPointHandLeft" parent="MechanicalRoom/InteractableDoor1/Area3D" unique_id=79579400 instance=ExtResource("3_vgpin")]
 transform = Transform3D(0.43804425, -0.79431343, 0.420932, -0.8735817, -0.4865921, -0.009120718, 0.21206692, -0.36372337, -0.9070462, -0.025268108, 0.3394575, -0.099666595)
-snap_hand = false
 hand_pose = SubResource("Resource_ujpo1")
 editor_preview_mode = 1
 
