@@ -716,9 +716,6 @@ open_pose = ExtResource("7_kqbvg")
 closed_pose = ExtResource("7_kqbvg")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vgpin"]
-size = Vector3(0.03957215, 0.16524354, 0.080574036)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_w63ex"]
 size = Vector3(0.4307251, 0.5546875, 0.09780884)
 
@@ -799,6 +796,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_27cn6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vgpin"]
+size = Vector3(0.03957215, 0.16524354, 0.080574036)
 
 [sub_resource type="Resource" id="Resource_ujpo1"]
 script = ExtResource("5_ujpo1")
@@ -1166,12 +1166,8 @@ hinge_position = -20.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MechanicalRoom/InteractableDoor1" unique_id=1147965315]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
-collision_layer = 4
+collision_layer = 256
 collision_mask = 0
-
-[node name="CollisionShape3D_knob" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=645065764]
-transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, -0.38222802, 0.0020523071, -0.036312103)
-shape = SubResource("BoxShape3D_vgpin")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=2094410996]
 transform = Transform3D(0.9999998, 0, 5.9604645e-08, -2.9802322e-08, 1, 2.9802322e-08, 2.9802322e-08, 0, 0.9999999, -0.20157006, -0.016601563, 0.43238974)
@@ -1182,8 +1178,17 @@ transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0,
 mesh = SubResource("ArrayMesh_jbq53")
 skeleton = NodePath("")
 
-[node name="GrabPointHandLeft" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=79579400 instance=ExtResource("3_vgpin")]
-transform = Transform3D(0.71890354, -0.60857594, 0.33587703, 0.031058334, -0.4545948, -0.8901566, 0.6944156, 0.65036863, -0.30790833, -0.44241607, 0.054027557, -0.001365304)
+[node name="Area3D" type="Area3D" parent="MechanicalRoom/InteractableDoor1" unique_id=2094513172]
+transform = Transform3D(0.93969274, -0.33495626, 0.06915273, 0, 0.20218904, 0.9793465, -0.34202015, -0.9202848, 0.18999557, -0.29807615, 0.08300018, 0.32132643)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D_knob" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/Area3D" unique_id=645065764]
+transform = Transform3D(0.9396925, 0, -0.34202012, -0.3349562, 0.20218906, -0.92028457, 0.06915272, 0.9793465, 0.18999554, 0.04324262, 0.34094906, -0.15304184)
+shape = SubResource("BoxShape3D_vgpin")
+
+[node name="GrabPointHandLeft" parent="MechanicalRoom/InteractableDoor1/Area3D" unique_id=79579400 instance=ExtResource("3_vgpin")]
+transform = Transform3D(0.43804425, -0.79431343, 0.420932, -0.8735817, -0.4865921, -0.009120718, 0.21206692, -0.36372337, -0.9070462, -0.025268108, 0.3394575, -0.099666595)
 snap_hand = false
 hand_pose = SubResource("Resource_ujpo1")
 editor_preview_mode = 1
