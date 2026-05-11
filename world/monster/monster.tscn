@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ifjticyj27bj"]
+
+[ext_resource type="PackedScene" uid="uid://dkwv2luonhqyo" path="res://world/monster/monster.glb" id="1_wa7tq"]
+
+[node name="Monster" type="Node3D" unique_id=1644163713]
+
+[node name="monster" parent="." unique_id=1881610555 instance=ExtResource("1_wa7tq")]
