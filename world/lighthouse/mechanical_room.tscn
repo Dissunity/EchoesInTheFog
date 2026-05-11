@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_w63ex"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="7_kqbvg"]
 [ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="10_y7eq8"]
+[ext_resource type="Script" uid="uid://e7gdpxabj45k" path="res://addons/godot-xr-tools/objects/interactable_area.gd" id="11_w63ex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ejoc"]
 resource_name = "Copper"
@@ -473,7 +474,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_axhbv")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4dyds"]
-size = Vector3(0.4, 0.25, 0.25)
+size = Vector3(0.2, 0.15, 0.15)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33exr"]
 resource_name = "Dark metal"
@@ -798,7 +799,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_27cn6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgpin"]
-size = Vector3(0.03957215, 0.16524354, 0.080574036)
+size = Vector3(0.059336856, 0.16524354, 0.080574036)
 
 [sub_resource type="Resource" id="Resource_ujpo1"]
 script = ExtResource("5_ujpo1")
@@ -1182,9 +1183,10 @@ skeleton = NodePath("")
 transform = Transform3D(0.93969274, -0.33495626, 0.06915273, 0, 0.20218904, 0.9793465, -0.34202015, -0.9202848, 0.18999557, -0.29807615, 0.08300018, 0.32132643)
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("11_w63ex")
 
 [node name="CollisionShape3D_knob" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/Area3D" unique_id=645065764]
-transform = Transform3D(0.9396925, 0, -0.34202012, -0.3349562, 0.20218906, -0.92028457, 0.06915272, 0.9793465, 0.18999554, 0.04324262, 0.34094906, -0.15304184)
+transform = Transform3D(0.9396925, 0, -0.34202012, -0.3349562, 0.20218942, -0.9202852, 0.06915272, 0.97934645, 0.18999603, 0.033956215, 0.3442583, -0.15371704)
 shape = SubResource("BoxShape3D_vgpin")
 
 [node name="GrabPointHandLeft" parent="MechanicalRoom/InteractableDoor1/Area3D" unique_id=79579400 instance=ExtResource("3_vgpin")]
