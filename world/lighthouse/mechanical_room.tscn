@@ -1042,6 +1042,18 @@ size = Vector3(0.45947266, 0.62145996, 0.12084961)
 [sub_resource type="SphereShape3D" id="SphereShape3D_kqbvg"]
 radius = 0.11596811
 
+[sub_resource type="Resource" id="Resource_eeir3"]
+script = ExtResource("5_ujpo1")
+open_pose = ExtResource("4_y7eq8")
+closed_pose = ExtResource("4_y7eq8")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_ebrkk"]
+script = ExtResource("5_ujpo1")
+open_pose = ExtResource("7_kqbvg")
+closed_pose = ExtResource("7_kqbvg")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
 [node name="MechanicalRoom" type="Node3D" unique_id=367583270]
 
 [node name="MechanicalRoom" type="Node3D" parent="." unique_id=1529749169]
@@ -1268,13 +1280,21 @@ shape = SubResource("BoxShape3D_w63ex")
 
 [node name="HandleOrigin" type="Node3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge" unique_id=1447784100]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin" unique_id=1225800263]
-collision_layer = 262144
-collision_mask = 2
+[node name="InteractableHandle" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin" unique_id=1849983732 instance=ExtResource("11_w63ex")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/RigidBody3D" unique_id=959682400]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/InteractableHandle" unique_id=959682400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39134845, 0, -0.08116315)
 shape = SubResource("SphereShape3D_kqbvg")
+
+[node name="GrabPointHandLeft" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/InteractableHandle" unique_id=1872192227 instance=ExtResource("3_vgpin")]
+transform = Transform3D(-0.04907643, -0.99879503, 0, -0.018982574, 0.0009327219, -0.99981934, 0.99861467, -0.049067564, -0.019005492, -0.4529358, 0.08036423, -0.05333115)
+hand_pose = SubResource("Resource_eeir3")
+editor_preview_mode = 1
+
+[node name="GrabPointHandRight" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/InteractableHandle" unique_id=1083561752 instance=ExtResource("6_w63ex")]
+transform = Transform3D(-0.55602, 0.8282999, -0.06900104, 9.190522e-10, -0.08301687, -0.9965482, -0.831169, -0.55410063, 0.046159036, -0.38595498, 0.084667206, -0.05604957)
+hand_pose = SubResource("Resource_ebrkk")
+editor_preview_mode = 1
 
 [connection signal="body_entered" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_entered"]
 [connection signal="body_exited" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_exited"]
