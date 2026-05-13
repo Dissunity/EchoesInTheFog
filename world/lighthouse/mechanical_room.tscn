@@ -1269,15 +1269,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 47.264, -0.2)
 collision_layer = 262400
 collision_mask = 2
 
-[node name="Turn mechanism_door 1" type="MeshInstance3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/StaticBody3D" unique_id=211846372]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
-layers = 0
-mesh = SubResource("ArrayMesh_jbq53")
-skeleton = NodePath("")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/StaticBody3D" unique_id=521324026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19750977, 0.015319824, -0.032836914)
 shape = SubResource("BoxShape3D_w63ex")
+
+[node name="Turn mechanism_door 1" type="MeshInstance3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/StaticBody3D" unique_id=161367854]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("ArrayMesh_jbq53")
+skeleton = NodePath("")
 
 [node name="HandleOrigin" type="Node3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge" unique_id=1447784100]
 
@@ -1302,6 +1301,7 @@ hand_pose = SubResource("Resource_ebrkk")
 editor_preview_mode = 1
 
 [node name="HighlightRing" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/InteractableHandle" unique_id=458116699 instance=ExtResource("2_4dyds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41439354, 0, -0.034053877)
 
 [connection signal="body_entered" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_entered"]
 [connection signal="body_exited" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_exited"]
