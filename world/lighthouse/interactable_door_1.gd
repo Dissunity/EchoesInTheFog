@@ -72,7 +72,7 @@ func _process(_delta: float) -> void:
 		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
 		to_handle.y = 0.0
 		to_handle_origin.y = 0.0
-		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
+		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
 
 	# Average the angular offsets
 	var offset := offset_sum / grabbed_handles.size()

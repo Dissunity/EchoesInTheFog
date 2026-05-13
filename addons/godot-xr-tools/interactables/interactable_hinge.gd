@@ -90,7 +90,7 @@ func _process(_delta: float) -> void:
 		to_handle_origin.y = 0.0
 		
 		# Bereken de hoek tussen waar de handle hoort (origin) en waar de hand hem nu heeft
-		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
+		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
 
 	# Gemiddelde berekenen voor als je met twee handen grijpt
 	var offset := offset_sum / grabbed_handles.size()
