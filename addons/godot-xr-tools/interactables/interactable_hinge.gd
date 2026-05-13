@@ -58,45 +58,31 @@ func _ready():
 
 	# Set the initial position to match the initial hinge position value
 	transform = Transform3D(
-		Basis.from_euler(Vector3(0,_hinge_position_rad, 0)),
+		Basis.from_euler(Vector3(0, _hinge_position_rad, 0)),
 		Vector3.ZERO
 	)
 
 	# Connect signals
-	if released.connect(_on_hinge_released) != OK:
+	if released.connect(_on_hinge_released):
 		push_error("Cannot connect hinge released signal")
-
 
 
 # Called every frame when one or more handles are held by the player
 func _process(_delta: float) -> void:
-	if grabbed_handles.is_empty():
-		return
-
-	# Pak de inverse van de globale transformatie van de hinge (onszelf)
-	# om punten vanuit de wereld naar onze lokale ruimte te vertalen.
-	var global_inv := global_transform.affine_inverse()
-	
+	# Get the total handle angular offsets
 	var offset_sum := 0.0
 	for item in grabbed_handles:
 		var handle := item as XRToolsInteractableHandle
-		
-		# Bereken lokale posities door de inverse matrix te vermenigvuldigen met de globale positie
-		var to_handle: Vector3 = global_inv * handle.global_transform.origin
-		var to_handle_origin: Vector3 = global_inv * handle.handle_origin.global_transform.origin
-		
-		# Projecteer op het YZ-vlak (we negeren de X-as omdat de hinge om X draait)
+		var to_handle: Vector3 = handle.global_transform.origin * global_transform
+		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
 		to_handle.y = 0.0
 		to_handle_origin.y = 0.0
-		
-		# Bereken de hoek tussen waar de handle hoort (origin) en waar de hand hem nu heeft
 		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
 
-	# Gemiddelde berekenen voor als je met twee handen grijpt
+	# Average the angular offsets
 	var offset := offset_sum / grabbed_handles.size()
 
-	# Beweeg de hinge. Als de hinge draait, draait de HandleOrigin (kind-node) mee,
-	# waardoor de afstand tussen de handle en origin klein blijft!
+	# Move the hinge by the requested offset
 	move_hinge(_hinge_position_rad + offset)
 
 
@@ -163,7 +149,7 @@ func _do_move_hinge(pos: float) -> float:
 
 	# Move if necessary
 	if pos != _hinge_position_rad:
-		transform.basis = Basis.from_euler(Vector3(0.0, pos, 0.0))
+		transform.basis = Basis.from_euler(Vector3( 0.0, pos,0.0))
 
 	# Return the updated position
 	return pos
