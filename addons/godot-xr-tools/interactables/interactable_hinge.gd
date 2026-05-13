@@ -85,14 +85,14 @@ func _process(_delta: float) -> void:
 		to_handle.y = 0.0
 		to_handle_origin.y = 0.0
 		
-		var angle = to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
+		var angle = to_handle_origin.signed_angle_to(to_handle, Vector3.DOWN)
 		offset_sum += angle
 
 	var offset := offset_sum / grabbed_handles.size()
 
 	if abs(offset) > 0.0001:
 		print("Offset: ", offset)
-		move_hinge(_hinge_position_rad + offset)
+		move_hinge(_hinge_position_rad - offset)
 
 
 # Move the hinge to the specified position
