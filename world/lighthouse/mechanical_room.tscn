@@ -1254,6 +1254,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 47.264, -0.2)
 [node name="InteractableHinge" parent="MechanicalRoom/HingeOrigin" unique_id=1330834209 instance=ExtResource("1_ba73e")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge" unique_id=2098320049]
+collision_layer = 262400
+collision_mask = 2
 
 [node name="Turn mechanism_door 1" type="MeshInstance3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/StaticBody3D" unique_id=211846372]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
@@ -1267,6 +1269,8 @@ shape = SubResource("BoxShape3D_w63ex")
 [node name="HandleOrigin" type="Node3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge" unique_id=1447784100]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin" unique_id=1225800263]
+collision_layer = 262144
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/RigidBody3D" unique_id=959682400]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39134845, 0, -0.08116315)
