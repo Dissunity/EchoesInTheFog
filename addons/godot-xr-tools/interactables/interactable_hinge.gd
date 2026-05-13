@@ -58,7 +58,7 @@ func _ready():
 
 	# Set the initial position to match the initial hinge position value
 	transform = Transform3D(
-		Basis.from_euler(Vector3(_hinge_position_rad, 0, 0)),
+		Basis.from_euler(Vector3(0,_hinge_position_rad, 0)),
 		Vector3.ZERO
 	)
 
@@ -86,8 +86,8 @@ func _process(_delta: float) -> void:
 		var to_handle_origin: Vector3 = global_inv * handle.handle_origin.global_transform.origin
 		
 		# Projecteer op het YZ-vlak (we negeren de X-as omdat de hinge om X draait)
-		to_handle.x = 0.0
-		to_handle_origin.x = 0.0
+		to_handle.y = 0.0
+		to_handle_origin.y = 0.0
 		
 		# Bereken de hoek tussen waar de handle hoort (origin) en waar de hand hem nu heeft
 		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
@@ -163,7 +163,7 @@ func _do_move_hinge(pos: float) -> float:
 
 	# Move if necessary
 	if pos != _hinge_position_rad:
-		transform.basis = Basis.from_euler(Vector3(pos, 0.0, 0.0))
+		transform.basis = Basis.from_euler(Vector3(0.0, pos, 0.0))
 
 	# Return the updated position
 	return pos
