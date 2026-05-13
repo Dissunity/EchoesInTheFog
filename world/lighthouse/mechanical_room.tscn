@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_w63ex"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="7_kqbvg"]
 [ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="10_y7eq8"]
-[ext_resource type="Script" uid="uid://b8uwrf51jd5xm" path="res://addons/godot-xr-tools/objects/grab_points/grab_point.gd" id="11_w63ex"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ejoc"]
 resource_name = "Copper"
@@ -1082,8 +1081,10 @@ skeleton = NodePath("")
 
 [node name="SnapZone" type="Area3D" parent="MechanicalRoom" unique_id=971470962]
 collision_layer = 4
-collision_mask = 65540
+collision_mask = 65536
 script = ExtResource("1_ujpo1")
+snap_mode = 1
+snap_require = "PuzzlePiece"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/SnapZone" unique_id=528894543]
 shape = SubResource("BoxShape3D_jh2n6")
@@ -1098,10 +1099,10 @@ max_distance = 100.0
 mesh = SubResource("ArrayMesh_55wpa")
 skeleton = NodePath("")
 
-[node name="Puzzle_mechanical_room" type="RigidBody3D" parent="MechanicalRoom" unique_id=1968491663]
+[node name="Puzzle_mechanical_room" type="RigidBody3D" parent="MechanicalRoom" unique_id=1968491663 groups=["PuzzlePiece"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.153, 0)
 collision_layer = 4
-collision_mask = 196867
+collision_mask = 196871
 center_of_mass_mode = 1
 center_of_mass = Vector3(0.08, 0, 0)
 freeze_mode = 1
@@ -1180,10 +1181,9 @@ mesh = SubResource("ArrayMesh_jbq53")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="MechanicalRoom/InteractableDoor1" unique_id=2094513172]
-transform = Transform3D(0.93969274, -0.33495626, 0.06915273, 0, 0.20218904, 0.9793465, -0.34202015, -0.9202848, 0.18999557, -0.29807615, 0.08300018, 0.32132643)
+transform = Transform3D(0.93969274, -0.33495626, 0.06915272, 0, 0.20218907, 0.9793465, -0.34202015, -0.9202848, 0.18999556, -0.29807615, 0.08300018, 0.32132643)
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("11_w63ex")
 
 [node name="CollisionShape3D_knob" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/Area3D" unique_id=645065764]
 transform = Transform3D(0.9396925, 0, -0.34202012, -0.3349562, 0.20218942, -0.9202852, 0.06915272, 0.97934645, 0.18999603, 0.033956215, 0.3442583, -0.15371704)

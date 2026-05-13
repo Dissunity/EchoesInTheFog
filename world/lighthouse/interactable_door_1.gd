@@ -17,7 +17,6 @@ extends XRToolsInteractableHandleDriven
 ## Signal for hinge moved
 signal hinge_moved(angle)
 
-
 ## Hinge minimum limit
 @export var hinge_limit_min : float = -45.0: set = _set_hinge_limit_min
 
