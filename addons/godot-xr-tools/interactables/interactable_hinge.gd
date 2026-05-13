@@ -63,26 +63,40 @@ func _ready():
 	)
 
 	# Connect signals
-	if released.connect(_on_hinge_released):
+	if released.connect(_on_hinge_released) != OK:
 		push_error("Cannot connect hinge released signal")
+
 
 
 # Called every frame when one or more handles are held by the player
 func _process(_delta: float) -> void:
-	# Get the total handle angular offsets
+	if grabbed_handles.is_empty():
+		return
+
+	# Pak de inverse van de globale transformatie van de hinge (onszelf)
+	# om punten vanuit de wereld naar onze lokale ruimte te vertalen.
+	var global_inv := global_transform.affine_inverse()
+	
 	var offset_sum := 0.0
 	for item in grabbed_handles:
 		var handle := item as XRToolsInteractableHandle
-		var to_handle: Vector3 = handle.global_transform.origin * global_transform
-		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
+		
+		# Bereken lokale posities door de inverse matrix te vermenigvuldigen met de globale positie
+		var to_handle: Vector3 = global_inv * handle.global_transform.origin
+		var to_handle_origin: Vector3 = global_inv * handle.handle_origin.global_transform.origin
+		
+		# Projecteer op het YZ-vlak (we negeren de X-as omdat de hinge om X draait)
 		to_handle.x = 0.0
 		to_handle_origin.x = 0.0
+		
+		# Bereken de hoek tussen waar de handle hoort (origin) en waar de hand hem nu heeft
 		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
 
-	# Average the angular offsets
+	# Gemiddelde berekenen voor als je met twee handen grijpt
 	var offset := offset_sum / grabbed_handles.size()
 
-	# Move the hinge by the requested offset
+	# Beweeg de hinge. Als de hinge draait, draait de HandleOrigin (kind-node) mee,
+	# waardoor de afstand tussen de handle en origin klein blijft!
 	move_hinge(_hinge_position_rad + offset)
 
 
