@@ -1036,6 +1036,12 @@ open_pose = ExtResource("7_kqbvg")
 closed_pose = ExtResource("7_kqbvg")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_w63ex"]
+size = Vector3(0.45947266, 0.62145996, 0.12084961)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kqbvg"]
+radius = 0.11596811
+
 [node name="MechanicalRoom" type="Node3D" unique_id=367583270]
 
 [node name="MechanicalRoom" type="Node3D" parent="." unique_id=1529749169]
@@ -1153,6 +1159,7 @@ editor_preview_mode = 1
 
 [node name="Door1" type="Node3D" parent="MechanicalRoom" unique_id=26563172]
 transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 0.2, 47.264, -0.2)
+visible = false
 
 [node name="InteractableDoor1" parent="MechanicalRoom/Door1" unique_id=1571357926 instance=ExtResource("1_ba73e")]
 script = ExtResource("2_adbr0")
@@ -1240,6 +1247,30 @@ transform = Transform3D(0.09652329, 0.9947783, -0.033156574, 0.20124495, 0.01311
 snap_hand = false
 hand_pose = SubResource("Resource_og3yr")
 editor_preview_mode = 1
+
+[node name="HingeOrigin" type="Node3D" parent="MechanicalRoom" unique_id=1797773102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 47.264, -0.2)
+
+[node name="InteractableHinge" parent="MechanicalRoom/HingeOrigin" unique_id=1330834209 instance=ExtResource("1_ba73e")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge" unique_id=2098320049]
+
+[node name="Turn mechanism_door 1" type="MeshInstance3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/StaticBody3D" unique_id=211846372]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
+mesh = SubResource("ArrayMesh_jbq53")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/StaticBody3D" unique_id=521324026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19750977, 0.015319824, -0.032836914)
+shape = SubResource("BoxShape3D_w63ex")
+
+[node name="HandleOrigin" type="Node3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge" unique_id=1447784100]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin" unique_id=1225800263]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/RigidBody3D" unique_id=959682400]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39134845, 0, -0.08116315)
+shape = SubResource("SphereShape3D_kqbvg")
 
 [connection signal="body_entered" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_entered"]
 [connection signal="body_exited" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_exited"]
