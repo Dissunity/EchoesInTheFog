@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b6j78x05dqew5"]
+
+[ext_resource type="PackedScene" uid="uid://cggkofnwypw3q" path="res://models/present/journal/journal.glb" id="1_wir0b"]
+[ext_resource type="Script" uid="uid://cdcmttphary18" path="res://models/present/journal/journal.gd" id="2_xic2l"]
+
+[node name="Journal" unique_id=278160710 instance=ExtResource("1_wir0b")]
+script = ExtResource("2_xic2l")
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(942976398) index="0" unique_id=1363311335]
+bones/1/rotation = Quaternion(0.99989015, 1.4075018e-16, 7.9886926e-17, -0.014828146)
+bones/2/rotation = Quaternion(0.008815043, 1.04734516e-17, 4.823106e-17, 0.99996114)
+bones/3/rotation = Quaternion(0.99989015, 2.4785891e-16, -3.2631226e-17, 0.014828146)
+bones/4/rotation = Quaternion(-0.008815043, -1.248861e-16, -8.487102e-17, 0.99996114)

@@ -798,7 +798,11 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_27cn6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgpin"]
+<<<<<<< HEAD
 size = Vector3(0.059336856, 0.16524354, 0.080574036)
+=======
+size = Vector3(0.03957215, 0.16524354, 0.080574036)
+>>>>>>> origin/main
 
 [sub_resource type="Resource" id="Resource_ujpo1"]
 script = ExtResource("5_ujpo1")
