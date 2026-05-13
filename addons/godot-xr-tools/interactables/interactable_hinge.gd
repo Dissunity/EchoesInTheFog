@@ -70,26 +70,29 @@ func _ready():
 
 # Called every frame when one or more handles are held by the player
 func _process(_delta: float) -> void:
-	# Get the total handle angular offsets
+	if grabbed_handles.is_empty():
+		return
+
+	var global_inv := global_transform.affine_inverse()
+	
 	var offset_sum := 0.0
 	for item in grabbed_handles:
-		print("Grabbed by handle")
 		var handle := item as XRToolsInteractableHandle
-		var to_handle: Vector3 = handle.global_transform.origin * global_transform
-		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
+		
+		var to_handle := global_inv * handle.global_transform.origin
+		var to_handle_origin := global_inv * handle.handle_origin.global_transform.origin
+		
 		to_handle.y = 0.0
 		to_handle_origin.y = 0.0
-		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
-	
+		
+		var angle = to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
+		offset_sum += angle
 
-	# Average the angular offsets
 	var offset := offset_sum / grabbed_handles.size()
 
-	print("New hinge position: ", _hinge_position_rad )
-	print("Offset: ", offset)
-
-	# Move the hinge by the requested offset
-	move_hinge(_hinge_position_rad + offset)
+	if abs(offset) > 0.0001:
+		print("Offset: ", offset)
+		move_hinge(_hinge_position_rad + offset)
 
 
 # Move the hinge to the specified position
