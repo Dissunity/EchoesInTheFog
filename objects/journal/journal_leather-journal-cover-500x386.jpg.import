@@ -2,12 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1nlwranxij11"
-<<<<<<<< HEAD:addons/godot-xr-tools/assets/misc/journal/journal_leather-journal-cover-500x386.jpg.import
-path.s3tc="res://.godot/imported/journal_leather-journal-cover-500x386.jpg-14a810923b7f3c71a98053817d7d0be9.s3tc.ctex"
-========
-path.s3tc="res://.godot/imported/progress_bar.png-2ef3cbffca173889900be004fdeb1700.s3tc.ctex"
->>>>>>>> main:addons/godot-xr-tools/assets/misc/progress_bar.png.import
+uid="uid://dvutwd3bmw1jw"
+path.s3tc="res://.godot/imported/journal_leather-journal-cover-500x386.jpg-ad32db9b20eb283586749978d38f868a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -15,13 +11,8 @@ metadata={
 
 [deps]
 
-<<<<<<<< HEAD:addons/godot-xr-tools/assets/misc/journal/journal_leather-journal-cover-500x386.jpg.import
-source_file="res://models/present/journal/journal_leather-journal-cover-500x386.jpg"
-dest_files=["res://.godot/imported/journal_leather-journal-cover-500x386.jpg-14a810923b7f3c71a98053817d7d0be9.s3tc.ctex"]
-========
-source_file="res://addons/godot-xr-tools/assets/misc/progress_bar.png"
-dest_files=["res://.godot/imported/progress_bar.png-2ef3cbffca173889900be004fdeb1700.s3tc.ctex"]
->>>>>>>> main:addons/godot-xr-tools/assets/misc/progress_bar.png.import
+source_file="res://objects/journal/journal_leather-journal-cover-500x386.jpg"
+dest_files=["res://.godot/imported/journal_leather-journal-cover-500x386.jpg-ad32db9b20eb283586749978d38f868a.s3tc.ctex"]
 
 [params]
 

@@ -65,6 +65,7 @@ move_right={
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Interactable"
 3d_physics/layer_9="Props (objects in environment that can move)"
+3d_physics/layer_19="Handle"
 
 [physics]
 
