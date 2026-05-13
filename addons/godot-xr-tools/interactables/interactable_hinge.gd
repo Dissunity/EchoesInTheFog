@@ -154,9 +154,6 @@ func _do_move_hinge(pos: float) -> float:
 	if _hinge_steps_rad:
 		pos = round(pos / _hinge_steps_rad) * _hinge_steps_rad
 
-	# Apply hinge limits
-	pos = clamp(pos, _hinge_limit_min_rad, _hinge_limit_max_rad)
-
 	# Move if necessary
 	if pos != _hinge_position_rad:
 		transform.basis = Basis.from_euler(Vector3( 0.0, pos,0.0))

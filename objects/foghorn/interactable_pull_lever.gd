@@ -18,11 +18,11 @@ extends XRToolsInteractableHandleDriven
 signal hinge_moved(angle)
 
 
-## Hinge minimum limit
-@export var hinge_limit_min : float = -45.0: set = _set_hinge_limit_min
-
-## Hinge maximum limit
-@export var hinge_limit_max : float = 45.0: set = _set_hinge_limit_max
+### Hinge minimum limit
+#@export var hinge_limit_min : float = -45.0: set = _set_hinge_limit_min
+#
+### Hinge maximum limit
+#@export var hinge_limit_max : float = 45.0: set = _set_hinge_limit_max
 
 ## Hinge step size (zero for no steps)
 @export var hinge_steps : float = 0.0: set = _set_hinge_steps
@@ -38,8 +38,6 @@ signal hinge_moved(angle)
 
 
 # Hinge values in radians
-@onready var _hinge_limit_min_rad : float = deg_to_rad(hinge_limit_min)
-@onready var _hinge_limit_max_rad : float = deg_to_rad(hinge_limit_max)
 @onready var _hinge_steps_rad : float = deg_to_rad(hinge_steps)
 @onready var _hinge_position_rad : float = deg_to_rad(hinge_position)
 @onready var _default_position_rad : float = deg_to_rad(default_position)
@@ -56,8 +54,11 @@ func _ready():
 	super()
 
 	# Set the initial position to match the initial hinge position value
-	transform.basis = Basis.from_euler(Vector3(0, 0, _hinge_position_rad))
-	
+	transform = Transform3D(
+		Basis.from_euler(Vector3(0, _hinge_position_rad, 0)),
+		Vector3.ZERO
+	)
+	print("Start position door: ", transform)
 
 	# Connect signals
 	if released.connect(_on_hinge_released):
@@ -66,26 +67,36 @@ func _ready():
 
 # Called every frame when one or more handles are held by the player
 func _process(_delta: float) -> void:
+	if grabbed_handles.is_empty():
+		return
+
+	var global_inv := global_transform.affine_inverse()
+	
 	var offset_sum := 0.0
 	for item in grabbed_handles:
 		var handle := item as XRToolsInteractableHandle
-		var to_handle: Vector3 = handle.global_transform.origin * global_transform
-		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
 		
+		var to_handle := global_inv * handle.global_transform.origin
+		var to_handle_origin := global_inv * handle.handle_origin.global_transform.origin
 		
-		to_handle.z = 0.0
-		to_handle_origin.z = 0.0
+		to_handle.y = 0.0
+		to_handle_origin.y = 0.0
 		
-		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.FORWARD)
+		var angle = to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
+		offset_sum += angle
 
 	var offset := offset_sum / grabbed_handles.size()
-	move_hinge(_hinge_position_rad + offset)
+
+	if abs(offset) > 0.0001:
+		print("Offset: ", offset)
+		move_hinge(_hinge_position_rad + offset)
 
 
 # Move the hinge to the specified position
 func move_hinge(pos: float) -> void:
 	# Do the hinge move
 	pos = _do_move_hinge(pos)
+	print("New position door: ", pos)
 	if pos == _hinge_position_rad:
 		return
 
@@ -101,19 +112,6 @@ func move_hinge(pos: float) -> void:
 func _on_hinge_released(_interactable: XRToolsInteractableHinge):
 	if default_on_release:
 		move_hinge(_default_position_rad)
-
-
-# Called when hinge_limit_min is set externally
-func _set_hinge_limit_min(value: float) -> void:
-	hinge_limit_min = value
-	_hinge_limit_min_rad = deg_to_rad(value)
-
-
-# Called when hinge_limit_max is set externally
-func _set_hinge_limit_max(value: float) -> void:
-	hinge_limit_max = value
-	_hinge_limit_max_rad = deg_to_rad(value)
-
 
 # Called when hinge_steps is set externally
 func _set_hinge_steps(value: float) -> void:
@@ -140,12 +138,9 @@ func _do_move_hinge(pos: float) -> float:
 	if _hinge_steps_rad:
 		pos = round(pos / _hinge_steps_rad) * _hinge_steps_rad
 
-	# Apply hinge limits
-	pos = clamp(pos, _hinge_limit_min_rad, _hinge_limit_max_rad)
-
 	# Move if necessary
 	if pos != _hinge_position_rad:
-		transform.basis = Basis.from_euler(Vector3(0.0, 0.0, pos))
+		transform.basis = Basis.from_euler(Vector3( 0.0, pos,0.0))
 
 	# Return the updated position
 	return pos
