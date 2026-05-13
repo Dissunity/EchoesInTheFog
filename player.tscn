@@ -33,6 +33,7 @@ tracker = &"left_hand"
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=678520256 instance=ExtResource("3_1jxqw")]
 grab_collision_mask = 327940
 ranged_distance = 0.0
+ranged_collision_mask = 262404
 
 [node name="LeftGlove" parent="XROrigin3D/LeftHand" unique_id=238805430 instance=ExtResource("4_2hs0m")]
 
@@ -43,5 +44,6 @@ tracker = &"right_hand"
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1277105623 instance=ExtResource("3_1jxqw")]
 grab_collision_mask = 327940
 ranged_distance = 0.0
+ranged_collision_mask = 262404
 
 [node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
