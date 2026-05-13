@@ -61,6 +61,7 @@ func _ready():
 		Basis.from_euler(Vector3(0, _hinge_position_rad, 0)),
 		Vector3.ZERO
 	)
+	print("Start position door: ", transform)
 
 	# Connect signals
 	if released.connect(_on_hinge_released):
@@ -72,15 +73,20 @@ func _process(_delta: float) -> void:
 	# Get the total handle angular offsets
 	var offset_sum := 0.0
 	for item in grabbed_handles:
+		print("Grabbed by handle")
 		var handle := item as XRToolsInteractableHandle
 		var to_handle: Vector3 = handle.global_transform.origin * global_transform
 		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
 		to_handle.y = 0.0
 		to_handle_origin.y = 0.0
 		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
+	
 
 	# Average the angular offsets
 	var offset := offset_sum / grabbed_handles.size()
+
+	print("New hinge position: ", _hinge_position_rad )
+	print("Offset: ", offset)
 
 	# Move the hinge by the requested offset
 	move_hinge(_hinge_position_rad + offset)
@@ -90,6 +96,7 @@ func _process(_delta: float) -> void:
 func move_hinge(pos: float) -> void:
 	# Do the hinge move
 	pos = _do_move_hinge(pos)
+	print("New position door: ", pos)
 	if pos == _hinge_position_rad:
 		return
 

@@ -1267,14 +1267,14 @@ picked_up_layer = 65536
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39134845, 0, -0.08116315)
 shape = SubResource("SphereShape3D_kqbvg")
 
-[node name="HighlightRing" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/InteractableHandle" unique_id=458116699 instance=ExtResource("2_4dyds")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41439354, 0, -0.034053877)
-
 [node name="GrabPointRedirectLeft" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/InteractableHandle" unique_id=668014431 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 target = NodePath("../../../StaticBody3D/Turn mechanism_door 1/GrabPointHandLeft")
 
 [node name="GrabPointRedirectRight" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/InteractableHandle" unique_id=909207416 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 target = NodePath("../../../StaticBody3D/Turn mechanism_door 1/GrabPointHandRight")
+
+[node name="HighlightRing" parent="MechanicalRoom/HingeOrigin/InteractableHinge/HandleOrigin/InteractableHandle" unique_id=458116699 instance=ExtResource("2_4dyds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41439354, 0, -0.034053877)
 
 [connection signal="body_entered" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_entered"]
 [connection signal="body_exited" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_exited"]
