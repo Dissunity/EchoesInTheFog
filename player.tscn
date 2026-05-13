@@ -9,7 +9,7 @@
 
 [node name="Player" type="CharacterBody3D" unique_id=1581452875]
 collision_layer = 2
-collision_mask = 261
+collision_mask = 262405
 script = ExtResource("1_2hs0m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2143596673]

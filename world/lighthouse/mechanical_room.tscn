@@ -801,12 +801,6 @@ shadow_mesh = SubResource("ArrayMesh_27cn6")
 [sub_resource type="BoxShape3D" id="BoxShape3D_vgpin"]
 size = Vector3(0.059336856, 0.16524354, 0.080574036)
 
-[sub_resource type="Resource" id="Resource_ujpo1"]
-script = ExtResource("5_ujpo1")
-open_pose = ExtResource("10_y7eq8")
-closed_pose = ExtResource("10_y7eq8")
-metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
-
 [sub_resource type="Resource" id="Resource_w63ex"]
 script = ExtResource("5_ujpo1")
 open_pose = ExtResource("10_y7eq8")
@@ -1160,38 +1154,40 @@ transform = Transform3D(-0.0685029, -0.9976509, 0, 0.9976509, -0.0685029, 0, 0, 
 hand_pose = SubResource("Resource_y84s8")
 editor_preview_mode = 1
 
-[node name="InteractableDoor1" parent="MechanicalRoom" unique_id=1571357926 instance=ExtResource("1_ba73e")]
+[node name="Door1" type="Node3D" parent="MechanicalRoom" unique_id=26563172]
 transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, 0.2, 47.264, -0.2)
+
+[node name="InteractableDoor1" parent="MechanicalRoom/Door1" unique_id=1571357926 instance=ExtResource("1_ba73e")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 script = ExtResource("2_adbr0")
 hinge_limit_min = -128.0
 hinge_limit_max = 0.0
 hinge_position = -20.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MechanicalRoom/InteractableDoor1" unique_id=1147965315]
+[node name="StaticBody3D" type="StaticBody3D" parent="MechanicalRoom/Door1/InteractableDoor1" unique_id=1147965315]
 transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 0)
 collision_layer = 256
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=2094410996]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door1/InteractableDoor1/StaticBody3D" unique_id=2094410996]
 transform = Transform3D(0.9999998, 0, 5.9604645e-08, -2.9802322e-08, 1, 2.9802322e-08, 2.9802322e-08, 0, 0.9999999, -0.20157006, -0.016601563, 0.43238974)
 shape = SubResource("BoxShape3D_w63ex")
 
-[node name="Turn mechanism_door 1" type="MeshInstance3D" parent="MechanicalRoom/InteractableDoor1/StaticBody3D" unique_id=1906103205]
+[node name="Turn mechanism_door 1" type="MeshInstance3D" parent="MechanicalRoom/Door1/InteractableDoor1/StaticBody3D" unique_id=1906103205]
 transform = Transform3D(0.9999999, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 0.9999999, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jbq53")
 skeleton = NodePath("")
 
-[node name="InteractableHandle" parent="MechanicalRoom/InteractableDoor1" unique_id=496077540 instance=ExtResource("11_w63ex")]
-collision_mask = 2
+[node name="Node3D" type="Node3D" parent="MechanicalRoom/Door1/InteractableDoor1" unique_id=1940497987]
 
-[node name="CollisionShape3D_knob" type="CollisionShape3D" parent="MechanicalRoom/InteractableDoor1/InteractableHandle" unique_id=645065764]
+[node name="InteractableHandle" parent="MechanicalRoom/Door1/InteractableDoor1/Node3D" unique_id=496077540 instance=ExtResource("11_w63ex")]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0, 0, 0)
+collision_mask = 2
+second_hand_grab = 1
+
+[node name="CollisionShape3D_knob" type="CollisionShape3D" parent="MechanicalRoom/Door1/InteractableDoor1/Node3D/InteractableHandle" unique_id=645065764]
 transform = Transform3D(1.0000001, -1.3250893e-07, 2.3841858e-07, -7.450581e-09, 1, 3.2782555e-07, 2.9802322e-08, -3.6406533e-07, 1.0000008, -0.39210925, 0.0020637512, -0.036308557)
 shape = SubResource("BoxShape3D_vgpin")
-
-[node name="GrabPointHandLeft" parent="MechanicalRoom/InteractableDoor1/InteractableHandle" unique_id=79579400 instance=ExtResource("3_vgpin")]
-transform = Transform3D(0.7189038, -0.60857606, 0.33587712, 0.031058311, -0.45459482, -0.8901566, 0.6944159, 0.6503688, -0.30790836, -0.4424161, 0.054027557, -0.0013651848)
-hand_pose = SubResource("Resource_ujpo1")
-editor_preview_mode = 1
 
 [node name="InteractableDoor2" parent="MechanicalRoom" unique_id=913902736 instance=ExtResource("1_ba73e")]
 transform = Transform3D(0.99026805, 0, -0.1391731, 0, 1, 0, 0.1391731, 0, 0.99026805, -0.2, 47.264, 0.2)
