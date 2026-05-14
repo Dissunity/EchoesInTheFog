@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_ujpo1"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_w63ex"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="7_kqbvg"]
+[ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="10_y7eq8"]
 [ext_resource type="Script" uid="uid://c8gx2wc7hsxf5" path="res://addons/godot-xr-tools/interactables/interactable_hinge.gd" id="13_y84s8"]
-[ext_resource type="Animation" uid="uid://1nlkfvitq7ku" path="res://addons/godot-xr-tools/hands/animations/left/Peace.res" id="15_jh2n6"]
+[ext_resource type="Animation" uid="uid://r8hleealhrqt" path="res://addons/godot-xr-tools/hands/animations/right/Grip 2.res" id="14_w63ex"]
 [ext_resource type="Script" uid="uid://dlojnwxo25bky" path="res://addons/godot-xr-tools/interactables/interactable_handle.gd" id="16_og3yr"]
-[ext_resource type="Animation" uid="uid://bxmc3vlfih764" path="res://addons/godot-xr-tools/hands/animations/right/Peace.res" id="16_y84s8"]
 [ext_resource type="Script" uid="uid://cvpjs8caktma8" path="res://world/lighthouse/interactable_hinge_y.gd" id="17_og3yr"]
 [ext_resource type="PackedScene" uid="uid://ca3daqmpo0tua" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_redirect.tscn" id="17_y84s8"]
 
@@ -861,14 +861,14 @@ shadow_mesh = SubResource("ArrayMesh_wj2vx")
 
 [sub_resource type="Resource" id="Resource_0310h"]
 script = ExtResource("5_ujpo1")
-open_pose = ExtResource("15_jh2n6")
-closed_pose = ExtResource("15_jh2n6")
+open_pose = ExtResource("4_y7eq8")
+closed_pose = ExtResource("4_y7eq8")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="Resource" id="Resource_1dfum"]
 script = ExtResource("5_ujpo1")
-open_pose = ExtResource("16_y84s8")
-closed_pose = ExtResource("16_y84s8")
+open_pose = ExtResource("7_kqbvg")
+closed_pose = ExtResource("7_kqbvg")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxyx6"]
@@ -963,14 +963,14 @@ shadow_mesh = SubResource("ArrayMesh_27cn6")
 
 [sub_resource type="Resource" id="Resource_78ddj"]
 script = ExtResource("5_ujpo1")
-open_pose = ExtResource("15_jh2n6")
-closed_pose = ExtResource("15_jh2n6")
+open_pose = ExtResource("10_y7eq8")
+closed_pose = ExtResource("10_y7eq8")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="Resource" id="Resource_oqq16"]
 script = ExtResource("5_ujpo1")
-open_pose = ExtResource("16_y84s8")
-closed_pose = ExtResource("16_y84s8")
+open_pose = ExtResource("14_w63ex")
+closed_pose = ExtResource("14_w63ex")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="SphereShape3D" id="7"]
@@ -1207,13 +1207,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.09535071)
 mesh = SubResource("ArrayMesh_1ll1q")
 skeleton = NodePath("")
 
-[node name="GrabPointHandLeft" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/turning-lever" unique_id=1570048779 instance=ExtResource("3_vgpin")]
-transform = Transform3D(-0.04907643, -0.99879503, 0, -0.018982574, 0.0009327219, -0.99981934, 0.99861467, -0.049067564, -0.019005492, -0.26599362, 0.09648132, -0.15520033)
+[node name="GrabPointHandLeft1" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/turning-lever" unique_id=1570048779 instance=ExtResource("3_vgpin")]
+transform = Transform3D(0.042860024, -0.98312336, 0.17785215, -0.02751743, -0.17910984, -0.9834443, 0.99870205, 0.037256405, -0.034729697, -0.28058144, 0.07128143, -0.14258894)
+snap_hand = false
 hand_pose = SubResource("Resource_0310h")
 editor_preview_mode = 1
 
-[node name="GrabPointHandRight" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/turning-lever" unique_id=1078064823 instance=ExtResource("6_w63ex")]
-transform = Transform3D(1.3113417e-07, 1, 4.371139e-08, 3.8213714e-15, 4.371139e-08, -1, -1.0000001, 1.3113416e-07, 1.9106855e-15, -0.17725429, 0.09880829, -0.14616403)
+[node name="GrabPointHandRight1" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/turning-lever" unique_id=1078064823 instance=ExtResource("6_w63ex")]
+transform = Transform3D(1.2762806e-07, 0.9732631, -0.22969297, -3.0120606e-08, -0.22969297, -0.9732631, -1.0000001, 1.3113416e-07, 2.0661287e-15, -0.16193005, 0.0646019, -0.15723535)
+snap_hand = false
+hand_pose = SubResource("Resource_1dfum")
+editor_preview_mode = 1
+
+[node name="GrabPointHandLeft2" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/turning-lever" unique_id=739565999 instance=ExtResource("3_vgpin")]
+transform = Transform3D(0.2047225, 0.96296835, -0.17544475, -0.08336431, -0.16143629, -0.983356, -0.97526366, 0.21594088, 0.04722757, -0.17438701, 0.06590271, -0.1386238)
+snap_hand = false
+hand_pose = SubResource("Resource_0310h")
+editor_preview_mode = 1
+
+[node name="GrabPointHandRight2" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/turning-lever" unique_id=312100104 instance=ExtResource("6_w63ex")]
+transform = Transform3D(-0.2600479, -0.9404421, 0.2189607, -0.05835637, -0.21104105, -0.9757337, 0.9638308, -0.2665152, -1.1649749e-08, -0.2873099, 0.065532684, -0.16204545)
+snap_hand = false
 hand_pose = SubResource("Resource_1dfum")
 editor_preview_mode = 1
 
@@ -1232,13 +1246,21 @@ picked_up_layer = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22641629, 0.0004234314, -0.2380047)
 shape = SubResource("BoxShape3D_lxyx6")
 
-[node name="GrabPointRedirectLeft" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=254339633 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+[node name="GrabPointRedirectLeft1" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=254339633 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010147095, 0.23648737, -0.24576062)
-target = NodePath("../../../HingeBody/turning-lever/GrabPointHandLeft")
+target = NodePath("../../../HingeBody/turning-lever/GrabPointHandLeft1")
 
-[node name="GrabPointRedirectRight" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=312484617 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+[node name="GrabPointRedirectRight1" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=312484617 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004890442, 0.22979365, -0.2452232)
-target = NodePath("../../../HingeBody/turning-lever/GrabPointHandRight")
+target = NodePath("../../../HingeBody/turning-lever/GrabPointHandRight1")
+
+[node name="GrabPointRedirectLeft2" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1379466684 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010147095, 0.23648737, -0.24576062)
+target = NodePath("../../../HingeBody/turning-lever/GrabPointHandLeft2")
+
+[node name="GrabPointRedirectRight2" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=629932336 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.004890442, 0.22979365, -0.2452232)
+target = NodePath("../../../HingeBody/turning-lever/GrabPointHandRight2")
 
 [node name="Door1Origin" type="Node3D" parent="MechanicalRoom" unique_id=1797773102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 47.264, -0.2)
@@ -1275,12 +1297,14 @@ mesh = SubResource("ArrayMesh_6iqc2")
 skeleton = NodePath("")
 
 [node name="GrabPointHandLeft" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Turn mechanism_door 1" unique_id=191213419 instance=ExtResource("3_vgpin")]
-transform = Transform3D(-0.049076423, -0.9987949, 0, -0.018982574, 0.0009327219, -0.99981934, 0.99861455, -0.049067557, -0.01900549, -0.45293576, 0.08036423, -0.05333115)
+transform = Transform3D(-0.2744049, -0.66936415, -0.6904011, -0.8941513, 0.441785, -0.07293685, 0.35383016, 0.5973086, -0.71974117, -0.36755484, 0.026939392, 0.019011721)
+snap_hand = false
 hand_pose = SubResource("Resource_78ddj")
 editor_preview_mode = 1
 
 [node name="GrabPointHandRight" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Turn mechanism_door 1" unique_id=342329761 instance=ExtResource("6_w63ex")]
-transform = Transform3D(-0.55601996, 0.82829976, -0.069001034, 9.190522e-10, -0.08301687, -0.9965482, -0.8311689, -0.5541006, 0.046159033, -0.38595492, 0.084667206, -0.05604957)
+transform = Transform3D(-0.6350453, 0.6814754, 0.3637432, 0.7581626, 0.6400781, 0.12445578, -0.14801057, 0.35481143, -0.92314774, -0.41126508, 0.004043579, 0.04011306)
+snap_hand = false
 hand_pose = SubResource("Resource_oqq16")
 editor_preview_mode = 1
 
@@ -1341,12 +1365,14 @@ mesh = SubResource("ArrayMesh_4rcgu")
 skeleton = NodePath("")
 
 [node name="GrabPointHandLeft" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Turn mechanism_door 2" unique_id=1510804807 instance=ExtResource("3_vgpin")]
-transform = Transform3D(-0.25233513, 0.96762276, 0.0057468894, -0.019174512, 0.00093779, -0.99981564, -0.96744984, -0.25239882, 0.01831706, 0.44958568, 0.08036423, 0.014610574)
+transform = Transform3D(-0.014305381, 0.3332141, 0.94274276, -0.9648454, -0.25205296, 0.07444779, 0.26242822, -0.90853614, 0.3251058, 0.36723, 0.01720047, -0.016108677)
+snap_hand = false
 hand_pose = SubResource("Resource_78ddj")
 editor_preview_mode = 1
 
 [node name="GrabPointHandRight" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Turn mechanism_door 2" unique_id=109000398 instance=ExtResource("6_w63ex")]
-transform = Transform3D(0.4140102, -0.90713024, 0.07556796, -1.8588966e-09, -0.083016865, -0.9965481, 0.91027236, 0.41258097, -0.034369834, 0.35200617, 0.084667206, 0.050626025)
+transform = Transform3D(0.26149547, -0.9646149, -0.03373909, 0.95839083, 0.25534433, 0.12761824, -0.114487365, -0.06570679, 0.99124926, 0.39594814, 0.010189056, -0.04002194)
+snap_hand = false
 hand_pose = SubResource("Resource_oqq16")
 editor_preview_mode = 1
 
