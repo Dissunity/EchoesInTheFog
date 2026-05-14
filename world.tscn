@@ -47,14 +47,14 @@ transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.964
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
 
-[node name="Foghorn" parent="." unique_id=21213881 instance=ExtResource("8_ic0uy")]
-transform = Transform3D(0.052667156, 0, 0.9986121, 0, 1, 0, -0.9986121, 0, 0.052667156, -1.8663874, 48.872997, -0.1477446)
-
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 
 [node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
+
+[node name="Foghorn" parent="." unique_id=21213881 instance=ExtResource("8_ic0uy")]
+transform = Transform3D(0.052335974, 0, 0.9986295, 0, 1, 0, -0.9986295, 0, 0.052335974, -1.866, 48.873, -0.148)
 
 [node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
 
@@ -62,6 +62,6 @@ transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.
 script = ExtResource("11_ic0uy")
 time_travel_light = NodePath("../Foghorn/TimeTravelLight")
 time_impacted_objects = [NodePath("../Chair"), NodePath("../Table")]
-hinge = NodePath("../Foghorn/foghorn_lever/Pull_lever")
+hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
 
 [editable path="Foghorn"]

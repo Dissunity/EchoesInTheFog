@@ -59,9 +59,6 @@ func _physics_process(delta: float) -> void:
 		var forward = -xr_camera.global_transform.basis.z
 		var right = xr_camera.global_transform.basis.x
 		
-		if input_vec != Vector2.ZERO:
-			print("Joystick input gedetecteerd: ", input_vec)
-		
 		# Prevent flying when looking up/down
 		forward.y = 0
 		right.y = 0
