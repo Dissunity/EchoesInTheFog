@@ -1322,9 +1322,8 @@ picked_up_layer = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39488816, 4.2087576e-15, -0.101783186)
 shape = SubResource("7")
 
-[node name="GrabPointRedirectLeft" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=872075576 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+[node name="GrabPointRedirectLeft" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=872075576 instance=ExtResource("17_y84s8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39335757, 4.1924446e-15, -0.1033137)
-target = NodePath("")
 
 [node name="GrabPointRedirectRight" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=2118927108 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39412278, 4.2006003e-15, -0.10407901)

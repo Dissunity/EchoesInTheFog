@@ -650,6 +650,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.0
 [node name="Collision Shape Glass (simple)" type="CollisionShape3D" parent="Lighthouse/Glass_001/StaticBody3D" unique_id=5472787]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("CylinderShape3D_sbijp")
+disabled = true
 
 [node name="Frame_001" type="MeshInstance3D" parent="Lighthouse" unique_id=358577199]
 transform = Transform3D(1.111193, 0, 0, 0, 1, 0, 0, 0, 1.111193, 0, 49.889698, 0)

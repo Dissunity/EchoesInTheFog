@@ -227,10 +227,12 @@ skeleton = NodePath("")
 [node name="LeverSmooth" type="Node3D" parent="foghorn_lever" unique_id=1583443813]
 
 [node name="Frame" type="StaticBody3D" parent="foghorn_lever/LeverSmooth" unique_id=103904820]
-visible = false
+transform = Transform3D(0.00083775906, 0.99999964, 0, -0.99999964, 0.00083775906, 0, 0, 0, 1, 0, -0.09865248, 0)
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="foghorn_lever/LeverSmooth/Frame" unique_id=1854194019]
 shape = SubResource("1")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="foghorn_lever/LeverSmooth/Frame" unique_id=1212961114]
 mesh = SubResource("2")
@@ -239,13 +241,12 @@ mesh = SubResource("2")
 transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractableLever" type="Node3D" parent="foghorn_lever/LeverSmooth/LeverOrigin" unique_id=1744806276]
-transform = Transform3D(0.9396926, 0.34202012, 0, -0.34202012, 0.9396926, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_y7cet")
-hinge_position = -20.0
 default_position = -20.0
 
 [node name="HingeBody" type="StaticBody3D" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1765097712]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1273813878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0026550293, 0.66259515, -0.098501995)
