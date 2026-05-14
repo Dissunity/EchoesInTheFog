@@ -2,12 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://88wua62ak7df"
-<<<<<<<< HEAD:addons/godot-xr-tools/assets/misc/journal/journal_431.jpg.import
-path.s3tc="res://.godot/imported/journal_431.jpg-94a617d888940fbad30b4e7c0709a6a9.s3tc.ctex"
-========
-path.s3tc="res://.godot/imported/Hold trigger to continue.png-ce0a3a4de13c262f7015326bad2cb09d.s3tc.ctex"
->>>>>>>> main:addons/godot-xr-tools/assets/misc/Hold trigger to continue.png.import
+uid="uid://cp4h68nocjh1t"
+path.s3tc="res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -15,13 +11,8 @@ metadata={
 
 [deps]
 
-<<<<<<<< HEAD:addons/godot-xr-tools/assets/misc/journal/journal_431.jpg.import
-source_file="res://models/present/journal/journal_431.jpg"
-dest_files=["res://.godot/imported/journal_431.jpg-94a617d888940fbad30b4e7c0709a6a9.s3tc.ctex"]
-========
-source_file="res://addons/godot-xr-tools/assets/misc/Hold trigger to continue.png"
-dest_files=["res://.godot/imported/Hold trigger to continue.png-ce0a3a4de13c262f7015326bad2cb09d.s3tc.ctex"]
->>>>>>>> main:addons/godot-xr-tools/assets/misc/Hold trigger to continue.png.import
+source_file="res://objects/journal/journal_431.jpg"
+dest_files=["res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex"]
 
 [params]
 

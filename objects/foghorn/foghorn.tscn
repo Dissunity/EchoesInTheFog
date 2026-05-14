@@ -1,7 +1,13 @@
 [gd_scene format=4 uid="uid://c5uicvmmf2pce"]
 
-[ext_resource type="PackedScene" uid="uid://bnvxqb33lltmj" path="res://addons/godot-xr-tools/interactables/interactable_hinge.tscn" id="1_0ahe6"]
-[ext_resource type="Script" uid="uid://4bp82yibc3xw" path="res://objects/foghorn/interactable_pull_lever.gd" id="2_qp8sy"]
+[ext_resource type="Script" uid="uid://ccmcjrtwan6it" path="res://world/lighthouse/interactable_hinge_z.gd" id="1_y7cet"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_c8smg"]
+[ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="3_y7cet"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="4_wqelk"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_2a6j5"]
+[ext_resource type="Animation" uid="uid://r8hleealhrqt" path="res://addons/godot-xr-tools/hands/animations/right/Grip 2.res" id="6_c8smg"]
+[ext_resource type="Script" uid="uid://dlojnwxo25bky" path="res://addons/godot-xr-tools/interactables/interactable_handle.gd" id="7_1yle4"]
+[ext_resource type="PackedScene" uid="uid://ca3daqmpo0tua" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_redirect.tscn" id="8_6d3ln"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugbp5"]
 resource_name = "Clockwork-cabinet-paint"
@@ -76,6 +82,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tovku")
+
+[sub_resource type="BoxShape3D" id="1"]
+size = Vector3(0.2, 0.6, 0.1)
+
+[sub_resource type="BoxMesh" id="2"]
+size = Vector3(0.2, 0.6, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6wuq7"]
+size = Vector3(0.023620605, 0.986639, 0.034317017)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_krxri"]
 resource_name = "Copper"
@@ -180,6 +195,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x6wgs")
 
+[sub_resource type="Resource" id="Resource_0310h"]
+script = ExtResource("4_wqelk")
+open_pose = ExtResource("3_y7cet")
+closed_pose = ExtResource("3_y7cet")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_1dfum"]
+script = ExtResource("4_wqelk")
+open_pose = ExtResource("6_c8smg")
+closed_pose = ExtResource("6_c8smg")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxyx6"]
+size = Vector3(0.06313477, 0.14206544, 0.05085449)
+
 [node name="Foghorn" type="Node3D" unique_id=21213881]
 
 [node name="foghorn_lever" type="Node3D" parent="." unique_id=751361432]
@@ -194,13 +224,85 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0451755)
 mesh = SubResource("ArrayMesh_pyfag")
 skeleton = NodePath("")
 
-[node name="Pull_lever" parent="foghorn_lever" unique_id=148654777 instance=ExtResource("1_0ahe6")]
-transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("2_qp8sy")
-hinge_limit_min = -35.0
-hinge_limit_max = 30.0
-hinge_position = 29.999999999999996
+[node name="LeverSmooth" type="Node3D" parent="foghorn_lever" unique_id=1583443813]
 
-[node name="pull_lever" type="MeshInstance3D" parent="foghorn_lever/Pull_lever" unique_id=1608356729]
+[node name="Frame" type="StaticBody3D" parent="foghorn_lever/LeverSmooth" unique_id=103904820]
+transform = Transform3D(0.00083775906, 0.99999964, 0, -0.99999964, 0.00083775906, 0, 0, 0, 1, 0, -0.09865248, 0)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="foghorn_lever/LeverSmooth/Frame" unique_id=1854194019]
+shape = SubResource("1")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="foghorn_lever/LeverSmooth/Frame" unique_id=1212961114]
+mesh = SubResource("2")
+
+[node name="LeverOrigin" type="Node3D" parent="foghorn_lever/LeverSmooth" unique_id=247207276]
+transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractableLever" type="Node3D" parent="foghorn_lever/LeverSmooth/LeverOrigin" unique_id=1744806276]
+script = ExtResource("1_y7cet")
+default_position = -20.0
+
+[node name="HingeBody" type="StaticBody3D" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1765097712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1273813878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0026550293, 0.66259515, -0.098501995)
+shape = SubResource("BoxShape3D_6wuq7")
+
+[node name="pull_lever" type="MeshInstance3D" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1608356729]
+transform = Transform3D(1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0, 1, 0, 0, -0.1)
 mesh = SubResource("ArrayMesh_dfwbi")
 skeleton = NodePath("")
+
+[node name="GrabPointHandLeft1" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/pull_lever" unique_id=1570048779 instance=ExtResource("2_c8smg")]
+transform = Transform3D(-0.01898257, 0.00093276554, -0.9998193, -0.032791503, 0.99946094, 0.001555011, 0.9992819, 0.0328151, -0.01894177, 0.089889556, 1.2678274, 0.012139991)
+hand_pose = SubResource("Resource_0310h")
+editor_preview_mode = 1
+
+[node name="GrabPointHandRight1" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/pull_lever" unique_id=1078064823 instance=ExtResource("5_2a6j5")]
+transform = Transform3D(-0.032990042, -0.15161097, -0.98788965, 0.27888566, 0.9477711, -0.15476725, 0.95975757, -0.28061393, 0.011015119, 0.08721988, 1.2547481, -0.016142778)
+hand_pose = SubResource("Resource_1dfum")
+editor_preview_mode = 1
+
+[node name="GrabPointHandLeft2" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/pull_lever" unique_id=527601288 instance=ExtResource("2_c8smg")]
+transform = Transform3D(-0.030602062, 0.09963648, 0.9945532, -0.029822066, 0.99448526, -0.100547284, -0.99908674, -0.032736585, -0.027461912, -0.060860008, 1.2678274, -0.0040160865)
+hand_pose = SubResource("Resource_0310h")
+editor_preview_mode = 1
+
+[node name="GrabPointHandRight2" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/pull_lever" unique_id=2073519678 instance=ExtResource("5_2a6j5")]
+transform = Transform3D(0.12575738, 0.12373004, 0.984315, 0.27888563, 0.947771, -0.15476722, -0.95205456, 0.2939744, 0.08468269, -0.063989684, 1.2547481, 0.010549672)
+hand_pose = SubResource("Resource_1dfum")
+editor_preview_mode = 1
+
+[node name="HandleOrigin" type="Node3D" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=850455270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.096104935)
+
+[node name="InteractableHandle" type="RigidBody3D" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=62008452]
+collision_layer = 262144
+collision_mask = 0
+freeze = true
+script = ExtResource("7_1yle4")
+picked_up_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1014959015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00925875, 1.229801, -0.09988774)
+shape = SubResource("BoxShape3D_lxyx6")
+
+[node name="GrabPointRedirectLeft1" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=254339633 node_paths=PackedStringArray("target") instance=ExtResource("8_6d3ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012451097, 1.2065107, -0.101069)
+target = NodePath("../../../HingeBody/pull_lever/GrabPointHandLeft1")
+
+[node name="GrabPointRedirectRight1" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=312484617 node_paths=PackedStringArray("target") instance=ExtResource("8_6d3ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016432256, 1.2096865, -0.102149665)
+target = NodePath("../../../HingeBody/pull_lever/GrabPointHandRight1")
+
+[node name="GrabPointRedirectLeft2" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1480781410 node_paths=PackedStringArray("target") instance=ExtResource("8_6d3ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010998413, 1.1908058, -0.09525865)
+target = NodePath("../../../HingeBody/pull_lever/GrabPointHandLeft2")
+
+[node name="GrabPointRedirectRight2" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=185648358 node_paths=PackedStringArray("target") instance=ExtResource("8_6d3ln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009169549, 1.212405, -0.102149665)
+target = NodePath(".")
