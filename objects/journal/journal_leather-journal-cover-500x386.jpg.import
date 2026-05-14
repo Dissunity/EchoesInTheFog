@@ -2,30 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1nlwranxij11"
-<<<<<<<< HEAD:addons/godot-xr-tools/assets/misc/journal/journal_leather-journal-cover-500x386.jpg.import
-path.s3tc="res://.godot/imported/journal_leather-journal-cover-500x386.jpg-14a810923b7f3c71a98053817d7d0be9.s3tc.ctex"
-========
-path.s3tc="res://.godot/imported/progress_bar.png-2ef3cbffca173889900be004fdeb1700.s3tc.ctex"
->>>>>>>> main:addons/godot-xr-tools/assets/misc/progress_bar.png.import
+uid="uid://ba2buu7o83ilk"
+path="res://.godot/imported/journal_leather-journal-cover-500x386.jpg-ad32db9b20eb283586749978d38f868a.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:addons/godot-xr-tools/assets/misc/journal/journal_leather-journal-cover-500x386.jpg.import
-source_file="res://models/present/journal/journal_leather-journal-cover-500x386.jpg"
-dest_files=["res://.godot/imported/journal_leather-journal-cover-500x386.jpg-14a810923b7f3c71a98053817d7d0be9.s3tc.ctex"]
-========
-source_file="res://addons/godot-xr-tools/assets/misc/progress_bar.png"
-dest_files=["res://.godot/imported/progress_bar.png-2ef3cbffca173889900be004fdeb1700.s3tc.ctex"]
->>>>>>>> main:addons/godot-xr-tools/assets/misc/progress_bar.png.import
+source_file="res://objects/journal/journal_leather-journal-cover-500x386.jpg"
+dest_files=["res://.godot/imported/journal_leather-journal-cover-500x386.jpg-ad32db9b20eb283586749978d38f868a.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -33,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -47,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
