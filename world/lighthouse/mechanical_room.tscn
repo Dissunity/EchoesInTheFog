@@ -872,7 +872,7 @@ closed_pose = ExtResource("16_y84s8")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxyx6"]
-size = Vector3(0.04057617, 0.14206544, 0.049902342)
+size = Vector3(0.15753174, 0.05697632, 0.0413208)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og3yr"]
 size = Vector3(0.2, 0.6, 0.1)
@@ -1229,7 +1229,7 @@ script = ExtResource("16_og3yr")
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1014959015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0020205472, 0.22980103, -0.246482)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22641629, 0.0004234314, -0.2380047)
 shape = SubResource("BoxShape3D_lxyx6")
 
 [node name="GrabPointRedirectLeft" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=254339633 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]

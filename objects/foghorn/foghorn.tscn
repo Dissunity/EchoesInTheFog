@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://c5uicvmmf2pce"]
 
 [ext_resource type="PackedScene" uid="uid://bnvxqb33lltmj" path="res://addons/godot-xr-tools/interactables/interactable_hinge.tscn" id="1_0ahe6"]
-[ext_resource type="Script" uid="uid://4bp82yibc3xw" path="res://objects/foghorn/interactable_pull_lever.gd" id="2_qp8sy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugbp5"]
 resource_name = "Clockwork-cabinet-paint"
@@ -195,11 +194,8 @@ mesh = SubResource("ArrayMesh_pyfag")
 skeleton = NodePath("")
 
 [node name="Pull_lever" parent="foghorn_lever" unique_id=148654777 instance=ExtResource("1_0ahe6")]
-transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("2_qp8sy")
-hinge_limit_min = -35.0
-hinge_limit_max = 30.0
-hinge_position = 29.999999999999996
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0)
+script = null
 
 [node name="pull_lever" type="MeshInstance3D" parent="foghorn_lever/Pull_lever" unique_id=1608356729]
 mesh = SubResource("ArrayMesh_dfwbi")

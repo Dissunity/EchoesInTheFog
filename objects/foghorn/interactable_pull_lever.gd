@@ -1,6 +1,5 @@
 @tool
-class_name XRToolsInteractableHinge
-extends XRToolsInteractableHandleDriven
+extends XRToolsInteractableHinge
 
 
 ## XR Tools Interactable Hinge script
@@ -13,39 +12,6 @@ extends XRToolsInteractableHandleDriven
 ##
 ## The interactable hinge is not a [RigidBody3D], and as such will not react
 ## to any collisions.
-
-
-## Signal for hinge moved
-signal hinge_moved(angle)
-
-
-## Hinge minimum limit
-@export var hinge_limit_min : float = -45.0: set = _set_hinge_limit_min
-
-## Hinge maximum limit
-@export var hinge_limit_max : float = 45.0: set = _set_hinge_limit_max
-
-## Hinge step size (zero for no steps)
-@export var hinge_steps : float = 0.0: set = _set_hinge_steps
-
-## Hinge position
-@export var hinge_position : float = 0.0: set = _set_hinge_position
-
-## Default position
-@export var default_position : float = 0.0: set = _set_default_position
-
-## If true, the hinge moves to the default position when releases
-@export var default_on_release : bool = false
-
-
-# Hinge values in radians
-@onready var _hinge_limit_min_rad : float = deg_to_rad(hinge_limit_min)
-@onready var _hinge_limit_max_rad : float = deg_to_rad(hinge_limit_max)
-@onready var _hinge_steps_rad : float = deg_to_rad(hinge_steps)
-@onready var _hinge_position_rad : float = deg_to_rad(hinge_position)
-@onready var _default_position_rad : float = deg_to_rad(default_position)
-
-
 # Add support for is_xr_class on XRTools classes
 func is_xr_class(xr_name:  String) -> bool:
 	return xr_name == "XRToolsInteractableHinge" or super(xr_name)
