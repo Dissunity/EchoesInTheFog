@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://c5uicvmmf2pce"]
 
+[ext_resource type="PackedScene" uid="uid://bnvxqb33lltmj" path="res://addons/godot-xr-tools/interactables/interactable_hinge.tscn" id="1_0ahe6"]
+[ext_resource type="Script" uid="uid://4bp82yibc3xw" path="res://objects/foghorn/interactable_pull_lever.gd" id="2_qp8sy"]
+[ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/time_travelling/time_travel_light.gd" id="3_vlf2p"]
 [ext_resource type="Script" uid="uid://ccmcjrtwan6it" path="res://world/lighthouse/interactable_hinge_z.gd" id="1_y7cet"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_c8smg"]
 [ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="3_y7cet"]
@@ -257,6 +260,12 @@ transform = Transform3D(1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0, 1, 0, 0, -0
 mesh = SubResource("ArrayMesh_dfwbi")
 skeleton = NodePath("")
 
+[node name="TimeTravelLight" type="OmniLight3D" parent="." unique_id=94223753]
+top_level = true
+light_energy = 0.0
+light_negative = true
+light_specular = 0.0
+script = ExtResource("3_vlf2p")
 [node name="GrabPointHandLeft1" parent="foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/pull_lever" unique_id=1570048779 instance=ExtResource("2_c8smg")]
 transform = Transform3D(-0.01898257, 0.00093276554, -0.9998193, -0.032791503, 0.99946094, 0.001555011, 0.9992819, 0.0328151, -0.01894177, 0.089889556, 1.2678274, 0.012139991)
 hand_pose = SubResource("Resource_0310h")

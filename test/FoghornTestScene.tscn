@@ -1,10 +1,12 @@
-[gd_scene format=3 uid="uid://6jhce84edv7f"]
+[gd_scene format=3 uid="uid://bfvdq1l4ttjr2"]
 
-[ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="2_b5nav"]
-[ext_resource type="PackedScene" uid="uid://c21g4lajakqf8" path="res://objects/chair/chair_broken.glb" id="3_2qqff"]
-[ext_resource type="Script" uid="uid://cner0ejyul4n3" path="res://mechanics/time_travelling/time_impacted_object.gd" id="3_b5nav"]
-[ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/time_travelling/time_travel_light.gd" id="4_gwyxx"]
-[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="5_b5nav"]
+[ext_resource type="Script" uid="uid://cner0ejyul4n3" path="res://mechanics/time_travelling/time_impacted_object.gd" id="1_y7c0b"]
+[ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="2_x3uko"]
+[ext_resource type="PackedScene" uid="uid://c21g4lajakqf8" path="res://objects/chair/chair_broken.glb" id="3_k0mke"]
+[ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/time_travelling/time_travel_light.gd" id="4_5gf4e"]
+[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="5_hkygc"]
+[ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="6_x3uko"]
+[ext_resource type="Script" path="res://test/hinge_mover.gd" id="7_k0mke"]
 
 [sub_resource type="Environment" id="Environment_b5nav"]
 volumetric_fog_enabled = true
@@ -12,7 +14,7 @@ volumetric_fog_enabled = true
 [sub_resource type="BoxMesh" id="BoxMesh_dot80"]
 size = Vector3(5, 0.2, 5)
 
-[node name="TimeTravelTestScene" type="Node3D" unique_id=637027800]
+[node name="FoghornTestScene" type="Node3D" unique_id=637027800]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=232249860]
 transform = Transform3D(1, 0, 0, 0, 0.9719282, 0.23527783, 0, -0.23527783, 0.9719282, 1.0919397, 0.4460324, 3.5780244)
@@ -22,14 +24,14 @@ environment = SubResource("Environment_b5nav")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2750912, -2.1531246, -1.1798073)
 
 [node name="TimeImpactedObject" type="Node" parent="Chair" unique_id=737264732 node_paths=PackedStringArray("present_model", "past_model")]
-script = ExtResource("3_b5nav")
+script = ExtResource("1_y7c0b")
 present_model = NodePath("../chair_broken")
 past_model = NodePath("../Chair_tscn")
 
-[node name="Chair_tscn" parent="Chair" unique_id=858333585 instance=ExtResource("2_b5nav")]
+[node name="Chair_tscn" parent="Chair" unique_id=858333585 instance=ExtResource("2_x3uko")]
 visible = false
 
-[node name="chair_broken" parent="Chair" unique_id=1775053312 instance=ExtResource("3_2qqff")]
+[node name="chair_broken" parent="Chair" unique_id=1775053312 instance=ExtResource("3_k0mke")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=324492833]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8697429, -2.294674, -1.8707728)
@@ -56,15 +58,25 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.88
 light_energy = 10.508
 spot_angle = 51.41644
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=247285513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.2203746)
-light_energy = 0.0
-light_specular = 0.0
-shadow_enabled = true
-script = ExtResource("4_gwyxx")
+[node name="Foghorn" parent="." unique_id=21213881 instance=ExtResource("6_x3uko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34095418, -1.7305315, -0.548563)
 
-[node name="TimeTravelController" type="Node" parent="." unique_id=1171497928 node_paths=PackedStringArray("time_travel_light", "time_impacted_objects")]
-script = ExtResource("5_b5nav")
-time_travel_light = NodePath("../OmniLight3D")
+[node name="OmniLight3D" type="OmniLight3D" parent="Foghorn" unique_id=247285513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34095418, -1.7305315, -0.548563)
+top_level = true
+light_energy = 0.0
+light_negative = true
+light_specular = 0.0
+script = ExtResource("4_5gf4e")
+
+[node name="TimeTravelController" type="Node" parent="." unique_id=1171497928 node_paths=PackedStringArray("time_travel_light", "time_impacted_objects", "hinge")]
+script = ExtResource("5_hkygc")
+time_travel_light = NodePath("../Foghorn/OmniLight3D")
 time_impacted_objects = [NodePath("../Chair/TimeImpactedObject")]
-test = true
+hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
+
+[node name="HingeMover" type="Node" parent="." unique_id=924811668 node_paths=PackedStringArray("hinge")]
+script = ExtResource("7_k0mke")
+hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
+
+[editable path="Foghorn"]
