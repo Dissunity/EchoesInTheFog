@@ -1,6 +1,5 @@
 @tool
-extends XRToolsInteractableHandleDriven
-
+extends XRToolsInteractableHinge
 
 ## XR Tools Interactable Hinge script
 ##
@@ -13,28 +12,6 @@ extends XRToolsInteractableHandleDriven
 ## The interactable hinge is not a [RigidBody3D], and as such will not react
 ## to any collisions.
 
-## Signal for hinge moved
-signal hinge_moved(angle)
-
-## Hinge step size (zero for no steps)
-@export var hinge_steps : float = 0.0: set = _set_hinge_steps
-
-## Hinge position
-@export var hinge_position : float = 0.0: set = _set_hinge_position
-
-## Default position
-@export var default_position : float = 0.0: set = _set_default_position
-
-## If true, the hinge moves to the default position when releases
-@export var default_on_release : bool = false
-
-
-# Hinge values in radians
-@onready var _hinge_steps_rad : float = deg_to_rad(hinge_steps)
-@onready var _hinge_position_rad : float = deg_to_rad(hinge_position)
-@onready var _default_position_rad : float = deg_to_rad(default_position)
-
-
 # Add support for is_xr_class on XRTools classes
 func is_xr_class(xr_name:  String) -> bool:
 	return xr_name == "XRToolsInteractableHinge" or super(xr_name)
@@ -46,7 +23,10 @@ func _ready():
 	super()
 
 	# Set the initial position to match the initial hinge position value
-	transform.basis = Basis.from_euler(Vector3(_hinge_position_rad, 0, 0))
+	transform = Transform3D(
+		Basis.from_euler(Vector3(0, _hinge_position_rad, 0)),
+		Vector3.ZERO
+	)
 
 	# Connect signals
 	if released.connect(_on_hinge_released):
@@ -93,6 +73,18 @@ func _on_hinge_released(_interactable: XRToolsInteractableHinge):
 		move_hinge(_default_position_rad)
 
 
+# Called when hinge_limit_min is set externally
+func _set_hinge_limit_min(value: float) -> void:
+	hinge_limit_min = value
+	_hinge_limit_min_rad = deg_to_rad(value)
+
+
+# Called when hinge_limit_max is set externally
+func _set_hinge_limit_max(value: float) -> void:
+	hinge_limit_max = value
+	_hinge_limit_max_rad = deg_to_rad(value)
+
+
 # Called when hinge_steps is set externally
 func _set_hinge_steps(value: float) -> void:
 	hinge_steps = value
@@ -117,6 +109,9 @@ func _do_move_hinge(pos: float) -> float:
 	# Apply hinge step-quantization
 	if _hinge_steps_rad:
 		pos = round(pos / _hinge_steps_rad) * _hinge_steps_rad
+
+	# Apply hinge limits
+	pos = clamp(pos, _hinge_limit_min_rad, _hinge_limit_max_rad)
 
 	# Move if necessary
 	if pos != _hinge_position_rad:

@@ -1,6 +1,5 @@
 @tool
-extends XRToolsInteractableHandleDriven
-
+extends XRToolsInteractableHinge
 
 ## XR Tools Interactable Hinge script
 ##
@@ -13,37 +12,6 @@ extends XRToolsInteractableHandleDriven
 ## The interactable hinge is not a [RigidBody3D], and as such will not react
 ## to any collisions.
 
-
-## Signal for hinge moved
-signal hinge_moved(angle)
-
-## Hinge minimum limit
-@export var hinge_limit_min : float = -45.0: set = _set_hinge_limit_min
-
-## Hinge maximum limit
-@export var hinge_limit_max : float = 45.0: set = _set_hinge_limit_max
-
-## Hinge step size (zero for no steps)
-@export var hinge_steps : float = 0.0: set = _set_hinge_steps
-
-## Hinge position
-@export var hinge_position : float = 0.0: set = _set_hinge_position
-
-## Default position
-@export var default_position : float = 0.0: set = _set_default_position
-
-## If true, the hinge moves to the default position when releases
-@export var default_on_release : bool = false
-
-
-# Hinge values in radians
-@onready var _hinge_limit_min_rad : float = deg_to_rad(hinge_limit_min)
-@onready var _hinge_limit_max_rad : float = deg_to_rad(hinge_limit_max)
-@onready var _hinge_steps_rad : float = deg_to_rad(hinge_steps)
-@onready var _hinge_position_rad : float = deg_to_rad(hinge_position)
-@onready var _default_position_rad : float = deg_to_rad(default_position)
-
-
 # Add support for is_xr_class on XRTools classes
 func is_xr_class(xr_name:  String) -> bool:
 	return xr_name == "XRToolsInteractableHinge" or super(xr_name)
@@ -55,7 +23,10 @@ func _ready():
 	super()
 
 	# Set the initial position to match the initial hinge position value
-	transform.basis = Basis.from_euler(Vector3(0, _hinge_position_rad, 0))
+	transform = Transform3D(
+		Basis.from_euler(Vector3(0, 0, _hinge_position_rad)),
+		Vector3.ZERO
+	)
 
 	# Connect signals
 	if released.connect(_on_hinge_released):
@@ -70,9 +41,9 @@ func _process(_delta: float) -> void:
 		var handle := item as XRToolsInteractableHandle
 		var to_handle: Vector3 = handle.global_transform.origin * global_transform
 		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
-		to_handle.y = 0.0
-		to_handle_origin.y = 0.0
-		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.UP)
+		to_handle.z = 0.0
+		to_handle_origin.z = 0.0
+		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.LEFT)
 
 	# Average the angular offsets
 	var offset := offset_sum / grabbed_handles.size()
@@ -144,7 +115,7 @@ func _do_move_hinge(pos: float) -> float:
 
 	# Move if necessary
 	if pos != _hinge_position_rad:
-		transform.basis = Basis.from_euler(Vector3(0.0, pos, 0.0))
+		transform.basis = Basis.from_euler(Vector3(0.0, 0.0, pos))
 
 	# Return the updated position
 	return pos
