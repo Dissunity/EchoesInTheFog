@@ -65,6 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34095418, -1.7305315, -0.54
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34095418, -1.7305315, -0.548563)
 top_level = true
 light_energy = 0.0
+light_negative = true
 light_specular = 0.0
 script = ExtResource("4_5gf4e")
 
@@ -77,7 +78,5 @@ hinge = NodePath("../Foghorn/foghorn_lever/Pull_lever")
 [node name="HingeMover" type="Node" parent="." unique_id=924811668 node_paths=PackedStringArray("hinge")]
 script = ExtResource("7_k0mke")
 hinge = NodePath("../Foghorn/foghorn_lever/Pull_lever")
-
-[connection signal="hinge_moved" from="Foghorn/foghorn_lever/Pull_lever" to="TimeTravelController" method="_on_pull_lever_hinge_moved"]
 
 [editable path="Foghorn"]
