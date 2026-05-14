@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://vsp1agw672i5"]
+[gd_scene format=3 uid="uid://bfvdq1l4ttjr2"]
 
 [ext_resource type="Script" uid="uid://cner0ejyul4n3" path="res://mechanics/time_travelling/time_impacted_object.gd" id="1_y7c0b"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="2_x3uko"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/time_travelling/time_travel_light.gd" id="4_5gf4e"]
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="5_hkygc"]
 [ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="6_x3uko"]
-[ext_resource type="Script" uid="uid://cql2ibqo185mv" path="res://test/hinge_mover.gd" id="7_k0mke"]
+[ext_resource type="Script" path="res://test/hinge_mover.gd" id="7_k0mke"]
 
 [sub_resource type="Environment" id="Environment_b5nav"]
 volumetric_fog_enabled = true
@@ -73,10 +73,10 @@ script = ExtResource("4_5gf4e")
 script = ExtResource("5_hkygc")
 time_travel_light = NodePath("../Foghorn/OmniLight3D")
 time_impacted_objects = [NodePath("../Chair/TimeImpactedObject")]
-hinge = NodePath("../Foghorn/foghorn_lever/Pull_lever")
+hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
 
 [node name="HingeMover" type="Node" parent="." unique_id=924811668 node_paths=PackedStringArray("hinge")]
 script = ExtResource("7_k0mke")
-hinge = NodePath("../Foghorn/foghorn_lever/Pull_lever")
+hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
 
 [editable path="Foghorn"]
