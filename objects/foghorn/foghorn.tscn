@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bnvxqb33lltmj" path="res://addons/godot-xr-tools/interactables/interactable_hinge.tscn" id="1_0ahe6"]
 [ext_resource type="Script" uid="uid://4bp82yibc3xw" path="res://objects/foghorn/interactable_pull_lever.gd" id="2_qp8sy"]
+[ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/time_travelling/time_travel_light.gd" id="3_vlf2p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugbp5"]
 resource_name = "Clockwork-cabinet-paint"
@@ -204,3 +205,10 @@ hinge_position = 29.999999999999996
 [node name="pull_lever" type="MeshInstance3D" parent="foghorn_lever/Pull_lever" unique_id=1608356729]
 mesh = SubResource("ArrayMesh_dfwbi")
 skeleton = NodePath("")
+
+[node name="TimeTravelLight" type="OmniLight3D" parent="." unique_id=94223753]
+top_level = true
+light_energy = 0.0
+light_negative = true
+light_specular = 0.0
+script = ExtResource("3_vlf2p")

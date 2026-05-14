@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://htyyy5fjm3hf"]
 
+[ext_resource type="Script" uid="uid://cner0ejyul4n3" path="res://mechanics/time_travelling/time_impacted_object.gd" id="1_26gxm"]
 [ext_resource type="PackedScene" uid="uid://dnxvm2fi8rku2" path="res://objects/table/table.glb" id="1_frh0p"]
 [ext_resource type="PackedScene" uid="uid://bihwxoyu8u1vp" path="res://objects/table/table_broken.glb" id="2_26gxm"]
 
-[node name="Table" type="Node3D" unique_id=723022751]
+[node name="Table" type="Node3D" unique_id=723022751 node_paths=PackedStringArray("present_model", "past_model")]
+script = ExtResource("1_26gxm")
+present_model = NodePath("table_broken")
+past_model = NodePath("table")
 
 [node name="table" parent="." unique_id=2010079531 instance=ExtResource("1_frh0p")]
 
