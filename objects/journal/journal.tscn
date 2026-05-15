@@ -2,6 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://cggkofnwypw3q" path="res://objects/journal/journal.glb" id="1_wir0b"]
 [ext_resource type="Script" uid="uid://cdcmttphary18" path="res://objects/journal/journal.gd" id="2_xic2l"]
+[ext_resource type="Script" uid="uid://dr836q5npwll0" path="res://objects/journal/journal_text_decal.gd" id="3_i6yj2"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_d05m8"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_i6yj2"]
 
 [node name="Journal" unique_id=278160710 instance=ExtResource("1_wir0b")]
 script = ExtResource("2_xic2l")
@@ -11,3 +16,63 @@ bones/1/rotation = Quaternion(0.99989015, 1.4075018e-16, 7.9886926e-17, -0.01482
 bones/2/rotation = Quaternion(0.008815043, 1.04734516e-17, 4.823106e-17, 0.99996114)
 bones/3/rotation = Quaternion(0.99989015, 2.4785891e-16, -3.2631226e-17, 0.014828146)
 bones/4/rotation = Quaternion(-0.008815043, -1.248861e-16, -8.487102e-17, 0.99996114)
+
+[node name="LeftPageAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="1" unique_id=621035058]
+transform = Transform3D(1, 6.695119e-16, -2.974066e-16, -6.54705e-16, 0.9988822, 0.047270074, 3.2872205e-16, -0.047270067, 0.99888223, 2.0739922e-16, 0.31742868, -0.012383478)
+bone_name = "Bone.006"
+bone_idx = 4
+
+[node name="Decal" type="Decal" parent="Armature/Skeleton3D/LeftPageAttachment" index="0" unique_id=1085006931 node_paths=PackedStringArray("target_viewport")]
+transform = Transform3D(1.9106857e-15, -4.3711402e-08, 1.0000001, -1.0000001, -4.3711402e-08, 0, 4.3711392e-08, -1.0000004, -4.3711392e-08, 0, 0, -0.05)
+visible = false
+size = Vector3(0.8, 0.1, 1.1)
+texture_albedo = SubResource("ImageTexture_d05m8")
+script = ExtResource("3_i6yj2")
+target_viewport = NodePath("../../../../LeftPage")
+
+[node name="RightPageAttachment" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="2" unique_id=27768494]
+transform = Transform3D(1, 1.9026356e-16, 1.7235049e-16, -1.8190383e-16, 0.9988822, -0.047270074, -1.8115159e-16, 0.047270067, 0.99888223, 1.1853448e-16, 0.31742868, 0.012383478)
+bone_name = "Bone.007"
+bone_idx = 2
+
+[node name="Decal" type="Decal" parent="Armature/Skeleton3D/RightPageAttachment" index="0" unique_id=1018378483 node_paths=PackedStringArray("target_viewport")]
+transform = Transform3D(-1.9106855e-15, -4.371139e-08, 1, 1, -4.4703484e-08, 0, -4.4703484e-08, -1, -4.3711392e-08, 0, 0, 0.05)
+visible = false
+size = Vector3(0.8, 0.1, 1.1)
+texture_albedo = SubResource("ImageTexture_i6yj2")
+script = ExtResource("3_i6yj2")
+target_viewport = NodePath("../../../../RightPage")
+
+[node name="LeftPage" type="SubViewport" parent="." index="2" unique_id=40513807]
+transparent_bg = true
+size = Vector2i(800, 1100)
+render_target_update_mode = 4
+
+[node name="Label" type="Label" parent="LeftPage" index="0" unique_id=1308176237]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Something"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="RightPage" type="SubViewport" parent="." index="3" unique_id=439996216]
+transparent_bg = true
+size = Vector2i(800, 1100)
+render_target_update_mode = 4
+
+[node name="Label" type="Label" parent="RightPage" index="0" unique_id=1797766593]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Something"
+horizontal_alignment = 1
+autowrap_mode = 3
