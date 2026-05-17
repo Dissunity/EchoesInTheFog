@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="11_ic0uy"]
+[ext_resource type="LightmapGIData" uid="uid://bk2wf5mr1yvv1" path="res://lights/world.lmbake" id="12_k3n1d"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -22,17 +23,41 @@ render_priority = 0
 shader = ExtResource("1_fj7yv")
 shader_parameter/normal_map_1 = ExtResource("3_036b0")
 shader_parameter/normal_map_2 = ExtResource("2_aqk2v")
-shader_parameter/color_deep = Color(0.05, 0.07, 0.09, 1)
-shader_parameter/color_shallow = Color(0.15, 0.18, 0.2, 1)
+shader_parameter/color_deep = Color(1.9741129e-09, 0.0028313347, 0.008412219, 1)
+shader_parameter/color_shallow = Color(0.13260809, 0.41962108, 0.6816237, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k3n1d"]
+sky_top_color = Color(0.017567739, 0.063042894, 0.14177978, 1)
+sky_horizon_color = Color(0.07766383, 0.13789278, 0.3718933, 1)
+sky_curve = 0.13995497
+ground_bottom_color = Color(0.13243553, 0.2443096, 0.30423883, 1)
+
+[sub_resource type="Sky" id="Sky_2o6r5"]
+sky_material = SubResource("ProceduralSkyMaterial_k3n1d")
+
+[sub_resource type="Environment" id="Environment_70uel"]
+background_mode = 2
+sky = SubResource("Sky_2o6r5")
+ambient_light_source = 3
+ambient_light_color = Color(2.7696238e-05, 0.0020867079, 0.04612478, 1)
+ambient_light_sky_contribution = 0.13
+ambient_light_energy = 0.92
+tonemap_mode = 4
+tonemap_agx_white = 16.5
+tonemap_agx_contrast = 1.17
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.23106223, 0.2778283, 0.45817608, 1)
+fog_light_energy = 0.19
+fog_sun_scatter = 0.02
+fog_density = 0.9919
+adjustment_enabled = true
+adjustment_brightness = 1.07
+adjustment_contrast = 1.005
+adjustment_saturation = 1.05
 
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
-transform = Transform3D(-0.93742365, 0.3322854, 0.10403445, 0.09317458, -0.048497155, 0.99446785, 0.33549252, 0.9419311, 0.014501836, 0, 46.970318, -0.026504517)
-light_color = Color(1, 0.79721934, 0.72160006, 1)
-shadow_enabled = true
-sky_mode = 1
 
 [node name="Ocean" type="Node3D" parent="." unique_id=1904178162]
 
@@ -48,7 +73,7 @@ transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.964
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
 
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.3647172)
 
 [node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
@@ -61,7 +86,34 @@ transform = Transform3D(0.052335974, 0, 0.9986295, 0, 1, 0, -0.9986295, 0, 0.052
 [node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "time_impacted_objects", "hinge")]
 script = ExtResource("11_ic0uy")
 time_travel_light = NodePath("../Foghorn/TimeTravelLight")
-time_impacted_objects = [NodePath("../Chair"), NodePath("../Table")]
+time_impacted_objects = [NodePath("../Chair"), null]
 hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
+
+[node name="Moon" type="DirectionalLight3D" parent="." unique_id=596411593]
+transform = Transform3D(-0.7253718, 0.4541764, -0.5172617, 0.048682015, 0.7834095, 0.6195965, 0.68663377, 0.42425647, -0.5903734, -10.699763, 62.307785, -21.270947)
+light_color = Color(0.66256917, 0.7932864, 0.92781705, 1)
+light_energy = 1.258
+light_specular = 1.105
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.164
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1539450234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6097853, 44.125248, 2.6405027)
+light_color = Color(0.8373361, 0.6507636, 0.28892657, 1)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_blur = 2.195
+omni_range = 4.128
+omni_attenuation = 0.211
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=311532075]
+generate_probes_subdiv = 3
+light_data = ExtResource("12_k3n1d")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1272229861]
+environment = SubResource("Environment_70uel")
 
 [editable path="Foghorn"]

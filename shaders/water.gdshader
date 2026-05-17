@@ -48,10 +48,10 @@ void vertex() {
     //vec4 wave_c = vec4(-0.2, 0.9, 0.3, 13.0);
     //vec4 wave_d = vec4(0.4, -0.1, 0.4, 5.0);
 	
-    vec4 wave_a = vec4(1.0, 0.5, 0.15, 26.0);
-    vec4 wave_b = vec4(3.8, -0.6, 0.1, 34.0); 
-    vec4 wave_c = vec4(-0.2, 1.9, 0.1, 29.0);
-    vec4 wave_d = vec4(-0.4, -0.1, 0.15, 83.0);
+    vec4 wave_a = vec4(1.0, 0.5, 0.2, 26.0);
+    vec4 wave_b = vec4(3.8, -0.6, 0.14, 34.0); 
+    vec4 wave_c = vec4(-0.2, 1.9, 0.14, 29.0);
+    vec4 wave_d = vec4(-0.4, -0.1, 0.24, 83.0);
 
     vec3 grid_pos = VERTEX;
     vec3 displacement = vec3(0.0);
@@ -63,7 +63,7 @@ void vertex() {
     gerstner_wave(wave_d, grid_pos, displacement, normal);
 
     float vertex_distance = length(VERTEX.xz);
-    float fade_mask = 1.0 - smoothstep(100.0, 400.0, vertex_distance);
+    float fade_mask = 1.0 - smoothstep(250.0, 700.0, vertex_distance);
     displacement *= fade_mask;
 
     VERTEX += displacement;
@@ -98,7 +98,7 @@ void fragment() {
     
     // VR Distance LOD
     vec3 flat_normal = vec3(0.5, 0.5, 1.0);
-    float normal_fade = smoothstep(20.0, 100.0, v_dist);
+    float normal_fade = smoothstep(70.0, 190.0, v_dist);
     NORMAL_MAP = mix(combined_normals, flat_normal, normal_fade);
 
     // View-Angle Color Mixing 
