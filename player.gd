@@ -68,9 +68,14 @@ func _physics_process(delta: float) -> void:
 		
 		# Apply joystick input to direction
 		direction = forward * input_vec.y + right * input_vec.x
+		
+		# Turning
+		# Replace the turning section with this:
 		var turn_input = right_controller.get_vector2("primary").x
-		if abs(turn_input) > 0.2: # deadzone
-			rotate_y(-turn_input * 2.5 * delta)
+		if abs(turn_input) > 0.6:  # higher threshold for snap
+			var snap_angle = deg_to_rad(30) * sign(-turn_input)
+			rotate_y(snap_angle)
+	# Optional: small cooldown so you don't snap multiple times
 
 	# --- APPLY FINAL MOVEMENT ---
 	if direction:
