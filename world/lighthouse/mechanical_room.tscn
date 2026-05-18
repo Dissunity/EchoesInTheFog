@@ -1177,6 +1177,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 47.347, 0)
 
 [node name="Frame" type="StaticBody3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth" unique_id=103904820]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/Frame" unique_id=1854194019]
 shape = SubResource("1")
@@ -1270,6 +1272,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 47.264, -0.2)
 
 [node name="Frame" type="StaticBody3D" parent="MechanicalRoom/Door1Origin/LeverSmooth" unique_id=1447097245]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door1Origin/LeverSmooth/Frame" unique_id=1761729354]
 shape = SubResource("BoxShape3D_og3yr")
@@ -1287,6 +1291,7 @@ hinge_limit_max = 0.0
 
 [node name="HingeBody" type="StaticBody3D" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1265450577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1932649032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14709473, 0.015319824, -0.13123973)
@@ -1338,6 +1343,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 47.264, 0.2)
 
 [node name="Frame" type="StaticBody3D" parent="MechanicalRoom/Door2Origin/LeverSmooth" unique_id=1647069965]
 visible = false
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door2Origin/LeverSmooth/Frame" unique_id=1993847504]
 shape = SubResource("BoxShape3D_og3yr")
@@ -1355,6 +1362,7 @@ hinge_limit_max = 0.0
 
 [node name="HingeBody" type="StaticBody3D" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever" unique_id=758578661]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1674931134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1739211, 0.015319824, -0.06033595)
