@@ -44,3 +44,4 @@ ranged_collision_mask = 262404
 [node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
 
 [node name="PlayerBody" parent="XROrigin3D" unique_id=365204637 instance=ExtResource("5_sweqy")]
+collision_layer = 524289
