@@ -1874,25 +1874,25 @@ past_model = NodePath("table")
 
 [node name="table" parent="Table" unique_id=366558317 instance=ExtResource("8_hiqwa")]
 
-[node name="table_structure" parent="Table/table" index="0" unique_id=151214619]
+[node name="table_structure" parent="Table/table" index="0" unique_id=1749389029]
 mesh = SubResource("ArrayMesh_70uel")
 
-[node name="leg_l_front" parent="Table/table" index="1" unique_id=515105271]
+[node name="leg_l_front" parent="Table/table" index="1" unique_id=1702336197]
 mesh = SubResource("ArrayMesh_hiqwa")
 
-[node name="table_drawers_top" parent="Table/table" index="2" unique_id=1584567983]
+[node name="table_drawers_top" parent="Table/table" index="2" unique_id=993231491]
 mesh = SubResource("ArrayMesh_2u3nc")
 
-[node name="Knobs" parent="Table/table" index="3" unique_id=1975097929]
+[node name="Knobs" parent="Table/table" index="3" unique_id=79831894]
 mesh = SubResource("ArrayMesh_udxuc")
 
-[node name="table_drawers_bottom" parent="Table/table" index="4" unique_id=702094024]
+[node name="table_drawers_bottom" parent="Table/table" index="4" unique_id=1130202539]
 mesh = SubResource("ArrayMesh_ikiii")
 
-[node name="table_top" parent="Table/table" index="5" unique_id=252641552]
+[node name="table_top" parent="Table/table" index="5" unique_id=807375598]
 mesh = SubResource("ArrayMesh_cbp6q")
 
-[node name="table_drawers_,middle" parent="Table/table" index="6" unique_id=795603380]
+[node name="table_drawers_,middle" parent="Table/table" index="6" unique_id=2122077132]
 mesh = SubResource("ArrayMesh_26xuy")
 
 [node name="table_broken" parent="Table" unique_id=1950040690 instance=ExtResource("9_2u3nc")]
@@ -2171,7 +2171,7 @@ omni_range = 2.261
 omni_attenuation = 0.211
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=311532075]
-quality = 3
+quality = 0
 bounce_indirect_energy = 0.75
 directional = true
 denoiser_strength = 0.08
