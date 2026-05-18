@@ -1298,13 +1298,11 @@ skeleton = NodePath("")
 
 [node name="GrabPointHandLeft" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Turn mechanism_door 1" unique_id=191213419 instance=ExtResource("3_vgpin")]
 transform = Transform3D(-0.2744049, -0.66936415, -0.6904011, -0.8941513, 0.441785, -0.07293685, 0.35383016, 0.5973086, -0.71974117, -0.36755484, 0.026939392, 0.019011721)
-snap_hand = false
 hand_pose = SubResource("Resource_78ddj")
 editor_preview_mode = 1
 
 [node name="GrabPointHandRight" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Turn mechanism_door 1" unique_id=342329761 instance=ExtResource("6_w63ex")]
 transform = Transform3D(-0.6350453, 0.6814754, 0.3637432, 0.7581626, 0.6400781, 0.12445578, -0.14801057, 0.35481143, -0.92314774, -0.41126508, 0.004043579, 0.04011306)
-snap_hand = false
 hand_pose = SubResource("Resource_oqq16")
 editor_preview_mode = 1
 
@@ -1367,13 +1365,11 @@ skeleton = NodePath("")
 
 [node name="GrabPointHandLeft" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Turn mechanism_door 2" unique_id=1510804807 instance=ExtResource("3_vgpin")]
 transform = Transform3D(-0.014305381, 0.3332141, 0.94274276, -0.9648454, -0.25205296, 0.07444779, 0.26242822, -0.90853614, 0.3251058, 0.36723, 0.01720047, -0.016108677)
-snap_hand = false
 hand_pose = SubResource("Resource_78ddj")
 editor_preview_mode = 1
 
 [node name="GrabPointHandRight" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Turn mechanism_door 2" unique_id=109000398 instance=ExtResource("6_w63ex")]
 transform = Transform3D(0.26149547, -0.9646149, -0.03373909, 0.95839083, 0.25534433, 0.12761824, -0.114487365, -0.06570679, 0.99124926, 0.39594814, 0.010189056, -0.04002194)
-snap_hand = false
 hand_pose = SubResource("Resource_oqq16")
 editor_preview_mode = 1
 
