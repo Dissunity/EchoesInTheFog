@@ -1189,7 +1189,6 @@ disabled = true
 mesh = SubResource("2")
 
 [node name="LeverOrigin" type="Node3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth" unique_id=247207276]
-transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractableLever" type="Node3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin" unique_id=1744806276]
 script = ExtResource("13_y84s8")
@@ -1233,7 +1232,6 @@ hand_pose = SubResource("Resource_1dfum")
 editor_preview_mode = 1
 
 [node name="HandleOrigin" type="Node3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever" unique_id=850455270]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.096104935)
 
 [node name="InteractableHandle" type="RigidBody3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=62008452]
 collision_layer = 262144

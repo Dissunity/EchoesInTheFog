@@ -37,6 +37,7 @@ signal hinge_moved(angle)
 ## If true, the hinge moves to the default position when releases
 @export var default_on_release : bool = false
 
+
 # Hinge values in radians
 @onready var _hinge_limit_min_rad : float = deg_to_rad(hinge_limit_min)
 @onready var _hinge_limit_max_rad : float = deg_to_rad(hinge_limit_max)
@@ -44,9 +45,6 @@ signal hinge_moved(angle)
 @onready var _hinge_position_rad : float = deg_to_rad(hinge_position)
 @onready var _default_position_rad : float = deg_to_rad(default_position)
 
-var _grab_start_angle := 0.0
-var _grab_start_hinge := 0.0
-var _is_grabbing = false
 
 # Add support for is_xr_class on XRTools classes
 func is_xr_class(xr_name:  String) -> bool:
@@ -59,12 +57,9 @@ func _ready():
 	super()
 
 	# Set the initial position to match the initial hinge position value
-	#transform = Transform3D(
-		#Basis.from_euler(Vector3(_hinge_position_rad, 0, 0)),
-		#Vector3.ZERO
-	#)
-	transform.basis = Basis.from_euler(
-		Vector3(_hinge_position_rad, 0, 0)
+	transform = Transform3D(
+		Basis.from_euler(Vector3(_hinge_position_rad, 0, 0)),
+		Vector3.ZERO
 	)
 
 	# Connect signals
@@ -73,83 +68,23 @@ func _ready():
 
 
 # Called every frame when one or more handles are held by the player
-#func _process(_delta: float) -> void:
-	#if grabbed_handles.is_empty():
-		#_is_grabbing = false
-		#return	
-	#
-	## Get the total handle angular offsets
-	#print("grabbed handles: ", grabbed_handles.size())
-	#var offset_sum := 0.0
-	#for item in grabbed_handles:
-		#var handle := item as XRToolsInteractableHandle
-		##var to_handle: Vector3 = handle.global_transform.origin * global_transform
-		##var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
-		##
-		#var to_handle: Vector3 = global_transform.affine_inverse() * handle.global_transform.origin
-		#var to_handle_origin: Vector3 = global_transform.affine_inverse() * handle.handle_origin.global_transform.origin
-		#
-		#print("HANDLE GLOBAL: ", handle.global_transform.origin)
-		#print("ORIGIN GLOBAL: ", handle.handle_origin.global_transform.origin)
-		#print("to_handle: ", to_handle)
-		#print("to_handle_origin: ", to_handle_origin)		
-		#
-		#to_handle.x = 0.0
-		#to_handle_origin.x = 0.0
-#
-		#offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
-#
-	#var offset := offset_sum / grabbed_handles.size()
-#
-	#if !_is_grabbing:
-		#_is_grabbing = true
-		#_grab_start_angle = offset
-		#_grab_start_hinge = _hinge_position_rad
-#
-	#print("CURRENT HINGE: ", rad_to_deg(_hinge_position_rad))
-	#print("OFFSET: ", rad_to_deg(offset))
-	#print("TARGET: ", rad_to_deg(_hinge_position_rad + offset))
-#
-	## Move the hinge by the requested offset
-	##move_hinge(_hinge_position_rad + offset)
-	##var relative_angle = offset - _grab_start_angle
-	##move_hinge(_grab_start_hinge + relative_angle)
-	#var relative_angle = offset - _grab_start_angle
-	#move_hinge(_grab_start_hinge + relative_angle)
-
 func _process(_delta: float) -> void:
-	if grabbed_handles.is_empty():
-		_is_grabbing = false
-		return
+	# Get the total handle angular offsets
+	var offset_sum := 0.0
+	for item in grabbed_handles:
+		var handle := item as XRToolsInteractableHandle
+		var to_handle: Vector3 = handle.global_transform.origin * global_transform
+		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
+		to_handle.x = 0.0
+		to_handle_origin.x = 0.0
+		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
 
-	var handle := grabbed_handles[0] as XRToolsInteractableHandle
+	# Average the angular offsets
+	var offset := offset_sum / grabbed_handles.size()
 
-	# Handle positie in local hinge space
-	var local_handle: Vector3 = to_local(handle.global_transform.origin)
+	# Move the hinge by the requested offset
+	move_hinge(_hinge_position_rad + offset)
 
-	# Voor X-axis hinge gebruiken we Y/Z vlak
-	var angle := atan2(local_handle.y, local_handle.z)
-
-	# Eerste frame van de grab
-	if !_is_grabbing:
-		_is_grabbing = true
-		_grab_start_angle = angle
-		_grab_start_hinge = _hinge_position_rad
-
-		print("GRAB START ANGLE: ", rad_to_deg(angle))
-		print("GRAB START HINGE: ", rad_to_deg(_grab_start_hinge))
-
-	# Delta vanaf grab start
-	var relative_angle := angle - _grab_start_angle
-
-	# Nieuwe hinge positie
-	var target := _grab_start_hinge + relative_angle
-
-	print("CURRENT ANGLE: ", rad_to_deg(angle))
-	print("RELATIVE: ", rad_to_deg(relative_angle))
-	print("TARGET: ", rad_to_deg(target))
-
-	move_hinge(target)
 
 # Move the hinge to the specified position
 func move_hinge(pos: float) -> void:
@@ -214,9 +149,7 @@ func _do_move_hinge(pos: float) -> float:
 
 	# Move if necessary
 	if pos != _hinge_position_rad:
-		print("MOVING HINGE TO: ", rad_to_deg(pos))
 		transform.basis = Basis.from_euler(Vector3(pos, 0.0, 0.0))
-		print("ACTUAL BASIS: ", transform.basis)
-		
+
 	# Return the updated position
 	return pos
