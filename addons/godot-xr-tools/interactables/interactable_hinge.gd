@@ -37,7 +37,6 @@ signal hinge_moved(angle)
 ## If true, the hinge moves to the default position when releases
 @export var default_on_release : bool = false
 
-
 # Hinge values in radians
 @onready var _hinge_limit_min_rad : float = deg_to_rad(hinge_limit_min)
 @onready var _hinge_limit_max_rad : float = deg_to_rad(hinge_limit_max)
@@ -45,6 +44,9 @@ signal hinge_moved(angle)
 @onready var _hinge_position_rad : float = deg_to_rad(hinge_position)
 @onready var _default_position_rad : float = deg_to_rad(default_position)
 
+var _grab_start_angle := 0.0
+var _grab_start_hinge := 0.0
+var _is_grabbing = false
 
 # Add support for is_xr_class on XRTools classes
 func is_xr_class(xr_name:  String) -> bool:
@@ -87,23 +89,26 @@ func _process(_delta: float) -> void:
 		
 		to_handle.x = 0.0
 		to_handle_origin.x = 0.0
-		var angle = to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
 
-		print("ANGLE RAD: ", angle)
-		print("ANGLE DEG: ", rad_to_deg(angle))
+		offset_sum += to_handle_origin.signed_angle_to(to_handle, Vector3.RIGHT)
 
-		offset_sum += angle
-		
-	# Average the angular offsets
 	var offset := offset_sum / grabbed_handles.size()
+
+	if !_is_grabbing:
+		_is_grabbing = true
+		_grab_start_angle = offset
+		_grab_start_hinge = _hinge_position_rad
 
 	print("CURRENT HINGE: ", rad_to_deg(_hinge_position_rad))
 	print("OFFSET: ", rad_to_deg(offset))
 	print("TARGET: ", rad_to_deg(_hinge_position_rad + offset))
 
 	# Move the hinge by the requested offset
-	move_hinge(_hinge_position_rad + offset)
-
+	#move_hinge(_hinge_position_rad + offset)
+	#var relative_angle = offset - _grab_start_angle
+	#move_hinge(_grab_start_hinge + relative_angle)
+	var relative_angle = offset - _grab_start_angle
+	move_hinge(_grab_start_hinge + relative_angle)
 
 # Move the hinge to the specified position
 func move_hinge(pos: float) -> void:
@@ -122,6 +127,7 @@ func move_hinge(pos: float) -> void:
 
 # Handle release of hinge
 func _on_hinge_released(_interactable: XRToolsInteractableHinge):
+	_is_grabbing = false
 	if default_on_release:
 		move_hinge(_default_position_rad)
 
