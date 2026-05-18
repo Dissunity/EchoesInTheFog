@@ -1314,6 +1314,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.096104935)
 [node name="InteractableHandle" type="RigidBody3D" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=73810816]
 collision_layer = 262144
 collision_mask = 0
+mass = 5.0
 freeze = true
 script = ExtResource("16_og3yr")
 snap_distance = 0.1
@@ -1382,6 +1383,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.096104935)
 [node name="InteractableHandle" type="RigidBody3D" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=2061972717]
 collision_layer = 262144
 collision_mask = 0
+mass = 5.0
 freeze = true
 script = ExtResource("16_og3yr")
 snap_distance = 0.1
