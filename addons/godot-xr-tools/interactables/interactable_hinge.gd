@@ -71,6 +71,10 @@ func _ready():
 
 # Called every frame when one or more handles are held by the player
 func _process(_delta: float) -> void:
+	if grabbed_handles.is_empty():
+		_is_grabbing = false
+		return	
+	
 	# Get the total handle angular offsets
 	print("grabbed handles: ", grabbed_handles.size())
 	var offset_sum := 0.0
@@ -127,7 +131,6 @@ func move_hinge(pos: float) -> void:
 
 # Handle release of hinge
 func _on_hinge_released(_interactable: XRToolsInteractableHinge):
-	_is_grabbing = false
 	if default_on_release:
 		move_hinge(_default_position_rad)
 
