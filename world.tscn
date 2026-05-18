@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="11_ic0uy"]
-[ext_resource type="LightmapGIData" uid="uid://bk2wf5mr1yvv1" path="res://lights/world.lmbake" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://ctistm7u240a8" path="res://world/lighthouse/mechanical_room.tscn" id="12_udxuc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
@@ -2178,7 +2177,6 @@ bounce_indirect_energy = 0.65
 directional = true
 denoiser_strength = 0.08
 generate_probes_subdiv = 3
-light_data = ExtResource("12_k3n1d")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1272229861]
 environment = SubResource("Environment_70uel")
