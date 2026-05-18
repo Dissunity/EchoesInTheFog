@@ -43,18 +43,29 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	# --- VR ROOM-SCALE DESYNC & WALL CLIPPING FIX ---
 	if not is_desktop_mode:
-		# Calculate where the headset is relative to the center of the physics capsule
+		# 1. Handle Horizontal Position Desync
 		var head_displacement = xr_origin.position + xr_camera.position
-		head_displacement.y = 0 # Keep calculations strictly on the horizontal floor plane
+		head_displacement.y = 0 
 		
 		if head_displacement.length_squared() > 0.0001:
-			# Convert local displacement to world space and physically move the capsule
 			var global_displacement = transform.basis * head_displacement
 			move_and_collide(global_displacement)
-			
-			# Slide the origin point backward by the exact same amount.
-			# This keeps the virtual camera locked to the capsule's position!
 			xr_origin.position -= head_displacement
+
+		# 2. Handle Rotation (Align Body Capsule to Camera)
+		# Get the camera's local horizontal rotation angle
+		var camera_forward = -xr_camera.transform.basis.z
+		camera_forward.y = 0
+		var rotation_angle = Vector3.FORWARD.signed_angle_to(camera_forward.normalized(), Vector3.UP)
+
+		if abs(rotation_angle) > 0.001:
+			# Rotate the main character capsule to match the camera
+			rotate_y(rotation_angle)
+			
+			# Counter-rotate the XROrigin in the opposite direction.
+			# This keeps the virtual camera perfectly still in world space 
+			# so the player doesn't feel a sudden artificial camera jerk!
+			xr_origin.rotate_y(-rotation_angle)
 
 	# --- GRAVITY ---
 	if not is_on_floor():
