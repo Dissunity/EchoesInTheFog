@@ -1,28 +1,20 @@
 [gd_scene format=3 uid="uid://o40u2gao0u2l"]
 
-[ext_resource type="Script" uid="uid://bjhmtatp6cmyv" path="res://player.gd" id="1_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_dw050"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_b26j0"]
 [ext_resource type="Script" uid="uid://cd3sgkcyk428r" path="res://stair_detector.gd" id="5_sweqy"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_1jxqw"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
-radius = 0.3
-height = 1.7
-
-[node name="Player" type="CharacterBody3D" unique_id=1581452875]
-collision_layer = 2
-collision_mask = 262405
-script = ExtResource("1_2hs0m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2143596673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
-shape = SubResource("CapsuleShape3D_sh265")
+[node name="Player" type="Node3D" unique_id=1467007416]
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=50921491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="DesktopCamera" type="Camera3D" parent="SpringArm3D" unique_id=864402729]
+current = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1051909420]
 
@@ -40,6 +32,8 @@ ranged_collision_mask = 327940
 
 [node name="LeftGlove" parent="XROrigin3D/LeftHand" unique_id=238805430 instance=ExtResource("4_2hs0m")]
 
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" unique_id=866302774 instance=ExtResource("3_dw050")]
+
 [node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1981951555]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"right_hand"
@@ -51,7 +45,12 @@ ranged_collision_mask = 262404
 
 [node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
 
+[node name="MovementTurn" parent="XROrigin3D/RightHand" unique_id=1070579715 instance=ExtResource("5_b26j0")]
+
+[node name="PlayerBody" parent="XROrigin3D" unique_id=907831540 instance=ExtResource("4_sweqy")]
+
 [node name="StairDetector" type="RayCast3D" parent="." unique_id=1206116429]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+visible = false
 target_position = Vector3(0, 0, -0.4)
 script = ExtResource("5_sweqy")

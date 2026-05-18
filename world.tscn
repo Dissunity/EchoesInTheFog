@@ -7,10 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
 [ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="8_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
-[ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="11_2u3nc"]
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="11_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="11_udxuc"]
+[ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="12_udxuc"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="13_ikiii"]
+[ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="14_cbp6q"]
+[ext_resource type="Material" uid="uid://rwfrc1fdcjsj" path="res://addons/godot-xr-tools/hands/materials/caucasian_hands_realistic.tres" id="14_ikiii"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="15_26xuy"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="16_bc84e"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -41,9 +48,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.401
 mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
-[node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
-transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.9648332, 0.24749339, 43.646576, -1.1616642)
-
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
 
@@ -64,5 +68,50 @@ time_travel_light = NodePath("../Foghorn/TimeTravelLight")
 time_impacted_objects = [NodePath("../Chair"), NodePath("../Table")]
 hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
 
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=999227428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.176211, 44.995457, 0.70173615)
+
+[node name="DesktopCamera" type="Camera3D" parent="SpringArm3D" unique_id=387112242]
+current = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1779849636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24419844, 43.55353, 0.5949588)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=1707697042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="VRCommonShaderCache" parent="XROrigin3D/XRCamera3D" unique_id=874548678 instance=ExtResource("11_udxuc")]
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=500412263]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
+tracker = &"left_hand"
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=1709292184 instance=ExtResource("11_2u3nc")]
+grab_distance = 0.2
+grab_collision_mask = 327940
+ranged_distance = 0.0
+ranged_collision_mask = 327940
+
+[node name="LeftGlove" parent="XROrigin3D/LeftHand" unique_id=1007677105 instance=ExtResource("12_udxuc")]
+hand_material_override = ExtResource("14_ikiii")
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHand" unique_id=1964061179 instance=ExtResource("13_ikiii")]
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=881952479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
+tracker = &"right_hand"
+
+[node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1397797278 instance=ExtResource("11_2u3nc")]
+grab_distance = 0.2
+grab_collision_mask = 327940
+ranged_distance = 0.0
+ranged_collision_mask = 262404
+
+[node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=429071359 instance=ExtResource("14_cbp6q")]
+hand_material_override = ExtResource("14_ikiii")
+
+[node name="MovementTurn" parent="XROrigin3D/RightHand" unique_id=883075241 instance=ExtResource("15_26xuy")]
+
+[node name="PlayerBody" parent="XROrigin3D" unique_id=719895242 instance=ExtResource("16_bc84e")]
+
 [editable path="Foghorn"]
-[editable path="LighthouseStructure"]
