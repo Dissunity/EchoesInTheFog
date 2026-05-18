@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="11_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://ctistm7u240a8" path="res://world/lighthouse/mechanical_room.tscn" id="12_udxuc"]
+[ext_resource type="LightmapGIData" uid="uid://bpvhse0mf81bu" path="res://lightmaps/world.lmbake" id="14_70uel"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -2170,13 +2171,13 @@ omni_range = 2.592
 omni_attenuation = 0.211
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=311532075]
-visible = false
 quality = 0
 bounces = 4
 bounce_indirect_energy = 0.65
 directional = true
 denoiser_strength = 0.08
 generate_probes_subdiv = 3
+light_data = ExtResource("14_70uel")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1272229861]
 environment = SubResource("Environment_70uel")
