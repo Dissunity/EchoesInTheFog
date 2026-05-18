@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://chsk6bqb8hxq0"]
+
+[ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_b1r12"]
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="2_5oq2l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wasq5"]
+size = Vector3(0.2, 0.05, 0.02)
+
+[node name="JournalBody" type="RigidBody3D" unique_id=990140002]
+script = ExtResource("1_b1r12")
+
+[node name="Journal" parent="." unique_id=278160710 instance=ExtResource("2_5oq2l")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=601172229]
+shape = SubResource("BoxShape3D_wasq5")

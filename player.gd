@@ -41,6 +41,22 @@ func _input(event: InputEvent) -> void:
 		spring_arm.rotation.x = clamp(spring_arm.rotation.x, -PI/2, PI/4)
 
 func _physics_process(delta: float) -> void:
+	# --- VR ROOM-SCALE DESYNC & WALL CLIPPING FIX ---
+	if not is_desktop_mode:
+		# Calculate where the headset is relative to the center of the physics capsule
+		var head_displacement = xr_origin.position + xr_camera.position
+		head_displacement.y = 0 # Keep calculations strictly on the horizontal floor plane
+		
+		if head_displacement.length_squared() > 0.0001:
+			# Convert local displacement to world space and physically move the capsule
+			var global_displacement = transform.basis * head_displacement
+			move_and_collide(global_displacement)
+			
+			# Slide the origin point backward by the exact same amount.
+			# This keeps the virtual camera locked to the capsule's position!
+			xr_origin.position -= head_displacement
+
+	# --- GRAVITY ---
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
@@ -72,7 +88,9 @@ func _physics_process(delta: float) -> void:
 		# Apply joystick input to direction
 		direction = forward * input_vec.y + right * input_vec.x
 
-		if forward.y > 0:
+		# 🐛 BUG FIX: You previously cleared forward.y to 0 right before checking it here.
+		# Instead, we check if the joystick is actually pushing forward.
+		if input_vec.y > 0.1: 
 			going_forward = true
 
 	# --- APPLY FINAL MOVEMENT ---
