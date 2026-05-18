@@ -1316,6 +1316,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("16_og3yr")
+snap_distance = 0.1
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1455648065]
@@ -1383,6 +1384,7 @@ collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("16_og3yr")
+snap_distance = 0.1
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=33129584]
