@@ -61,7 +61,7 @@ func _process(_delta: float) -> void:
 func pick_up(by) -> void:
 	# Call the base-class to perform the pickup
 	super(by)
-
+	print("HANDLE PICKED UP")
 	# Enable the process function while held
 	set_process(true)
 
@@ -70,7 +70,7 @@ func pick_up(by) -> void:
 func let_go(by: Node3D, _p_linear_velocity: Vector3, _p_angular_velocity: Vector3) -> void:
 	# Call the base-class to perform the drop, but with no velocity
 	super(by, Vector3.ZERO, Vector3.ZERO)
-
+	print("HANDLE RELEASED")
 	# Disable the process function as no-longer held
 	set_process(false)
 
