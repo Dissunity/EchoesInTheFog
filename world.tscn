@@ -56,6 +56,9 @@ transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.
 [node name="Foghorn" parent="." unique_id=21213881 instance=ExtResource("8_ic0uy")]
 transform = Transform3D(0.052335974, 0, 0.9986295, 0, 1, 0, -0.9986295, 0, 0.052335974, -1.866, 48.873, -0.148)
 
+[node name="GrabPointRedirectRight2" parent="Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" parent_id_path=PackedInt32Array(21213881, 62008452) index="4" unique_id=185648358 node_paths=PackedStringArray("target")]
+target = NodePath("../../../HingeBody/pull_lever/GrabPointHandRight2")
+
 [node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
 
 [node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "time_impacted_objects", "hinge")]
