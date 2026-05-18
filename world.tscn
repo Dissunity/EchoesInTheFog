@@ -1861,7 +1861,7 @@ mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
-transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.9648332, 0.24749339, 46.798412, -1.1616642)
+transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.9648332, 0.24749339, 49.8575, -2.09957)
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
@@ -2161,18 +2161,20 @@ shadow_blur = 1.164
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1539450234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6097853, 44.125248, 2.6405027)
 light_color = Color(0.8373361, 0.6507636, 0.28892657, 1)
-light_energy = 0.5
-light_indirect_energy = 0.631
+light_energy = 0.499
+light_indirect_energy = 0.578
 light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.0
 shadow_blur = 2.195
-omni_range = 2.261
+omni_range = 2.592
 omni_attenuation = 0.211
 
 [node name="LightmapGI" type="LightmapGI" parent="." unique_id=311532075]
+visible = false
 quality = 0
-bounce_indirect_energy = 0.75
+bounces = 4
+bounce_indirect_energy = 0.65
 directional = true
 denoiser_strength = 0.08
 generate_probes_subdiv = 3

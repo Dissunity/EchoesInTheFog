@@ -24,10 +24,6 @@ config/icon="res://icon.svg"
 XRToolsUserSettings="*uid://bqgb8i74tm0t"
 XRToolsRumbleManager="*uid://by853dk86g1qw"
 
-[editor_plugins]
-
-enabled=PackedStringArray()
-
 [filesystem]
 
 import/blender/enabled=false
