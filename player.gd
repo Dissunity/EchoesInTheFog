@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.003 
 
@@ -9,6 +9,7 @@ const MOUSE_SENSITIVITY = 0.003
 @onready var xr_origin = $XROrigin3D
 @onready var xr_camera = $XROrigin3D/XRCamera3D
 @onready var left_controller = $XROrigin3D/LeftHand
+@onready var stair_detector = $StairDetector
 
 var is_desktop_mode = false 
 
@@ -44,6 +45,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	var direction := Vector3.ZERO
+	var going_forward = false
 
 	# --- DESKTOP CONTROLS (WASD) ---
 	if is_desktop_mode:
@@ -51,6 +53,8 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			
 		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+		if input_dir.y < 0:
+			going_forward = true
 		direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	# --- VR CONTROLS (Joystick) ---
@@ -68,10 +72,15 @@ func _physics_process(delta: float) -> void:
 		# Apply joystick input to direction
 		direction = forward * input_vec.y + right * input_vec.x
 
+		if forward.y > 0:
+			going_forward = true
+
 	# --- APPLY FINAL MOVEMENT ---
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if going_forward and stair_detector.is_detecting_stairs() and is_on_floor():
+			velocity.y = 2
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
