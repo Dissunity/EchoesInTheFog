@@ -437,8 +437,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tf3by")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_jh2n6"]
-
 [sub_resource type="ArrayMesh" id="ArrayMesh_axhbv"]
 _surfaces = [{
 "aabb": AABB(-0.22500001, 34.15111, -0.09897684, 0.45000002, 13.003319, 0.050000012),
@@ -473,8 +471,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_axhbv")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jh2n6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w63ex"]
+size = Vector3(0.049240112, 0.23588562, 0.065979004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kqbvg"]
+size = Vector3(0.036621094, 0.23120117, 0.064086914)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_4dyds"]
-size = Vector3(0.2, 0.15, 0.15)
+size = Vector3(0.1987671, 0.19286767, 0.2730957)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33exr"]
 resource_name = "Dark metal"
@@ -717,6 +723,12 @@ open_pose = ExtResource("7_kqbvg")
 closed_pose = ExtResource("7_kqbvg")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_y84s8"]
+size = Vector3(0.038879395, 0.42552185, 0.05114746)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eeir3"]
+size = Vector3(0.014224121, 0.26879883, 0.27593994)
+
 [sub_resource type="BoxShape3D" id="1"]
 size = Vector3(0.2, 0.6, 0.1)
 
@@ -872,7 +884,7 @@ closed_pose = ExtResource("7_kqbvg")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxyx6"]
-size = Vector3(0.15753174, 0.03760338, 0.034683228)
+size = Vector3(0.18979645, 0.038452864, 0.04138565)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og3yr"]
 size = Vector3(0.2, 0.6, 0.1)
@@ -1090,29 +1102,41 @@ skeleton = NodePath("")
 mesh = SubResource("ArrayMesh_74cpq")
 skeleton = NodePath("")
 
-[node name="SnapZone" type="Area3D" parent="MechanicalRoom" unique_id=971470962]
+[node name="PuzzleHolder" type="StaticBody3D" parent="MechanicalRoom" unique_id=1285356868]
+collision_mask = 0
+
+[node name="Puzzle-holder" type="MeshInstance3D" parent="MechanicalRoom/PuzzleHolder" unique_id=858689615]
+mesh = SubResource("ArrayMesh_55wpa")
+skeleton = NodePath("")
+
+[node name="SnapZone" type="Area3D" parent="MechanicalRoom/PuzzleHolder" unique_id=971470962]
 collision_mask = 65536
 script = ExtResource("1_ujpo1")
+grab_distance = 0.1
 snap_mode = 1
 snap_require = "PuzzlePiece"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/SnapZone" unique_id=528894543]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzleHolder/SnapZone" unique_id=528894543]
 shape = SubResource("BoxShape3D_jh2n6")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MechanicalRoom/SnapZone" unique_id=775312164]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MechanicalRoom/PuzzleHolder/SnapZone" unique_id=775312164]
 visible = false
 unit_size = 3.0
 max_db = 1.0
 max_distance = 100.0
 
-[node name="Puzzle-holder" type="MeshInstance3D" parent="MechanicalRoom/SnapZone" unique_id=858689615]
-mesh = SubResource("ArrayMesh_55wpa")
-skeleton = NodePath("")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzleHolder" unique_id=1259666008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20008087, 47.01455, -0.07009888)
+shape = SubResource("BoxShape3D_w63ex")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MechanicalRoom/PuzzleHolder" unique_id=1912098320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20581055, 47.01179, -0.07318115)
+shape = SubResource("BoxShape3D_kqbvg")
 
 [node name="Puzzle_mechanical_room" type="RigidBody3D" parent="MechanicalRoom" unique_id=1968491663 groups=["PuzzlePiece"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.153, 0)
 collision_layer = 4
-collision_mask = 196871
+collision_mask = 3
 mass = 10.0
 center_of_mass_mode = 1
 center_of_mass = Vector3(0.08, 0, 0)
@@ -1121,6 +1145,7 @@ script = ExtResource("1_nc57i")
 second_hand_grab = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=529443448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06471559, -0.0013160706, -0.07345636)
 shape = SubResource("BoxShape3D_4dyds")
 
 [node name="Puzzle-bar" type="MeshInstance3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=1652247457]
@@ -1170,6 +1195,14 @@ transform = Transform3D(-0.0685029, -0.9976509, 0, 0.9976509, -0.0685029, 0, 0, 
 hand_pose = SubResource("Resource_y84s8")
 editor_preview_mode = 1
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=243809502]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.014549255, 0.001033783, -0.0750643)
+shape = SubResource("BoxShape3D_y84s8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=22897599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14957398, -0.0030517578, -0.0753479)
+shape = SubResource("BoxShape3D_eeir3")
+
 [node name="TurnLeverOrigin" type="Node3D" parent="MechanicalRoom" unique_id=1367064062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 47.347, 0)
 
@@ -1201,7 +1234,6 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1273813878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1812918, 0.002998352, 0)
 shape = SubResource("BoxShape3D_6wuq7")
-disabled = true
 
 [node name="turning-lever" type="MeshInstance3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1464660132]
 mesh = SubResource("ArrayMesh_1ll1q")
@@ -1244,7 +1276,7 @@ picked_up_layer = 0
 second_hand_grab = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1014959015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22641629, -0.0033683777, -0.24930304)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20749283, -0.00579834, -0.15997124)
 shape = SubResource("BoxShape3D_lxyx6")
 
 [node name="GrabPointRedirectLeft1" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=254339633 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
@@ -1406,5 +1438,5 @@ target = NodePath("../../../HingeBody/Turn mechanism_door 2/GrabPointHandLeft")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39954728, 0, -0.10407901)
 target = NodePath("../../../HingeBody/Turn mechanism_door 2/GrabPointHandRight")
 
-[connection signal="body_entered" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_entered"]
-[connection signal="body_exited" from="MechanicalRoom/SnapZone" to="MechanicalRoom/SnapZone" method="_on_snap_zone_body_exited"]
+[connection signal="body_entered" from="MechanicalRoom/PuzzleHolder/SnapZone" to="MechanicalRoom/PuzzleHolder/SnapZone" method="_on_snap_zone_body_entered"]
+[connection signal="body_exited" from="MechanicalRoom/PuzzleHolder/SnapZone" to="MechanicalRoom/PuzzleHolder/SnapZone" method="_on_snap_zone_body_exited"]
