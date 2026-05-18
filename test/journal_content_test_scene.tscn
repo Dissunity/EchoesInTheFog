@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bn4wbx3nu10oj"]
+
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="1_ig5ee"]
+
+[node name="JournalDemo" type="Node3D" unique_id=2011010187]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1603817394]
+transform = Transform3D(0.48591712, -0.69514287, 0.5297744, 0.16099346, 0.66696334, 0.72748953, -0.85904926, -0.26820943, 0.4360024, 1.7062234, 2.6357334, 1.2398459)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1070529170]
+transform = Transform3D(0.89387274, -0.32496333, 0.30885333, 0, 0.68891144, 0.7248455, -0.4483208, -0.64791965, 0.6157991, 0, 1.360457, -0.93573475)
+
+[node name="Journal" parent="." unique_id=278160710 instance=ExtResource("1_ig5ee")]
+debug = true
