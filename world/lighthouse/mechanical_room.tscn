@@ -872,7 +872,7 @@ closed_pose = ExtResource("7_kqbvg")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lxyx6"]
-size = Vector3(0.15753174, 0.05697632, 0.0413208)
+size = Vector3(0.15753174, 0.03760338, 0.034683228)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_og3yr"]
 size = Vector3(0.2, 0.6, 0.1)
@@ -975,7 +975,7 @@ metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="SphereShape3D" id="7"]
 margin = 0.12
-radius = 0.06
+radius = 0.02
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_r5325"]
 _surfaces = [{
@@ -1241,11 +1241,12 @@ collision_mask = 0
 mass = 3.0
 freeze = true
 script = ExtResource("16_og3yr")
+snap_distance = 0.1
 picked_up_layer = 0
 second_hand_grab = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1014959015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22641629, 0.0004234314, -0.2380047)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22641629, -0.0033683777, -0.24930304)
 shape = SubResource("BoxShape3D_lxyx6")
 
 [node name="GrabPointRedirectLeft1" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=254339633 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
@@ -1325,7 +1326,7 @@ picked_up_layer = 0
 second_hand_grab = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1455648065]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39488816, 4.2087576e-15, -0.101783186)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40240636, 0, -0.106842756)
 shape = SubResource("7")
 
 [node name="GrabPointRedirectLeft" parent="MechanicalRoom/Door1Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=872075576 instance=ExtResource("17_y84s8")]
@@ -1396,7 +1397,7 @@ picked_up_layer = 0
 second_hand_grab = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=33129584]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38694817, 0, -0.101783186)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39825207, 0, -0.08125159)
 shape = SubResource("7")
 
 [node name="GrabPointRedirectLeft" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1399804073 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
