@@ -3,18 +3,13 @@
 [ext_resource type="Script" uid="uid://bjhmtatp6cmyv" path="res://player.gd" id="1_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_sweqy"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_1jxqw"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1581452875]
 collision_layer = 2
 collision_mask = 262405
 script = ExtResource("1_2hs0m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2143596673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=50921491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
@@ -47,3 +42,5 @@ ranged_distance = 0.0
 ranged_collision_mask = 262404
 
 [node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
+
+[node name="PlayerBody" parent="XROrigin3D" unique_id=365204637 instance=ExtResource("5_sweqy")]

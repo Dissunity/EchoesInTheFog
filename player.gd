@@ -9,6 +9,7 @@ const MOUSE_SENSITIVITY = 0.003
 @onready var xr_origin = $XROrigin3D
 @onready var xr_camera = $XROrigin3D/XRCamera3D
 @onready var left_controller = $XROrigin3D/LeftHand
+@onready var right_controller = $XROrigin3D/RightHand
 
 var is_desktop_mode = false 
 
