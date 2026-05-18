@@ -74,8 +74,12 @@ func _process(_delta: float) -> void:
 	var offset_sum := 0.0
 	for item in grabbed_handles:
 		var handle := item as XRToolsInteractableHandle
-		var to_handle: Vector3 = handle.global_transform.origin * global_transform
-		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
+		#var to_handle: Vector3 = handle.global_transform.origin * global_transform
+		#var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
+		#
+		var to_handle: Vector3 = global_transform.affine_inverse() * handle.global_transform.origin
+		var to_handle_origin: Vector3 = global_transform.affine_inverse() * handle.handle_origin.global_transform.origin
+		
 		print("HANDLE GLOBAL: ", handle.global_transform.origin)
 		print("ORIGIN GLOBAL: ", handle.handle_origin.global_transform.origin)
 		print("to_handle: ", to_handle)

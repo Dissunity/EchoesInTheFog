@@ -724,7 +724,7 @@ size = Vector3(0.2, 0.6, 0.1)
 size = Vector3(0.2, 0.6, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6wuq7"]
-size = Vector3(0.4772339, 0.043920517, 0.044509888)
+size = Vector3(0.53243256, 0.043920517, 0.044509888)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82h10"]
 resource_name = "Leather"
@@ -1176,6 +1176,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 47.347, 0)
 [node name="LeverSmooth" type="Node3D" parent="MechanicalRoom/TurnLeverOrigin" unique_id=1583443813]
 
 [node name="Frame" type="StaticBody3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth" unique_id=103904820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036122486, 0, 0)
 visible = false
 collision_layer = 0
 collision_mask = 0
@@ -1196,16 +1197,14 @@ hinge_limit_min = -20000.0
 hinge_limit_max = 20000.0
 
 [node name="HingeBody" type="StaticBody3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1765097712]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1273813878]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18386841, 0.003047943, -0.09241374)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1812918, 0.002998352, 0)
 shape = SubResource("BoxShape3D_6wuq7")
 disabled = true
 
 [node name="turning-lever" type="MeshInstance3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1464660132]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.09535071)
 mesh = SubResource("ArrayMesh_1ll1q")
 skeleton = NodePath("")
 
