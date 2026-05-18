@@ -53,18 +53,22 @@ func _physics_process(delta: float) -> void:
 			xr_origin.position -= head_displacement
 
 		# 2. Handle Rotation (Align Body Capsule to Camera)
-		# Get the camera's local horizontal rotation angle
-		var camera_forward = -xr_camera.transform.basis.z
-		camera_forward.y = 0
-		var rotation_angle = Vector3.FORWARD.signed_angle_to(camera_forward.normalized(), Vector3.UP)
+		# We MUST use global transforms to prevent an infinite feedback loop!
+		var camera_global_forward = -xr_camera.global_transform.basis.z
+		var body_global_forward = -global_transform.basis.z
+		
+		# Flatten to the floor plane so looking up/down doesn't tilt the capsule
+		camera_global_forward.y = 0
+		body_global_forward.y = 0
+		
+		# Calculate the difference between where the body is facing and the camera is facing
+		var rotation_angle = body_global_forward.signed_angle_to(camera_global_forward.normalized(), Vector3.UP)
 
 		if abs(rotation_angle) > 0.001:
-			# Rotate the main character capsule to match the camera
+			# Rotate the main character capsule
 			rotate_y(rotation_angle)
 			
-			# Counter-rotate the XROrigin in the opposite direction.
-			# This keeps the virtual camera perfectly still in world space 
-			# so the player doesn't feel a sudden artificial camera jerk!
+			# Counter-rotate the XROrigin in the opposite direction
 			xr_origin.rotate_y(-rotation_angle)
 
 	# --- GRAVITY ---
