@@ -6,9 +6,9 @@ const MOUSE_SENSITIVITY = 0.003
 
 @onready var spring_arm = $SpringArm3D
 @onready var desktop_camera = $SpringArm3D/DesktopCamera
-@onready var xr_origin = $XROrigin3D
-@onready var xr_camera = $XROrigin3D/XRCamera3D
-@onready var left_controller = $XROrigin3D/LeftHand
+@onready var xr_origin = $CollisionShape3D/XROrigin3D
+@onready var xr_camera = $CollisionSHap/XROrigin3D/XRCamera3D
+@onready var left_controller = $CollisionShape3D/XROrigin3D/LeftHand
 @onready var stair_detector = $StairDetector
 
 var is_desktop_mode = false 
