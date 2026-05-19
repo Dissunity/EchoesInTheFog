@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cgbysxva1dki2"]
-
-[ext_resource type="Script" uid="uid://cd3sgkcyk428r" path="res://stair_detector.gd" id="1_b2nng"]
-
-[node name="StairDetector" type="RayCast3D" unique_id=1103762403]
-target_position = Vector3(0, 0, -0.4)
-script = ExtResource("1_b2nng")

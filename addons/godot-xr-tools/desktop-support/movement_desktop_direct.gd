@@ -27,14 +27,12 @@ extends XRToolsMovementProvider
 @export var input_left : String = "ui_left"
 @export var input_right : String = "ui_right"
 
-var world
 
-
-func _ready():
-	world = get_tree().root.get_node("World")
-
-func is_xr():
-	return world.is_xr
+# XRStart node
+@onready var xr_start_node = XRTools.find_xr_child(
+	XRTools.find_xr_ancestor(self,
+	"*Staging",
+	"XRToolsStaging"),"StartXR","Node")
 
 
 # Add support for is_xr_class on XRTools classes
@@ -45,7 +43,7 @@ func is_xr_class(xr_name:  String) -> bool:
 # Perform jump movement
 func physics_movement(_delta: float, player_body: XRToolsPlayerBody, _disabled: bool):
 	# Skip if the controller isn't active
-	if is_xr():
+	if !player_body.enabled or xr_start_node.is_xr_active():
 		return
 
 	#Calculate input vector

@@ -123,8 +123,6 @@ func is_xr_class(xr_name:  String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	
 	# Do not initialise if in the editor
 	if Engine.is_editor_hint():
 		return
@@ -144,8 +142,6 @@ func _ready():
 	_update_suppress_radius()
 	_update_suppress_mask()
 
-
-
 # Called on each frame to update the pickup
 func _process(_delta):
 	# Do not process if in the editor
@@ -157,8 +153,7 @@ func _process(_delta):
 	if (_world_scale != new_world_scale):
 		_world_scale = new_world_scale
 		_update_y_offset()
-	var is_xr = false
-	set_enabled(!is_xr)
+	set_enabled(!xr_start_node.is_xr_active())
 
 	if Input.is_action_just_released(active_button_action):
 		_on_button_pressed(active_button_action)

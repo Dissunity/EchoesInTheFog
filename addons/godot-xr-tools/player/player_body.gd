@@ -390,6 +390,37 @@ func teleport(target : Transform3D) -> void:
 	player_teleported.emit(target * inv_global_transform)
 
 
+## Request a jump
+func request_jump(skip_jump_velocity := false):
+	# Skip if not on ground
+	if !on_ground:
+		return
+
+	# Skip if we have any vertical velocity with regards to the ground-plane
+	var ground_relative := velocity - ground_velocity
+	if abs(ground_relative.dot(ground_vector)) > 0.01:
+		return
+
+	# Skip if jump disabled on this ground
+	var jump_velocity := XRToolsGroundPhysicsSettings.get_jump_velocity(
+			ground_physics, default_physics)
+	if jump_velocity == 0.0:
+		return
+
+	# Skip if the ground is too steep to jump
+	var max_slope := XRToolsGroundPhysicsSettings.get_jump_max_slope(
+			ground_physics, default_physics)
+	if ground_angle > max_slope:
+		return
+
+	# Perform the jump
+	if !skip_jump_velocity:
+		velocity += ground_vector * jump_velocity * XRServer.world_scale
+
+	# Report the jump
+	emit_signal("player_jumped")
+
+
 ## This method moves the players body using the provided velocity. Movement
 ## providers may use this function if they are exclusively driving the player.
 func move_player(p_velocity: Vector3) -> Vector3:
