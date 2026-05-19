@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
-[ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="8_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://byqokurhp32q7" path="res://objects/foghorn/foghorn_mechanism.tscn" id="11_ic0uy"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -41,7 +41,7 @@ mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
-transform = Transform3D(0.9672855, 0, -0.2536904, 0, 1, 0, 0.2536904, 0, 0.9672855, -0.38150442, 48.915348, 1.9757497)
+transform = Transform3D(-0.84813136, 0, 0.52978593, 0, 1, 0, -0.52978593, 0, -0.84813136, -0.38150442, 48.915348, -1.6785384)
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
@@ -52,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 [node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
 
-[node name="Foghorn" parent="." unique_id=954340535 instance=ExtResource("8_ic0uy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6491497, 48.893, 0)
-
 [node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
+
+[node name="FoghornMechanism" parent="." unique_id=940733429 instance=ExtResource("11_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.649, 48.893, 0)
