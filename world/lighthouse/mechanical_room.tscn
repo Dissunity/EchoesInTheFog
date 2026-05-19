@@ -1719,7 +1719,6 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
 [node name="PullLever" type="Node3D" parent="." unique_id=1226044270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.885765, 0)
-visible = false
 
 [node name="LeverSmooth" type="Node3D" parent="PullLever" unique_id=392145377]
 
@@ -1765,7 +1764,6 @@ shape = SubResource("4")
 
 [node name="Circle_001" type="MeshInstance3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=282394840]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0045001656)
-visible = false
 mesh = SubResource("ArrayMesh_p0j1k")
 skeleton = NodePath("")
 
@@ -1807,6 +1805,7 @@ target = NodePath("../../../HingeBody/Circle_001/GrabPointHandRight")
 
 [node name="DoorLever1" type="Node3D" parent="." unique_id=1865544698]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.886, 0)
+visible = false
 
 [node name="LeverSmooth" type="Node3D" parent="DoorLever1" unique_id=382572880]
 
