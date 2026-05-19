@@ -46,8 +46,8 @@ func physics_movement(delta: float, _player_body: XRToolsPlayerBody, _disabled: 
 	cooldown -= delta
 	if stair_detector.is_detecting_stairs() and _player_body.on_ground and (dz_input_action.y > 0.1 or input_dir.y > 0.1) and cooldown <= 0:
 		cooldown = 0.3
-		_player_body.position.y += 0.2
-		_player_body.velocity.y = 1.1;
+		_player_body.position.y += 0.25
+		_player_body.velocity.y = 1.5
 
 
 # This method verifies the movement provider has a valid configuration.

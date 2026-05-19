@@ -81,3 +81,4 @@ metadata/_custom_type_script = "uid://bjqk58f7j3hgl"
 
 [node name="StairDetector" parent="PlayerBody" unique_id=1103762403 instance=ExtResource("13_bwjto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+target_position = Vector3(0, 0, -0.25)
