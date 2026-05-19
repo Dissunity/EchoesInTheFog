@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ds0isbkfbm223"]
 
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_n7ghd"]
+[ext_resource type="PackedScene" uid="uid://42xbeno6pt3y" path="res://addons/godot-xr-tools/desktop-support/function_desktop_pointer.tscn" id="2_nvl01"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_dw050"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_2hs0m"]
@@ -9,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_b26j0"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://6uusxts6n6gm" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_direct.tscn" id="6_ivps1"]
+[ext_resource type="PackedScene" uid="uid://chb848dtavews" path="res://addons/godot-xr-tools/desktop-support/controller_hider.tscn" id="8_ivps1"]
 [ext_resource type="Script" uid="uid://bjqk58f7j3hgl" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_turn.gd" id="9_urp6f"]
 
 [node name="Player" type="XROrigin3D" unique_id=1677439462]
@@ -17,6 +19,10 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="VRCommonShaderCache" parent="XRCamera3D" unique_id=1276908772 instance=ExtResource("1_n7ghd")]
+
+[node name="FunctionDesktopPointer" parent="XRCamera3D" unique_id=545310703 instance=ExtResource("2_nvl01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39999998, -0.5)
+active_button_action = "trigger"
 
 [node name="LeftHand" type="XRController3D" parent="." unique_id=1646036122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
@@ -32,13 +38,15 @@ ranged_collision_mask = 327940
 hand_material_override = ExtResource("4_nvl01")
 
 [node name="MovementDirect" parent="LeftHand" unique_id=1611758846 instance=ExtResource("3_dw050")]
-max_speed = 2.0
+max_speed = 1.0
 strafe = true
 
 [node name="MovementDesktopDirect" parent="LeftHand" unique_id=612022894 instance=ExtResource("6_ivps1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0999985, 0.5)
-max_speed = 2.0
+max_speed = 1.0
 strafe = true
+
+[node name="ControllerHider" parent="LeftHand" unique_id=999136874 instance=ExtResource("8_ivps1")]
 
 [node name="RightHand" type="XRController3D" parent="." unique_id=268034581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
@@ -58,5 +66,7 @@ hand_material_override = ExtResource("4_nvl01")
 [node name="XRToolsDesktopMovementTurn" type="Node3D" parent="RightHand" unique_id=1084545209 groups=["movement_providers"]]
 script = ExtResource("9_urp6f")
 metadata/_custom_type_script = "uid://bjqk58f7j3hgl"
+
+[node name="ControllerHider" parent="RightHand" unique_id=1266130208 instance=ExtResource("8_ivps1")]
 
 [node name="PlayerBody" parent="." unique_id=694939654 instance=ExtResource("4_sweqy")]
