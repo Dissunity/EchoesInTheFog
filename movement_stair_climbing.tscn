@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dme03b46a0vp"]
+
+[ext_resource type="Script" uid="uid://c04d7a3ohms7d" path="res://movement_stair_climbing.gd" id="1_pydx0"]
+[ext_resource type="Script" uid="uid://cd3sgkcyk428r" path="res://stair_detector.gd" id="2_o221p"]
+
+[node name="MovementStairClimbing" type="Node3D" unique_id=623875204]
+script = ExtResource("1_pydx0")
+order = null
+input_action = null
+input_forward = null
+input_backward = null
+input_left = null
+input_right = null
+
+[node name="StairDetector" type="RayCast3D" parent="." unique_id=692672840]
+target_position = Vector3(0, 0, -0.35)
+script = ExtResource("2_o221p")

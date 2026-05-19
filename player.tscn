@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_b26j0"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://6uusxts6n6gm" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_direct.tscn" id="6_ivps1"]
-[ext_resource type="PackedScene" uid="uid://chb848dtavews" path="res://addons/godot-xr-tools/desktop-support/controller_hider.tscn" id="8_ivps1"]
 [ext_resource type="Script" uid="uid://bjqk58f7j3hgl" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_turn.gd" id="9_urp6f"]
+[ext_resource type="PackedScene" uid="uid://dme03b46a0vp" path="res://movement_stair_climbing.tscn" id="13_urp6f"]
 
 [node name="Player" type="XROrigin3D" unique_id=1677439462]
 
@@ -22,6 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="FunctionDesktopPointer" parent="XRCamera3D" unique_id=545310703 instance=ExtResource("2_nvl01")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39999998, -0.5)
+visible = false
 active_button_action = "trigger"
 
 [node name="LeftHand" type="XRController3D" parent="." unique_id=1646036122]
@@ -46,7 +47,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0999985, 0.5)
 max_speed = 1.0
 strafe = true
 
-[node name="ControllerHider" parent="LeftHand" unique_id=999136874 instance=ExtResource("8_ivps1")]
+[node name="MovementStairClimbing" parent="LeftHand" unique_id=623875204 groups=["movement_providers"] instance=ExtResource("13_urp6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0416784, 0.5)
+order = 7
+input_action = "primary"
+input_forward = "ui_up"
+input_backward = "ui_down"
+input_left = "ui_left"
+input_right = "ui_right"
 
 [node name="RightHand" type="XRController3D" parent="." unique_id=268034581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
@@ -66,7 +74,5 @@ hand_material_override = ExtResource("4_nvl01")
 [node name="XRToolsDesktopMovementTurn" type="Node3D" parent="RightHand" unique_id=1084545209 groups=["movement_providers"]]
 script = ExtResource("9_urp6f")
 metadata/_custom_type_script = "uid://bjqk58f7j3hgl"
-
-[node name="ControllerHider" parent="RightHand" unique_id=1266130208 instance=ExtResource("8_ivps1")]
 
 [node name="PlayerBody" parent="." unique_id=694939654 instance=ExtResource("4_sweqy")]
