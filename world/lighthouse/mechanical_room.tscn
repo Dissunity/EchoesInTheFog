@@ -11,6 +11,7 @@
 [ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="10_y7eq8"]
 [ext_resource type="Script" uid="uid://c8gx2wc7hsxf5" path="res://addons/godot-xr-tools/interactables/interactable_hinge.gd" id="13_y84s8"]
 [ext_resource type="Animation" uid="uid://r8hleealhrqt" path="res://addons/godot-xr-tools/hands/animations/right/Grip 2.res" id="14_w63ex"]
+[ext_resource type="PackedScene" uid="uid://cf3kx0i8tint3" path="res://world/lever/lever.tscn" id="15_kqbvg"]
 [ext_resource type="Script" uid="uid://dlojnwxo25bky" path="res://addons/godot-xr-tools/interactables/interactable_handle.gd" id="16_og3yr"]
 [ext_resource type="Script" uid="uid://cvpjs8caktma8" path="res://world/lighthouse/interactable_hinge_y.gd" id="17_og3yr"]
 [ext_resource type="PackedScene" uid="uid://ca3daqmpo0tua" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_redirect.tscn" id="17_y84s8"]
@@ -1437,6 +1438,9 @@ target = NodePath("../../../HingeBody/Turn mechanism_door 2/GrabPointHandLeft")
 [node name="GrabPointRedirectRight" parent="MechanicalRoom/Door2Origin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=892727878 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39954728, 0, -0.10407901)
 target = NodePath("../../../HingeBody/Turn mechanism_door 2/GrabPointHandRight")
+
+[node name="Lever" parent="." unique_id=1067888138 instance=ExtResource("15_kqbvg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 43.622105, 0)
 
 [connection signal="body_entered" from="MechanicalRoom/PuzzleHolder/SnapZone" to="MechanicalRoom/PuzzleHolder/SnapZone" method="_on_snap_zone_body_entered"]
 [connection signal="body_exited" from="MechanicalRoom/PuzzleHolder/SnapZone" to="MechanicalRoom/PuzzleHolder/SnapZone" method="_on_snap_zone_body_exited"]
