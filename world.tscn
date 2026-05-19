@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="11_ic0uy"]
+[ext_resource type="PackedScene" uid="uid://ckxouti2i8cn2" path="res://objects/bigger candle/big candleholder.glb" id="12_k3n1d"]
+[ext_resource type="PackedScene" uid="uid://bpb6d1lax4xg3" path="res://objects/candle/candle export.glb" id="13_2o6r5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -61,6 +63,11 @@ time_travel_light = NodePath("../Foghorn/TimeTravelLight")
 time_impacted_objects = [NodePath("../Chair"), NodePath("../Table")]
 hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
 
+[node name="big candleholder" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
+transform = Transform3D(0.038302224, 0, 0.03213938, 0, 0.05, 0, -0.03213938, 0, 0.038302224, 0.30535138, 43.504337, -1.8879902)
+
+[node name="candle export" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 44.0296, 2.1546419)
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 46.907032, 1.3690032)
 
