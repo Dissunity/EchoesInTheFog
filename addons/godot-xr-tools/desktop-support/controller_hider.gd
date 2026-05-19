@@ -9,20 +9,21 @@ extends Node
 
 var _pointer_disabler := false
 var _last_xr_active := true
-# XRStart node
-@onready var xr_start_node = XRTools.find_xr_child(
-	XRTools.find_xr_ancestor(self,
-	"*Staging",
-	"XRToolsStaging"),"StartXR","Node")
 
 # Parent controller
 @onready var _controller : XRController3D = XRHelpers.get_xr_controller(self)
 
+
+var world
+
+
+func is_xr():
+	return world.is_xr
+
 func _ready() -> void:
-	if get_parent().has_method("is_xr_class"):
-		if get_parent().is_xr_class("XRToolsFunctionPointer"):
-			_pointer_disabler = true
-	if get_parent() is XRToolsFunctionPointer:
+	var root = get_tree().root
+	world = root.get_node("World")
+	if !is_xr:
 		_pointer_disabler = true
 
 # Add support for is_xr_class on XRTools classes
@@ -32,13 +33,11 @@ func is_xr_class(xr_name:  String) -> bool:
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint() or !is_inside_tree():
 		return
-	if xr_start_node.is_xr_active()==_last_xr_active:
-		return
 	if _pointer_disabler:
-		get_parent().enabled=xr_start_node.is_xr_active()
+		get_parent().enabled=is_xr()
 	elif is_instance_valid(_controller):
-		_controller.visible=xr_start_node.is_xr_active()
-	_last_xr_active=xr_start_node.is_xr_active()
+		_controller.visible=is_xr()
+	_last_xr_active=is_xr()
 
 
 # This method verifies the movement provider has a valid configuration.

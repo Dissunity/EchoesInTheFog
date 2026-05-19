@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dme03b46a0vp"]
+
+[ext_resource type="Script" uid="uid://c04d7a3ohms7d" path="res://movement_stair_climbing.gd" id="1_pydx0"]
+
+[node name="MovementStairClimbing" type="Node3D" unique_id=623875204]
+script = ExtResource("1_pydx0")
+order = null
+input_action = null
+input_forward = null
+input_backward = null
+input_left = null
+input_right = null
