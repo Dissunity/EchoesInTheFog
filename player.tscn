@@ -25,7 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.85, 0)
 [node name="XRCamera3D" type="XRCamera3D" parent="CollisionShape3D/XROrigin3D" unique_id=212173750]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="Node3D" type="Node3D" parent="CollisionShape3D/XROrigin3D/XRCamera3D" unique_id=613006301]
+[node name="Neck" type="Node3D" parent="CollisionShape3D/XROrigin3D/XRCamera3D" unique_id=613006301]
 
 [node name="LeftHand" type="XRController3D" parent="CollisionShape3D/XROrigin3D" unique_id=503059481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)

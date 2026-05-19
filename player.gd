@@ -9,6 +9,7 @@ const MOUSE_SENSITIVITY = 0.003
 @onready var xr_origin = $CollisionShape3D/XROrigin3D
 @onready var xr_camera = $CollisionShape3D/XROrigin3D/XRCamera3D
 @onready var left_controller = $CollisionShape3D/XROrigin3D/LeftHand
+@onready var right_controller = $CollisionShape3D/XROrigin3D/RightHand
 @onready var stair_detector = $StairDetector
 
 var is_desktop_mode = false 
@@ -80,6 +81,11 @@ func _physics_process(delta: float) -> void:
 
 		if forward.y > 0:
 			going_forward = true
+			
+		# implements turning
+		var turn_vec = right_controller.get_vector2("primary")
+		var turn_amount = -turn_vec.x * 1 * delta   # Negative = natural direction
+		rotate_y(turn_amount)
 
 	# --- APPLY FINAL MOVEMENT ---
 	if direction:
