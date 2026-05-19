@@ -1830,22 +1830,22 @@ skeleton = NodePath("")
 shape = SubResource("3")
 
 [node name="HandleCollision" type="CollisionShape3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=374536243]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1116513)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1)
 shape = SubResource("4")
 
 [node name="BarMesh" type="MeshInstance3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1816631342]
 mesh = SubResource("BoxMesh_y84s8")
 
 [node name="HandleMesh" type="MeshInstance3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=356602297]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.13)
 mesh = SubResource("6")
 
 [node name="GrabPointHandLeft" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=865863030 instance=ExtResource("3_vgpin")]
-transform = Transform3D(-4.37114e-08, 1, -7.53641e-15, -0.707107, -3.09086e-08, -0.707107, -0.707107, -3.09086e-08, 0.707107, 0.050000012, 0.075927734, 0.9607814)
+transform = Transform3D(-4.37114e-08, 1, -7.53641e-15, -0.707107, -3.09086e-08, -0.707107, -0.707107, -3.09086e-08, 0.707107, 0.05, 0.0759278, -0.0419973)
 hand_pose = SubResource("Resource_v6sel")
 
 [node name="GrabPointHandRight" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=257380527 instance=ExtResource("6_w63ex")]
-transform = Transform3D(-4.37114e-08, -1, -1.02355e-14, 0.642788, -2.80971e-08, -0.766044, 0.766044, -3.34849e-08, 0.642788, -0.050000012, 0.075927734, 1.0167598)
+transform = Transform3D(-4.37114e-08, -1, -1.02355e-14, 0.642788, -2.80971e-08, -0.766044, 0.766044, -3.34849e-08, 0.642788, -0.05, 0.0759278, -0.0419973)
 hand_pose = SubResource("Resource_t7yav")
 
 [node name="HandleOrigin" type="Node3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=250087569]
@@ -1859,15 +1859,15 @@ script = ExtResource("16_og3yr")
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1727624476]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0146607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 shape = SubResource("SphereShape3D_f050i")
 
 [node name="GrabPointRedirectLeft" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=541216239 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0169102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 
 [node name="GrabPointRedirectRight" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=971102266 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0106068)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
 [connection signal="body_entered" from="MechanicalRoom/PuzzleHolder/SnapZone" to="MechanicalRoom/PuzzleHolder/SnapZone" method="_on_snap_zone_body_entered"]
