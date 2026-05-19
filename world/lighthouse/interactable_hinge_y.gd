@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 	for item in grabbed_handles:
 		var handle := item as XRToolsInteractableHandle
 		var to_handle: Vector3 = handle.global_transform.origin * global_transform
-		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform
+		var to_handle_origin: Vector3 = handle.handle_origin.global_transform.origin * global_transform	
 		
 		# Projecteer op het XZ-vlak (we negeren Y voor een Y-hinge)
 		to_handle.y = 0.0
