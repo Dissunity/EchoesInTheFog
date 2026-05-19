@@ -8,6 +8,7 @@ signal pose_recentered
  
 var xr_interface : OpenXRInterface
 var xr_is_focussed = false
+var is_xr: bool = false
  
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,6 +19,8 @@ func _ready():
  
 		# Enable XR on our viewport
 		vp.use_xr = true
+		
+		is_xr = true
  
 		# Make sure v-sync is off, v-sync is handled by OpenXR
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
