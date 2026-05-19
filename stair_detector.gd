@@ -11,3 +11,4 @@ func is_detecting_stairs() -> bool:
 	if collider_parent.name != "Stairs_001":
 		return false
 	return true
+	
