@@ -1442,9 +1442,11 @@ mesh = SubResource("2")
 [node name="LeverOrigin" type="Node3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth" unique_id=247207276]
 
 [node name="InteractableLever" type="Node3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin" unique_id=1744806276]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0, 0)
 script = ExtResource("13_y84s8")
 hinge_limit_min = -20000.0
 hinge_limit_max = 20000.0
+hinge_position = 20.0
 
 [node name="HingeBody" type="StaticBody3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1765097712]
 collision_mask = 0
@@ -1484,7 +1486,6 @@ editor_preview_mode = 1
 [node name="HandleOrigin" type="Node3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever" unique_id=850455270]
 
 [node name="InteractableHandle" type="RigidBody3D" parent="MechanicalRoom/TurnLeverOrigin/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=62008452]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21397853, 0, -0.15329802)
 collision_layer = 262144
 collision_mask = 0
 mass = 3.0
@@ -1580,6 +1581,7 @@ target = NodePath("../../../HingeBody/Turn mechanism_door 1/GrabPointHandRight")
 
 [node name="Door2Origin" type="Node3D" parent="MechanicalRoom" unique_id=1318935992]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 47.264, 0.2)
+visible = false
 
 [node name="LeverSmooth" type="Node3D" parent="MechanicalRoom/Door2Origin" unique_id=1609958652]
 
@@ -1730,7 +1732,6 @@ mesh = SubResource("BoxMesh_i36dt")
 transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractableLever" type="Node3D" parent="DoorLever1/LeverSmooth/LeverOrigin" unique_id=170855492]
-transform = Transform3D(1, 0, 0, 0, 1, 1.7484555e-07, 0, -1.7484555e-07, 1, 0, 0, 0)
 script = ExtResource("13_y84s8")
 
 [node name="HingeBody" type="StaticBody3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever" unique_id=440836253]
@@ -1781,8 +1782,7 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
 [node name="PullLever" type="Node3D" parent="." unique_id=1782428610]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.435, 43.622, 0)
-visible = false
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.649, 48.893, 0)
 
 [node name="LeverSmooth" type="Node3D" parent="PullLever" unique_id=1774261039]
 
@@ -1809,7 +1809,12 @@ skeleton = NodePath("")
 transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractableLever" type="Node3D" parent="PullLever/LeverSmooth/LeverOrigin" unique_id=96939347]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0)
 script = ExtResource("13_y84s8")
+hinge_limit_min = -10.0
+hinge_position = 29.999999999999996
+default_position = 30.0
+default_on_release = true
 
 [node name="HingeBody" type="StaticBody3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=543764757]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
@@ -1827,10 +1832,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.1)
 shape = SubResource("4")
 
 [node name="BarMesh" type="MeshInstance3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1816631342]
+visible = false
 mesh = SubResource("BoxMesh_y84s8")
 
 [node name="HandleMesh" type="MeshInstance3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=356602297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.13)
+visible = false
 mesh = SubResource("6")
 
 [node name="GrabPointHandLeft" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=865863030 instance=ExtResource("3_vgpin")]

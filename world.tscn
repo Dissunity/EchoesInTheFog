@@ -56,3 +56,4 @@ transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.
 
 [node name="FoghornMechanism" parent="." unique_id=940733429 instance=ExtResource("11_ic0uy")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -1.649, 48.893, 0)
+visible = false
