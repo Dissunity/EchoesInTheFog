@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://bjhmtatp6cmyv" path="res://player.gd" id="1_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_2hs0m"]
+[ext_resource type="Script" uid="uid://cd3sgkcyk428r" path="res://stair_detector.gd" id="5_sweqy"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_1jxqw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+radius = 0.3
+height = 1.7
 
 [node name="Player" type="CharacterBody3D" unique_id=1581452875]
 collision_layer = 2
@@ -13,21 +16,21 @@ collision_mask = 262405
 script = ExtResource("1_2hs0m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2143596673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
 shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=50921491]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="DesktopCamera" type="Camera3D" parent="SpringArm3D" unique_id=864402729]
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1051909420]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=212173750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=503059481]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"left_hand"
 
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=678520256 instance=ExtResource("3_1jxqw")]
@@ -38,7 +41,7 @@ ranged_collision_mask = 327940
 [node name="LeftGlove" parent="XROrigin3D/LeftHand" unique_id=238805430 instance=ExtResource("4_2hs0m")]
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1981951555]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"right_hand"
 
 [node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1277105623 instance=ExtResource("3_1jxqw")]
@@ -47,3 +50,8 @@ ranged_distance = 0.0
 ranged_collision_mask = 262404
 
 [node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
+
+[node name="StairDetector" type="RayCast3D" parent="." unique_id=1206116429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+target_position = Vector3(0, 0, -0.4)
+script = ExtResource("5_sweqy")
