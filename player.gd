@@ -7,7 +7,7 @@ const MOUSE_SENSITIVITY = 0.003
 @onready var spring_arm = $SpringArm3D
 @onready var desktop_camera = $SpringArm3D/DesktopCamera
 @onready var xr_origin = $CollisionShape3D/XROrigin3D
-@onready var xr_camera = $CollisionSHap/XROrigin3D/XRCamera3D
+@onready var xr_camera = $CollisionShape3D/XROrigin3D/XRCamera3D
 @onready var left_controller = $CollisionShape3D/XROrigin3D/LeftHand
 @onready var stair_detector = $StairDetector
 
@@ -96,9 +96,9 @@ func _physics_process(delta: float) -> void:
 
 # Added code from documentation
 # Helper variables to keep our code readable
-@onready var origin_node = $XROrigin3D
-@onready var camera_node = $XROrigin3D/XRCamera3D
-@onready var neck_position_node = $XROrigin3D/XRCamera3D/Neck
+@onready var origin_node = $CollisionShape3D/XROrigin3D
+@onready var camera_node = $CollisionShape3D/XROrigin3D/XRCamera3D
+@onready var neck_position_node = $CollisionShape3D/XROrigin3D/XRCamera3D/Neck
 
 func _process_on_physical_movement(delta) -> bool:
 	var current_velocity = velocity
