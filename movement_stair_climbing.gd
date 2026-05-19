@@ -5,8 +5,6 @@ class_name MovementStairClimbing
 ## Movement provider order
 @export var order : int = 7
 
-@onready var stair_detector = $StairDetector
-
 # Controller node
 var _controller : XRController3D
 
@@ -16,6 +14,9 @@ var _controller : XRController3D
 @export var input_backward : String = "ui_down"
 @export var input_left : String = "ui_left"
 @export var input_right : String = "ui_right"
+
+
+@export var stair_detector: StairDetector
 
 
 # Add support for is_xr_class on XRTools classes
@@ -37,7 +38,7 @@ func physics_pre_movement(_delta: float, _player_body: XRToolsPlayerBody):
 
 
 
-var cooldown = 0.3
+var cooldown = 0
 
 func physics_movement(delta: float, _player_body: XRToolsPlayerBody, _disabled: bool):
 	var dz_input_action = XRToolsUserSettings.get_adjusted_vector2(_controller, input_action)
@@ -56,6 +57,10 @@ func _get_configuration_warnings() -> PackedStringArray:
 	# Check the controller node
 	if not XRHelpers.get_xr_controller(self):
 		warnings.append("This node must be within a branch of an XRController3D node")
+
+	if stair_detector == null:
+		warnings.append("Assign a stair detector")
+
 
 	# Return warnings
 	return warnings
