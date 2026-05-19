@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
-[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="11_ic0uy"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -42,7 +41,10 @@ mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
-transform = Transform3D(0.9672855, 0, -0.2536904, 0, 1, 0, 0.2536904, 0, 0.9672855, -0.38150442, 42.800602, 1.3624464)
+transform = Transform3D(0.9672855, 0, -0.2536904, 0, 1, 0, 0.2536904, 0, 0.9672855, -0.38150442, 48.915348, 1.9757497)
+
+[node name="Foghorn" parent="." unique_id=68061835 instance=ExtResource("8_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8605239, 48.898518, 0)
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
@@ -53,11 +55,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 [node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
 
-[node name="Foghorn" parent="." unique_id=21213881 instance=ExtResource("8_ic0uy")]
-transform = Transform3D(0.052335974, 0, 0.9986295, 0, 1, 0, -0.9986295, 0, 0.052335974, -1.866, 48.873, -0.148)
-
 [node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
 
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_impacted_objects")]
-script = ExtResource("11_ic0uy")
-time_impacted_objects = [NodePath("../Chair"), NodePath("../Table")]
+[node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
