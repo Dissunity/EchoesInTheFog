@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://cvpjs8caktma8" path="res://world/lighthouse/interactable_hinge_y.gd" id="17_og3yr"]
 [ext_resource type="PackedScene" uid="uid://ca3daqmpo0tua" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_redirect.tscn" id="17_y84s8"]
 [ext_resource type="Animation" uid="uid://d1xnpyc08njjx" path="res://addons/godot-xr-tools/hands/animations/right/Grip 4.res" id="18_78ddj"]
+[ext_resource type="PackedScene" uid="uid://dh0oiku522bjp" path="res://world/lever/door2_lever_mechanical_room.glb" id="18_og3yr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ejoc"]
 resource_name = "Copper"
@@ -1105,6 +1106,41 @@ closed_pose = ExtResource("18_78ddj")
 margin = 0.12
 radius = 0.05543486
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f050i"]
+size = Vector3(0.2, 0.6, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5oq7q"]
+size = Vector3(0.2, 0.6, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yhmr7"]
+size = Vector3(0.04, 0.04, 0.2)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tlo77"]
+radius = 0.06
+
+[sub_resource type="BoxMesh" id="BoxMesh_0higs"]
+size = Vector3(0.04, 0.04, 0.2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_hpls2"]
+radius = 0.06
+height = 0.12
+radial_segments = 16
+rings = 8
+
+[sub_resource type="Resource" id="Resource_fah00"]
+script = ExtResource("5_ujpo1")
+open_pose = ExtResource("17_ebrkk")
+closed_pose = ExtResource("17_ebrkk")
+
+[sub_resource type="Resource" id="Resource_f66pt"]
+script = ExtResource("5_ujpo1")
+open_pose = ExtResource("18_78ddj")
+closed_pose = ExtResource("18_78ddj")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jb12b"]
+margin = 0.12
+radius = 0.06
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hgp8"]
 resource_name = "Clockwork-cabinet-paint"
 albedo_color = Color(0.12969285, 0.41457367, 0.1227801, 1)
@@ -1909,71 +1945,217 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 [node name="GrabPointRedirectRight" parent="Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1295080199 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
-[node name="DoorLever1" type="Node3D" parent="." unique_id=1865544698]
+[node name="DoorLever-932" type="Node3D" parent="." unique_id=1865544698]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0.10274632, 47.264, -0.20203769)
 visible = false
 
-[node name="LeverSmooth" type="Node3D" parent="DoorLever1" unique_id=382572880]
+[node name="LeverSmooth" type="Node3D" parent="DoorLever-932" unique_id=382572880]
 
-[node name="Frame" type="StaticBody3D" parent="DoorLever1/LeverSmooth" unique_id=1104858508]
+[node name="Frame" type="StaticBody3D" parent="DoorLever-932/LeverSmooth" unique_id=1104858508]
 visible = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLever1/LeverSmooth/Frame" unique_id=1741040952]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLever-932/LeverSmooth/Frame" unique_id=1741040952]
 shape = SubResource("BoxShape3D_oqq16")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorLever1/LeverSmooth/Frame" unique_id=373656153]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorLever-932/LeverSmooth/Frame" unique_id=373656153]
 mesh = SubResource("BoxMesh_i36dt")
 
-[node name="LeverOrigin" type="Node3D" parent="DoorLever1/LeverSmooth" unique_id=410483653]
+[node name="LeverOrigin" type="Node3D" parent="DoorLever-932/LeverSmooth" unique_id=410483653]
 transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="InteractableLever" type="Node3D" parent="DoorLever1/LeverSmooth/LeverOrigin" unique_id=170855492]
+[node name="InteractableLever" type="Node3D" parent="DoorLever-932/LeverSmooth/LeverOrigin" unique_id=170855492]
 script = ExtResource("13_y84s8")
 
-[node name="HingeBody" type="StaticBody3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever" unique_id=440836253]
+[node name="HingeBody" type="StaticBody3D" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever" unique_id=440836253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
-[node name="BarCollision" type="CollisionShape3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=414314230]
+[node name="BarCollision" type="CollisionShape3D" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=414314230]
 shape = SubResource("3")
 
-[node name="HandleCollision" type="CollisionShape3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=903920005]
+[node name="HandleCollision" type="CollisionShape3D" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=903920005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 shape = SubResource("4")
 
-[node name="BarMesh" type="MeshInstance3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1517928279]
+[node name="BarMesh" type="MeshInstance3D" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1517928279]
 mesh = SubResource("5")
 
-[node name="HandleMesh" type="MeshInstance3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1335640861]
+[node name="HandleMesh" type="MeshInstance3D" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1335640861]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 mesh = SubResource("6")
 
-[node name="GrabPointHandLeft" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=2114620340 instance=ExtResource("3_vgpin")]
+[node name="GrabPointHandLeft" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=2114620340 instance=ExtResource("3_vgpin")]
 transform = Transform3D(-4.37114e-08, 1, -7.53641e-15, -0.707107, -3.09086e-08, -0.707107, -0.707107, -3.09086e-08, 0.707107, 0.05, 0.0759278, -0.0419973)
 hand_pose = SubResource("Resource_v6sel")
 
-[node name="GrabPointHandRight" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=663451982 instance=ExtResource("6_w63ex")]
+[node name="GrabPointHandRight" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=663451982 instance=ExtResource("6_w63ex")]
 transform = Transform3D(-4.37114e-08, -1, -1.02355e-14, 0.642788, -2.80971e-08, -0.766044, 0.766044, -3.34849e-08, 0.642788, -0.05, 0.0759278, -0.0419973)
 hand_pose = SubResource("Resource_t7yav")
 
-[node name="door1_lever_mechanical_room" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=778085569 instance=ExtResource("17_eeir3")]
+[node name="door1_lever_mechanical_room" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=778085569 instance=ExtResource("17_eeir3")]
 
-[node name="HandleOrigin" type="Node3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever" unique_id=535855071]
+[node name="HandleOrigin" type="Node3D" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever" unique_id=535855071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
 
-[node name="InteractableHandle" type="RigidBody3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=1172501330]
+[node name="InteractableHandle" type="RigidBody3D" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=1172501330]
 collision_layer = 262144
 collision_mask = 0
 freeze = true
 script = ExtResource("16_og3yr")
 picked_up_layer = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=115178144]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=115178144]
 shape = SubResource("SphereShape3D_f050i")
 
-[node name="GrabPointRedirectLeft" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=596165302 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+[node name="GrabPointRedirectLeft" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=596165302 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 
-[node name="GrabPointRedirectRight" parent="DoorLever1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1649184440 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+[node name="GrabPointRedirectRight" parent="DoorLever-932/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1649184440 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
+
+[node name="Door2Lever" type="Node3D" parent="." unique_id=253043712]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2, 47.264, 0.2)
+
+[node name="LeverSmooth" type="Node3D" parent="Door2Lever" unique_id=1825583497]
+
+[node name="Frame" type="StaticBody3D" parent="Door2Lever/LeverSmooth" unique_id=1818243461]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2Lever/LeverSmooth/Frame" unique_id=462037294]
+shape = SubResource("BoxShape3D_f050i")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door2Lever/LeverSmooth/Frame" unique_id=1044401765]
+mesh = SubResource("BoxMesh_5oq7q")
+
+[node name="LeverOrigin" type="Node3D" parent="Door2Lever/LeverSmooth" unique_id=1328970426]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractableLever" type="Node3D" parent="Door2Lever/LeverSmooth/LeverOrigin" unique_id=1428835588]
+transform = Transform3D(1, 0, 0, 0, 0.17364822, 0.9848077, 0, -0.9848077, 0.17364822, 0, 0, 0)
+script = ExtResource("13_y84s8")
+hinge_limit_min = -90.0
+hinge_position = -80.0
+
+[node name="HingeBody" type="StaticBody3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1729672906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="door2_lever_mechanical_room" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=556890419 instance=ExtResource("18_og3yr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.098507434)
+
+[node name="BarCollision" type="CollisionShape3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1213788587]
+visible = false
+shape = SubResource("BoxShape3D_yhmr7")
+
+[node name="HandleCollision" type="CollisionShape3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1555753996]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.27934092)
+shape = SubResource("SphereShape3D_tlo77")
+
+[node name="BarMesh" type="MeshInstance3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=969196452]
+visible = false
+mesh = SubResource("BoxMesh_0higs")
+
+[node name="HandleMesh" type="MeshInstance3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1373840888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2758817)
+mesh = SubResource("SphereMesh_hpls2")
+
+[node name="GrabPointHandLeft" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=1368151472 instance=ExtResource("3_vgpin")]
+transform = Transform3D(-4.37114e-08, 1, -7.53641e-15, -0.707107, -3.09086e-08, -0.707107, -0.707107, -3.09086e-08, 0.707107, 0.05, 0.0759278, -0.0419973)
+hand_pose = SubResource("Resource_fah00")
+
+[node name="GrabPointHandRight" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=1353239277 instance=ExtResource("6_w63ex")]
+transform = Transform3D(-4.37114e-08, -1, -1.02355e-14, 0.642788, -2.80971e-08, -0.766044, 0.766044, -3.34849e-08, 0.642788, -0.05, 0.0759278, -0.0419973)
+hand_pose = SubResource("Resource_f66pt")
+
+[node name="HandleOrigin" type="Node3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=820109828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.40344244)
+
+[node name="InteractableHandle" type="RigidBody3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=1968072366]
+collision_layer = 262144
+collision_mask = 0
+freeze = true
+script = ExtResource("16_og3yr")
+picked_up_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=200521827]
+shape = SubResource("SphereShape3D_jb12b")
+
+[node name="GrabPointRedirectLeft" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1078518001 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
+
+[node name="GrabPointRedirectRight" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=2058713613 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
+
+[node name="Door1Lever" type="Node3D" parent="." unique_id=1713652773]
+transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, 0.20209576, 47.264, -0.19872932)
+
+[node name="LeverSmooth" type="Node3D" parent="Door1Lever" unique_id=1416869374]
+
+[node name="Frame" type="StaticBody3D" parent="Door1Lever/LeverSmooth" unique_id=800882550]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door1Lever/LeverSmooth/Frame" unique_id=1805750361]
+shape = SubResource("BoxShape3D_f050i")
+disabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door1Lever/LeverSmooth/Frame" unique_id=1440934041]
+mesh = SubResource("BoxMesh_5oq7q")
+
+[node name="LeverOrigin" type="Node3D" parent="Door1Lever/LeverSmooth" unique_id=1622711282]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractableLever" type="Node3D" parent="Door1Lever/LeverSmooth/LeverOrigin" unique_id=1939865593]
+transform = Transform3D(1, 0, 0, 0, 0.034899496, 0.99939084, 0, -0.99939084, 0.034899496, 0, 0, 0)
+script = ExtResource("13_y84s8")
+hinge_limit_min = -90.0
+hinge_position = -88.0
+
+[node name="HingeBody" type="StaticBody3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=637408262]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+
+[node name="door2_lever_mechanical_room" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1574274314 instance=ExtResource("18_og3yr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.098507434)
+
+[node name="BarCollision" type="CollisionShape3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=103497233]
+visible = false
+shape = SubResource("BoxShape3D_yhmr7")
+
+[node name="HandleCollision" type="CollisionShape3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=539613512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.27934092)
+shape = SubResource("SphereShape3D_tlo77")
+
+[node name="BarMesh" type="MeshInstance3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=620566620]
+visible = false
+mesh = SubResource("BoxMesh_0higs")
+
+[node name="HandleMesh" type="MeshInstance3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=67487599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2758817)
+mesh = SubResource("SphereMesh_hpls2")
+
+[node name="GrabPointHandLeft" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=775163489 instance=ExtResource("3_vgpin")]
+transform = Transform3D(-4.37114e-08, 1, -7.53641e-15, -0.707107, -3.09086e-08, -0.707107, -0.707107, -3.09086e-08, 0.707107, 0.05, 0.0759278, -0.0419973)
+hand_pose = SubResource("Resource_fah00")
+
+[node name="GrabPointHandRight" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=176524124 instance=ExtResource("6_w63ex")]
+transform = Transform3D(-4.37114e-08, -1, -1.02355e-14, 0.642788, -2.80971e-08, -0.766044, 0.766044, -3.34849e-08, 0.642788, -0.05, 0.0759278, -0.0419973)
+hand_pose = SubResource("Resource_f66pt")
+
+[node name="HandleOrigin" type="Node3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1706481391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.40344244)
+
+[node name="InteractableHandle" type="RigidBody3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin" unique_id=566229049]
+collision_layer = 262144
+collision_mask = 0
+freeze = true
+script = ExtResource("16_og3yr")
+picked_up_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1220167597]
+shape = SubResource("SphereShape3D_jb12b")
+
+[node name="GrabPointRedirectLeft" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=103395410 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
+target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
+
+[node name="GrabPointRedirectRight" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1497767419 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
 [node name="PullLever" type="Node3D" parent="." unique_id=1782428610]
