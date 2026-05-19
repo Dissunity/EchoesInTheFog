@@ -43,9 +43,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
 transform = Transform3D(0.9672855, 0, -0.2536904, 0, 1, 0, 0.2536904, 0, 0.9672855, -0.38150442, 48.915348, 1.9757497)
 
-[node name="Foghorn" parent="." unique_id=68061835 instance=ExtResource("8_ic0uy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8605239, 48.898518, 0)
-
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
 
@@ -55,6 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 [node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
 
-[node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
+[node name="Foghorn" parent="." unique_id=954340535 instance=ExtResource("8_ic0uy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6491497, 48.893, 0)
 
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
+[node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]

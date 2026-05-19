@@ -236,10 +236,10 @@ shape = SubResource("1")
 transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractableLever" type="Node3D" parent="PullLever/LeverSmooth/LeverOrigin" unique_id=1907593825]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, -0.6427876, 0, 0.6427876, 0.76604444, 0, 0, 0)
 script = ExtResource("2_y7cet")
 hinge_limit_min = -10.0
-default_position = 40.0
-default_on_release = true
+hinge_position = 40.0
 
 [node name="HingeBody" type="StaticBody3D" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1023200589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
@@ -259,13 +259,11 @@ skeleton = NodePath("")
 
 [node name="GrabPointHandLeft" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Handle" unique_id=1184179149 instance=ExtResource("2_c8smg")]
 transform = Transform3D(0.99894214, 0.033434164, 0.03158205, 0.03834042, -0.2261024, -0.9733491, -0.025402438, 0.9735296, -0.22714484, 0.00095107034, 0.072141275, 1.277571)
-snap_hand = false
 hand_pose = SubResource("Resource_v6sel")
 editor_preview_mode = 1
 
 [node name="GrabPointHandRight" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/Handle" unique_id=440144543 instance=ExtResource("5_2a6j5")]
 transform = Transform3D(0.9391575, -0.27933797, -0.19988342, -0.23328567, -0.09160204, -0.9680841, 0.25211284, 0.95581335, -0.15119427, 0.0022668652, 0.07886386, 1.2606196)
-snap_hand = false
 hand_pose = SubResource("Resource_t7yav")
 editor_preview_mode = 1
 
@@ -287,5 +285,3 @@ target = NodePath("../../../HingeBody/Handle/GrabPointHandLeft")
 
 [node name="GrabPointRedirectRight" parent="PullLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1295080199 node_paths=PackedStringArray("target") instance=ExtResource("8_6d3ln")]
 target = NodePath("../../../HingeBody/Handle/GrabPointHandRight")
-
-[node name="pull_lever_foghorn" type="Node3D" parent="PullLever/LeverSmooth" unique_id=114955935]
