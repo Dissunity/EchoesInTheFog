@@ -98,6 +98,7 @@ reflections/reflection_atlas/reflection_count=32
 [xr]
 
 openxr/enabled=true
+openxr/reference_space=2
 openxr/foveation_level=0
 openxr/extensions/render_model=true
 shaders/enabled=true
