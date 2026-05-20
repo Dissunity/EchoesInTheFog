@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/Lighthouse/dirt.jpg" id="8_70uel"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://b6i65mvl7bnol" path="res://textures/Lighthouse/lighthouse_diffuse.png" id="9_udxuc"]
-[ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
+[ext_resource type="PackedScene" uid="uid://ds0isbkfbm223" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://803ceklrsdjh" path="res://textures/Lighthouse/lighthouse_normals.png" id="10_ikiii"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
@@ -23,7 +23,6 @@
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="16_2u3nc"]
 [ext_resource type="Texture2D" uid="uid://os6iyr8nfpx" path="res://textures/Lighthouse/rusty_metal_diffuse.png" id="16_bc84e"]
 [ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="17_wukud"]
-[ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
 [ext_resource type="Texture2D" uid="uid://ddf0f6crcei8i" path="res://textures/Lighthouse/blue_metal_diffuse.png" id="18_1ew0l"]
 [ext_resource type="Texture2D" uid="uid://cjei3xh5knws1" path="res://textures/Lighthouse/grey_woor.png" id="18_qktwf"]
 [ext_resource type="Texture2D" uid="uid://dnf6q76f00m2u" path="res://textures/Lighthouse/grey_normal.png" id="19_bh8nc"]
@@ -32,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://7p0e80wpa7sr" path="res://textures/Lighthouse/worn_floor_diffuse.png" id="21_gggvi"]
 [ext_resource type="Texture2D" uid="uid://b27uya7rwvlto" path="res://textures/Lighthouse/worn_floor_roughness.png" id="22_w44yn"]
 [ext_resource type="Texture2D" uid="uid://r638g51ytrgn" path="res://textures/Lighthouse/rust_diff.png" id="23_6ah6f"]
+[ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
 [ext_resource type="Texture2D" uid="uid://bhev61mfv31a8" path="res://textures/Lighthouse/rust_normal.png" id="24_g1i3r"]
 [ext_resource type="Texture2D" uid="uid://roaxinoy2yox" path="res://textures/Lighthouse/rust_rough.png" id="25_my276"]
 [ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="28_ytpkv"]
@@ -725,16 +725,6 @@ material_override = SubResource("StandardMaterial3D_1ew0l")
 transform = Transform3D(0.9999992, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999992, 0, 1.3418579, 0)
 shape = SubResource("CylinderShape3D_hiqwa")
 
-[node name="InteractableLever" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin" parent_id_path=PackedInt32Array(1498340944, 367583270, 1328970426) index="0" unique_id=1428835588]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-hinge_position = 0.0
-
-[node name="InteractableLever" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin" parent_id_path=PackedInt32Array(1498340944, 367583270, 1622711282) index="0" unique_id=1939865593]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-hinge_position = 0.0
-[node name="TimeTravelLight" type="OmniLight3D" parent="LighthouseStructure/MechanicalRoom/PullLever" parent_id_path=PackedInt32Array(1498340944, 367583270, 1782428610) index="1" unique_id=430956315]
-light_color = Color(1, 0, 0.23333311, 1)
-light_energy = 0.0
 [node name="Stairs_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="14" unique_id=1445684434]
 material_override = SubResource("StandardMaterial3D_ryup7")
 
@@ -774,13 +764,21 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 [node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1968491663) index="5" unique_id=319097456]
 material_override = SubResource("StandardMaterial3D_w44yn")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1458058797]
+[node name="InteractableLever" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin" parent_id_path=PackedInt32Array(1498340944, 367583270, 1328970426) index="0" unique_id=1428835588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+hinge_position = 0.0
+
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1307461933]
 material_override = SubResource("StandardMaterial3D_6ah6f")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 1729672906) index="4" unique_id=1373840888]
 material_override = SubResource("StandardMaterial3D_q42o5")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1458058797]
+[node name="InteractableLever" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin" parent_id_path=PackedInt32Array(1498340944, 367583270, 1622711282) index="0" unique_id=1939865593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+hinge_position = 0.0
+
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1307461933]
 material_override = SubResource("StandardMaterial3D_g1i3r")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 637408262) index="4" unique_id=67487599]
@@ -795,6 +793,10 @@ material_override = SubResource("StandardMaterial3D_iett8")
 [node name="Circle_001" parent="LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 543764757) index="0" unique_id=547244034]
 material_override = SubResource("StandardMaterial3D_r5m4j")
 
+[node name="TimeTravelLight" type="OmniLight3D" parent="LighthouseStructure/MechanicalRoom/PullLever" parent_id_path=PackedInt32Array(1498340944, 367583270, 1782428610) index="1" unique_id=430956315]
+light_color = Color(1, 0, 0.23333311, 1)
+light_energy = 0.0
+
 [node name="turning-lever_001" parent="LighthouseStructure/MechanicalRoom/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 539045129) index="1" unique_id=1671252395]
 material_override = SubResource("StandardMaterial3D_e77ka")
 
@@ -804,87 +806,87 @@ material_override = SubResource("StandardMaterial3D_my276")
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
 
-[node name="chair_base" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="0" unique_id=1467525054]
+[node name="chair_base" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="0" unique_id=852573981]
 material_override = SubResource("StandardMaterial3D_c0wax")
 
-[node name="BézierCurve - backing" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="5" unique_id=1874875427]
+[node name="BézierCurve - backing" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="5" unique_id=665921615]
 material_override = SubResource("StandardMaterial3D_sedwk")
 
-[node name="BézierCurve - backing_cushion__LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="6" unique_id=1086825451]
+[node name="BézierCurve - backing_cushion__LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="6" unique_id=1865206522]
 material_override = SubResource("StandardMaterial3D_37ykd")
 
-[node name="chair_base_cushion__LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="7" unique_id=1716645187]
+[node name="chair_base_cushion__LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="7" unique_id=1863253985]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010501862, 0)
 material_override = SubResource("StandardMaterial3D_1hvhf")
 
-[node name="arm_l_front_LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="8" unique_id=1512967619]
+[node name="arm_l_front_LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="8" unique_id=976290801]
 material_override = SubResource("StandardMaterial3D_75cpn")
 
 [node name="chair_broken" parent="Chair" index="1" unique_id=1397308486]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00078344345)
 
-[node name="chair_base" parent="Chair/chair_broken" index="0" unique_id=1334540736]
+[node name="chair_base" parent="Chair/chair_broken" index="0" unique_id=1627296218]
 material_override = SubResource("StandardMaterial3D_ct3wn")
 
-[node name="BézierCurve - backing_cushion__LP" parent="Chair/chair_broken" index="5" unique_id=504953670]
+[node name="BézierCurve - backing_cushion__LP" parent="Chair/chair_broken" index="5" unique_id=315366150]
 material_override = SubResource("StandardMaterial3D_ynm8w")
 
-[node name="chair_base_cushion__LP" parent="Chair/chair_broken" index="6" unique_id=1477559896]
+[node name="chair_base_cushion__LP" parent="Chair/chair_broken" index="6" unique_id=599489077]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01260376, 0)
 material_override = SubResource("StandardMaterial3D_rakx2")
 
-[node name="chair_base_cushion__filling" parent="Chair/chair_broken" index="11" unique_id=1393039112]
+[node name="chair_base_cushion__filling" parent="Chair/chair_broken" index="11" unique_id=469933914]
 material_override = SubResource("StandardMaterial3D_3fh52")
 
-[node name="BézierCurve - backing_broken" parent="Chair/chair_broken" index="13" unique_id=271368552]
+[node name="BézierCurve - backing_broken" parent="Chair/chair_broken" index="13" unique_id=710107726]
 material_override = SubResource("StandardMaterial3D_8f1f8")
 
-[node name="arm_l_front_LP_broken" parent="Chair/chair_broken" index="14" unique_id=95222713]
+[node name="arm_l_front_LP_broken" parent="Chair/chair_broken" index="14" unique_id=1234803068]
 material_override = SubResource("StandardMaterial3D_lxwtw")
 
-[node name="arm_r_front_LP_broken" parent="Chair/chair_broken" index="15" unique_id=195760598]
+[node name="arm_r_front_LP_broken" parent="Chair/chair_broken" index="15" unique_id=1169993218]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="BézierCurve - backing_cushion__LP_filling" parent="Chair/chair_broken" index="16" unique_id=1638167857]
+[node name="BézierCurve - backing_cushion__LP_filling" parent="Chair/chair_broken" index="16" unique_id=865342987]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 
-[node name="table_structure" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="0" unique_id=1818064274]
+[node name="table_structure" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="0" unique_id=1270337065]
 material_override = SubResource("StandardMaterial3D_xpnt2")
 
-[node name="leg_l_front" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="1" unique_id=958181246]
+[node name="leg_l_front" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="1" unique_id=509651534]
 material_override = SubResource("StandardMaterial3D_ruyqm")
 
-[node name="table_drawers_top" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="2" unique_id=120116464]
+[node name="table_drawers_top" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="2" unique_id=828397317]
 material_override = SubResource("StandardMaterial3D_fnoqa")
 
-[node name="table_drawers_bottom" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="4" unique_id=2042449971]
+[node name="table_drawers_bottom" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="4" unique_id=531473549]
 material_override = SubResource("StandardMaterial3D_yy5nj")
 
-[node name="table_top" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="5" unique_id=931835201]
+[node name="table_top" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="5" unique_id=753060608]
 material_override = SubResource("StandardMaterial3D_p5g01")
 
-[node name="table_drawers_,middle" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="6" unique_id=1877557710]
+[node name="table_drawers_,middle" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="6" unique_id=1111668033]
 material_override = SubResource("StandardMaterial3D_fl6gn")
 
-[node name="table_structure" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="0" unique_id=1653667264]
+[node name="table_structure" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="0" unique_id=1509054403]
 material_override = SubResource("StandardMaterial3D_gjwlp")
 
-[node name="leg_l_front" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="1" unique_id=1003108195]
+[node name="leg_l_front" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="1" unique_id=83559135]
 material_override = SubResource("StandardMaterial3D_yfwfa")
 
-[node name="table_drawers_top" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="2" unique_id=1391644937]
+[node name="table_drawers_top" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="2" unique_id=817563895]
 material_override = SubResource("StandardMaterial3D_qm10a")
 
-[node name="table_drawers_bottom" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="4" unique_id=531296703]
+[node name="table_drawers_bottom" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="4" unique_id=1636644215]
 material_override = SubResource("StandardMaterial3D_7fs00")
 
-[node name="table_drawers_,middle" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="5" unique_id=1439946901]
+[node name="table_drawers_,middle" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="5" unique_id=2015193709]
 material_override = SubResource("StandardMaterial3D_e0aah")
 
-[node name="table_top_broken" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="6" unique_id=356048596]
+[node name="table_top_broken" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="6" unique_id=949464764]
 material_override = SubResource("StandardMaterial3D_415my")
 
 [node name="BigCandle" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
@@ -896,7 +898,7 @@ transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 49.138306, 1.6970791)
 
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "environment", "moonlight", "hinge")]
+[node name="TimeTravelController2" type="Node" parent="." unique_id=699235048 node_paths=PackedStringArray("time_travel_light", "environment", "moonlight", "hinge")]
 script = ExtResource("16_2u3nc")
 time_travel_light = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/TimeTravelLight")
 environment = NodePath("../WorldEnvironment")
