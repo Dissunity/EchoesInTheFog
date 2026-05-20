@@ -1,8 +1,11 @@
 extends Area3D
 
 
+@export var label: Label3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	label.text = "Hellow"
 	pass
 
 
@@ -12,4 +15,10 @@ func _process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area3D) -> void:
+	label.text = "Area entered"
 	print("Area entered")
+
+
+func _on_area_exited(area: Area3D) -> void:
+	label.text = "Area exited"
+	print("Area exited")

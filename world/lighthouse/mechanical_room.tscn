@@ -1272,10 +1272,11 @@ editor_preview_mode = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011169434, 0.009700775, -0.08150864)
 shape = SubResource("BoxShape3D_og3yr")
 
-[node name="PuzzleArea3D" type="Area3D" parent="MechanicalRoom" unique_id=836480515]
+[node name="PuzzleArea3D" type="Area3D" parent="MechanicalRoom" unique_id=836480515 node_paths=PackedStringArray("label")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.124, 0)
 collision_mask = 0
 script = ExtResource("9_kqbvg")
+label = NodePath("../../Label3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzleArea3D" unique_id=543814204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, -0.044254303, -0.031714767)
@@ -1587,5 +1588,10 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 
 [node name="GrabPointRedirectRight" parent="TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=176946566 node_paths=PackedStringArray("target") instance=ExtResource("17_y84s8")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=65362811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7427888, 47.57029, 0)
+
+[connection signal="area_exited" from="MechanicalRoom/PuzzleArea3D" to="MechanicalRoom/PuzzleArea3D" method="_on_area_exited"]
 
 [editable path="MechanicalRoom/PuzzleHolder/MechanicalRoom_puzzleholder"]
