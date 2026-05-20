@@ -880,10 +880,10 @@ transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757,
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 52.468136, 2.5508676)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09658629, 52.10396, 0.7564624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42340094, 59.36475, 1.9177792)
 
 [node name="StairDetector" parent="Player/PlayerBody" parent_id_path=PackedInt32Array(1677439462, 694939654) index="0" unique_id=97997994 node_paths=PackedStringArray("bodies_to_react_to")]
-bodies_to_react_to = [NodePath("../../../LighthouseStructure/Lighthouse/Stairs_001/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Floor Viewing level _001/StaticBody3D")]
+bodies_to_react_to = [NodePath("../../../LighthouseStructure/Lighthouse/Stairs_001/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Floor Viewing level _001/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Mechanical room/StaticBody3D")]
 
 [node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "environment", "moonlight", "hinge")]
 script = ExtResource("16_2u3nc")
@@ -891,6 +891,7 @@ time_travel_light = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/Ti
 environment = NodePath("../WorldEnvironment")
 moonlight = NodePath("../Moonlight")
 hinge = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever")
+test = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=526361758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009957075, 52.672054, 2.550275)
