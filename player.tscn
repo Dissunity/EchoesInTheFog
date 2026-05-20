@@ -1,57 +1,92 @@
-[gd_scene format=3 uid="uid://o40u2gao0u2l"]
+[gd_scene format=3 uid="uid://ds0isbkfbm223"]
 
-[ext_resource type="Script" uid="uid://bjhmtatp6cmyv" path="res://player.gd" id="1_2hs0m"]
+[ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_n7ghd"]
+[ext_resource type="PackedScene" uid="uid://42xbeno6pt3y" path="res://addons/godot-xr-tools/desktop-support/function_desktop_pointer.tscn" id="2_nvl01"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_dw050"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_2hs0m"]
-[ext_resource type="Script" uid="uid://cd3sgkcyk428r" path="res://stair_detector.gd" id="5_sweqy"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_sweqy"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_b26j0"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_1jxqw"]
+[ext_resource type="PackedScene" uid="uid://6uusxts6n6gm" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_direct.tscn" id="6_ivps1"]
+[ext_resource type="Script" uid="uid://bjqk58f7j3hgl" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_turn.gd" id="9_urp6f"]
+[ext_resource type="PackedScene" uid="uid://d2iqcc25yvk61" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_crouch.tscn" id="11_urp6f"]
+[ext_resource type="PackedScene" uid="uid://clt88d5d1dje4" path="res://addons/godot-xr-tools/functions/movement_crouch.tscn" id="12_bwjto"]
+[ext_resource type="PackedScene" uid="uid://cgbysxva1dki2" path="res://stair_detector.tscn" id="13_bwjto"]
+[ext_resource type="PackedScene" uid="uid://dme03b46a0vp" path="res://movement_stair_climbing.tscn" id="13_urp6f"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
-radius = 0.3
-height = 1.7
+[node name="Player" type="XROrigin3D" unique_id=1677439462]
 
-[node name="Player" type="CharacterBody3D" unique_id=1581452875]
-collision_layer = 2
-collision_mask = 262405
-script = ExtResource("1_2hs0m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2143596673]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
-shape = SubResource("CapsuleShape3D_sh265")
-
-[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=50921491]
+[node name="XRCamera3D" type="XRCamera3D" parent="." unique_id=1665786479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
-[node name="DesktopCamera" type="Camera3D" parent="SpringArm3D" unique_id=864402729]
+[node name="VRCommonShaderCache" parent="XRCamera3D" unique_id=1276908772 instance=ExtResource("1_n7ghd")]
 
-[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1051909420]
+[node name="FunctionDesktopPointer" parent="XRCamera3D" unique_id=545310703 instance=ExtResource("2_nvl01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39999998, -0.5)
+visible = false
+active_button_action = "trigger"
 
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=212173750]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-
-[node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=503059481]
+[node name="LeftHand" type="XRController3D" parent="." unique_id=1646036122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"left_hand"
 
-[node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=678520256 instance=ExtResource("3_1jxqw")]
+[node name="FunctionPickup" parent="LeftHand" unique_id=343088528 instance=ExtResource("3_1jxqw")]
+grab_distance = 0.2
 grab_collision_mask = 327940
 ranged_distance = 0.0
 ranged_collision_mask = 327940
 
-[node name="LeftGlove" parent="XROrigin3D/LeftHand" unique_id=238805430 instance=ExtResource("4_2hs0m")]
+[node name="LeftGlove" parent="LeftHand" unique_id=145892470 instance=ExtResource("4_2hs0m")]
 
-[node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1981951555]
+[node name="MovementDirect" parent="LeftHand" unique_id=1611758846 instance=ExtResource("3_dw050")]
+max_speed = 1.0
+strafe = true
+
+[node name="MovementDesktopDirect" parent="LeftHand" unique_id=612022894 instance=ExtResource("6_ivps1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0999985, 0.5)
+max_speed = 1.0
+strafe = true
+input_forward = "move_forward"
+input_backward = "move_back"
+input_left = "move_left"
+input_right = "move_right"
+
+[node name="MovementStairClimbing" parent="LeftHand" unique_id=623875204 node_paths=PackedStringArray("stair_detector") groups=["movement_providers"] instance=ExtResource("13_urp6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0416784, 0.5)
+order = 7
+input_action = "primary"
+input_forward = "move_forward"
+input_backward = "move_back"
+input_left = "move_left"
+input_right = "move_right"
+stair_detector = NodePath("../../PlayerBody/StairDetector")
+
+[node name="RightHand" type="XRController3D" parent="." unique_id=268034581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"right_hand"
 
-[node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1277105623 instance=ExtResource("3_1jxqw")]
+[node name="FunctionPickup" parent="RightHand" unique_id=1130798177 instance=ExtResource("3_1jxqw")]
+grab_distance = 0.2
 grab_collision_mask = 327940
 ranged_distance = 0.0
 ranged_collision_mask = 262404
 
-[node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
+[node name="RightGlove" parent="RightHand" unique_id=744352348 instance=ExtResource("6_1jxqw")]
 
-[node name="StairDetector" type="RayCast3D" parent="." unique_id=1206116429]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-target_position = Vector3(0, 0, -0.4)
-script = ExtResource("5_sweqy")
+[node name="MovementTurn" parent="RightHand" unique_id=14706712 instance=ExtResource("5_b26j0")]
+
+[node name="XRToolsDesktopMovementTurn" type="Node3D" parent="RightHand" unique_id=1084545209 groups=["movement_providers"]]
+script = ExtResource("9_urp6f")
+metadata/_custom_type_script = "uid://bjqk58f7j3hgl"
+
+[node name="MovementDesktopCrouch" parent="RightHand" unique_id=2094126384 instance=ExtResource("11_urp6f")]
+
+[node name="MovementCrouch" parent="RightHand" unique_id=472297651 instance=ExtResource("12_bwjto")]
+crouch_button_action = "action_crouch"
+
+[node name="PlayerBody" parent="." unique_id=694939654 instance=ExtResource("4_sweqy")]
+
+[node name="StairDetector" parent="PlayerBody" unique_id=1103762403 instance=ExtResource("13_bwjto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1452932, 0)
+target_position = Vector3(0, 0, -0.25)
