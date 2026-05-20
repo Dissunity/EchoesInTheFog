@@ -13,8 +13,15 @@
 [ext_resource type="Texture2D" uid="uid://803ceklrsdjh" path="res://textures/Lighthouse/lighthouse_normals.png" id="10_ikiii"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
 [ext_resource type="Texture2D" uid="uid://bahcg7lqv37og" path="res://textures/Lighthouse/lighthouse_roughness_2.jpg" id="11_cbp6q"]
+[ext_resource type="Texture2D" uid="uid://cetyatm2r6em2" path="res://textures/Lighthouse/worn_floor_normal.png" id="12_ikiii"]
 [ext_resource type="PackedScene" uid="uid://ckxouti2i8cn2" path="res://objects/bigger candle/big candleholder.glb" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://bpb6d1lax4xg3" path="res://objects/candle/candle export.glb" id="13_2o6r5"]
+[ext_resource type="Texture2D" uid="uid://c5sn06n8ignjj" path="res://textures/Lighthouse/plaster_diffuse.png" id="13_cbp6q"]
+[ext_resource type="Texture2D" uid="uid://tldatsne7br0" path="res://textures/Lighthouse/plaster_normal.png" id="14_26xuy"]
+[ext_resource type="Texture2D" uid="uid://cq2usv20s8osm" path="res://textures/Lighthouse/plaster_roughness.png" id="15_bc84e"]
+[ext_resource type="Texture2D" uid="uid://dvnqlcjbxym27" path="res://textures/Lighthouse/rusty_metal_rough.png" id="15_wukud"]
+[ext_resource type="Texture2D" uid="uid://os6iyr8nfpx" path="res://textures/Lighthouse/rusty_metal_diffuse.png" id="16_bc84e"]
+[ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="17_wukud"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2o6r5"]
 sky_top_color = Color(0.002400443, 0.07285706, 0.16548955, 1)
@@ -66,6 +73,23 @@ roughness = 0.12
 emission_enabled = true
 emission = Color(0.67687863, 0.67687863, 0.67687863, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc84e"]
+albedo_texture = ExtResource("9_udxuc")
+roughness_texture = ExtResource("11_cbp6q")
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = ExtResource("10_ikiii")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wukud"]
+albedo_texture = ExtResource("9_udxuc")
+roughness_texture = ExtResource("11_cbp6q")
+normal_enabled = true
+normal_scale = 0.1
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
 transparency = 1
 cull_mode = 2
@@ -74,12 +98,47 @@ albedo_texture = ExtResource("8_70uel")
 metallic_specular = 0.84
 roughness = 0.12
 roughness_texture = ExtResource("8_70uel")
+normal_enabled = true
+normal_texture = ExtResource("12_ikiii")
+uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udxuc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjb0r"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.62
+metallic_specular = 0.7
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(3, 3, 3)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il2jm"]
 albedo_texture = ExtResource("9_udxuc")
 roughness_texture = ExtResource("11_cbp6q")
 normal_enabled = true
+normal_scale = 0.5
 normal_texture = ExtResource("10_ikiii")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udxuc"]
+albedo_texture = ExtResource("13_cbp6q")
+roughness_texture = ExtResource("15_bc84e")
+normal_enabled = true
+normal_texture = ExtResource("14_26xuy")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mc2jv"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.4
+metallic_specular = 0.53
+roughness_texture = ExtResource("15_bc84e")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("14_26xuy")
+uv1_scale = Vector3(3, 3, 3)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqwa"]
@@ -88,6 +147,7 @@ metallic_specular = 0.4
 roughness_texture = ExtResource("11_cbp6q")
 normal_enabled = true
 normal_texture = ExtResource("10_ikiii")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 1.0000008
 
@@ -101,16 +161,20 @@ script = ExtResource("1_036b0")
 environment = SubResource("Environment_hiqwa")
 
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
-transform = Transform3D(0.6408201, -0.42923182, -0.6364822, 0, -0.8290865, 0.55912054, -0.7676912, -0.3582957, -0.53129524, -1485.0125, 1739.7202, -3445.2383)
+transform = Transform3D(0.6408201, -0.42923188, -0.6364823, 0, -0.8290865, 0.55912054, -0.7676912, -0.35829565, -0.5312952, -3.8790703, 50.00697, -4.3962145)
 light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
 light_energy = 0.921
 light_indirect_energy = 1.475
 light_specular = 1.238
 light_bake_mode = 1
 shadow_enabled = true
+shadow_bias = 0.217
+shadow_blur = 1.506
 directional_shadow_mode = 0
+directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.79
-directional_shadow_max_distance = 10.3
+directional_shadow_max_distance = 8.1
+directional_shadow_pancake_size = 8.9
 
 [node name="Water" type="Node3D" parent="." unique_id=1904178162]
 
@@ -127,11 +191,28 @@ transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.
 [node name="Fresenlplaceholder2_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="0" unique_id=308327002]
 material_override = SubResource("StandardMaterial3D_70uel")
 
+[node name="Lighthouse Body" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="1" unique_id=1479727972]
+material_override = SubResource("StandardMaterial3D_bc84e")
+
+[node name="Base" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="2" unique_id=371550911]
+material_override = SubResource("StandardMaterial3D_wukud")
+
 [node name="Glass_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="3" unique_id=413148215]
 material_override = SubResource("StandardMaterial3D_2o6r5")
 
+[node name="Frame_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="4" unique_id=358577199]
+material_override = SubResource("StandardMaterial3D_wjb0r")
+
+[node name="Roof_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="5" unique_id=26312032]
+transform = Transform3D(1.1481339, 0, 0, 0, 1, 0, 0, 0, 1.1481339, -0.0034720898, 54.494564, -0.005399704)
+material_override = SubResource("StandardMaterial3D_il2jm")
+
 [node name="Floor Viewing level _001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="7" unique_id=2017304933]
+transform = Transform3D(1.0412025, 0, 0, 0, 1.0412025, 0, 0, 0, 1.0412025, -0.0041990876, 49.929432, -0.009908199)
 material_override = SubResource("StandardMaterial3D_udxuc")
+
+[node name="Railing Viewing level_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="8" unique_id=121648206]
+material_override = SubResource("StandardMaterial3D_mc2jv")
 
 [node name="Walls Room_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="11" unique_id=752707944]
 material_override = SubResource("StandardMaterial3D_hiqwa")
@@ -147,20 +228,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.024
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 
 [node name="BigCandle" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
-transform = Transform3D(0.038302224, 0, 0.03213938, 0, 0.05, 0, -0.03213938, 0, 0.038302224, 0.30535138, 43.504337, -1.8879902)
+transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757, 0, 0.007660445, -2.5580878, 42.91658, -0.611697)
 
 [node name="SmallCandle" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 44.0296, 2.1546419)
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5508676)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 46.907032, 1.3690032)
 
 [node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
 
-[node name="TestDirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=731060452]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.426125, 2.651006)
-light_energy = 12.955
-light_indirect_energy = 3.966
-sky_mode = 1
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=526361758]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010338128, 43.830795, 2.5510192)
+light_color = Color(0.9262696, 0.80915624, 0.50088173, 1)
+light_energy = 4.984
+light_indirect_energy = 0.938
+light_size = 0.052
+light_bake_mode = 1
+shadow_enabled = true
+shadow_blur = 1.195
+omni_range = 11.796
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1389733909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.182728, 1.417907)
+light_color = Color(0.7258298, 0.6066042, 0.27108586, 1)
+light_energy = 3.241
+light_indirect_energy = 0.813
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 3.155
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1499123509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4853816, 43.184402, -0.5753466)
+light_color = Color(0.9287116, 0.7410736, 0.45704, 1)
+light_energy = 2.307
+light_indirect_energy = 0.751
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 2.394
 
 [editable path="LighthouseStructure"]
