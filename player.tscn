@@ -12,8 +12,11 @@
 [ext_resource type="Script" uid="uid://bjqk58f7j3hgl" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_turn.gd" id="9_urp6f"]
 [ext_resource type="PackedScene" uid="uid://d2iqcc25yvk61" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_crouch.tscn" id="11_urp6f"]
 [ext_resource type="PackedScene" uid="uid://clt88d5d1dje4" path="res://addons/godot-xr-tools/functions/movement_crouch.tscn" id="12_bwjto"]
-[ext_resource type="PackedScene" uid="uid://cgbysxva1dki2" path="res://stair_detector.tscn" id="13_bwjto"]
 [ext_resource type="PackedScene" uid="uid://dme03b46a0vp" path="res://movement_stair_climbing.tscn" id="13_urp6f"]
+[ext_resource type="Script" uid="uid://cd3sgkcyk428r" path="res://stair_detector.gd" id="14_bwjto"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_606se"]
+size = Vector3(0.25, 0.25, 0.25)
 
 [node name="Player" type="XROrigin3D" unique_id=1677439462]
 
@@ -88,6 +91,10 @@ crouch_button_action = "action_crouch"
 [node name="PlayerBody" parent="." unique_id=694939654 instance=ExtResource("4_sweqy")]
 head_behavior_mode = 0
 
-[node name="StairDetector" parent="PlayerBody" unique_id=1103762403 instance=ExtResource("13_bwjto")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.055481285, 0)
-target_position = Vector3(0, 0, -0.25)
+[node name="StairDetector" type="Area3D" parent="PlayerBody" unique_id=97997994]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32971746, 0)
+script = ExtResource("14_bwjto")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/StairDetector" unique_id=1086221489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13318047, -0.12974943)
+shape = SubResource("BoxShape3D_606se")
