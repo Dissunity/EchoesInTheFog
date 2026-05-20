@@ -141,6 +141,10 @@ material_override = SubResource("StandardMaterial3D_hiqwa")
 transform = Transform3D(0.9999992, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999992, 0, 1.3418579, 0)
 shape = SubResource("CylinderShape3D_hiqwa")
 
+[node name="InteractableLever" parent="LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin" parent_id_path=PackedInt32Array(1498340944, 367583270, 1415834249) index="0" unique_id=96939347]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0)
+hinge_position = 29.999999999999996
+
 [node name="TimeTravelLight" type="OmniLight3D" parent="LighthouseStructure/MechanicalRoom/PullLever" parent_id_path=PackedInt32Array(1498340944, 367583270, 1782428610) index="1" unique_id=430956315 node_paths=PackedStringArray("moonlight")]
 light_color = Color(1, 0, 0.23333311, 1)
 light_energy = 0.0

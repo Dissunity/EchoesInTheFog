@@ -7,7 +7,7 @@ extends Node
 @export var time_impacted_objects: Array[TimeImpactedObject]
 
 ## Foghorn lever hinge which when pulled triggers the time travelling
-@export var hinge: XRToolsInteractableHandleDriven
+@export var hinge: XRToolsInteractableHinge
 
 ## Only enable this to easily test the time travelling effect
 ## When enabled, within a single press of ENTER, the time travel will happen
@@ -20,8 +20,6 @@ func _ready():
 
 func _time_travel():
 	cooldown = 10
-	hinge.hinge_limit_min = -29
-	hinge.move_hinge(deg_to_rad(-28))
 	time_travel_light.time_travel()
 	await get_tree().create_timer(1.5).timeout
 	for obj in time_impacted_objects:
@@ -32,10 +30,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept"):
 			_time_travel()
 	cooldown -= delta
-	if cooldown < 0:
-		hinge.hinge_limit_min = -35
-	
 
 func _on_pull_lever_hinge_moved(angle: Variant) -> void:
-	if angle < -30:
+	if angle <= hinge.hinge_limit_min + 1 and cooldown <= 0:
 		_time_travel()
