@@ -444,9 +444,6 @@ size = Vector3(0.049240112, 0.23588562, 0.065979004)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqbvg"]
 size = Vector3(0.036621094, 0.23120117, 0.064086914)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_og3yr"]
-size = Vector3(0.46887207, 0.24802399, 0.25662994)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33exr"]
 resource_name = "Dark metal"
 cull_mode = 2
@@ -1194,16 +1191,8 @@ shape = SubResource("BoxShape3D_w63ex")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.206, 0, -0.073)
 shape = SubResource("BoxShape3D_kqbvg")
 
-[node name="PuzzlePiece" type="Node3D" parent="MechanicalRoom" unique_id=633703433]
+[node name="Puzzle_mechanical_room" type="RigidBody3D" parent="MechanicalRoom" unique_id=1968491663 groups=["PuzzlePiece"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.153, 0.74922353)
-
-[node name="PuzzleArea3D" type="Area3D" parent="MechanicalRoom/PuzzlePiece" unique_id=596353824]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzlePiece/PuzzleArea3D" unique_id=1362453066]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011169434, 0.009700775, -0.08150864)
-shape = SubResource("BoxShape3D_og3yr")
-
-[node name="Puzzle_mechanical_room" type="RigidBody3D" parent="MechanicalRoom/PuzzlePiece" unique_id=1968491663 groups=["PuzzlePiece"]]
 collision_layer = 4
 collision_mask = 3
 mass = 10.0
@@ -1213,75 +1202,79 @@ freeze_mode = 1
 script = ExtResource("1_nc57i")
 second_hand_grab = 1
 
-[node name="PuzzleMesh" type="Node3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=1136130312]
+[node name="PuzzleMesh" type="Node3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=1136130312]
 
-[node name="Puzzle-bar" type="MeshInstance3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room/PuzzleMesh" unique_id=1652247457]
+[node name="Puzzle-bar" type="MeshInstance3D" parent="MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" unique_id=1652247457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013, 0, -0.074)
 mesh = SubResource("ArrayMesh_pflon")
 skeleton = NodePath("")
 
-[node name="Puzzle-Gear_001" type="MeshInstance3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room/PuzzleMesh" unique_id=1928444832]
+[node name="Puzzle-Gear_001" type="MeshInstance3D" parent="MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" unique_id=1928444832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047, 0, -0.074)
 mesh = SubResource("ArrayMesh_cyqnj")
 skeleton = NodePath("")
 
-[node name="Puzzle-Gear_002" type="MeshInstance3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room/PuzzleMesh" unique_id=509403186]
+[node name="Puzzle-Gear_002" type="MeshInstance3D" parent="MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" unique_id=509403186]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153, 0, -0.074)
 mesh = SubResource("ArrayMesh_ptud1")
 skeleton = NodePath("")
 
-[node name="Puzzle-Gear_003" type="MeshInstance3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room/PuzzleMesh" unique_id=1964656213]
+[node name="Puzzle-Gear_003" type="MeshInstance3D" parent="MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" unique_id=1964656213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.074)
 mesh = SubResource("ArrayMesh_3ikhb")
 skeleton = NodePath("")
 
-[node name="Puzzle-Gear_004" type="MeshInstance3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room/PuzzleMesh" unique_id=319097456]
+[node name="Puzzle-Gear_004" type="MeshInstance3D" parent="MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" unique_id=319097456]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133, 0, -0.074)
 mesh = SubResource("ArrayMesh_4g4l7")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=529443448]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=529443448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06471559, -0.0013160706, -0.07345636)
 shape = SubResource("BoxShape3D_4dyds")
 
-[node name="HighlightRing" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=1131035522 instance=ExtResource("2_4dyds")]
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=243809502]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=243809502]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.014549255, 0.001033783, -0.0750643)
 shape = SubResource("BoxShape3D_y84s8")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=22897599]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=22897599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14957398, -0.0030517578, -0.0753479)
 shape = SubResource("BoxShape3D_eeir3")
 
-[node name="GrabPointHandLeft_Door1" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=382666579 instance=ExtResource("3_vgpin")]
+[node name="HighlightRing" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=1131035522 instance=ExtResource("2_4dyds")]
+
+[node name="GrabPointHandLeft_Door1" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=382666579 instance=ExtResource("3_vgpin")]
 transform = Transform3D(0.095320284, -0.99541456, -0.007990867, -0.9919352, -0.09565465, 0.08315567, -0.083538726, 0, -0.99650455, -0.13263449, -0.014080048, 0.006556481)
 hand_pose = SubResource("Resource_vgpin")
 editor_preview_mode = 1
 
-[node name="GrabPointHandRight_Door1" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=661571787 instance=ExtResource("6_w63ex")]
+[node name="GrabPointHandRight_Door1" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=661571787 instance=ExtResource("6_w63ex")]
 transform = Transform3D(0.11924629, 0.9928326, -0.007980952, 0.9906164, -0.119513065, -0.06630027, -0.066778906, 0, -0.9977678, -0.037815645, -0.0042419434, 0.00206206)
 hand_pose = SubResource("Resource_y7eq8")
 editor_preview_mode = 1
 
-[node name="GrabPointHandLeft_Door2" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=641836590 instance=ExtResource("3_vgpin")]
+[node name="GrabPointHandLeft_Door2" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=641836590 instance=ExtResource("3_vgpin")]
 transform = Transform3D(-0.08052946, 0.9967522, 0, -0.9967522, -0.08052946, 0, 0, 0, 1, -0.03450927, -0.013408661, -0.1578809)
 hand_pose = SubResource("Resource_jh2n6")
 editor_preview_mode = 1
 
-[node name="GrabPointHandRight_Door2" parent="MechanicalRoom/PuzzlePiece/Puzzle_mechanical_room" unique_id=1817036307 instance=ExtResource("6_w63ex")]
+[node name="GrabPointHandRight_Door2" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=1817036307 instance=ExtResource("6_w63ex")]
 transform = Transform3D(-0.0685029, -0.9976509, 0, 0.9976509, -0.0685029, 0, 0, 0, 1, -0.13347091, -0.01228714, -0.15861386)
 hand_pose = SubResource("Resource_y84s8")
 editor_preview_mode = 1
 
-[node name="PuzzleHolderArea3D" type="Area3D" parent="MechanicalRoom" unique_id=836480515 node_paths=PackedStringArray("label")]
+[node name="PuzzleHolderArea3D" type="Area3D" parent="MechanicalRoom" unique_id=836480515 node_paths=PackedStringArray("label", "target_position_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.124, 0)
+collision_mask = 4
 script = ExtResource("9_kqbvg")
 label = NodePath("../../Label3D")
+target_position_node = NodePath("Marker3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzleHolderArea3D" unique_id=543814204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, -0.044254303, -0.031714767)
 shape = SubResource("BoxShape3D_jh2n6")
+
+[node name="Marker3D" type="Marker3D" parent="MechanicalRoom/PuzzleHolderArea3D" unique_id=447942769]
 
 [node name="Door2Lever" type="Node3D" parent="." unique_id=253043712]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2, 47.264, 0.2)
