@@ -98,16 +98,19 @@ script = ExtResource("1_036b0")
 environment = SubResource("Environment_hiqwa")
 
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
-transform = Transform3D(0.6408201, -0.42923182, -0.6364822, 0, -0.8290865, 0.55912054, -0.7676912, -0.3582957, -0.53129524, -1485.0125, 1739.7202, -3445.2383)
+transform = Transform3D(0.6408201, -0.42923188, -0.6364823, 0, -0.8290865, 0.55912054, -0.7676912, -0.35829565, -0.5312952, 389.00232, 59.80095, -2231.3252)
 light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
 light_energy = 0.921
 light_indirect_energy = 1.475
 light_specular = 1.238
 light_bake_mode = 1
 shadow_enabled = true
+shadow_bias = 0.217
+shadow_blur = 1.506
 directional_shadow_mode = 0
+directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.79
-directional_shadow_max_distance = 10.3
+directional_shadow_max_distance = 5.1
 
 [node name="Water" type="Node3D" parent="." unique_id=1904178162]
 
