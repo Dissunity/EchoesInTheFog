@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
+[ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/dirt.jpg" id="8_70uel"]
 [ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="8_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
@@ -56,6 +57,15 @@ shader_parameter/normal_map_2 = ExtResource("2_aqk2v")
 shader_parameter/color_deep = Color(0.0089846635, 0.09450225, 0.17750144, 1)
 shader_parameter/color_shallow = Color(0.10444861, 0.25518325, 0.4711396, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.827451, 0.827451, 0.827451, 0.047058824)
+albedo_texture = ExtResource("8_70uel")
+metallic_specular = 0.84
+roughness = 0.12
+roughness_texture = ExtResource("8_70uel")
+
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
@@ -63,15 +73,15 @@ script = ExtResource("1_036b0")
 environment = SubResource("Environment_hiqwa")
 
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
-transform = Transform3D(1, 0, 0, 0, -0.82908636, 0.5591205, 0, -0.5591205, -0.82908636, -1485.0125, 1739.7202, -3445.2383)
-light_color = Color(0.6334978, 0.8085721, 0.9789714, 1)
+transform = Transform3D(0.6408201, -0.42923182, -0.6364822, 0, -0.8290865, 0.55912054, -0.7676912, -0.3582957, -0.53129524, -1485.0125, 1739.7202, -3445.2383)
+light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
 light_energy = 0.921
 light_indirect_energy = 1.475
 light_specular = 1.238
 light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_fade_start = 0.79
-directional_shadow_max_distance = 348.7
+directional_shadow_max_distance = 13.4
 
 [node name="Water" type="Node3D" parent="." unique_id=1904178162]
 
@@ -80,6 +90,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.401
 mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
+[node name="LighthouseReflectionProbe" type="ReflectionProbe" parent="." unique_id=692408556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22273254, 51.2646, 0.13249207)
+intensity = 0.9
+size = Vector3(6.4888, 5.836914, 6.9706726)
+
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
 transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.9648332, 0.24749339, 43.646576, -1.1616642)
 
@@ -87,6 +102,9 @@ transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.964
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
 
 [node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
+
+[node name="Glass_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="3" unique_id=413148215]
+material_override = SubResource("StandardMaterial3D_2o6r5")
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
