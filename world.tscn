@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/Lighthouse/dirt.jpg" id="8_70uel"]
 [ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="8_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
+[ext_resource type="Texture2D" uid="uid://blo2qkl3h271g" path="res://textures/Lighthouse/diff_2k.png" id="9_udxuc"]
 [ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
+[ext_resource type="Texture2D" uid="uid://b4mx0iqci3ny2" path="res://textures/Lighthouse/nor_2k.png" id="10_ikiii"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
+[ext_resource type="Texture2D" uid="uid://c0hhtm8d4xj65" path="res://textures/Lighthouse/rough_2k.png" id="11_cbp6q"]
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="11_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://ckxouti2i8cn2" path="res://objects/bigger candle/big candleholder.glb" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://bpb6d1lax4xg3" path="res://objects/candle/candle export.glb" id="13_2o6r5"]
@@ -76,7 +79,12 @@ roughness_texture = ExtResource("8_70uel")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2u3nc"]
 albedo_color = Color(1, 1, 1, 0.88235295)
+albedo_texture = ExtResource("9_udxuc")
+metallic_specular = 0.36
+roughness_texture = ExtResource("11_cbp6q")
 normal_enabled = true
+normal_texture = ExtResource("10_ikiii")
+uv1_triplanar = true
 
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")

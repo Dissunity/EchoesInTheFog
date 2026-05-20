@@ -69,7 +69,6 @@ move_right={
 
 [physics]
 
-common/physics_ticks_per_second=72
 3d/physics_engine="Jolt Physics"
 
 [rendering]
@@ -78,11 +77,10 @@ rendering_device/driver.windows="d3d12"
 reflections/reflection_atlas/reflection_size=128
 reflections/reflection_atlas/reflection_size.mobile=127
 reflections/reflection_atlas/reflection_count=32
-anti_aliasing/quality/msaa_3d=2
 
 [xr]
 
 openxr/enabled=true
-openxr/foveation_level=2
+openxr/foveation_level=0
 openxr/extensions/render_model=true
 shaders/enabled=true
