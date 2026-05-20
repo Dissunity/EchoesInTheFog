@@ -44,8 +44,7 @@ func snap_piece_to_place(piece: Node3D) -> void:
 	is_solved = true
 	label.text = "PuzzleSoved"
 	
-	if piece.has_method("set_pickable"):
-		piece.enabled = false 
+	piece.enabled = false
 	
 	if piece is RigidBody3D:
 		piece.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC

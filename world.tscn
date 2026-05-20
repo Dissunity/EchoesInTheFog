@@ -632,9 +632,10 @@ uv1_triplanar = true
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
-[node name="GameManager" type="Node3D" parent="." unique_id=1948934005 node_paths=PackedStringArray("player", "monster")]
+[node name="GameManager" type="Node3D" parent="." unique_id=1948934005 node_paths=PackedStringArray("player", "puzzleHolder", "monster")]
 script = ExtResource("23_il2jm")
 player = NodePath("../Player")
+puzzleHolder = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D")
 monster = NodePath("../Monster")
 
 [node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
@@ -916,7 +917,7 @@ light_bake_mode = 1
 shadow_enabled = true
 omni_range = 2.394
 
-[connection signal="area_entered" from="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleArea3D" to="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleArea3D" method="_on_area_entered"]
+[connection signal="area_entered" from="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" to="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" method="_on_area_entered"]
 
 [editable path="LighthouseStructure"]
 [editable path="LighthouseStructure/MechanicalRoom"]

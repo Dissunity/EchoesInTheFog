@@ -1192,7 +1192,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.206, 0, -0.073)
 shape = SubResource("BoxShape3D_kqbvg")
 
 [node name="Puzzle_mechanical_room" type="RigidBody3D" parent="MechanicalRoom" unique_id=1968491663 groups=["PuzzlePiece"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.153, 0.74922353)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.184505, 1.2136875)
 collision_layer = 4
 collision_mask = 3
 mass = 10.0
@@ -1264,7 +1264,7 @@ hand_pose = SubResource("Resource_y84s8")
 editor_preview_mode = 1
 
 [node name="PuzzleHolderArea3D" type="Area3D" parent="MechanicalRoom" unique_id=836480515 node_paths=PackedStringArray("label", "target_position_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.124, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.185, -0.008)
 collision_mask = 4
 script = ExtResource("9_kqbvg")
 label = NodePath("../../Label3D")
@@ -1585,6 +1585,7 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
 [node name="Label3D" type="Label3D" parent="." unique_id=65362811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7427888, 47.57029, 0)
+visible = false
 
 [connection signal="area_exited" from="MechanicalRoom/PuzzleHolderArea3D" to="MechanicalRoom/PuzzleHolderArea3D" method="_on_area_exited"]
 [connection signal="body_entered" from="MechanicalRoom/PuzzleHolderArea3D" to="MechanicalRoom/PuzzleHolderArea3D" method="_on_body_entered"]
