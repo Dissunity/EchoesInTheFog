@@ -40,7 +40,8 @@ func _ready():
 	else:
 		# THE FIX: No more crashing! Just a friendly fallback message.
 		print("OpenXR not found or failed to initialize. Falling back to Desktop mode.")
- 
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 # Handle OpenXR session ready
 func _on_openxr_session_begun() -> void:
 	var current_refresh_rate = xr_interface.get_display_refresh_rate()
