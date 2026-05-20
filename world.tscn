@@ -91,6 +91,9 @@ normal_texture = ExtResource("10_ikiii")
 uv1_triplanar = true
 uv1_triplanar_sharpness = 1.0000008
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hiqwa"]
+height = 4.683716
+
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
@@ -132,6 +135,10 @@ material_override = SubResource("StandardMaterial3D_udxuc")
 
 [node name="Walls Room_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="11" unique_id=752707944]
 material_override = SubResource("StandardMaterial3D_hiqwa")
+
+[node name="Collision Shape stairmiddle" parent="LighthouseStructure/Lighthouse/Center of stairs_001/StaticBody3D" parent_id_path=PackedInt32Array(1498340944, 1742053483) index="0" unique_id=1858801285]
+transform = Transform3D(0.9999992, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999992, 0, 1.3418579, 0)
+shape = SubResource("CylinderShape3D_hiqwa")
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
