@@ -4,8 +4,8 @@
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
+[ext_resource type="Script" uid="uid://ook5rcwquue" path="res://addons/godot-xr-tools/effects/fade.gd" id="3_xpnt2"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
-[ext_resource type="Script" uid="uid://dw5deo661l4jw" path="res://world/monster/monster.gd" id="7_xpnt2"]
 [ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/Lighthouse/dirt.jpg" id="8_70uel"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://b6i65mvl7bnol" path="res://textures/Lighthouse/lighthouse_diffuse.png" id="9_udxuc"]
@@ -633,11 +633,16 @@ uv1_triplanar = true
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
-[node name="GameManager" type="Node3D" parent="." unique_id=1948934005 node_paths=PackedStringArray("player", "puzzleHolder", "monster")]
+[node name="GameManager" type="Node3D" parent="." unique_id=1948934005 node_paths=PackedStringArray("player", "puzzleHolder", "monster", "vr_fade")]
 script = ExtResource("23_il2jm")
 player = NodePath("../Player")
 puzzleHolder = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D")
 monster = NodePath("../Monster")
+vr_fade = NodePath("XRToolsFade")
+
+[node name="XRToolsFade" type="Node3D" parent="GameManager" unique_id=1952421127]
+script = ExtResource("3_xpnt2")
+metadata/_custom_type_script = "uid://ook5rcwquue"
 
 [node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
 
@@ -669,7 +674,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
 [node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
-script = ExtResource("7_xpnt2")
 
 [node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
 
@@ -739,7 +743,7 @@ material_override = SubResource("StandardMaterial3D_w4lh7")
 material_override = SubResource("StandardMaterial3D_k3lar")
 
 [node name="Puzzle_mechanical_room" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="8" unique_id=1968491663]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.000168, 1.0127665)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7203709, 43.37325, 0.22188038)
 
 [node name="Puzzle-bar" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="0" unique_id=1652247457]
 material_override = SubResource("StandardMaterial3D_qktwf")
@@ -880,7 +884,7 @@ transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757,
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5508676)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
-transform = Transform3D(-0.86261964, 0, 0.5058532, 0, 1, 0, -0.5058532, 0, -0.86261964, -0.177, 48.737934, -2.1243834)
+transform = Transform3D(-0.25299817, 0, -0.96746683, 0, 1, 0, 0.96746683, 0, -0.25299817, -1.5447729, 42.88512, -0.79678434)
 
 [node name="TimeTravelController2" type="Node" parent="." unique_id=699235048 node_paths=PackedStringArray("time_travel_light", "environment", "moonlight", "hinge")]
 script = ExtResource("16_2u3nc")
