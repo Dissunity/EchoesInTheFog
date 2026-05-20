@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcpoaefeomw2m"
-path.s3tc="res://.godot/imported/dirty_tiles_diff.png-26fddec5578de7a20a42d5d890a0528d.s3tc.ctex"
+uid="uid://carb0m1o2u8yv"
+path.s3tc="res://.godot/imported/blue_metal_roughness.png-32664ce757551bbc42791b0b33c0a253.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Lighthouse/dirty_tiles_diff.png"
-dest_files=["res://.godot/imported/dirty_tiles_diff.png-26fddec5578de7a20a42d5d890a0528d.s3tc.ctex"]
+source_file="res://textures/Lighthouse/blue_metal_roughness.png"
+dest_files=["res://.godot/imported/blue_metal_roughness.png-32664ce757551bbc42791b0b33c0a253.s3tc.ctex"]
 
 [params]
 

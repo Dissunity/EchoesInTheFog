@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://deuiis3wjcw61"
-path.s3tc="res://.godot/imported/dirty_tiles_normal.png-cb0e670d23a5a0dcf0d13a29df1798c9.s3tc.ctex"
+uid="uid://bwgcejc8nng8a"
+path.s3tc="res://.godot/imported/blue_metal_normal.png-081555b929972362de0d8dedd4e068a9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Lighthouse/dirty_tiles_normal.png"
-dest_files=["res://.godot/imported/dirty_tiles_normal.png-cb0e670d23a5a0dcf0d13a29df1798c9.s3tc.ctex"]
+source_file="res://textures/Lighthouse/blue_metal_normal.png"
+dest_files=["res://.godot/imported/blue_metal_normal.png-081555b929972362de0d8dedd4e068a9.s3tc.ctex"]
 
 [params]
 
@@ -27,7 +27,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://textures/Lighthouse/dirty_tiles_normal.png"
+roughness/src_normal="res://textures/Lighthouse/blue_metal_normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
