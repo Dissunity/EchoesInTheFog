@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var player: XROrigin3D
-@export var puzzleHolder: XRToolsSnapZone
+#@export var puzzleHolder: XRToolsSnapZone
 @export var monster: Node3D
 
 # To see whether the player is in the fresnel room
@@ -11,13 +11,13 @@ var puzzle_is_snapped: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if not player or not puzzleHolder or not monster:
-			push_error("GameManager is missing one or more nodes in the Inspector!")
-			return
+	#if not player or not puzzleHolder or not monster:
+			#push_error("GameManager is missing one or more nodes in the Inspector!")
+			#return
 	
 	player.reached_target_height.connect(_on_player_height_changed)
-	puzzleHolder.has_picked_up.connect(_on_object_snapped)
-	puzzleHolder.has_dropped.connect(_on_object_dropped)
+	#puzzleHolder.has_picked_up.connect(_on_object_snapped)
+	#puzzleHolder.has_dropped.connect(_on_object_dropped)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
