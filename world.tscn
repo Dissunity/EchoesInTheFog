@@ -735,6 +735,9 @@ material_override = SubResource("StandardMaterial3D_w4lh7")
 [node name="Oil-lamp" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="5" unique_id=786476786]
 material_override = SubResource("StandardMaterial3D_k3lar")
 
+[node name="Puzzle_mechanical_room" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="8" unique_id=1968491663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.000168, 1.0127665)
+
 [node name="Puzzle-bar" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="0" unique_id=1652247457]
 material_override = SubResource("StandardMaterial3D_qktwf")
 
@@ -749,9 +752,6 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 
 [node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="4" unique_id=319097456]
 material_override = SubResource("StandardMaterial3D_w44yn")
-
-[node name="PuzzleArea3D" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="9" unique_id=836480515 node_paths=PackedStringArray("target_position_node")]
-target_position_node = NodePath("Marker3D")
 
 [node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1307461933]
 material_override = SubResource("StandardMaterial3D_6ah6f")
@@ -915,6 +915,8 @@ light_indirect_energy = 0.751
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 2.394
+
+[connection signal="area_entered" from="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleArea3D" to="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleArea3D" method="_on_area_entered"]
 
 [editable path="LighthouseStructure"]
 [editable path="LighthouseStructure/MechanicalRoom"]

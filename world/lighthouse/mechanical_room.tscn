@@ -694,8 +694,11 @@ open_pose = ExtResource("7_kqbvg")
 closed_pose = ExtResource("7_kqbvg")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_og3yr"]
+size = Vector3(0.46887207, 0.24802399, 0.25662994)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_jh2n6"]
-size = Vector3(0.3779297, 0.36647034, 0.4215088)
+size = Vector3(0.3779297, 0.27796173, 0.21612549)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f050i"]
 size = Vector3(0.2, 0.6, 0.1)
@@ -1192,7 +1195,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.206, 0, -0.073)
 shape = SubResource("BoxShape3D_kqbvg")
 
 [node name="Puzzle_mechanical_room" type="RigidBody3D" parent="MechanicalRoom" unique_id=1968491663 groups=["PuzzlePiece"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.153, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.153, 0.74922353)
 collision_layer = 4
 collision_mask = 3
 mass = 10.0
@@ -1263,16 +1266,20 @@ transform = Transform3D(-0.0685029, -0.9976509, 0, 0.9976509, -0.0685029, 0, 0, 
 hand_pose = SubResource("Resource_y84s8")
 editor_preview_mode = 1
 
+[node name="Area3D" type="Area3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=596353824]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room/Area3D" unique_id=1362453066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011169434, 0.009700775, -0.08150864)
+shape = SubResource("BoxShape3D_og3yr")
+
 [node name="PuzzleArea3D" type="Area3D" parent="MechanicalRoom" unique_id=836480515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.124, 0)
 collision_mask = 0
 script = ExtResource("9_kqbvg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzleArea3D" unique_id=543814204]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, 0, 0.002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, -0.044254303, -0.031714767)
 shape = SubResource("BoxShape3D_jh2n6")
-
-[node name="Marker3D" type="Marker3D" parent="MechanicalRoom/PuzzleArea3D" unique_id=605488652]
 
 [node name="Door2Lever" type="Node3D" parent="." unique_id=253043712]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2, 47.264, 0.2)
