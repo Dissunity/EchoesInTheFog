@@ -90,6 +90,7 @@ crouch_button_action = "action_crouch"
 
 [node name="PlayerBody" parent="." unique_id=694939654 instance=ExtResource("4_sweqy")]
 head_behavior_mode = 0
+push_rigid_bodies = false
 
 [node name="StairDetector" type="Area3D" parent="PlayerBody" unique_id=97997994]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32971746, 0)

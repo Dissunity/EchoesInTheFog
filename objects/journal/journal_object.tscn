@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_1e2rf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g1kit"]
-size = Vector3(0.3730957, 0.28248292, 0.05)
+size = Vector3(0.3249634, 0.19055787, 0.05)
 
 [sub_resource type="Resource" id="Resource_t30hx"]
 script = ExtResource("5_1e2rf")
@@ -20,13 +20,14 @@ metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 mass = 0.25
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0024169981, 0.12322146, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004486084, 0.07725893, 0)
 shape = SubResource("BoxShape3D_g1kit")
 
 [node name="Journal" parent="." index="1" unique_id=278160710 instance=ExtResource("2_pweuu")]
-transform = Transform3D(0.3, 0, 0, 0, 0.4, 0, 0, 0, 0.3, 0, 0, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="GrabPointHandLeft" parent="." index="2" unique_id=1339177687 instance=ExtResource("3_pweuu")]
-transform = Transform3D(-4.371139e-08, -0.9999999, -1.0587911e-22, 0.9102578, -3.978863e-08, -0.41404194, 0.41404194, -1.8098348e-08, 0.9102577, -0.07255339, -0.009520963, -0.06723953)
+transform = Transform3D(-4.371139e-08, -0.9999999, -4.2351647e-22, 0.72401536, -3.1647716e-08, -0.68978375, 0.6897838, -3.0151405e-08, 0.7240153, 0.047697872, -0.009520963, -0.06723953)
+visible = true
 mode = 1
 hand_pose = SubResource("Resource_t30hx")

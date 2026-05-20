@@ -11,6 +11,9 @@ var is_open = false
 @onready var label_right: Label = $RightPage/Label
 @export var debug = false
 
+
+var parent: XRToolsPickable
+
 func toggle_open():
 	if is_open:
 		close_journal()
@@ -55,17 +58,12 @@ func _turn_decal_on():
 	decal_right.update_text_projection()
 
 func _ready() -> void:
+	parent = get_parent()
 	decal_left.update_text_projection.call_deferred()
 	decal_right.update_text_projection.call_deferred()
 
 func _process(_delta: float) -> void:
-	if debug and Input.is_action_just_pressed("ui_accept"):
-		toggle_open()
-	if debug and Input.is_action_just_pressed("ui_right"):
-		change_text("hello", "world")
-	print(global_rotation)
-	
-	if abs(global_rotation.x) < 0.2 and abs(global_rotation.z) < 0.2 and not is_open:
+	if parent.is_picked_up() and !is_open:
 		open_journal()
-	elif (abs(global_rotation.x) > 0.3 or abs(global_rotation.z) > 0.3) and is_open:
+	elif !parent.is_picked_up() and is_open:
 		close_journal()
