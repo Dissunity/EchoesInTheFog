@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dvnqlcjbxym27" path="res://textures/Lighthouse/rusty_metal_rough.png" id="15_wukud"]
 [ext_resource type="Texture2D" uid="uid://os6iyr8nfpx" path="res://textures/Lighthouse/rusty_metal_diffuse.png" id="16_bc84e"]
 [ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="17_wukud"]
+[ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2o6r5"]
 sky_top_color = Color(0.002400443, 0.07285706, 0.16548955, 1)
@@ -157,6 +158,14 @@ height = 4.683716
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
+[node name="GameManager" type="Node3D" parent="." unique_id=1948934005 node_paths=PackedStringArray("player", "puzzleHolder", "monster")]
+script = ExtResource("23_il2jm")
+player = NodePath("../Player")
+puzzleHolder = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolder/SnapZone")
+monster = NodePath("../Monster")
+
+[node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1791015796]
 environment = SubResource("Environment_hiqwa")
 
@@ -221,6 +230,14 @@ material_override = SubResource("StandardMaterial3D_hiqwa")
 transform = Transform3D(0.9999992, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999992, 0, 1.3418579, 0)
 shape = SubResource("CylinderShape3D_hiqwa")
 
+[node name="InteractableLever" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin" parent_id_path=PackedInt32Array(1498340944, 367583270, 1328970426) index="0" unique_id=1428835588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+hinge_position = 0.0
+
+[node name="InteractableLever" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin" parent_id_path=PackedInt32Array(1498340944, 367583270, 1622711282) index="0" unique_id=1939865593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+hinge_position = 0.0
+
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
 
@@ -234,9 +251,7 @@ transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757,
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5508676)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 46.907032, 1.3690032)
-
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177, 46.807, 1.369)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=526361758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010338128, 43.830795, 2.5510192)
@@ -268,3 +283,4 @@ shadow_enabled = true
 omni_range = 2.394
 
 [editable path="LighthouseStructure"]
+[editable path="LighthouseStructure/MechanicalRoom"]

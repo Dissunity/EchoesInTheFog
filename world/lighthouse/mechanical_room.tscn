@@ -1346,7 +1346,6 @@ metadata/_custom_type_script = "uid://dn7grmvmgjiqv"
 
 [node name="Door2Lever" type="Node3D" parent="." unique_id=253043712]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2, 47.264, 0.2)
-visible = false
 
 [node name="LeverSmooth" type="Node3D" parent="Door2Lever" unique_id=1825583497]
 
@@ -1364,10 +1363,10 @@ mesh = SubResource("BoxMesh_5oq7q")
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractableLever" type="Node3D" parent="Door2Lever/LeverSmooth/LeverOrigin" unique_id=1428835588]
-transform = Transform3D(1, 0, 0, 0, 0.17364822, 0.9848077, 0, -0.9848077, 0.17364822, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0)
 script = ExtResource("13_y84s8")
 hinge_limit_min = -90.0
-hinge_position = -80.0
+hinge_position = 45.0
 
 [node name="HingeBody" type="StaticBody3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=1729672906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
@@ -1420,7 +1419,6 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
 [node name="Door1Lever" type="Node3D" parent="." unique_id=1713652773]
 transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, 0.20209576, 47.264, -0.19872932)
-visible = false
 
 [node name="LeverSmooth" type="Node3D" parent="Door1Lever" unique_id=1416869374]
 
@@ -1438,10 +1436,10 @@ mesh = SubResource("BoxMesh_5oq7q")
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractableLever" type="Node3D" parent="Door1Lever/LeverSmooth/LeverOrigin" unique_id=1939865593]
-transform = Transform3D(1, 0, 0, 0, 0.034899496, 0.99939084, 0, -0.99939084, 0.034899496, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0)
 script = ExtResource("13_y84s8")
 hinge_limit_min = -90.0
-hinge_position = -88.0
+hinge_position = 45.0
 
 [node name="HingeBody" type="StaticBody3D" parent="Door1Lever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=637408262]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
