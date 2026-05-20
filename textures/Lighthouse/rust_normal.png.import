@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxfb77d5jjsly"
-path.s3tc="res://.godot/imported/granite_tile_normal.png-7a6ab1555a011dca7175d0e90f7313e7.s3tc.ctex"
+uid="uid://bhev61mfv31a8"
+path.s3tc="res://.godot/imported/rust_normal.png-efad4bc7f06219459b60c6ea2e890817.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Lighthouse/granite_tile_normal.png"
-dest_files=["res://.godot/imported/granite_tile_normal.png-7a6ab1555a011dca7175d0e90f7313e7.s3tc.ctex"]
+source_file="res://textures/Lighthouse/rust_normal.png"
+dest_files=["res://.godot/imported/rust_normal.png-efad4bc7f06219459b60c6ea2e890817.s3tc.ctex"]
 
 [params]
 
@@ -26,8 +26,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://textures/Lighthouse/granite_tile_normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

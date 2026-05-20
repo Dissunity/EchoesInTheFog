@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca14xddjy33e7"
-path.s3tc="res://.godot/imported/wood_normal.png-7a57abb2a4c4980350f69257882371f3.s3tc.ctex"
+uid="uid://cuucjxlfin3t5"
+path.s3tc="res://.godot/imported/wood_table_nor.png-b6e992210393d2207b4fb6e6c90503d7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Lighthouse/wood_normal.png"
-dest_files=["res://.godot/imported/wood_normal.png-7a57abb2a4c4980350f69257882371f3.s3tc.ctex"]
+source_file="res://textures/Lighthouse/wood_table_nor.png"
+dest_files=["res://.godot/imported/wood_table_nor.png-b6e992210393d2207b4fb6e6c90503d7.s3tc.ctex"]
 
 [params]
 
@@ -26,8 +26,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://textures/Lighthouse/wood_table_nor.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
