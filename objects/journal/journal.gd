@@ -63,3 +63,9 @@ func _process(_delta: float) -> void:
 		toggle_open()
 	if debug and Input.is_action_just_pressed("ui_right"):
 		change_text("hello", "world")
+	print(global_rotation)
+	
+	if abs(global_rotation.x) < 0.2 and abs(global_rotation.z) < 0.2 and not is_open:
+		open_journal()
+	elif (abs(global_rotation.x) > 0.3 or abs(global_rotation.z) > 0.3) and is_open:
+		close_journal()
