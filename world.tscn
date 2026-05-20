@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/Lighthouse/dirt.jpg" id="8_70uel"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://b6i65mvl7bnol" path="res://textures/Lighthouse/lighthouse_diffuse.png" id="9_udxuc"]
-[ext_resource type="PackedScene" uid="uid://ds0isbkfbm223" path="res://player.tscn" id="9_wse8f"]
+[ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://803ceklrsdjh" path="res://textures/Lighthouse/lighthouse_normals.png" id="10_ikiii"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
@@ -22,6 +22,26 @@
 [ext_resource type="Texture2D" uid="uid://dvnqlcjbxym27" path="res://textures/Lighthouse/rusty_metal_rough.png" id="15_wukud"]
 [ext_resource type="Texture2D" uid="uid://os6iyr8nfpx" path="res://textures/Lighthouse/rusty_metal_diffuse.png" id="16_bc84e"]
 [ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="17_wukud"]
+[ext_resource type="Texture2D" uid="uid://ddf0f6crcei8i" path="res://textures/Lighthouse/blue_metal_diffuse.png" id="18_1ew0l"]
+[ext_resource type="Texture2D" uid="uid://cjei3xh5knws1" path="res://textures/Lighthouse/grey_woor.png" id="18_qktwf"]
+[ext_resource type="Texture2D" uid="uid://dnf6q76f00m2u" path="res://textures/Lighthouse/grey_normal.png" id="19_bh8nc"]
+[ext_resource type="Texture2D" uid="uid://bwgcejc8nng8a" path="res://textures/Lighthouse/blue_metal_normal.png" id="19_ryup7"]
+[ext_resource type="Texture2D" uid="uid://cltcevqvy0ins" path="res://textures/Lighthouse/grey_wood.png" id="20_jjr1n"]
+[ext_resource type="Texture2D" uid="uid://7p0e80wpa7sr" path="res://textures/Lighthouse/worn_floor_diffuse.png" id="21_gggvi"]
+[ext_resource type="Texture2D" uid="uid://b27uya7rwvlto" path="res://textures/Lighthouse/worn_floor_roughness.png" id="22_w44yn"]
+[ext_resource type="Texture2D" uid="uid://r638g51ytrgn" path="res://textures/Lighthouse/rust_diff.png" id="23_6ah6f"]
+[ext_resource type="Texture2D" uid="uid://bhev61mfv31a8" path="res://textures/Lighthouse/rust_normal.png" id="24_g1i3r"]
+[ext_resource type="Texture2D" uid="uid://roaxinoy2yox" path="res://textures/Lighthouse/rust_rough.png" id="25_my276"]
+[ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="28_ytpkv"]
+[ext_resource type="Texture2D" uid="uid://d4dxtk3m0uuvj" path="res://textures/Lighthouse/wood_diffue.png" id="30_jas3d"]
+[ext_resource type="Texture2D" uid="uid://ca14xddjy33e7" path="res://textures/Lighthouse/wood_normal.png" id="31_7htu6"]
+[ext_resource type="Texture2D" uid="uid://cmmfnqbrsflg" path="res://textures/Lighthouse/wood_rough.png" id="32_7qk3m"]
+[ext_resource type="Texture2D" uid="uid://cy7u2x2nhwr82" path="res://textures/Lighthouse/fabric_diffuse.png" id="33_xpnt2"]
+[ext_resource type="Texture2D" uid="uid://b2lklufe7w8fy" path="res://textures/Lighthouse/fabric_normal.png" id="34_ruyqm"]
+[ext_resource type="Texture2D" uid="uid://bbma4vwkoahcu" path="res://textures/Lighthouse/fabric_rough.png" id="35_fnoqa"]
+[ext_resource type="Texture2D" uid="uid://bs7ogjltewj8e" path="res://textures/Lighthouse/wood_table_diff.png" id="37_jas3d"]
+[ext_resource type="Texture2D" uid="uid://cuucjxlfin3t5" path="res://textures/Lighthouse/wood_table_nor.png" id="38_7htu6"]
+[ext_resource type="Texture2D" uid="uid://dvnb0gmcjlcrn" path="res://textures/Lighthouse/wood_table_rough.png" id="39_7qk3m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2o6r5"]
 sky_top_color = Color(0.002400443, 0.07285706, 0.16548955, 1)
@@ -141,6 +161,17 @@ normal_texture = ExtResource("14_26xuy")
 uv1_scale = Vector3(3, 3, 3)
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nx736"]
+albedo_texture = ExtResource("18_1ew0l")
+metallic = 0.72
+metallic_specular = 0.68
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("19_ryup7")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqwa"]
 albedo_texture = ExtResource("9_udxuc")
 metallic_specular = 0.4
@@ -151,8 +182,461 @@ uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 1.0000008
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yx0jh"]
+albedo_texture = ExtResource("18_qktwf")
+metallic_specular = 0.37
+roughness_texture = ExtResource("20_jjr1n")
+normal_enabled = true
+normal_texture = ExtResource("19_bh8nc")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ew0l"]
+albedo_texture = ExtResource("16_bc84e")
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.06698606
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_hiqwa"]
 height = 4.683716
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ryup7"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.38
+metallic_specular = 0.38
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_texture = ExtResource("17_wukud")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytpkv"]
+albedo_texture = ExtResource("21_gggvi")
+roughness_texture = ExtResource("22_w44yn")
+normal_enabled = true
+normal_scale = 0.7
+normal_texture = ExtResource("12_ikiii")
+uv1_scale = Vector3(0.7, 0.7, 0.7)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55kwu"]
+albedo_texture = ExtResource("16_bc84e")
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3o6s"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.38
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jas3d"]
+albedo_texture = ExtResource("23_6ah6f")
+metallic = 0.34
+metallic_specular = 0.47
+roughness_texture = ExtResource("25_my276")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("24_g1i3r")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4lh7"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.36
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3lar"]
+albedo_color = Color(0.3328807, 0.33288068, 0.33288068, 0.9372549)
+emission_enabled = true
+emission = Color(0.62152386, 0.62152386, 0.6215238, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olr1q"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.56
+roughness = 0.64
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qktwf"]
+albedo_texture = ExtResource("23_6ah6f")
+metallic = 0.43
+roughness_texture = ExtResource("25_my276")
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("24_g1i3r")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh8nc"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.68
+metallic_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjr1n"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.41
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gggvi"]
+albedo_color = Color(0.34781694, 0.34781697, 0.3478169, 1)
+albedo_texture = ExtResource("23_6ah6f")
+metallic = 0.33
+roughness_texture = ExtResource("25_my276")
+normal_enabled = true
+normal_texture = ExtResource("24_g1i3r")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w44yn"]
+albedo_texture = ExtResource("23_6ah6f")
+metallic = 0.66
+roughness_texture = ExtResource("25_my276")
+normal_enabled = true
+normal_scale = 5.0
+normal_texture = ExtResource("24_g1i3r")
+uv1_scale = Vector3(5, 5, 5)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ah6f"]
+albedo_color = Color(0.6194887, 0.61948866, 0.6194887, 1)
+albedo_texture = ExtResource("23_6ah6f")
+metallic = 0.32
+roughness_texture = ExtResource("25_my276")
+normal_enabled = true
+normal_texture = ExtResource("24_g1i3r")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q42o5"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.32
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1i3r"]
+albedo_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
+albedo_texture = ExtResource("23_6ah6f")
+metallic = 0.32
+roughness_texture = ExtResource("25_my276")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("24_g1i3r")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b7btk"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.32
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kkgr2"]
+albedo_color = Color(0.21950102, 0.21950102, 0.21950102, 1)
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.34
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iett8"]
+albedo_color = Color(0.2357319, 0.23573193, 0.2357319, 1)
+albedo_texture = ExtResource("18_1ew0l")
+metallic = 0.38
+roughness_texture = ExtResource("28_ytpkv")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("19_ryup7")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5m4j"]
+albedo_texture = ExtResource("18_1ew0l")
+metallic = 0.34
+metallic_specular = 0.57
+roughness_texture = ExtResource("28_ytpkv")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("19_ryup7")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e77ka"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.29
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_my276"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.39
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0wax"]
+albedo_texture = ExtResource("30_jas3d")
+roughness_texture = ExtResource("32_7qk3m")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("31_7htu6")
+uv1_scale = Vector3(3, 3, 3)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sedwk"]
+albedo_texture = ExtResource("30_jas3d")
+roughness_texture = ExtResource("32_7qk3m")
+normal_enabled = true
+normal_texture = ExtResource("2_aqk2v")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37ykd"]
+albedo_texture = ExtResource("33_xpnt2")
+roughness_texture = ExtResource("35_fnoqa")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("34_ruyqm")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hvhf"]
+albedo_texture = ExtResource("33_xpnt2")
+roughness_texture = ExtResource("35_fnoqa")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("34_ruyqm")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75cpn"]
+albedo_texture = ExtResource("30_jas3d")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("31_7htu6")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct3wn"]
+albedo_texture = ExtResource("30_jas3d")
+roughness_texture = ExtResource("32_7qk3m")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("31_7htu6")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynm8w"]
+albedo_texture = ExtResource("33_xpnt2")
+roughness_texture = ExtResource("35_fnoqa")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("34_ruyqm")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rakx2"]
+albedo_texture = ExtResource("33_xpnt2")
+roughness_texture = ExtResource("35_fnoqa")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("34_ruyqm")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fh52"]
+albedo_color = Color(0.5529556, 0.55295557, 0.55295557, 1)
+albedo_texture = ExtResource("33_xpnt2")
+roughness_texture = ExtResource("35_fnoqa")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("34_ruyqm")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8f1f8"]
+albedo_texture = ExtResource("30_jas3d")
+roughness_texture = ExtResource("32_7qk3m")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("31_7htu6")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxwtw"]
+albedo_texture = ExtResource("30_jas3d")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("31_7htu6")
+uv1_scale = Vector3(4, 4, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir1d4"]
+albedo_texture = ExtResource("30_jas3d")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("31_7htu6")
+uv1_scale = Vector3(3, 3, 3)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj74d"]
+albedo_color = Color(0.73300546, 0.7330054, 0.7330054, 1)
+albedo_texture = ExtResource("33_xpnt2")
+roughness_texture = ExtResource("35_fnoqa")
+normal_enabled = true
+normal_scale = 3.0
+normal_texture = ExtResource("34_ruyqm")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpnt2"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruyqm"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fnoqa"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy5nj"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5g01"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl6gn"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjwlp"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfwfa"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qm10a"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fs00"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0aah"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_415my"]
+albedo_texture = ExtResource("37_jas3d")
+roughness_texture = ExtResource("39_7qk3m")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("38_7htu6")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
 
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
@@ -214,18 +698,175 @@ material_override = SubResource("StandardMaterial3D_udxuc")
 [node name="Railing Viewing level_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="8" unique_id=121648206]
 material_override = SubResource("StandardMaterial3D_mc2jv")
 
+[node name="Cube_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="9" unique_id=708427184]
+material_override = SubResource("StandardMaterial3D_nx736")
+
 [node name="Walls Room_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="11" unique_id=752707944]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012268782, -0.066223145, -0.0070996284)
 material_override = SubResource("StandardMaterial3D_hiqwa")
+
+[node name="Floor Room_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="12" unique_id=1473161402]
+transform = Transform3D(1.048912, 0, 0, 0, 1, 0, 0, 0, 1.048912, 0.00018250008, 42.752712, -0.0025579338)
+material_override = SubResource("StandardMaterial3D_yx0jh")
+
+[node name="Center of stairs_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="13" unique_id=1007143571]
+material_override = SubResource("StandardMaterial3D_1ew0l")
 
 [node name="Collision Shape stairmiddle" parent="LighthouseStructure/Lighthouse/Center of stairs_001/StaticBody3D" parent_id_path=PackedInt32Array(1498340944, 1742053483) index="0" unique_id=1858801285]
 transform = Transform3D(0.9999992, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999992, 0, 1.3418579, 0)
 shape = SubResource("CylinderShape3D_hiqwa")
 
+[node name="Stairs_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="14" unique_id=1445684434]
+material_override = SubResource("StandardMaterial3D_ryup7")
+
+[node name="Mechanical room" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="16" unique_id=1866034699]
+material_override = SubResource("StandardMaterial3D_ytpkv")
+
+[node name="Circle" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="0" unique_id=1100336640]
+material_override = SubResource("StandardMaterial3D_55kwu")
+
+[node name="Circle_001" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="1" unique_id=949112408]
+material_override = SubResource("StandardMaterial3D_f3o6s")
+
+[node name="Clockwork-cabinet" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="2" unique_id=1240149120]
+material_override = SubResource("StandardMaterial3D_jas3d")
+
+[node name="Gear" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="3" unique_id=811916278]
+material_override = SubResource("StandardMaterial3D_w4lh7")
+
+[node name="Oil-lamp" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="5" unique_id=786476786]
+material_override = SubResource("StandardMaterial3D_k3lar")
+
+[node name="Puzzle-holder" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolder" parent_id_path=PackedInt32Array(1498340944, 367583270, 1285356868) index="0" unique_id=858689615]
+material_override = SubResource("StandardMaterial3D_olr1q")
+
+[node name="Puzzle-bar" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1968491663) index="1" unique_id=1652247457]
+material_override = SubResource("StandardMaterial3D_qktwf")
+
+[node name="Puzzle-Gear_001" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1968491663) index="2" unique_id=1928444832]
+material_override = SubResource("StandardMaterial3D_bh8nc")
+
+[node name="Puzzle-Gear_002" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1968491663) index="3" unique_id=509403186]
+material_override = SubResource("StandardMaterial3D_jjr1n")
+
+[node name="Puzzle-Gear_003" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1968491663) index="4" unique_id=1964656213]
+material_override = SubResource("StandardMaterial3D_gggvi")
+
+[node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1968491663) index="5" unique_id=319097456]
+material_override = SubResource("StandardMaterial3D_w44yn")
+
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1458058797]
+material_override = SubResource("StandardMaterial3D_6ah6f")
+
+[node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 1729672906) index="4" unique_id=1373840888]
+material_override = SubResource("StandardMaterial3D_q42o5")
+
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1458058797]
+material_override = SubResource("StandardMaterial3D_g1i3r")
+
+[node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 637408262) index="4" unique_id=67487599]
+material_override = SubResource("StandardMaterial3D_b7btk")
+
+[node name="Circle" parent="LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/Frame/pull_lever_foghorn" parent_id_path=PackedInt32Array(1498340944, 367583270, 114955935) index="0" unique_id=257718913]
+material_override = SubResource("StandardMaterial3D_kkgr2")
+
+[node name="Circle_002" parent="LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/Frame/pull_lever_foghorn" parent_id_path=PackedInt32Array(1498340944, 367583270, 114955935) index="1" unique_id=844432638]
+material_override = SubResource("StandardMaterial3D_iett8")
+
+[node name="Circle_001" parent="LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 543764757) index="0" unique_id=547244034]
+material_override = SubResource("StandardMaterial3D_r5m4j")
+
+[node name="turning-lever_001" parent="LighthouseStructure/MechanicalRoom/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 539045129) index="1" unique_id=1671252395]
+material_override = SubResource("StandardMaterial3D_e77ka")
+
+[node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 539045129) index="4" unique_id=2021877850]
+material_override = SubResource("StandardMaterial3D_my276")
+
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
 
+[node name="chair_base" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="0" unique_id=1467525054]
+material_override = SubResource("StandardMaterial3D_c0wax")
+
+[node name="BézierCurve - backing" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="5" unique_id=1874875427]
+material_override = SubResource("StandardMaterial3D_sedwk")
+
+[node name="BézierCurve - backing_cushion__LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="6" unique_id=1086825451]
+material_override = SubResource("StandardMaterial3D_37ykd")
+
+[node name="chair_base_cushion__LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="7" unique_id=1716645187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010501862, 0)
+material_override = SubResource("StandardMaterial3D_1hvhf")
+
+[node name="arm_l_front_LP" parent="Chair/chair" parent_id_path=PackedInt32Array(858333585, 934903067) index="8" unique_id=1512967619]
+material_override = SubResource("StandardMaterial3D_75cpn")
+
+[node name="chair_broken" parent="Chair" index="1" unique_id=1397308486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00078344345)
+
+[node name="chair_base" parent="Chair/chair_broken" index="0" unique_id=1334540736]
+material_override = SubResource("StandardMaterial3D_ct3wn")
+
+[node name="BézierCurve - backing_cushion__LP" parent="Chair/chair_broken" index="5" unique_id=504953670]
+material_override = SubResource("StandardMaterial3D_ynm8w")
+
+[node name="chair_base_cushion__LP" parent="Chair/chair_broken" index="6" unique_id=1477559896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01260376, 0)
+material_override = SubResource("StandardMaterial3D_rakx2")
+
+[node name="chair_base_cushion__filling" parent="Chair/chair_broken" index="11" unique_id=1393039112]
+material_override = SubResource("StandardMaterial3D_3fh52")
+
+[node name="BézierCurve - backing_broken" parent="Chair/chair_broken" index="13" unique_id=271368552]
+material_override = SubResource("StandardMaterial3D_8f1f8")
+
+[node name="arm_l_front_LP_broken" parent="Chair/chair_broken" index="14" unique_id=95222713]
+material_override = SubResource("StandardMaterial3D_lxwtw")
+
+[node name="arm_r_front_LP_broken" parent="Chair/chair_broken" index="15" unique_id=195760598]
+material_override = SubResource("StandardMaterial3D_ir1d4")
+
+[node name="BézierCurve - backing_cushion__LP_filling" parent="Chair/chair_broken" index="16" unique_id=1638167857]
+material_override = SubResource("StandardMaterial3D_tj74d")
+
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
+
+[node name="table_structure" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="0" unique_id=1818064274]
+material_override = SubResource("StandardMaterial3D_xpnt2")
+
+[node name="leg_l_front" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="1" unique_id=958181246]
+material_override = SubResource("StandardMaterial3D_ruyqm")
+
+[node name="table_drawers_top" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="2" unique_id=120116464]
+material_override = SubResource("StandardMaterial3D_fnoqa")
+
+[node name="table_drawers_bottom" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="4" unique_id=2042449971]
+material_override = SubResource("StandardMaterial3D_yy5nj")
+
+[node name="table_top" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="5" unique_id=931835201]
+material_override = SubResource("StandardMaterial3D_p5g01")
+
+[node name="table_drawers_,middle" parent="Table/table" parent_id_path=PackedInt32Array(723022751, 2010079531) index="6" unique_id=1877557710]
+material_override = SubResource("StandardMaterial3D_fl6gn")
+
+[node name="table_structure" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="0" unique_id=1653667264]
+material_override = SubResource("StandardMaterial3D_gjwlp")
+
+[node name="leg_l_front" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="1" unique_id=1003108195]
+material_override = SubResource("StandardMaterial3D_yfwfa")
+
+[node name="table_drawers_top" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="2" unique_id=1391644937]
+material_override = SubResource("StandardMaterial3D_qm10a")
+
+[node name="table_drawers_bottom" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="4" unique_id=531296703]
+material_override = SubResource("StandardMaterial3D_7fs00")
+
+[node name="table_drawers_,middle" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="5" unique_id=1439946901]
+material_override = SubResource("StandardMaterial3D_e0aah")
+
+[node name="table_top_broken" parent="Table/table_broken" parent_id_path=PackedInt32Array(723022751, 1950040690) index="6" unique_id=356048596]
+material_override = SubResource("StandardMaterial3D_415my")
 
 [node name="BigCandle" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757, 0, 0.007660445, -2.5580878, 42.91658, -0.611697)
@@ -239,7 +880,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 46.907032, 1.369
 [node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=526361758]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010338128, 43.830795, 2.5510192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009957075, 43.869022, 2.550275)
 light_color = Color(0.9262696, 0.80915624, 0.50088173, 1)
 light_energy = 4.984
 light_indirect_energy = 0.938
@@ -250,7 +891,7 @@ shadow_blur = 1.195
 omni_range = 11.796
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1389733909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.182728, 1.417907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28558558, 47.284626, 1.4361355)
 light_color = Color(0.7258298, 0.6066042, 0.27108586, 1)
 light_energy = 3.241
 light_indirect_energy = 0.813
@@ -268,3 +909,12 @@ shadow_enabled = true
 omni_range = 2.394
 
 [editable path="LighthouseStructure"]
+[editable path="LighthouseStructure/MechanicalRoom"]
+[editable path="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
+[editable path="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
+[editable path="Chair"]
+[editable path="Chair/chair"]
+[editable path="Chair/chair_broken"]
+[editable path="Table"]
+[editable path="Table/table"]
+[editable path="Table/table_broken"]
