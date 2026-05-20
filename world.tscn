@@ -44,7 +44,7 @@ mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
-transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.9648332, 0.24749339, 43.646576, -1.1616642)
+transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.9648332, -0.5925199, 44.07114, -0.5093287)
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)

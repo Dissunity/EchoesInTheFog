@@ -16,33 +16,8 @@ collision_mask = 262405
 script = ExtResource("1_2hs0m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2143596673]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_sh265")
-
-[node name="XROrigin3D" type="XROrigin3D" parent="CollisionShape3D" unique_id=1051909420]
-
-[node name="XRCamera3D" type="XRCamera3D" parent="CollisionShape3D/XROrigin3D" unique_id=212173750]
-
-[node name="Neck" type="Node3D" parent="CollisionShape3D/XROrigin3D/XRCamera3D" unique_id=613006301]
-
-[node name="LeftHand" type="XRController3D" parent="CollisionShape3D/XROrigin3D" unique_id=503059481]
-tracker = &"left_hand"
-
-[node name="FunctionPickup" parent="CollisionShape3D/XROrigin3D/LeftHand" unique_id=678520256 instance=ExtResource("3_1jxqw")]
-grab_collision_mask = 327940
-ranged_distance = 0.0
-ranged_collision_mask = 327940
-
-[node name="LeftGlove" parent="CollisionShape3D/XROrigin3D/LeftHand" unique_id=238805430 instance=ExtResource("4_2hs0m")]
-
-[node name="RightHand" type="XRController3D" parent="CollisionShape3D/XROrigin3D" unique_id=1981951555]
-tracker = &"right_hand"
-
-[node name="FunctionPickup" parent="CollisionShape3D/XROrigin3D/RightHand" unique_id=1277105623 instance=ExtResource("3_1jxqw")]
-grab_collision_mask = 327940
-ranged_distance = 0.0
-ranged_collision_mask = 262404
-
-[node name="RightGlove" parent="CollisionShape3D/XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
 
 [node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=50921491]
 
@@ -52,3 +27,29 @@ ranged_collision_mask = 262404
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 target_position = Vector3(0, 0, 0)
 script = ExtResource("5_sweqy")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1051909420]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=212173750]
+
+[node name="Neck" type="Node3D" parent="XROrigin3D/XRCamera3D" unique_id=613006301]
+
+[node name="LeftHand" type="XRController3D" parent="XROrigin3D" unique_id=503059481]
+tracker = &"left_hand"
+
+[node name="FunctionPickup" parent="XROrigin3D/LeftHand" unique_id=678520256 instance=ExtResource("3_1jxqw")]
+grab_collision_mask = 327940
+ranged_distance = 0.0
+ranged_collision_mask = 327940
+
+[node name="LeftGlove" parent="XROrigin3D/LeftHand" unique_id=238805430 instance=ExtResource("4_2hs0m")]
+
+[node name="RightHand" type="XRController3D" parent="XROrigin3D" unique_id=1981951555]
+tracker = &"right_hand"
+
+[node name="FunctionPickup" parent="XROrigin3D/RightHand" unique_id=1277105623 instance=ExtResource("3_1jxqw")]
+grab_collision_mask = 327940
+ranged_distance = 0.0
+ranged_collision_mask = 262404
+
+[node name="RightGlove" parent="XROrigin3D/RightHand" unique_id=768321862 instance=ExtResource("6_1jxqw")]
