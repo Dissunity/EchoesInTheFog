@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://tldatsne7br0" path="res://textures/Lighthouse/plaster_normal.png" id="14_26xuy"]
 [ext_resource type="Texture2D" uid="uid://cq2usv20s8osm" path="res://textures/Lighthouse/plaster_roughness.png" id="15_bc84e"]
 [ext_resource type="Texture2D" uid="uid://dvnqlcjbxym27" path="res://textures/Lighthouse/rusty_metal_rough.png" id="15_wukud"]
+[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="16_2u3nc"]
 [ext_resource type="Texture2D" uid="uid://os6iyr8nfpx" path="res://textures/Lighthouse/rusty_metal_diffuse.png" id="16_bc84e"]
 [ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="17_wukud"]
 [ext_resource type="Texture2D" uid="uid://ddf0f6crcei8i" path="res://textures/Lighthouse/blue_metal_diffuse.png" id="18_1ew0l"]
@@ -59,7 +60,6 @@ background_energy_multiplier = 0.84
 sky = SubResource("Sky_70uel")
 ambient_light_source = 3
 ambient_light_sky_contribution = 0.8
-ambient_light_energy = 0.92
 reflected_light_source = 2
 tonemap_mode = 4
 tonemap_exposure = 0.94
@@ -647,7 +647,7 @@ environment = SubResource("Environment_hiqwa")
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
 transform = Transform3D(0.6408201, -0.42923188, -0.6364823, 0, -0.8290865, 0.55912054, -0.7676912, -0.35829565, -0.5312952, -3.8790703, 50.00697, -4.3962145)
 light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
-light_energy = 0.921
+light_energy = 0.92
 light_indirect_energy = 1.475
 light_specular = 1.238
 light_bake_mode = 1
@@ -716,6 +716,9 @@ material_override = SubResource("StandardMaterial3D_1ew0l")
 transform = Transform3D(0.9999992, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999992, 0, 1.3418579, 0)
 shape = SubResource("CylinderShape3D_hiqwa")
 
+[node name="TimeTravelLight" type="OmniLight3D" parent="LighthouseStructure/MechanicalRoom/PullLever" parent_id_path=PackedInt32Array(1498340944, 367583270, 1782428610) index="1" unique_id=430956315]
+light_color = Color(1, 0, 0.23333311, 1)
+light_energy = 0.0
 [node name="Stairs_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="14" unique_id=1445684434]
 material_override = SubResource("StandardMaterial3D_ryup7")
 
@@ -875,9 +878,15 @@ transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757,
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5508676)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 46.907032, 1.3690032)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 49.138306, 1.6970791)
 
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
+[node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "environment", "moonlight", "hinge")]
+script = ExtResource("16_2u3nc")
+time_travel_light = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/TimeTravelLight")
+environment = NodePath("../WorldEnvironment")
+moonlight = NodePath("../Moonlight")
+hinge = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever")
+test = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=526361758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009957075, 43.869022, 2.550275)
