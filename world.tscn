@@ -750,6 +750,9 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 [node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="4" unique_id=319097456]
 material_override = SubResource("StandardMaterial3D_w44yn")
 
+[node name="PuzzleArea3D" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="9" unique_id=836480515 node_paths=PackedStringArray("target_position_node")]
+target_position_node = NodePath("Marker3D")
+
 [node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1307461933]
 material_override = SubResource("StandardMaterial3D_6ah6f")
 
@@ -874,7 +877,7 @@ transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757,
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5508676)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 46.874107, 1.6970791)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177, 47.1, 1.697)
 
 [node name="TimeTravelController2" type="Node" parent="." unique_id=699235048 node_paths=PackedStringArray("time_travel_light", "environment", "moonlight", "hinge")]
 script = ExtResource("16_2u3nc")

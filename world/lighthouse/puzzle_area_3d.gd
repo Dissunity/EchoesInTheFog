@@ -5,7 +5,7 @@ signal puzzle_piece_snapped
 @export var required_puzzle_group: String = "PuzzlePiece"
 @export var snap_duration: float = 0.4 
 
-@onready var target_position_node: Marker3D = $TargetPosition
+@export var target_position_node: Marker3D
 
 var current_piece_in_zone: XRToolsPickable = null
 var is_solved: bool = false
@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node3D):
+	print("Body entered")
 	if is_solved: return
 	
 	# Check of dit het juiste puzzelstuk is (bijv. via een Godot Group)
@@ -32,10 +33,11 @@ func _on_body_entered(body: Node3D):
 			current_piece_in_zone.connect("dropped", _on_puzzle_piece_dropped)
 
 func _on_body_exited(body: Node3D):
+	print("Body exited")
 	if is_solved: return
 	
 	if body == current_piece_in_zone:
-		# Als de speler het stuk weer weghaalt VOORDAT hij loslaat, stoppen we met luisteren
+		
 		if current_piece_in_zone.is_connected("dropped", _on_puzzle_piece_dropped):
 			current_piece_in_zone.disconnect("dropped", _on_puzzle_piece_dropped)
 		current_piece_in_zone = null
@@ -43,7 +45,6 @@ func _on_body_exited(body: Node3D):
 func _on_puzzle_piece_dropped():
 	if not current_piece_in_zone or is_solved: return
 	
-	# Puzzelstuk is losgelaten ín de zone! Start het mooie snappen:
 	snap_piece_to_place(current_piece_in_zone)
 
 func snap_piece_to_place(piece: Node3D):
@@ -53,7 +54,7 @@ func snap_piece_to_place(piece: Node3D):
 		piece.freeze = true
 	
 	if piece.has_method("set_pickable"):
-		piece.enabled = false # Schakelt XRTools pickup uit
+		piece.enabled = false
 	
 	var tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	
@@ -61,6 +62,6 @@ func snap_piece_to_place(piece: Node3D):
 	tween.tween_property(piece, "global_basis", target_position_node.global_basis, snap_duration)
 	
 	tween.chain().tween_callback(func():
-		print("Puzzele is placed")
+		print("Puzzle is placed")
 		puzzle_piece_snapped.emit()
 	)
