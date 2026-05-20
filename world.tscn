@@ -123,7 +123,7 @@ blend_distance = 0.85
 size = Vector3(6.4888, 5.836914, 6.9706726)
 
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]
-transform = Transform3D(-0.9648332, 0, 0.2628629, 0, 1, 0, -0.2628629, 0, -0.9648332, 0.24749339, 43.646576, -1.1616642)
+transform = Transform3D(-0.84813136, 0, 0.52978593, 0, 1, 0, -0.52978593, 0, -0.84813136, -0.38150442, 48.915348, -1.6785384)
 
 [node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
@@ -157,11 +157,7 @@ transform = Transform3D(0.038302224, 0, 0.03213938, 0, 0.05, 0, -0.03213938, 0, 
 [node name="SmallCandle" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 44.0296, 2.1546419)
 
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "time_impacted_objects", "hinge")]
-script = ExtResource("11_ic0uy")
-time_travel_light = NodePath("../Foghorn/TimeTravelLight")
-time_impacted_objects = [NodePath("../Chair"), NodePath("../Table")]
-hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
+[node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
 
 [editable path="LighthouseStructure"]
 [editable path="Foghorn"]

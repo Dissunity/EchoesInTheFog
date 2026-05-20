@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c21g4lajakqf8" path="res://objects/chair/chair_broken.glb" id="3_k0mke"]
 [ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/time_travelling/time_travel_light.gd" id="4_5gf4e"]
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="5_hkygc"]
-[ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="6_x3uko"]
-[ext_resource type="Script" path="res://test/hinge_mover.gd" id="7_k0mke"]
+[ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn_lever2.tscn" id="6_x3uko"]
+[ext_resource type="Script" uid="uid://cql2ibqo185mv" path="res://test/hinge_mover.gd" id="7_k0mke"]
 
 [sub_resource type="Environment" id="Environment_b5nav"]
 volumetric_fog_enabled = true
