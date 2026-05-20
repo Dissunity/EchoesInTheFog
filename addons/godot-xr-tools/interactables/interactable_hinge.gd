@@ -2,7 +2,6 @@
 class_name XRToolsInteractableHinge
 extends XRToolsInteractableHandleDriven
 
-
 ## XR Tools Interactable Hinge script
 ##
 ## The interactable hinge is a hinge transform node controlled by the
@@ -13,7 +12,6 @@ extends XRToolsInteractableHandleDriven
 ##
 ## The interactable hinge is not a [RigidBody3D], and as such will not react
 ## to any collisions.
-
 
 ## Signal for hinge moved
 signal hinge_moved(angle)

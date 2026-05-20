@@ -5,14 +5,45 @@
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
-[ext_resource type="PackedScene" uid="uid://c5uicvmmf2pce" path="res://objects/foghorn/foghorn.tscn" id="8_ic0uy"]
+[ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/Lighthouse/dirt.jpg" id="8_70uel"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
+[ext_resource type="Texture2D" uid="uid://b6i65mvl7bnol" path="res://textures/Lighthouse/lighthouse_diffuse.png" id="9_udxuc"]
 [ext_resource type="PackedScene" uid="uid://ds0isbkfbm223" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
+[ext_resource type="Texture2D" uid="uid://803ceklrsdjh" path="res://textures/Lighthouse/lighthouse_normals.png" id="10_ikiii"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
-[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="11_ic0uy"]
+[ext_resource type="Texture2D" uid="uid://bahcg7lqv37og" path="res://textures/Lighthouse/lighthouse_roughness_2.jpg" id="11_cbp6q"]
 [ext_resource type="PackedScene" uid="uid://ckxouti2i8cn2" path="res://objects/bigger candle/big candleholder.glb" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://bpb6d1lax4xg3" path="res://objects/candle/candle export.glb" id="13_2o6r5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2o6r5"]
+sky_top_color = Color(0.002400443, 0.07285706, 0.16548955, 1)
+sky_horizon_color = Color(0.0061095553, 0.11536034, 0.21632108, 1)
+sky_curve = 0.09896313
+ground_bottom_color = Color(0.016194494, 0.0899444, 0.21669549, 1)
+ground_horizon_color = Color(0.009173829, 0.11976708, 0.23808646, 1)
+
+[sub_resource type="Sky" id="Sky_70uel"]
+sky_material = SubResource("ProceduralSkyMaterial_2o6r5")
+
+[sub_resource type="Environment" id="Environment_hiqwa"]
+background_mode = 2
+background_energy_multiplier = 0.84
+sky = SubResource("Sky_70uel")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.8
+ambient_light_energy = 0.92
+reflected_light_source = 2
+tonemap_mode = 4
+tonemap_exposure = 0.94
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.01028716, 0.107588805, 0.23054966, 1)
+fog_sun_scatter = 0.03
+fog_density = 0.9319
+fog_depth_curve = 0.99999994
+fog_depth_begin = 4.0
+fog_depth_end = 80.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -24,24 +55,83 @@ render_priority = 0
 shader = ExtResource("1_fj7yv")
 shader_parameter/normal_map_1 = ExtResource("3_036b0")
 shader_parameter/normal_map_2 = ExtResource("2_aqk2v")
-shader_parameter/color_deep = Color(0.05, 0.07, 0.09, 1)
-shader_parameter/color_shallow = Color(0.15, 0.18, 0.2, 1)
+shader_parameter/color_deep = Color(0.0089846635, 0.09450225, 0.17750144, 1)
+shader_parameter/color_shallow = Color(0.10444861, 0.25518325, 0.4711396, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70uel"]
+transparency = 1
+albedo_color = Color(0.8901961, 0.8901961, 0.8901961, 0.09019608)
+metallic_specular = 0.3
+roughness = 0.12
+emission_enabled = true
+emission = Color(0.67687863, 0.67687863, 0.67687863, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.827451, 0.827451, 0.827451, 0.047058824)
+albedo_texture = ExtResource("8_70uel")
+metallic_specular = 0.84
+roughness = 0.12
+roughness_texture = ExtResource("8_70uel")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udxuc"]
+albedo_texture = ExtResource("9_udxuc")
+roughness_texture = ExtResource("11_cbp6q")
+normal_enabled = true
+normal_texture = ExtResource("10_ikiii")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hiqwa"]
+albedo_texture = ExtResource("9_udxuc")
+metallic_specular = 0.4
+roughness_texture = ExtResource("11_cbp6q")
+normal_enabled = true
+normal_texture = ExtResource("10_ikiii")
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0000008
 
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2069508969]
-transform = Transform3D(-0.93742365, 0.3322854, 0.10403445, 0.09317458, -0.048497155, 0.99446785, 0.33549252, 0.9419311, 0.014501836, 0, 46.970318, -0.026504517)
-light_color = Color(1, 0.79721934, 0.72160006, 1)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1791015796]
+environment = SubResource("Environment_hiqwa")
+
+[node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
+transform = Transform3D(0.6408201, -0.42923182, -0.6364822, 0, -0.8290865, 0.55912054, -0.7676912, -0.3582957, -0.53129524, -1485.0125, 1739.7202, -3445.2383)
+light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
+light_energy = 0.921
+light_indirect_energy = 1.475
+light_specular = 1.238
+light_bake_mode = 1
 shadow_enabled = true
-sky_mode = 1
+directional_shadow_mode = 0
+directional_shadow_fade_start = 0.79
+directional_shadow_max_distance = 10.3
 
-[node name="Ocean" type="Node3D" parent="." unique_id=1904178162]
+[node name="Water" type="Node3D" parent="." unique_id=1904178162]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ocean" unique_id=162288658]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water" unique_id=162288658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
 mesh = SubResource("PlaneMesh_tlwt5")
 surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
+
+[node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
+transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
+
+[node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
+
+[node name="Fresenlplaceholder2_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="0" unique_id=308327002]
+material_override = SubResource("StandardMaterial3D_70uel")
+
+[node name="Glass_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="3" unique_id=413148215]
+material_override = SubResource("StandardMaterial3D_2o6r5")
+
+[node name="Floor Viewing level _001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="7" unique_id=2017304933]
+material_override = SubResource("StandardMaterial3D_udxuc")
+
+[node name="Walls Room_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="11" unique_id=752707944]
+material_override = SubResource("StandardMaterial3D_hiqwa")
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
@@ -49,26 +139,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.024
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 
-[node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
-transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
-
-[node name="Foghorn" parent="." unique_id=21213881 instance=ExtResource("8_ic0uy")]
-transform = Transform3D(0.052335974, 0, 0.9986295, 0, 1, 0, -0.9986295, 0, 0.052335974, -1.866, 48.873, -0.148)
-
-[node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
-
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "time_impacted_objects", "hinge")]
-script = ExtResource("11_ic0uy")
-time_travel_light = NodePath("../Foghorn/TimeTravelLight")
-time_impacted_objects = [NodePath("../Chair"), NodePath("../Table")]
-hinge = NodePath("../Foghorn/foghorn_lever/LeverSmooth/LeverOrigin/InteractableLever")
-
-[node name="big candleholder" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
+[node name="BigCandle" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(0.038302224, 0, 0.03213938, 0, 0.05, 0, -0.03213938, 0, 0.038302224, 0.30535138, 43.504337, -1.8879902)
 
-[node name="candle export" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
+[node name="SmallCandle" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 44.0296, 2.1546419)
+
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 46.907032, 1.3690032)
 
-[editable path="Foghorn"]
+[node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
+
+[editable path="LighthouseStructure"]

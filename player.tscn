@@ -5,14 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_dw050"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_2hs0m"]
-[ext_resource type="Material" uid="uid://rwfrc1fdcjsj" path="res://addons/godot-xr-tools/hands/materials/caucasian_hands_realistic.tres" id="4_nvl01"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="4_sweqy"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_b26j0"]
 [ext_resource type="PackedScene" uid="uid://xqimcf20s2jp" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_fullglove_low.tscn" id="6_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://6uusxts6n6gm" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_direct.tscn" id="6_ivps1"]
 [ext_resource type="Script" uid="uid://bjqk58f7j3hgl" path="res://addons/godot-xr-tools/desktop-support/movement_desktop_turn.gd" id="9_urp6f"]
-[ext_resource type="PackedScene" uid="uid://cgbysxva1dki2" path="res://stair_detector.tscn" id="13_bwjto"]
-[ext_resource type="PackedScene" uid="uid://dme03b46a0vp" path="res://movement_stair_climbing.tscn" id="13_urp6f"]
+[ext_resource type="PackedScene" path="res://stair_detector.tscn" id="13_bwjto"]
+[ext_resource type="PackedScene" path="res://movement_stair_climbing.tscn" id="13_urp6f"]
 
 [node name="Player" type="XROrigin3D" unique_id=1677439462]
 
@@ -37,7 +36,6 @@ ranged_distance = 0.0
 ranged_collision_mask = 327940
 
 [node name="LeftGlove" parent="LeftHand" unique_id=145892470 instance=ExtResource("4_2hs0m")]
-hand_material_override = ExtResource("4_nvl01")
 
 [node name="MovementDirect" parent="LeftHand" unique_id=1611758846 instance=ExtResource("3_dw050")]
 max_speed = 1.0
@@ -69,7 +67,6 @@ ranged_distance = 0.0
 ranged_collision_mask = 262404
 
 [node name="RightGlove" parent="RightHand" unique_id=744352348 instance=ExtResource("6_1jxqw")]
-hand_material_override = ExtResource("4_nvl01")
 
 [node name="MovementTurn" parent="RightHand" unique_id=14706712 instance=ExtResource("5_b26j0")]
 
@@ -81,4 +78,4 @@ metadata/_custom_type_script = "uid://bjqk58f7j3hgl"
 
 [node name="StairDetector" parent="PlayerBody" unique_id=1103762403 instance=ExtResource("13_bwjto")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1452932, 0)
-target_position = Vector3(0, 0, -0.3)
+target_position = Vector3(0, 0, -0.25)
