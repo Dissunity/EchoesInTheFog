@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_ujpo1"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_w63ex"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="7_kqbvg"]
+[ext_resource type="Script" uid="uid://dn7grmvmgjiqv" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.gd" id="9_kqbvg"]
 [ext_resource type="Script" uid="uid://c8gx2wc7hsxf5" path="res://addons/godot-xr-tools/interactables/interactable_hinge.gd" id="13_y84s8"]
 [ext_resource type="Script" uid="uid://dlojnwxo25bky" path="res://addons/godot-xr-tools/interactables/interactable_handle.gd" id="16_og3yr"]
 [ext_resource type="Animation" uid="uid://db62hs5s4n2b3" path="res://addons/godot-xr-tools/hands/animations/left/Grip 4.res" id="17_ebrkk"]
@@ -472,15 +473,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_axhbv")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jh2n6"]
+size = Vector3(0.42121887, 0.19458008, 0.14294434)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w63ex"]
 size = Vector3(0.049240112, 0.23588562, 0.065979004)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kqbvg"]
 size = Vector3(0.036621094, 0.23120117, 0.064086914)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4dyds"]
-size = Vector3(0.1987671, 0.19286767, 0.2730957)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33exr"]
 resource_name = "Dark metal"
@@ -699,6 +698,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0334u")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4dyds"]
+size = Vector3(0.1987671, 0.19286767, 0.2730957)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y84s8"]
+size = Vector3(0.038879395, 0.42552185, 0.05114746)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eeir3"]
+size = Vector3(0.014224121, 0.26879883, 0.27593994)
+
 [sub_resource type="Resource" id="Resource_vgpin"]
 script = ExtResource("5_ujpo1")
 open_pose = ExtResource("4_y7eq8")
@@ -722,12 +730,6 @@ script = ExtResource("5_ujpo1")
 open_pose = ExtResource("7_kqbvg")
 closed_pose = ExtResource("7_kqbvg")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_y84s8"]
-size = Vector3(0.038879395, 0.42552185, 0.05114746)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_eeir3"]
-size = Vector3(0.014224121, 0.26879883, 0.27593994)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f050i"]
 size = Vector3(0.2, 0.6, 0.1)
@@ -1214,6 +1216,7 @@ mesh = SubResource("ArrayMesh_55wpa")
 skeleton = NodePath("")
 
 [node name="SnapZone" type="Area3D" parent="MechanicalRoom/PuzzleHolder" unique_id=971470962]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.168427, 0)
 collision_mask = 65536
 script = ExtResource("1_ujpo1")
 grab_distance = 0.1
@@ -1221,6 +1224,7 @@ snap_mode = 1
 snap_require = "PuzzlePiece"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzleHolder/SnapZone" unique_id=528894543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01066649, -0.06921387, -0.03387451)
 shape = SubResource("BoxShape3D_jh2n6")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MechanicalRoom/PuzzleHolder/SnapZone" unique_id=775312164]
@@ -1236,6 +1240,35 @@ shape = SubResource("BoxShape3D_w63ex")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="MechanicalRoom/PuzzleHolder" unique_id=1912098320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20581055, 47.01179, -0.07318115)
 shape = SubResource("BoxShape3D_kqbvg")
+
+[node name="PuzzleMesh" type="Node3D" parent="MechanicalRoom/PuzzleHolder" unique_id=1607655134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.154133, 0)
+visible = false
+
+[node name="Puzzle-bar" type="MeshInstance3D" parent="MechanicalRoom/PuzzleHolder/PuzzleMesh" unique_id=655553718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013, 0, -0.074)
+mesh = SubResource("ArrayMesh_pflon")
+skeleton = NodePath("")
+
+[node name="Puzzle-Gear_001" type="MeshInstance3D" parent="MechanicalRoom/PuzzleHolder/PuzzleMesh" unique_id=369155291]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047, 0, -0.074)
+mesh = SubResource("ArrayMesh_cyqnj")
+skeleton = NodePath("")
+
+[node name="Puzzle-Gear_002" type="MeshInstance3D" parent="MechanicalRoom/PuzzleHolder/PuzzleMesh" unique_id=571714650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153, 0, -0.074)
+mesh = SubResource("ArrayMesh_ptud1")
+skeleton = NodePath("")
+
+[node name="Puzzle-Gear_003" type="MeshInstance3D" parent="MechanicalRoom/PuzzleHolder/PuzzleMesh" unique_id=652399061]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.074)
+mesh = SubResource("ArrayMesh_3ikhb")
+skeleton = NodePath("")
+
+[node name="Puzzle-Gear_004" type="MeshInstance3D" parent="MechanicalRoom/PuzzleHolder/PuzzleMesh" unique_id=1801716480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133, 0, -0.074)
+mesh = SubResource("ArrayMesh_4g4l7")
+skeleton = NodePath("")
 
 [node name="Puzzle_mechanical_room" type="RigidBody3D" parent="MechanicalRoom" unique_id=1968491663 groups=["PuzzlePiece"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.153, 0)
@@ -1279,6 +1312,14 @@ skeleton = NodePath("")
 
 [node name="HighlightRing" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=1131035522 instance=ExtResource("2_4dyds")]
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=243809502]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.014549255, 0.001033783, -0.0750643)
+shape = SubResource("BoxShape3D_y84s8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=22897599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14957398, -0.0030517578, -0.0753479)
+shape = SubResource("BoxShape3D_eeir3")
+
 [node name="GrabPointHandLeft_Door1" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=382666579 instance=ExtResource("3_vgpin")]
 transform = Transform3D(0.095320284, -0.99541456, -0.007990867, -0.9919352, -0.09565465, 0.08315567, -0.083538726, 0, -0.99650455, -0.13263449, -0.014080048, 0.006556481)
 hand_pose = SubResource("Resource_vgpin")
@@ -1299,16 +1340,13 @@ transform = Transform3D(-0.0685029, -0.9976509, 0, 0.9976509, -0.0685029, 0, 0, 
 hand_pose = SubResource("Resource_y84s8")
 editor_preview_mode = 1
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=243809502]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.014549255, 0.001033783, -0.0750643)
-shape = SubResource("BoxShape3D_y84s8")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=22897599]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14957398, -0.0030517578, -0.0753479)
-shape = SubResource("BoxShape3D_eeir3")
+[node name="XRToolsGrabPointSnap" type="Marker3D" parent="MechanicalRoom/Puzzle_mechanical_room" unique_id=161848736]
+script = ExtResource("9_kqbvg")
+metadata/_custom_type_script = "uid://dn7grmvmgjiqv"
 
 [node name="Door2Lever" type="Node3D" parent="." unique_id=253043712]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2, 47.264, 0.2)
+visible = false
 
 [node name="LeverSmooth" type="Node3D" parent="Door2Lever" unique_id=1825583497]
 
@@ -1382,6 +1420,7 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
 [node name="Door1Lever" type="Node3D" parent="." unique_id=1713652773]
 transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, 0.20209576, 47.264, -0.19872932)
+visible = false
 
 [node name="LeverSmooth" type="Node3D" parent="Door1Lever" unique_id=1416869374]
 

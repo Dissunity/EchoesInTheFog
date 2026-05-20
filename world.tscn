@@ -157,4 +157,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 46.907032, 1.369
 
 [node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
 
+[node name="TestDirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=731060452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.426125, 2.651006)
+light_energy = 12.955
+light_indirect_energy = 3.966
+sky_mode = 1
+
 [editable path="LighthouseStructure"]
