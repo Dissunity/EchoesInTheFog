@@ -81,7 +81,7 @@ light_specular = 1.238
 light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_fade_start = 0.79
-directional_shadow_max_distance = 13.4
+directional_shadow_max_distance = 10.3
 
 [node name="Water" type="Node3D" parent="." unique_id=1904178162]
 
@@ -92,7 +92,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
 [node name="LighthouseReflectionProbe" type="ReflectionProbe" parent="." unique_id=692408556]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22273254, 51.2646, 0.13249207)
-intensity = 0.9
+blend_distance = 0.85
 size = Vector3(6.4888, 5.836914, 6.9706726)
 
 [node name="Player" parent="." unique_id=1581452875 instance=ExtResource("9_wse8f")]

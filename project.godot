@@ -74,6 +74,9 @@ move_right={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+reflections/reflection_atlas/reflection_size=128
+reflections/reflection_atlas/reflection_size.mobile=127
+reflections/reflection_atlas/reflection_count=32
 
 [xr]
 
