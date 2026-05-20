@@ -16,12 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://cetyatm2r6em2" path="res://textures/Lighthouse/worn_floor_normal.png" id="12_ikiii"]
 [ext_resource type="PackedScene" uid="uid://ckxouti2i8cn2" path="res://objects/bigger candle/big candleholder.glb" id="12_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://bpb6d1lax4xg3" path="res://objects/candle/candle export.glb" id="13_2o6r5"]
-[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="16_2u3nc"]
-[ext_resource type="Script" uid="uid://dg1mp1vg573fc" path="res://mechanics/time_travelling/time_travel_light.gd" id="17_udxuc"]
 [ext_resource type="Texture2D" uid="uid://c5sn06n8ignjj" path="res://textures/Lighthouse/plaster_diffuse.png" id="13_cbp6q"]
 [ext_resource type="Texture2D" uid="uid://tldatsne7br0" path="res://textures/Lighthouse/plaster_normal.png" id="14_26xuy"]
 [ext_resource type="Texture2D" uid="uid://cq2usv20s8osm" path="res://textures/Lighthouse/plaster_roughness.png" id="15_bc84e"]
 [ext_resource type="Texture2D" uid="uid://dvnqlcjbxym27" path="res://textures/Lighthouse/rusty_metal_rough.png" id="15_wukud"]
+[ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="16_2u3nc"]
 [ext_resource type="Texture2D" uid="uid://os6iyr8nfpx" path="res://textures/Lighthouse/rusty_metal_diffuse.png" id="16_bc84e"]
 [ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="17_wukud"]
 
@@ -222,12 +221,9 @@ material_override = SubResource("StandardMaterial3D_hiqwa")
 transform = Transform3D(0.9999992, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999992, 0, 1.3418579, 0)
 shape = SubResource("CylinderShape3D_hiqwa")
 
-[node name="TimeTravelLight" type="OmniLight3D" parent="LighthouseStructure/MechanicalRoom/PullLever" parent_id_path=PackedInt32Array(1498340944, 367583270, 1782428610) index="1" unique_id=430956315 node_paths=PackedStringArray("moonlight")]
+[node name="TimeTravelLight" type="OmniLight3D" parent="LighthouseStructure/MechanicalRoom/PullLever" parent_id_path=PackedInt32Array(1498340944, 367583270, 1782428610) index="1" unique_id=430956315]
 light_color = Color(1, 0, 0.23333311, 1)
 light_energy = 0.0
-script = ExtResource("17_udxuc")
-moonlight = NodePath("../../../../Moonlight")
-metadata/_custom_type_script = "uid://dg1mp1vg573fc"
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29374886, 42.790855, 2.0246098)
@@ -244,9 +240,11 @@ transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17683035, 49.138306, 1.6970791)
 
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "hinge")]
+[node name="TimeTravelController" type="Node" parent="." unique_id=596340254 node_paths=PackedStringArray("time_travel_light", "environment", "moonlight", "hinge")]
 script = ExtResource("16_2u3nc")
 time_travel_light = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/TimeTravelLight")
+environment = NodePath("../WorldEnvironment")
+moonlight = NodePath("../Moonlight")
 hinge = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever")
 test = true
 
