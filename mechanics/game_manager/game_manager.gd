@@ -26,10 +26,8 @@ func _process(delta: float) -> void:
 func _check_conditions():
 	if puzzle_is_snapped:
 		if player_is_high_enough:
-			print("Add monster function here")
-			pass
-		#if monster.has_method("appear"):
-			#monster.appear
+			print("Monster should appear")
+			monster.spawn()
 
 func _on_player_height_changed(is_high_enough: bool):
 	player_is_high_enough = is_high_enough
