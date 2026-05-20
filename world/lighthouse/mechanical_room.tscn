@@ -473,7 +473,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_axhbv")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jh2n6"]
-size = Vector3(0.42121887, 0.19458008, 0.14294434)
+size = Vector3(0.42121887, 0.07644653, 0.14294434)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w63ex"]
 size = Vector3(0.049240112, 0.23588562, 0.065979004)
@@ -1224,7 +1224,7 @@ snap_mode = 1
 snap_require = "PuzzlePiece"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzleHolder/SnapZone" unique_id=528894543]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01066649, -0.06921387, -0.03387451)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01066649, -0.077926636, -0.03387451)
 shape = SubResource("BoxShape3D_jh2n6")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MechanicalRoom/PuzzleHolder/SnapZone" unique_id=775312164]
