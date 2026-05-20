@@ -22,3 +22,13 @@ func _on_area_entered(area: Area3D) -> void:
 func _on_area_exited(area: Area3D) -> void:
 	label.text = "Area exited"
 	print("Area exited")
+
+
+func _on_body_entered(body: Node3D) -> void:
+	label.text = "Body entered"
+	print("Body entered")
+
+
+func _on_body_exited(body: Node3D) -> void:
+	label.text = "Body exited"
+	print("Body exited")

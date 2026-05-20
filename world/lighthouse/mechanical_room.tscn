@@ -1276,7 +1276,6 @@ editor_preview_mode = 1
 
 [node name="PuzzleHolderArea3D" type="Area3D" parent="MechanicalRoom" unique_id=836480515 node_paths=PackedStringArray("label")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.124, 0)
-collision_mask = 0
 script = ExtResource("9_kqbvg")
 label = NodePath("../../Label3D")
 
@@ -1595,5 +1594,7 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7427888, 47.57029, 0)
 
 [connection signal="area_exited" from="MechanicalRoom/PuzzleHolderArea3D" to="MechanicalRoom/PuzzleHolderArea3D" method="_on_area_exited"]
+[connection signal="body_entered" from="MechanicalRoom/PuzzleHolderArea3D" to="MechanicalRoom/PuzzleHolderArea3D" method="_on_body_entered"]
+[connection signal="body_exited" from="MechanicalRoom/PuzzleHolderArea3D" to="MechanicalRoom/PuzzleHolderArea3D" method="_on_body_exited"]
 
 [editable path="MechanicalRoom/PuzzleHolder/MechanicalRoom_puzzleholder"]
