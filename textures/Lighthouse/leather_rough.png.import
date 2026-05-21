@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4dxtk3m0uuvj"
-path.s3tc="res://.godot/imported/wood_diffue.png-3049e48ce72c3c3d238a2ee10ed61e58.s3tc.ctex"
+uid="uid://y4vv30275ri3"
+path.s3tc="res://.godot/imported/leather_rough.png-e3503abe38b556a073ed8e07bf8ab22b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Lighthouse/wood_diffue.png"
-dest_files=["res://.godot/imported/wood_diffue.png-3049e48ce72c3c3d238a2ee10ed61e58.s3tc.ctex"]
+source_file="res://textures/Lighthouse/leather_rough.png"
+dest_files=["res://.godot/imported/leather_rough.png-e3503abe38b556a073ed8e07bf8ab22b.s3tc.ctex"]
 
 [params]
 
