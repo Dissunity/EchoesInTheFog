@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://co51fptjewgm2"]
 
+[ext_resource type="Script" uid="uid://bck8oic47poss" path="res://objects/lockbox/model_destruct.gd" id="1_rugom"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4jhd"]
 resource_name = "lockbox_box"
 cull_mode = 2
@@ -1019,6 +1021,7 @@ skeleton = NodePath("")
 
 [node name="lockbox_destruct" type="Node3D" parent="." unique_id=1925961911]
 visible = false
+script = ExtResource("1_rugom")
 
 [node name="RigidBody3D24" type="RigidBody3D" parent="lockbox_destruct" unique_id=2042559423]
 
