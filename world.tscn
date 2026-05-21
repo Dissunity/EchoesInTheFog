@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://d7b7dn4reh42" path="res://world.gd" id="1_036b0"]
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://b38rv0j4gt8vu" path="res://rotating_light_center.gd" id="2_7qk3m"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
 [ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/Lighthouse/dirt.jpg" id="8_70uel"]
 [ext_resource type="PackedScene" uid="uid://htyyy5fjm3hf" path="res://objects/table/table.tscn" id="9_k3n1d"]
 [ext_resource type="Texture2D" uid="uid://b6i65mvl7bnol" path="res://textures/Lighthouse/lighthouse_diffuse.png" id="9_udxuc"]
-[ext_resource type="PackedScene" uid="uid://o40u2gao0u2l" path="res://player.tscn" id="9_wse8f"]
+[ext_resource type="PackedScene" uid="uid://ds0isbkfbm223" path="res://player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://803ceklrsdjh" path="res://textures/Lighthouse/lighthouse_normals.png" id="10_ikiii"]
 [ext_resource type="PackedScene" uid="uid://oypog4ywp12f" path="res://world/lighthouse/Lighthouse_structure.tscn" id="10_wse8f"]
@@ -71,6 +72,7 @@ fog_density = 0.9319
 fog_depth_curve = 0.99999994
 fog_depth_begin = 4.0
 fog_depth_end = 80.0
+volumetric_fog_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
 size = Vector2(400, 400)
@@ -88,10 +90,12 @@ shader_parameter/color_shallow = Color(0.10444861, 0.25518325, 0.4711396, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70uel"]
 transparency = 1
 albedo_color = Color(0.8901961, 0.8901961, 0.8901961, 0.09019608)
-metallic_specular = 0.3
-roughness = 0.12
+metallic_specular = 0.32
+roughness_texture = ExtResource("8_70uel")
 emission_enabled = true
 emission = Color(0.67687863, 0.67687863, 0.67687863, 1)
+normal_enabled = true
+normal_texture = ExtResource("17_wukud")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc84e"]
 albedo_texture = ExtResource("9_udxuc")
@@ -115,7 +119,7 @@ transparency = 1
 cull_mode = 2
 albedo_color = Color(0.827451, 0.827451, 0.827451, 0.047058824)
 albedo_texture = ExtResource("8_70uel")
-metallic_specular = 0.84
+metallic_specular = 0.56
 roughness = 0.12
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
@@ -660,6 +664,21 @@ directional_shadow_fade_start = 0.79
 directional_shadow_max_distance = 8.1
 directional_shadow_pancake_size = 8.9
 
+[node name="RotatingLightCenter" type="Node3D" parent="." unique_id=1167753070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+script = ExtResource("2_7qk3m")
+
+[node name="RotatingSpotlight" type="SpotLight3D" parent="RotatingLightCenter" unique_id=1873142353]
+transform = Transform3D(0.15459298, -0.97606164, -0.15298578, -0.98768836, -0.15643443, -9.11022e-08, -0.023932157, 0.15110229, -0.9882284, 0, 0.9, 0.05)
+light_color = Color(0.999999, 0.99989754, 0.81470966, 1)
+light_energy = 5.045
+light_indirect_energy = 1.906
+light_specular = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 4.0
+spot_range = 16.397
+spot_angle = 70.49
+
 [node name="Water" type="Node3D" parent="." unique_id=1904178162]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water" unique_id=162288658]
@@ -716,9 +735,6 @@ material_override = SubResource("StandardMaterial3D_1ew0l")
 transform = Transform3D(0.9999992, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.9999992, 0, 1.3418579, 0)
 shape = SubResource("CylinderShape3D_hiqwa")
 
-[node name="TimeTravelLight" type="OmniLight3D" parent="LighthouseStructure/MechanicalRoom/PullLever" parent_id_path=PackedInt32Array(1498340944, 367583270, 1782428610) index="1" unique_id=430956315]
-light_color = Color(1, 0, 0.23333311, 1)
-light_energy = 0.0
 [node name="Stairs_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="14" unique_id=1445684434]
 material_override = SubResource("StandardMaterial3D_ryup7")
 
@@ -778,6 +794,10 @@ material_override = SubResource("StandardMaterial3D_iett8")
 
 [node name="Circle_001" parent="LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 543764757) index="0" unique_id=547244034]
 material_override = SubResource("StandardMaterial3D_r5m4j")
+
+[node name="TimeTravelLight" type="OmniLight3D" parent="LighthouseStructure/MechanicalRoom/PullLever" parent_id_path=PackedInt32Array(1498340944, 367583270, 1782428610) index="1" unique_id=430956315]
+light_color = Color(1, 0, 0.23333311, 1)
+light_energy = 0.0
 
 [node name="turning-lever_001" parent="LighthouseStructure/MechanicalRoom/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 539045129) index="1" unique_id=1671252395]
 material_override = SubResource("StandardMaterial3D_e77ka")
