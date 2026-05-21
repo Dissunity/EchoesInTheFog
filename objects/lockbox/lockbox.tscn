@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://co51fptjewgm2"]
+
+[ext_resource type="PackedScene" uid="uid://df4e2rwy3wrhm" path="res://objects/lockbox/lockbox_destroyed.glb" id="1_ujqom"]
+[ext_resource type="PackedScene" uid="uid://ngv7380v2dsr" path="res://objects/lockbox/lockbox.glb" id="2_0sy2x"]
+
+[node name="Lockbox" type="Node3D" unique_id=1685966090]
+
+[node name="lockbox_destroyed" parent="." unique_id=423855006 instance=ExtResource("1_ujqom")]
+
+[node name="Solid" type="Node3D" parent="." unique_id=1911544199]
+visible = false
+
+[node name="lockbox" parent="Solid" unique_id=1834405340 instance=ExtResource("2_0sy2x")]
+
+[editable path="lockbox_destroyed"]
+[editable path="Solid/lockbox"]

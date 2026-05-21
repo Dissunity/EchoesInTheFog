@@ -1351,6 +1351,7 @@ mesh = SubResource("BoxMesh_0higs")
 
 [node name="HandleMesh" type="MeshInstance3D" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1373840888]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2758817)
+visible = false
 mesh = SubResource("SphereMesh_hpls2")
 
 [node name="GrabPointHandLeft" parent="Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=1368151472 instance=ExtResource("3_vgpin")]
