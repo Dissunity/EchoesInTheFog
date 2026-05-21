@@ -971,6 +971,7 @@ points = PackedVector3Array(-0.011054816, -0.09373266, 0.014851929, 0.009389505,
 [node name="lockbox" type="Node3D" parent="." unique_id=1420791062]
 
 [node name="RigidBody3D" type="RigidBody3D" parent="lockbox" unique_id=292225525]
+mass = 20.0
 
 [node name="Cube_001" type="MeshInstance3D" parent="lockbox/RigidBody3D" unique_id=1520691935]
 mesh = SubResource("ArrayMesh_ovt01")
