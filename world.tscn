@@ -270,7 +270,12 @@ transparency = 1
 albedo_color = Color(1, 1, 1, 0.32941177)
 emission_enabled = true
 emission = Color(0.46034718, 0.46034718, 0.46034712, 1)
-emission_energy_multiplier = 1.3
+emission_energy_multiplier = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eleh8"]
+emission_enabled = true
+emission = Color(0.98234254, 0.9823423, 0.9823424, 1)
+emission_energy_multiplier = 9.62
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olr1q"]
 albedo_texture = ExtResource("16_bc84e")
@@ -935,6 +940,9 @@ material_override = SubResource("StandardMaterial3D_w4lh7")
 
 [node name="Oil-lamp" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="5" unique_id=786476786]
 surface_material_override/2 = SubResource("StandardMaterial3D_afx2c")
+
+[node name="Oil-lamp-flame" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="6" unique_id=796280477]
+material_override = SubResource("StandardMaterial3D_eleh8")
 
 [node name="Puzzle-holder" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolder" parent_id_path=PackedInt32Array(1498340944, 367583270, 1285356868) index="0" unique_id=858689615]
 material_override = SubResource("StandardMaterial3D_olr1q")
