@@ -536,7 +536,6 @@ roughness = 0.47
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
 normal_texture = ExtResource("33_ruyqm")
-uv1_scale = Vector3(50, 50, 50)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0wax"]
@@ -549,7 +548,6 @@ roughness = 0.47
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
 normal_texture = ExtResource("33_ruyqm")
-uv1_scale = Vector3(50, 50, 50)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sedwk"]
@@ -561,7 +559,6 @@ metallic_specular = 0.62
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
 normal_texture = ExtResource("33_ruyqm")
-uv1_scale = Vector3(50, 50, 50)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fnoqa"]
