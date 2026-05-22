@@ -563,8 +563,7 @@ past_model = NodePath("table")
 
 [node name="table" type="Node3D" parent="." unique_id=2010079531]
 
-[node name="TableRigidBody3D" type="RigidBody3D" parent="table" unique_id=428050188]
-mass = 20.0
+[node name="TableRigidBody3D" type="StaticBody3D" parent="table" unique_id=1372069896]
 
 [node name="table_structure" type="MeshInstance3D" parent="table/TableRigidBody3D" unique_id=1270337065]
 mesh = SubResource("ArrayMesh_owijq")
@@ -629,8 +628,7 @@ shape = SubResource("BoxShape3D_mq5d6")
 [node name="table_broken" type="Node3D" parent="." unique_id=1950040690]
 visible = false
 
-[node name="RigidBody3D" type="RigidBody3D" parent="table_broken" unique_id=1916787906]
-mass = 20.0
+[node name="RigidBody3D" type="StaticBody3D" parent="table_broken" unique_id=1702163884]
 
 [node name="table_structure" type="MeshInstance3D" parent="table_broken/RigidBody3D" unique_id=1509054403]
 mesh = SubResource("ArrayMesh_4df3i")
