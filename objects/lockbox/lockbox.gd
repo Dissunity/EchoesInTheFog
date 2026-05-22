@@ -1,7 +1,8 @@
 extends Node3D
 
-@onready var lockbox: Node3D = $lockbox/lockbox_destructables
+@onready var lockbox: Node3D = $lockbox/RigidBody3D/lockbox_destructables
 @onready var lockbox_destruct: Node3D = $lockbox_destruct
+@onready var lockbox_collision: CollisionShape3D = $lockbox/RigidBody3D/DestructableCollisionShape3D6
 @export var locked_object: XRToolsPickable
 
 var lockbox_unlocked = false
