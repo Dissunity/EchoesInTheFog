@@ -22,13 +22,14 @@ open_pose = ExtResource("6_ggo0v")
 closed_pose = ExtResource("6_ggo0v")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
-[node name="Crowbar" type="Node3D" unique_id=995516737]
+[node name="Crowbar" type="Node3D" unique_id=995516737 groups=["Crowbar"]]
 
-[node name="XRToolsPickable" type="RigidBody3D" parent="." unique_id=1145141031]
+[node name="XRToolsPickable" type="RigidBody3D" parent="." unique_id=1145141031 groups=["Crowbar"]]
 collision_layer = 4
 collision_mask = 3
 mass = 3.0
 script = ExtResource("1_cmnns")
+second_hand_grab = 1
 metadata/_custom_type_script = "uid://bfrlpbsqg5lqr"
 
 [node name="crowbar" parent="XRToolsPickable" unique_id=503869715 instance=ExtResource("2_xa1kr")]

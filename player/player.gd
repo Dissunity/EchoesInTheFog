@@ -2,7 +2,7 @@ extends XROrigin3D
 
 signal reached_target_height(is_high_enough: bool)
 
-@export var target_height: float = 50.4 # Fresnel room
+@export var target_height: float = 58.2 # Fresnel room
 
 var was_above_height: bool = false
 

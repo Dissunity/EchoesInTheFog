@@ -41,7 +41,8 @@ func _process(delta: float) -> void:
 func _check_conditions():
 	if puzzle_is_snapped:
 		if player_is_high_enough:
-			print("Monster should appear")
+			#print("Monster should appear")
+			await get_tree().create_timer(2).timeout
 			monster.spawn()
 			_on_game_end()
 
@@ -62,8 +63,7 @@ func _on_player_height_changed(is_high_enough: bool):
 	
 func _on_puzzle_piece_snapped() -> void:
 	puzzle_is_snapped = true
-	puzzle_snapped.emit()
-	print("GameManager puzzleholder status changes to: ", puzzle_is_snapped)
+	#print("GameManager puzzleholder status changes to: ", puzzle_is_snapped)
 	if gear_audio and not gear_audio.playing:
 		gear_audio.play() # Start playing the silent track
 		var audio_tween = create_tween()

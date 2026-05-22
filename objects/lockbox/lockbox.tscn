@@ -1299,3 +1299,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011291504, -0.0008544922,
 shape = SubResource("BoxShape3D_c66b3")
 
 [node name="TestLabel3D" type="Label3D" parent="." unique_id=1215588460]
+visible = false
