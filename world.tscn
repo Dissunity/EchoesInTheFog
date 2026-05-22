@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d7b7dn4reh42" path="res://world.gd" id="1_036b0"]
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://b38rv0j4gt8vu" path="res://rotating_light_center.gd" id="2_7qk3m"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
 [ext_resource type="Script" uid="uid://ook5rcwquue" path="res://addons/godot-xr-tools/effects/fade.gd" id="3_xpnt2"]
@@ -93,11 +94,15 @@ shader_parameter/color_shallow = Color(0.10444861, 0.25518325, 0.4711396, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70uel"]
 transparency = 1
-albedo_color = Color(0.8901961, 0.8901961, 0.8901961, 0.09019608)
-metallic_specular = 0.3
-roughness = 0.12
+cull_mode = 2
+albedo_color = Color(0.8901961, 0.8901961, 0.8901961, 0.03137255)
+albedo_texture = ExtResource("8_70uel")
+metallic_specular = 0.32
+roughness = 0.23
+roughness_texture = ExtResource("8_70uel")
 emission_enabled = true
 emission = Color(0.67687863, 0.67687863, 0.67687863, 1)
+normal_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc84e"]
 albedo_texture = ExtResource("9_udxuc")
@@ -119,10 +124,10 @@ uv1_triplanar = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
 transparency = 1
 cull_mode = 2
-albedo_color = Color(0.827451, 0.827451, 0.827451, 0.047058824)
+albedo_color = Color(0.827451, 0.827451, 0.827451, 0.019607844)
 albedo_texture = ExtResource("8_70uel")
-metallic_specular = 0.84
-roughness = 0.12
+metallic_specular = 0.56
+roughness = 0.11
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
 normal_texture = ExtResource("12_ikiii")
@@ -268,7 +273,13 @@ uv1_triplanar = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3lar"]
 albedo_color = Color(0.3328807, 0.33288068, 0.33288068, 0.9372549)
 emission_enabled = true
-emission = Color(0.62152386, 0.62152386, 0.6215238, 1)
+emission = Color(0.46034718, 0.46034718, 0.46034712, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eleh8"]
+emission_enabled = true
+emission = Color(0.98234254, 0.9823423, 0.9823424, 1)
+emission_energy_multiplier = 9.62
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qktwf"]
 albedo_texture = ExtResource("23_6ah6f")
@@ -624,6 +635,24 @@ directional_shadow_fade_start = 0.79
 directional_shadow_max_distance = 8.1
 directional_shadow_pancake_size = 8.9
 
+[node name="RotatingLightCenter" type="Node3D" parent="." unique_id=1167753070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+script = ExtResource("2_7qk3m")
+
+[node name="RotatingSpotlight" type="SpotLight3D" parent="RotatingLightCenter" unique_id=1873142353]
+transform = Transform3D(0.15459298, -0.97606164, -0.15298578, -0.98768836, -0.15643443, -9.11022e-08, -0.023932157, 0.15110229, -0.9882284, 0, 11.417564, 0.05)
+light_color = Color(0.999999, 0.99989754, 0.81470966, 1)
+light_energy = 4.743
+light_indirect_energy = 1.906
+light_specular = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+spot_range = 4.121
+spot_attenuation = -1.41
+spot_angle = 71.17
+spot_angle_attenuation = 1.1486983
+
 [node name="Water" type="Node3D" parent="." unique_id=1904178162]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water" unique_id=162288658]
@@ -701,6 +730,9 @@ material_override = SubResource("StandardMaterial3D_w4lh7")
 
 [node name="Oil-lamp" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="5" unique_id=786476786]
 material_override = SubResource("StandardMaterial3D_k3lar")
+
+[node name="Oil-lamp-flame" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="6" unique_id=796280477]
+material_override = SubResource("StandardMaterial3D_eleh8")
 
 [node name="Puzzle_mechanical_room" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="8" unique_id=1968491663]
 transform = Transform3D(0.60350025, 0, 0.7973628, 0, 1, 0, -0.7973628, 0, 0.60350025, -1.8891082, 43.05, -0.9228839)
