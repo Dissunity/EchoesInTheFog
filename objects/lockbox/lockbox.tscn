@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://co51fptjewgm2"]
 
 [ext_resource type="Script" uid="uid://bck8oic47poss" path="res://objects/lockbox/model_destruct.gd" id="1_rugom"]
+[ext_resource type="Script" uid="uid://byrhiqjfln05k" path="res://objects/lockbox/lockbox.gd" id="1_ujqom"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4jhd"]
 resource_name = "lockbox_box"
@@ -969,6 +970,7 @@ shadow_mesh = SubResource("ArrayMesh_kcia5")
 points = PackedVector3Array(-0.011054816, -0.09373266, 0.014851929, 0.009389505, -0.09307372, 0.014469217, 0.0074770693, 0.12978315, 0.014849029, -0.014590341, 0.12585142, 0.01338487, -0.015673319, -0.09395231, 0.011764151, 0.009389505, -0.09397428, -0.014767543, 0.0124786105, -0.09373266, -0.010148924, 0.012095572, -0.09305175, 0.011764151, 0.012216821, 0.12965137, 0.01116399, 0.009389505, 0.12303991, -0.014767543, -0.014590341, 0.11941569, -0.013686096, -0.015673319, -0.094611265, -0.012062476, -0.012970006, -0.094611265, -0.014767543, 0.012095572, 0.12288616, -0.012062476)
 
 [node name="Lockbox" type="Node3D" unique_id=1685966090]
+script = ExtResource("1_ujqom")
 
 [node name="lockbox" type="Node3D" parent="." unique_id=1420791062]
 
