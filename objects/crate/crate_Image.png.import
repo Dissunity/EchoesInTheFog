@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwkvkq2sp8am1"
-path.s3tc="res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex"
+uid="uid://7pr68ppmmv2o"
+path.s3tc="res://.godot/imported/crate_Image.png-a2584385c401fc9db055df0c8918e0b7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "8597d4e7e65352a302b63e07bc01a7da"
+}
 
 [deps]
 
-source_file="res://objects/journal/journal_431.jpg"
-dest_files=["res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex"]
+source_file="res://objects/crate/crate_Image.png"
+dest_files=["res://.godot/imported/crate_Image.png-a2584385c401fc9db055df0c8918e0b7.s3tc.ctex"]
 
 [params]
 
