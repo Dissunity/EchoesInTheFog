@@ -1,5 +1,12 @@
 extends Node3D
 
+signal time_travelled
+signal crowbar_taken
+signal lockbox_opened
+signal puzzle_snapped
+signal player_went_upstairs
+
+
 @export var player: XROrigin3D
 @export var puzzleHolder: Area3D
 @export var monster: Node3D
@@ -30,7 +37,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
+
 func _check_conditions():
 	if puzzle_is_snapped:
 		if player_is_high_enough:
@@ -38,13 +45,24 @@ func _check_conditions():
 			monster.spawn()
 			_on_game_end()
 
+func _on_crowbar_taken():
+	crowbar_taken.emit()
+
+func _on_lockbow_opened():
+	lockbox_opened.emit()
+
+func _on_time_travelled():
+	time_travelled.emit()
+
 func _on_player_height_changed(is_high_enough: bool):
 	player_is_high_enough = is_high_enough
+	player_went_upstairs.emit()
 	print("GameManager player status changes to: ", is_high_enough)
 	_check_conditions()
 	
 func _on_puzzle_piece_snapped() -> void:
 	puzzle_is_snapped = true
+	puzzle_snapped.emit()
 	print("GameManager puzzleholder status changes to: ", puzzle_is_snapped)
 	if gear_audio and not gear_audio.playing:
 		gear_audio.play() # Start playing the silent track

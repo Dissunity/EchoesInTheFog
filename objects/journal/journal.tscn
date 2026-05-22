@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cggkofnwypw3q" path="res://objects/journal/journal.glb" id="1_wir0b"]
 [ext_resource type="Script" uid="uid://cdcmttphary18" path="res://objects/journal/journal.gd" id="2_xic2l"]
-[ext_resource type="Script" uid="uid://dr836q5npwll0" path="res://objects/journal/journal_text_decal.gd" id="3_i6yj2"]
+[ext_resource type="Script" path="res://objects/journal/journal_text_decal.gd" id="3_i6yj2"]
+[ext_resource type="Script" uid="uid://cffagca4hw5y0" path="res://objects/journal/journal_notification_light.gd" id="4_d05m8"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_d05m8"]
 
@@ -76,3 +77,9 @@ theme_override_font_sizes/font_size = 60
 text = "Something"
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="JournalNotificationLight" type="OmniLight3D" parent="." index="4" unique_id=1891114505]
+light_color = Color(0.7066031, 0.458906, 1, 1)
+light_energy = 0.0
+omni_range = 1.0
+script = ExtResource("4_d05m8")
