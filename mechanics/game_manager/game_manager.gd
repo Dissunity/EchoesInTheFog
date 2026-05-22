@@ -12,6 +12,8 @@ var puzzle_is_snapped: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_viewport().audio_listener_enable_3d = true
+	
 	if not player or not puzzleHolder or not monster:
 			push_error("GameManager is missing one or more nodes in the Inspector!")
 			return
@@ -59,6 +61,6 @@ func _on_game_end() -> void:
 	await fade_tween.finished
 	
 	await get_tree().create_timer(1.0).timeout
-	
+
 	print("Game ended. VR Application closing...")
 	get_tree().quit()
