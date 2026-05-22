@@ -603,8 +603,6 @@ vr_fade = NodePath("XRToolsFade")
 script = ExtResource("3_xpnt2")
 metadata/_custom_type_script = "uid://ook5rcwquue"
 
-[node name="TimeTravelController" type="Node" parent="." unique_id=596340254]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1791015796]
 environment = SubResource("Environment_hiqwa")
 
@@ -784,9 +782,6 @@ material_override = SubResource("StandardMaterial3D_tj74d")
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
 
-[node name="table" parent="Table" index="0" unique_id=2010079531]
-visible = true
-
 [node name="table_structure" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 428050188) index="0" unique_id=1270337065]
 material_override = SubResource("StandardMaterial3D_xpnt2")
 
@@ -804,9 +799,6 @@ material_override = SubResource("StandardMaterial3D_p5g01")
 
 [node name="table_drawers_,middle" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 428050188) index="6" unique_id=1111668033]
 material_override = SubResource("StandardMaterial3D_fl6gn")
-
-[node name="table_broken" parent="Table" index="1" unique_id=1950040690]
-visible = false
 
 [node name="table_structure" parent="Table/table_broken/RigidBody3D" parent_id_path=PackedInt32Array(723022751, 1916787906) index="0" unique_id=1509054403]
 material_override = SubResource("StandardMaterial3D_gjwlp")
