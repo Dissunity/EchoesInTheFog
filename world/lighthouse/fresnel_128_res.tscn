@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://fqk8b8r0l3ga"]
+
+[ext_resource type="PackedScene" uid="uid://bpeue4ksp23vg" path="res://world/lighthouse/Fresnel128res.glb" id="1_is7vr"]
+
+[node name="Fresnel128res" unique_id=941834532 instance=ExtResource("1_is7vr")]
