@@ -609,6 +609,7 @@ script = ExtResource("3_xpnt2")
 metadata/_custom_type_script = "uid://ook5rcwquue"
 
 [node name="FadeMesh" type="MeshInstance3D" parent="GameManager/XRToolsFade" unique_id=35658011]
+layers = 2
 material_override = SubResource("ShaderMaterial_fnoqa")
 mesh = SubResource("QuadMesh_nx736")
 
@@ -726,13 +727,13 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 [node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="4" unique_id=319097456]
 material_override = SubResource("StandardMaterial3D_w44yn")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=2142616731]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1307461933]
 material_override = SubResource("StandardMaterial3D_6ah6f")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 1729672906) index="4" unique_id=1373840888]
 material_override = SubResource("StandardMaterial3D_q42o5")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=2142616731]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1307461933]
 material_override = SubResource("StandardMaterial3D_g1i3r")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 637408262) index="4" unique_id=67487599]
