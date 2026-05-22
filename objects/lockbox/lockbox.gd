@@ -3,8 +3,8 @@ extends Node3D
 @onready var lockbox: Node3D = $lockbox/RigidBody3D/lockbox_destructables
 @onready var lockbox_destruct: Node3D = $lockbox_destruct
 @onready var lockbox_collision: CollisionShape3D = $lockbox/RigidBody3D/DestructableCollisionShape3D6
-@onready var test_label:Label3D = $testLabel3D
-@onready var hit_box:Area3D = $hitBoxArea3D
+@onready var test_label:Label3D = $TestLabel3D
+@onready var hit_box:Area3D = $HitBoxArea3D
 
 @export var locked_object: XRToolsPickable
 @export var INTENSITY:float = 12.0
