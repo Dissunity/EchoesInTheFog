@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://h3jbhemgjwd5"
+path="res://.godot/imported/walking on wooden floor.wav-ae62c091d3243234f5e0a3534382c444.sample"
+
+[deps]
+
+source_file="res://sounds/walking on wooden floor.wav"
+dest_files=["res://.godot/imported/walking on wooden floor.wav-ae62c091d3243234f5e0a3534382c444.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
