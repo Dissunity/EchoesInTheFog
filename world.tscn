@@ -41,12 +41,13 @@
 [ext_resource type="AudioStream" uid="uid://h3jbhemgjwd5" path="res://sounds/walking on wooden floor.wav" id="28_iett8"]
 [ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="28_ytpkv"]
 [ext_resource type="Script" uid="uid://bsk5funnj0084" path="res://addons/godot-xr-tools/audio/surface_audio_type.gd" id="29_b7btk"]
-[ext_resource type="AudioStream" uid="uid://b1uytk488lhch" path="res://sounds/walking up stairs.wav" id="29_iett8"]
+[ext_resource type="AudioStream" uid="uid://cvk54d6ah2665" path="res://sounds/freesound_community-steps-on-stairs-102729.mp3" id="29_r5m4j"]
 [ext_resource type="Texture2D" uid="uid://d4dxtk3m0uuvj" path="res://textures/Lighthouse/wood_diffue.png" id="30_jas3d"]
 [ext_resource type="Texture2D" uid="uid://ca14xddjy33e7" path="res://textures/Lighthouse/wood_normal.png" id="31_7htu6"]
 [ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="31_55kwu"]
 [ext_resource type="Texture2D" uid="uid://cmmfnqbrsflg" path="res://textures/Lighthouse/wood_rough.png" id="32_7qk3m"]
 [ext_resource type="AudioStream" uid="uid://bom0u61snaih6" path="res://sounds/steps on stone.wav" id="32_iett8"]
+[ext_resource type="AudioStream" uid="uid://hlhpryw7drtq" path="res://sounds/freesound_community-footsteps-metallic-muffled-108304.mp3" id="32_r5m4j"]
 [ext_resource type="Texture2D" uid="uid://cy7u2x2nhwr82" path="res://textures/Lighthouse/fabric_diffuse.png" id="33_xpnt2"]
 [ext_resource type="Texture2D" uid="uid://b2lklufe7w8fy" path="res://textures/Lighthouse/fabric_normal.png" id="34_ruyqm"]
 [ext_resource type="Texture2D" uid="uid://bbma4vwkoahcu" path="res://textures/Lighthouse/fabric_rough.png" id="35_fnoqa"]
@@ -232,7 +233,7 @@ uv1_triplanar = true
 
 [sub_resource type="Resource" id="Resource_e77ka"]
 script = ExtResource("29_b7btk")
-walk_sounds = Array[AudioStream]([ExtResource("29_iett8")])
+walk_sounds = Array[AudioStream]([ExtResource("29_r5m4j")])
 metadata/_custom_type_script = "uid://bsk5funnj0084"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytpkv"]
@@ -243,6 +244,11 @@ normal_scale = 0.7
 normal_texture = ExtResource("12_ikiii")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
+
+[sub_resource type="Resource" id="Resource_c0wax"]
+script = ExtResource("29_b7btk")
+walk_sounds = Array[AudioStream]([ExtResource("32_r5m4j")])
+metadata/_custom_type_script = "uid://bsk5funnj0084"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojkoy"]
 resource_name = "Dark metal"
@@ -1044,6 +1050,11 @@ metadata/_custom_type_script = "uid://mc4dmfy38nqa"
 
 [node name="Mechanical room" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="15" unique_id=1866034699]
 material_override = SubResource("StandardMaterial3D_ytpkv")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="LighthouseStructure/Lighthouse/Mechanical room/StaticBody3D/Collision Shape Mechanical Room" parent_id_path=PackedInt32Array(1498340944, 1870804674) index="0" unique_id=956751409]
+script = ExtResource("26_q42o5")
+surface_audio_type = SubResource("Resource_c0wax")
+metadata/_custom_type_script = "uid://mc4dmfy38nqa"
 
 [node name="Stairs+topfloor" type="Node3D" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="16" unique_id=1260647379]
 
