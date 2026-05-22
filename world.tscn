@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d7b7dn4reh42" path="res://world.gd" id="1_036b0"]
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
-[ext_resource type="Script" uid="uid://b38rv0j4gt8vu" path="res://rotating_light_center.gd" id="2_7qk3m"]
+[ext_resource type="Script" path="res://rotating_light_center.gd" id="2_7qk3m"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
 [ext_resource type="AudioStream" uid="uid://bfevky2u3pr4d" path="res://sounds/creepy_ambience.wav" id="2_nx736"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
@@ -41,8 +41,8 @@
 [ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="31_55kwu"]
 [ext_resource type="Script" uid="uid://swu1ri6h1e45" path="res://objects/crowbar/crowbar.gd" id="37_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
-[ext_resource type="PackedScene" uid="uid://cf2ovgr7fksb3" path="res://mechanics/time_travelling/time_travel_controller.tscn" id="43_7htu6"]
-[ext_resource type="PackedScene" uid="uid://c3ld251uv3hnc" path="res://objects/journal/journal_object.tscn" id="44_7qk3m"]
+[ext_resource type="PackedScene" path="res://mechanics/time_travelling/time_travel_controller.tscn" id="43_7htu6"]
+[ext_resource type="PackedScene" path="res://objects/journal/journal_object.tscn" id="44_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
 [ext_resource type="PackedScene" uid="uid://o5pxc06qt3b0" path="res://objects/crate/crate.glb" id="48_nx736"]
 

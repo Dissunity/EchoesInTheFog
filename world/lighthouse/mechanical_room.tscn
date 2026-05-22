@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_ujpo1"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_w63ex"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="7_kqbvg"]
-[ext_resource type="Script" uid="uid://covh58riffqx5" path="res://world/lighthouse/puzzle_area_3d.gd" id="9_kqbvg"]
+[ext_resource type="Script" path="res://world/lighthouse/puzzle_area_3d.gd" id="9_kqbvg"]
 [ext_resource type="Script" uid="uid://c8gx2wc7hsxf5" path="res://addons/godot-xr-tools/interactables/interactable_hinge.gd" id="13_y84s8"]
 [ext_resource type="Script" uid="uid://dlojnwxo25bky" path="res://addons/godot-xr-tools/interactables/interactable_handle.gd" id="16_og3yr"]
 [ext_resource type="Animation" uid="uid://db62hs5s4n2b3" path="res://addons/godot-xr-tools/hands/animations/left/Grip 4.res" id="17_ebrkk"]
@@ -1180,7 +1180,7 @@ collision_mask = 0
 
 [node name="MechanicalRoom_puzzleholder" parent="MechanicalRoom/PuzzleHolder" unique_id=667914428 instance=ExtResource("1_jh2n6")]
 
-[node name="Puzzle-holder" parent="MechanicalRoom/PuzzleHolder/MechanicalRoom_puzzleholder" index="0" unique_id=1264848329]
+[node name="Puzzle-holder" parent="MechanicalRoom/PuzzleHolder/MechanicalRoom_puzzleholder" index="0" unique_id=1794867607]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.074)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MechanicalRoom/PuzzleHolder" unique_id=1259666008]
