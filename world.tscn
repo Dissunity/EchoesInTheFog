@@ -528,11 +528,11 @@ radius = 1.0087891
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruyqm"]
 blend_mode = 1
-cull_mode = 2
+cull_mode = 1
 albedo_texture = ExtResource("8_70uel")
-metallic = 0.62
-metallic_specular = 0.62
-roughness = 0.47
+metallic = 0.3
+metallic_specular = 0.0
+roughness = 0.7
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
 normal_texture = ExtResource("33_ruyqm")
@@ -540,11 +540,11 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0wax"]
 blend_mode = 1
-cull_mode = 2
+cull_mode = 1
 albedo_texture = ExtResource("8_70uel")
-metallic = 0.62
-metallic_specular = 0.62
-roughness = 0.47
+metallic = 0.3
+metallic_specular = 0.0
+roughness = 0.7
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
 normal_texture = ExtResource("33_ruyqm")
@@ -552,10 +552,11 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sedwk"]
 blend_mode = 1
-cull_mode = 2
+cull_mode = 1
 albedo_texture = ExtResource("8_70uel")
-metallic = 0.61
-metallic_specular = 0.62
+metallic = 0.3
+metallic_specular = 0.0
+roughness = 0.7
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
 normal_texture = ExtResource("33_ruyqm")
@@ -835,7 +836,7 @@ shadow_blur = 1.506
 directional_shadow_mode = 0
 directional_shadow_blend_splits = true
 directional_shadow_fade_start = 0.79
-directional_shadow_max_distance = 8.1
+directional_shadow_max_distance = 10.0
 directional_shadow_pancake_size = 8.9
 
 [node name="RotatingLightCenter" type="Node3D" parent="." unique_id=1167753070]
@@ -846,7 +847,7 @@ script = ExtResource("2_7qk3m")
 transform = Transform3D(0.15459298, -0.97606164, -0.15298578, -0.98768836, -0.15643443, -9.11022e-08, -0.023932157, 0.15110229, -0.9882284, 0, 10.687923, -0.016123783)
 light_color = Color(0.999999, 0.99989754, 0.81470966, 1)
 light_energy = 5.546
-light_indirect_energy = 1.906
+light_indirect_energy = 1.282
 light_specular = 0.0
 distance_fade_enabled = true
 distance_fade_begin = 0.0
@@ -1125,10 +1126,10 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LighthouseStructure/Lighthouse/Stairs+topfloor/Floor Viewing level fixed/StaticBody3D" unique_id=12517398]
 shape = SubResource("ConcavePolygonShape3D_nx736")
 
-[node name="Fresnel128res" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="17" unique_id=941834532 instance=ExtResource("26_fnoqa")]
+[node name="Fresnel128res" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="17" unique_id=140850357 instance=ExtResource("26_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
 
-[node name="Frame top part" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="0" unique_id=1860017532]
+[node name="Frame top part" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="0" unique_id=1741441482]
 material_override = SubResource("StandardMaterial3D_xpnt2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" index="0" unique_id=1224455523]
@@ -1137,16 +1138,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.89995193, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part/StaticBody3D" unique_id=1042996189]
 shape = SubResource("CylinderShape3D_fnoqa")
 
-[node name="Middle planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="1" unique_id=1694966376]
+[node name="Middle planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="1" unique_id=2066354396]
 material_override = SubResource("StandardMaterial3D_ruyqm")
+lod_bias = 2.5
 
-[node name="Bottom planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="2" unique_id=913519750]
+[node name="Bottom planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="2" unique_id=1743812679]
 material_override = SubResource("StandardMaterial3D_c0wax")
+lod_bias = 2.5
 
-[node name="Top planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="3" unique_id=129439650]
+[node name="Top planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="3" unique_id=350668696]
 material_override = SubResource("StandardMaterial3D_sedwk")
+lod_bias = 2.5
 
-[node name="Frame top part_001" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="4" unique_id=1051642273]
+[node name="Frame top part_001" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="4" unique_id=720107255]
 material_override = SubResource("StandardMaterial3D_fnoqa")
 
 [node name="Circle" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="0" unique_id=1100336640]
