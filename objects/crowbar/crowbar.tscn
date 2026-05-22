@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b1e3ngyppghuq"]
+
+[ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_cmnns"]
+[ext_resource type="PackedScene" uid="uid://co7lrasgsdunv" path="res://objects/crowbar/crowbar.glb" id="2_xa1kr"]
+[ext_resource type="Script" uid="uid://dx3swqg2owe4p" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="3_o2gqd"]
+[ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="4_aod1o"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_66ig8"]
+[ext_resource type="Animation" uid="uid://r8hleealhrqt" path="res://addons/godot-xr-tools/hands/animations/right/Grip 2.res" id="6_ggo0v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7camw"]
+size = Vector3(0.059814453, 0.39120483, 0.025756836)
+
+[sub_resource type="Resource" id="Resource_65sec"]
+script = ExtResource("5_66ig8")
+open_pose = ExtResource("4_aod1o")
+closed_pose = ExtResource("4_aod1o")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[sub_resource type="Resource" id="Resource_7dug6"]
+script = ExtResource("5_66ig8")
+open_pose = ExtResource("6_ggo0v")
+closed_pose = ExtResource("6_ggo0v")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
+
+[node name="Crowbar" type="Node3D" unique_id=995516737]
+
+[node name="XRToolsPickable" type="RigidBody3D" parent="." unique_id=1145141031]
+collision_layer = 4
+collision_mask = 3
+mass = 3.0
+script = ExtResource("1_cmnns")
+metadata/_custom_type_script = "uid://bfrlpbsqg5lqr"
+
+[node name="crowbar" parent="XRToolsPickable" unique_id=503869715 instance=ExtResource("2_xa1kr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XRToolsPickable" unique_id=2025773659]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004272461, -0.05836487, -0.0065307617)
+shape = SubResource("BoxShape3D_7camw")
+
+[node name="XRToolsGrabPointHandLeft" type="Marker3D" parent="XRToolsPickable" unique_id=852737801]
+transform = Transform3D(0.9736001, 0.22825348, 0.0018576068, -0.22825772, 0.9735095, 0.013327245, 0.0012335924, -0.01339942, 0.9999095, 0.030164376, 0, -0.07942)
+visible = false
+script = ExtResource("3_o2gqd")
+snap_hand = false
+hand_pose = SubResource("Resource_65sec")
+editor_preview_mode = 1
+metadata/_custom_type_script = "uid://dx3swqg2owe4p"
+
+[node name="XRToolsGrabPointHandRight" type="Marker3D" parent="XRToolsPickable" unique_id=829597012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.081053704)
+visible = false
+script = ExtResource("3_o2gqd")
+hand = 1
+snap_hand = false
+hand_pose = SubResource("Resource_7dug6")
+editor_preview_mode = 1
+metadata/_custom_type_script = "uid://dx3swqg2owe4p"
+
+[node name="XRToolsGrabPointHandLeft2" type="Marker3D" parent="XRToolsPickable" unique_id=697632111]
+transform = Transform3D(-0.9999527, -0.009676367, 0.001103974, 0.009660721, -0.9998634, -0.01341072, 0.0012335925, -0.013399421, 0.9999095, 0.0057731867, -0.04728231, -0.07485227)
+visible = false
+script = ExtResource("3_o2gqd")
+snap_hand = false
+hand_pose = SubResource("Resource_65sec")
+editor_preview_mode = 1
+metadata/_custom_type_script = "uid://dx3swqg2owe4p"
+
+[node name="XRToolsGrabPointHandRight2" type="Marker3D" parent="XRToolsPickable" unique_id=2065594001]
+transform = Transform3D(-0.9823265, 0.18717566, 0, -0.18717566, -0.9823265, 0, 0, 0, 1, 0.031177089, -0.047963142, -0.081053704)
+visible = false
+script = ExtResource("3_o2gqd")
+hand = 1
+hand_pose = SubResource("Resource_7dug6")
+editor_preview_mode = 1
+metadata/_custom_type_script = "uid://dx3swqg2owe4p"
