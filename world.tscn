@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://bpeue4ksp23vg" path="res://world/lighthouse/Fresnel128res.glb" id="26_fnoqa"]
 [ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="28_ytpkv"]
 [ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="31_55kwu"]
+[ext_resource type="Script" uid="uid://swu1ri6h1e45" path="res://objects/crowbar/crowbar.gd" id="37_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
 [ext_resource type="PackedScene" path="res://mechanics/time_travelling/time_travel_controller.tscn" id="43_7htu6"]
 [ext_resource type="PackedScene" path="res://objects/journal/journal_object.tscn" id="44_7qk3m"]
@@ -1133,6 +1134,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.332, 2.438)
 
 [node name="Crowbar" parent="." unique_id=995516737 instance=ExtResource("42_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2.0613308, 51.70515, -0.24978772)
+script = ExtResource("37_7qk3m")
 
 [node name="BigCandle" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757, 0, 0.007660445, -2.5580878, 51.669838, -0.611697)
@@ -1180,7 +1182,7 @@ shadow_enabled = true
 omni_range = 2.394
 
 [node name="JournalObject" parent="." unique_id=662103822 instance=ExtResource("44_7qk3m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15919673, 52.538013, -1.4216437)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15919673, 51.531174, -1.4216437)
 
 [node name="crate" parent="." unique_id=1760873807 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -2.1183348, 51.4571, 1.0171839)
@@ -1192,7 +1194,14 @@ lights_to_dim_on_time_travel = [NodePath("../Moonlight"), NodePath("../RotatingL
 hinge = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever")
 test = true
 
+[connection signal="crowbar_taken" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_crowbar_taken"]
+[connection signal="lockbox_opened" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_lockbox_opened"]
+[connection signal="player_went_upstairs" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_player_went_upstairs"]
+[connection signal="puzzle_snapped" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_puzzle_snapped"]
+[connection signal="time_travelled" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_time_travelled"]
 [connection signal="area_entered" from="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" to="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" method="_on_area_entered"]
+[connection signal="crowbar_taken" from="Crowbar" to="GameManager" method="_on_crowbar_taken"]
+[connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travelled"]
 
 [editable path="LighthouseStructure"]
 [editable path="LighthouseStructure/Lighthouse/Fresnel128res"]

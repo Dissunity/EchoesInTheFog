@@ -1,5 +1,7 @@
 extends Node3D
 
+signal lockbox_opened
+
 @onready var lockbox: Node3D = $lockbox/RigidBody3D/lockbox_destructables
 @onready var lockbox_destruct: Node3D = $lockbox_destruct
 @onready var lockbox_collision: CollisionShape3D = $lockbox/RigidBody3D/DestructableCollisionShape3D6
@@ -113,6 +115,7 @@ func _hit():
 			# Puzzle is pickable
 			unlocked.emit()
 			locked_object.enabled = true
+			lockbox_opened.emit()
 
 
 func _freeze_all_pieces(should_freeze: bool):
