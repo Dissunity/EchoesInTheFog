@@ -27,22 +27,22 @@ func _time_travel():
 	
 	var tween = get_tree().create_tween()
 	var energy = moonlight.light_energy
-	tween.tween_property(moonlight, "light_energy", 0, 1)
-	tween.parallel().tween_property(environment.environment, "fog_light_energy", 0, 1)
-	tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", 0, 1)
-	tween.tween_interval(2)
+	tween.tween_property(moonlight, "light_energy", 0, 5)
+	tween.parallel().tween_property(environment.environment, "fog_light_energy", 0, 5)
+	tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", 0, 5)
+	tween.tween_interval(4)
 	tween.tween_property(time_travel_light, "light_energy", 500, 1.5).set_ease(Tween.EASE_OUT)
 	
-	for i in range(12):
+	for i in range(20):
 		tween.tween_property(time_travel_light, "light_energy", 100, 0.2)
 		tween.tween_property(time_travel_light, "light_energy", 500, 0.2)
 
 	tween.tween_property(time_travel_light, "light_energy", 0, 2).set_ease(Tween.EASE_OUT)
 	
 
-	tween.tween_property(moonlight, "light_energy", energy, 5)
-	tween.parallel().tween_property(environment.environment, "fog_light_energy", 1, 5)
-	tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", 0.8, 5)
+	tween.tween_property(moonlight, "light_energy", energy, 7)
+	tween.parallel().tween_property(environment.environment, "fog_light_energy", 1, 7)
+	tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", 0.8, 7)
 
 
 	await tween.finished

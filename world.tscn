@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d7b7dn4reh42" path="res://world.gd" id="1_036b0"]
 [ext_resource type="Shader" uid="uid://71443hwokrce" path="res://shaders/water.gdshader" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://b38rv0j4gt8vu" path="res://rotating_light_center.gd" id="2_7qk3m"]
 [ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="2_aqk2v"]
+[ext_resource type="AudioStream" uid="uid://bfevky2u3pr4d" path="res://sounds/creepy_ambience.wav" id="2_nx736"]
 [ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="3_036b0"]
 [ext_resource type="Script" uid="uid://ook5rcwquue" path="res://addons/godot-xr-tools/effects/fade.gd" id="3_xpnt2"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
@@ -38,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="28_ytpkv"]
 [ext_resource type="Texture2D" uid="uid://d4dxtk3m0uuvj" path="res://textures/Lighthouse/wood_diffue.png" id="30_jas3d"]
 [ext_resource type="Texture2D" uid="uid://ca14xddjy33e7" path="res://textures/Lighthouse/wood_normal.png" id="31_7htu6"]
+[ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="31_55kwu"]
 [ext_resource type="Texture2D" uid="uid://cmmfnqbrsflg" path="res://textures/Lighthouse/wood_rough.png" id="32_7qk3m"]
 [ext_resource type="Texture2D" uid="uid://cy7u2x2nhwr82" path="res://textures/Lighthouse/fabric_diffuse.png" id="33_xpnt2"]
 [ext_resource type="Texture2D" uid="uid://b2lklufe7w8fy" path="res://textures/Lighthouse/fabric_normal.png" id="34_ruyqm"]
@@ -46,7 +49,13 @@
 [ext_resource type="Texture2D" uid="uid://cuucjxlfin3t5" path="res://textures/Lighthouse/wood_table_nor.png" id="38_7htu6"]
 [ext_resource type="Texture2D" uid="uid://dvnb0gmcjlcrn" path="res://textures/Lighthouse/wood_table_rough.png" id="39_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
+[ext_resource type="PackedScene" uid="uid://c3ld251uv3hnc" path="res://objects/journal/journal_object.tscn" id="44_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
+[ext_resource type="PackedScene" uid="uid://o5pxc06qt3b0" path="res://objects/crate/crate.glb" id="48_nx736"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_55kwu"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_f3o6s"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2o6r5"]
 sky_top_color = Color(0.002400443, 0.07285706, 0.16548955, 1)
@@ -91,11 +100,15 @@ shader_parameter/color_shallow = Color(0.10444861, 0.25518325, 0.4711396, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70uel"]
 transparency = 1
-albedo_color = Color(0.8901961, 0.8901961, 0.8901961, 0.09019608)
-metallic_specular = 0.3
-roughness = 0.12
+cull_mode = 2
+albedo_color = Color(0.8901961, 0.8901961, 0.8901961, 0.03137255)
+albedo_texture = ExtResource("8_70uel")
+metallic_specular = 0.32
+roughness = 0.23
+roughness_texture = ExtResource("8_70uel")
 emission_enabled = true
 emission = Color(0.67687863, 0.67687863, 0.67687863, 1)
+normal_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bc84e"]
 albedo_texture = ExtResource("9_udxuc")
@@ -117,10 +130,10 @@ uv1_triplanar = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
 transparency = 1
 cull_mode = 2
-albedo_color = Color(0.827451, 0.827451, 0.827451, 0.047058824)
+albedo_color = Color(0.827451, 0.827451, 0.827451, 0.019607844)
 albedo_texture = ExtResource("8_70uel")
-metallic_specular = 0.84
-roughness = 0.12
+metallic_specular = 0.56
+roughness = 0.11
 roughness_texture = ExtResource("8_70uel")
 normal_enabled = true
 normal_texture = ExtResource("12_ikiii")
@@ -550,7 +563,13 @@ uv1_triplanar = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3lar"]
 albedo_color = Color(0.3328807, 0.33288068, 0.33288068, 0.9372549)
 emission_enabled = true
-emission = Color(0.62152386, 0.62152386, 0.6215238, 1)
+emission = Color(0.46034718, 0.46034718, 0.46034712, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eleh8"]
+emission_enabled = true
+emission = Color(0.98234254, 0.9823423, 0.9823424, 1)
+emission_energy_multiplier = 9.62
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qktwf"]
 albedo_texture = ExtResource("23_6ah6f")
@@ -876,6 +895,12 @@ uv1_triplanar = true
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=421538233]
+stream = ExtResource("2_nx736")
+volume_db = -10.188
+autoplay = true
+bus = &"Ambience"
+
 [node name="GameManager" type="Node3D" parent="." unique_id=1948934005 node_paths=PackedStringArray("player", "puzzleHolder", "monster", "vr_fade")]
 script = ExtResource("23_il2jm")
 player = NodePath("../Player")
@@ -886,6 +911,11 @@ vr_fade = NodePath("XRToolsFade")
 [node name="XRToolsFade" type="Node3D" parent="GameManager" unique_id=1952421127]
 script = ExtResource("3_xpnt2")
 metadata/_custom_type_script = "uid://ook5rcwquue"
+
+[node name="FadeMesh" type="MeshInstance3D" parent="GameManager/XRToolsFade" unique_id=493753271]
+layers = 2
+material_override = SubResource("ShaderMaterial_55kwu")
+mesh = SubResource("QuadMesh_f3o6s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1791015796]
 environment = SubResource("Environment_hiqwa")
@@ -906,6 +936,24 @@ directional_shadow_fade_start = 0.79
 directional_shadow_max_distance = 8.1
 directional_shadow_pancake_size = 8.9
 
+[node name="RotatingLightCenter" type="Node3D" parent="." unique_id=1167753070]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+script = ExtResource("2_7qk3m")
+
+[node name="RotatingSpotlight" type="SpotLight3D" parent="RotatingLightCenter" unique_id=1873142353]
+transform = Transform3D(0.15459298, -0.97606164, -0.15298578, -0.98768836, -0.15643443, -9.11022e-08, -0.023932157, 0.15110229, -0.9882284, 0, 11.417564, 0.05)
+light_color = Color(0.999999, 0.99989754, 0.81470966, 1)
+light_energy = 4.743
+light_indirect_energy = 1.906
+light_specular = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+spot_range = 4.121
+spot_attenuation = -1.41
+spot_angle = 71.17
+spot_angle_attenuation = 1.1486983
+
 [node name="Water" type="Node3D" parent="." unique_id=1904178162]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water" unique_id=162288658]
@@ -917,6 +965,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
 
 [node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="Fresenlplaceholder2_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="0" unique_id=308327002]
 visible = false
@@ -1168,7 +1217,7 @@ shape = SubResource("ConcavePolygonShape3D_nx736")
 [node name="Fresnel128res" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="17" unique_id=941834532 instance=ExtResource("26_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" parent_id_path=PackedInt32Array(941834532, 108043203) index="0" unique_id=1224455523]
+[node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" parent_id_path=PackedInt32Array(941834532, 2107011079) index="0" unique_id=1224455523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.89995193, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part/StaticBody3D" unique_id=1042996189]
@@ -1186,8 +1235,21 @@ material_override = SubResource("StandardMaterial3D_jas3d")
 [node name="Gear" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="3" unique_id=811916278]
 material_override = SubResource("StandardMaterial3D_w4lh7")
 
+[node name="GearAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Gear" index="0" unique_id=204327202]
+transform = Transform3D(0.60350025, 0, 0.7973628, 0, 1, 0, -0.7973628, 0, 0.60350025, -0.41093266, 0.921154, 0.07162273)
+stream = ExtResource("31_55kwu")
+attenuation_model = 2
+volume_db = -0.978
+unit_size = 3.3
+autoplay = true
+max_distance = 4.5
+bus = &"SFX"
+
 [node name="Oil-lamp" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="5" unique_id=786476786]
 material_override = SubResource("StandardMaterial3D_k3lar")
+
+[node name="Oil-lamp-flame" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="6" unique_id=796280477]
+material_override = SubResource("StandardMaterial3D_eleh8")
 
 [node name="Puzzle_mechanical_room" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="8" unique_id=1968491663]
 transform = Transform3D(0.60350025, 0, 0.7973628, 0, 1, 0, -0.7973628, 0, 0.60350025, -1.8891082, 43.05, -0.9228839)
@@ -1207,13 +1269,13 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 [node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="4" unique_id=319097456]
 material_override = SubResource("StandardMaterial3D_w44yn")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=83575945]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=893550325]
 material_override = SubResource("StandardMaterial3D_6ah6f")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 1729672906) index="4" unique_id=1373840888]
 material_override = SubResource("StandardMaterial3D_q42o5")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=83575945]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=893550325]
 material_override = SubResource("StandardMaterial3D_g1i3r")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 637408262) index="4" unique_id=67487599]
@@ -1269,8 +1331,41 @@ material_override = SubResource("StandardMaterial3D_ir1d4")
 [node name="BézierCurve - backing_cushion__LP_filling" parent="Chair/chair_broken/ChairBrokenRigidBody" parent_id_path=PackedInt32Array(858333585, 1472975722) index="12" unique_id=865342987]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
+[node name="chair_base" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="0" unique_id=852573981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="leg_l_front" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="1" unique_id=1161883942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="leg_l_front_wheel_hood" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="2" unique_id=1898844454]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="@VehicleWheel3D@55146" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="3" unique_id=199400060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="leg_l_back" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="4" unique_id=828574062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="BézierCurve - backing" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="5" unique_id=665921615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="BézierCurve - backing_cushion__LP" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="6" unique_id=1865206522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="chair_base_cushion__LP" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="7" unique_id=1863253985]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="arm_l_front_LP" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="8" unique_id=976290801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.54594, 0)
+
+[node name="CollisionShape3D" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="9" unique_id=202828924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32343292, 8.794231, 0.017211914)
+
+[node name="CollisionShape3D2" parent="Chair/chair/ChairRigidBody3D" parent_id_path=PackedInt32Array(858333585, 207045552) index="10" unique_id=834223144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3157196, 9.39735, -0.26586914)
+
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.794613, 2.4376316)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.54787, 2.4376316)
 
 [node name="table_structure" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 428050188) index="0" unique_id=1270337065]
 material_override = SubResource("StandardMaterial3D_xpnt2")
@@ -1309,19 +1404,23 @@ material_override = SubResource("StandardMaterial3D_e0aah")
 material_override = SubResource("StandardMaterial3D_415my")
 
 [node name="Crowbar" parent="." unique_id=995516737 instance=ExtResource("42_fnoqa")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2.0613308, 43.15921, -0.24978772)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2.0613308, 51.70515, -0.24978772)
 
 [node name="BigCandle" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
-transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757, 0, 0.007660445, -2.5580878, 42.91658, -0.611697)
+transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757, 0, 0.007660445, -2.5580878, 51.669838, -0.611697)
 
 [node name="SmallCandle" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5508676)
-
-[node name="Lockbox" parent="." unique_id=1685966090 instance=ExtResource("44_ruyqm")]
-transform = Transform3D(0.4716891, 0, 0.88176495, 0, 1, 0, -0.88176495, 0, 0.4716891, -1.9578016, 43.049534, -0.97437686)
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 52.468136, 2.5508676)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
-transform = Transform3D(0.4333918, 0, 0.9012057, 0, 1, 0, -0.9012057, 0, 0.4333918, -0.7797193, 42.88512, -0.79678434)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42340094, 59.36475, 1.9177792)
+
+[node name="StairDetector" parent="Player/PlayerBody" parent_id_path=PackedInt32Array(1677439462, 694939654) index="0" unique_id=97997994 node_paths=PackedStringArray("bodies_to_react_to")]
+bodies_to_react_to = [NodePath("../../../LighthouseStructure/Lighthouse/Stairs_001/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Stairs+topfloor/Floor Viewing level fixed/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Mechanical room/StaticBody3D")]
+
+[node name="Lockbox" parent="." unique_id=1685966090 node_paths=PackedStringArray("locked_object") instance=ExtResource("44_ruyqm")]
+transform = Transform3D(0.4716891, 0, 0.88176495, 0, 1, 0, -0.88176495, 0, 0.4716891, -1.9578016, 51.595474, -0.97437686)
+locked_object = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room")
 
 [node name="TimeTravelController2" type="Node" parent="." unique_id=699235048 node_paths=PackedStringArray("time_travel_light", "environment", "moonlight", "hinge")]
 script = ExtResource("16_2u3nc")
@@ -1332,7 +1431,7 @@ hinge = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/Le
 test = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=526361758]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009957075, 43.869022, 2.550275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009957075, 52.672054, 2.550275)
 light_color = Color(0.9262696, 0.80915624, 0.50088173, 1)
 light_energy = 4.984
 light_indirect_energy = 0.938
@@ -1343,7 +1442,7 @@ shadow_blur = 1.195
 omni_range = 11.796
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1389733909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28558558, 47.284626, 1.4361355)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6042273, 56.771225, 0.4817099)
 light_color = Color(0.7258298, 0.6066042, 0.27108586, 1)
 light_energy = 3.241
 light_indirect_energy = 0.813
@@ -1352,13 +1451,19 @@ shadow_enabled = true
 omni_range = 3.155
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1499123509]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4853816, 43.184402, -0.5753466)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6553745, 53.45566, -0.7327801)
 light_color = Color(0.9287116, 0.7410736, 0.45704, 1)
 light_energy = 2.307
 light_indirect_energy = 0.751
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 2.394
+
+[node name="JournalObject" parent="." unique_id=662103822 instance=ExtResource("44_7qk3m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2889825, 61.373936, -1.1666768)
+
+[node name="crate" parent="." unique_id=1760873807 instance=ExtResource("48_nx736")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -2.1183348, 51.4571, 1.0171839)
 
 [connection signal="area_entered" from="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" to="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" method="_on_area_entered"]
 
@@ -1370,3 +1475,5 @@ omni_range = 2.394
 [editable path="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
 [editable path="Chair"]
 [editable path="Table"]
+[editable path="Player"]
+[editable path="JournalObject"]
