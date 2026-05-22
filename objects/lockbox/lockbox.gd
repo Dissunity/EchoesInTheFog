@@ -3,8 +3,8 @@ extends Node3D
 @onready var lockbox: Node3D = $lockbox/RigidBody3D/lockbox_destructables
 @onready var lockbox_destruct: Node3D = $lockbox_destruct
 @onready var lockbox_collision: CollisionShape3D = $lockbox/RigidBody3D/DestructableCollisionShape3D6
-@onready var testLabel:Label3D = $TestLabel3D
-@onready var hitBox:Area3D = $HitBoxArea3D
+@onready var test_label:Label3D = $testLabel3D
+@onready var hit_box:Area3D = $hitBoxArea3D
 
 @export var locked_object: XRToolsPickable
 @export var INTENSITY:float = 12.0
@@ -51,7 +51,7 @@ var MIN_HITS = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	testLabel.text = "Hellow"
+	test_label.text = "Hellow"
 	locked_object.enabled = false
 	_freeze_all_pieces(locked)
 	_toggle_visibility(true)
@@ -59,8 +59,22 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta: float) -> void:
+	if hit_cooldown or hit_count >= MIN_HITS:
+		return
+
+	var overlapping_bodies = hit_box.get_overlapping_bodies()
+	for body in overlapping_bodies:
+		if body.is_in_group("Crowbar"):
+			if body is XRToolsPickable and body.is_picked_up():
+				hit_cooldown = true
+				
+				test_label.text = "Hit detected"
+				_hit()
+				
+				await get_tree().create_timer(0.5).timeout
+				hit_cooldown = false
+				break
 
 func _toggle_collisions(disable_mesh: bool):
 	lockbox_collision.disabled = disable_mesh
@@ -113,13 +127,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		#print("Button pressed")
 		_hit()
+
+
 	
-func _on_hit_box_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Crowbar") and body.is_picked_up():
-		if not hit_cooldown:
-			hit_cooldown = true
-			testLabel.text = "Hit registered!"
-			_hit()
-			
-			await get_tree().create_timer(0.5).timeout
-			hit_cooldown = false
+#func _on_hit_box_body_entered(body: Node3D) -> void:
+	#if body.is_in_group("Crowbar") and body.is_picked_up():
+		#if not hit_cooldown:
+			#hit_cooldown = true
+			#test_label.text = "Hit registered!"
+			#_hit()
+			#
+			#await get_tree().create_timer(0.5).timeout
+			#hit_cooldown = false
