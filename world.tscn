@@ -281,16 +281,6 @@ emission_enabled = true
 emission = Color(0.98234254, 0.9823423, 0.9823424, 1)
 emission_energy_multiplier = 9.62
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olr1q"]
-albedo_texture = ExtResource("16_bc84e")
-metallic = 0.56
-roughness = 0.64
-normal_enabled = true
-normal_scale = 5.0
-normal_texture = ExtResource("17_wukud")
-uv1_scale = Vector3(5, 5, 5)
-uv1_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qktwf"]
 albedo_texture = ExtResource("23_6ah6f")
 metallic = 0.43
@@ -650,7 +640,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
 script = ExtResource("2_7qk3m")
 
 [node name="RotatingSpotlight" type="SpotLight3D" parent="RotatingLightCenter" unique_id=1873142353]
-transform = Transform3D(0.15459298, -0.97606164, -0.15298578, -0.98768836, -0.15643443, -9.11022e-08, -0.023932157, 0.15110229, -0.9882284, 0, 0.9, 0.05)
+transform = Transform3D(0.15459298, -0.97606164, -0.15298578, -0.98768836, -0.15643443, -9.11022e-08, -0.023932157, 0.15110229, -0.9882284, 0, 11.417564, 0.05)
 light_color = Color(0.999999, 0.99989754, 0.81470966, 1)
 light_energy = 4.743
 light_indirect_energy = 1.906
@@ -744,8 +734,6 @@ material_override = SubResource("StandardMaterial3D_k3lar")
 [node name="Oil-lamp-flame" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="6" unique_id=796280477]
 material_override = SubResource("StandardMaterial3D_eleh8")
 
-[node name="Puzzle-holder" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolder" parent_id_path=PackedInt32Array(1498340944, 367583270, 1285356868) index="0" unique_id=858689615]
-material_override = SubResource("StandardMaterial3D_olr1q")
 [node name="Puzzle_mechanical_room" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="8" unique_id=1968491663]
 transform = Transform3D(0.60350025, 0, 0.7973628, 0, 1, 0, -0.7973628, 0, 0.60350025, -1.8891082, 43.05, -0.9228839)
 
