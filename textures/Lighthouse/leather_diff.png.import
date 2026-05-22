@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwkvkq2sp8am1"
-path.s3tc="res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex"
+uid="uid://nc3nbcbxxual"
+path.s3tc="res://.godot/imported/leather_diff.png-c495081b95631176c1dbc607f906376e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://objects/journal/journal_431.jpg"
-dest_files=["res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex"]
+source_file="res://textures/Lighthouse/leather_diff.png"
+dest_files=["res://.godot/imported/leather_diff.png-c495081b95631176c1dbc607f906376e.s3tc.ctex"]
 
 [params]
 
