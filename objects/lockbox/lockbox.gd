@@ -3,12 +3,17 @@ extends Node3D
 @onready var lockbox: Node3D = $lockbox/RigidBody3D/lockbox_destructables
 @onready var lockbox_destruct: Node3D = $lockbox_destruct
 @onready var lockbox_collision: CollisionShape3D = $lockbox/RigidBody3D/DestructableCollisionShape3D6
-@export var locked_object: XRToolsPickable
-@export var INTENSITY:float = 12.0;
+@onready var testLabel:Label3D = $TestLabel3D
+@onready var hitBox:Area3D = $HitBoxArea3D
 
+@export var locked_object: XRToolsPickable
+@export var INTENSITY:float = 12.0
+
+signal unlocked
+			
 var locked = true
 var hit_count = 0
-
+var hit_cooldown = false 
 var MIN_HITS = 3
 
 @onready var impact_list_1: Array = ["lockbox_destruct/RigidBody3D11", 
@@ -46,6 +51,7 @@ var MIN_HITS = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	testLabel.text = "Hellow"
 	locked_object.enabled = false
 	_freeze_all_pieces(locked)
 	_toggle_visibility(true)
@@ -92,6 +98,7 @@ func _hit():
 		
 		if hit_count >= MIN_HITS:
 			# Puzzle is pickable
+			unlocked.emit()
 			locked_object.enabled = true
 
 
@@ -107,3 +114,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		#print("Button pressed")
 		_hit()
 	
+func _on_hit_box_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Crowbar") and body.is_picked_up():
+		if not hit_cooldown:
+			hit_cooldown = true
+			testLabel.text = "Hit registered!"
+			_hit()
+			
+			await get_tree().create_timer(0.5).timeout
+			hit_cooldown = false

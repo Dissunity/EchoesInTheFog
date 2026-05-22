@@ -969,6 +969,9 @@ shadow_mesh = SubResource("ArrayMesh_kcia5")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_imu4h"]
 points = PackedVector3Array(-0.011054816, -0.09373266, 0.014851929, 0.009389505, -0.09307372, 0.014469217, 0.0074770693, 0.12978315, 0.014849029, -0.014590341, 0.12585142, 0.01338487, -0.015673319, -0.09395231, 0.011764151, 0.009389505, -0.09397428, -0.014767543, 0.0124786105, -0.09373266, -0.010148924, 0.012095572, -0.09305175, 0.011764151, 0.012216821, 0.12965137, 0.01116399, 0.009389505, 0.12303991, -0.014767543, -0.014590341, 0.11941569, -0.013686096, -0.015673319, -0.094611265, -0.012062476, -0.012970006, -0.094611265, -0.014767543, 0.012095572, 0.12288616, -0.012062476)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_c66b3"]
+size = Vector3(0.5005493, 0.4987793, 0.5557251)
+
 [node name="Lockbox" type="Node3D" unique_id=1685966090]
 script = ExtResource("1_ujqom")
 
@@ -1286,3 +1289,13 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lockbox_destruct/RigidBody3D10" unique_id=829983697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23674083, 0.08104279, 0.26859367)
 shape = SubResource("ConvexPolygonShape3D_imu4h")
+
+[node name="HitBoxArea3D" type="Area3D" parent="." unique_id=1398427482]
+collision_layer = 0
+collision_mask = 65536
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitBoxArea3D" unique_id=1994216564]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011291504, -0.0008544922, 0.023040771)
+shape = SubResource("BoxShape3D_c66b3")
+
+[node name="TestLabel3D" type="Label3D" parent="." unique_id=1215588460]

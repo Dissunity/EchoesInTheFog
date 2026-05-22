@@ -39,8 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="28_ytpkv"]
 [ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="31_55kwu"]
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
-[ext_resource type="PackedScene" uid="uid://cf2ovgr7fksb3" path="res://mechanics/time_travelling/time_travel_controller.tscn" id="43_7htu6"]
-[ext_resource type="PackedScene" uid="uid://c3ld251uv3hnc" path="res://objects/journal/journal_object.tscn" id="44_7qk3m"]
+[ext_resource type="PackedScene" path="res://mechanics/time_travelling/time_travel_controller.tscn" id="43_7htu6"]
+[ext_resource type="PackedScene" path="res://objects/journal/journal_object.tscn" id="44_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
 [ext_resource type="PackedScene" uid="uid://o5pxc06qt3b0" path="res://objects/crate/crate.glb" id="48_nx736"]
 
@@ -1030,7 +1030,7 @@ shape = SubResource("ConcavePolygonShape3D_nx736")
 [node name="Fresnel128res" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="17" unique_id=941834532 instance=ExtResource("26_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" parent_id_path=PackedInt32Array(941834532, 2107011079) index="0" unique_id=1224455523]
+[node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" parent_id_path=PackedInt32Array(941834532, 2061020780) index="0" unique_id=1224455523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.89995193, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part/StaticBody3D" unique_id=1042996189]
