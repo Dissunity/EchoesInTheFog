@@ -48,6 +48,10 @@
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
 [ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnoqa"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_nx736"]
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2o6r5"]
 sky_top_color = Color(0.002400443, 0.07285706, 0.16548955, 1)
 sky_horizon_color = Color(0.0061095553, 0.11536034, 0.21632108, 1)
@@ -602,6 +606,10 @@ vr_fade = NodePath("XRToolsFade")
 [node name="XRToolsFade" type="Node3D" parent="GameManager" unique_id=1952421127]
 script = ExtResource("3_xpnt2")
 metadata/_custom_type_script = "uid://ook5rcwquue"
+
+[node name="FadeMesh" type="MeshInstance3D" parent="GameManager/XRToolsFade" unique_id=35658011]
+material_override = SubResource("ShaderMaterial_fnoqa")
+mesh = SubResource("QuadMesh_nx736")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1791015796]
 environment = SubResource("Environment_hiqwa")

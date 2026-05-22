@@ -6,6 +6,8 @@ extends Node3D
 @export var locked_object: XRToolsPickable
 
 var lockbox_unlocked = false
+var min_hits = 3
+var hit_count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
