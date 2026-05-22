@@ -45,11 +45,11 @@ func _on_puzzle_piece_snapped() -> void:
 	
 func _on_game_end() -> void:
 	await get_tree().create_timer(3.0).timeout
-
+	
 	print("Fade-out to black...")
-
+	
 	var fade_tween = create_tween()
-
+	
 	fade_tween.tween_method(
 		func(alpha: float): 
 			XRToolsFade.set_fade(self, Color(0, 0, 0, alpha)), 
@@ -57,9 +57,9 @@ func _on_game_end() -> void:
 		1.0, 
 		2.0
 	)
-
+	
 	await fade_tween.finished
-
+	
 	await get_tree().create_timer(1.0).timeout
 
 	print("Game ended. VR Application closing...")

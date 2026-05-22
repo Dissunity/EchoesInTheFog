@@ -1024,6 +1024,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012817383, -0.0032348633,
 shape = SubResource("BoxShape3D_ah3ry")
 
 [node name="lockbox_destruct" type="Node3D" parent="." unique_id=1925961911]
+visible = false
 script = ExtResource("1_rugom")
 
 [node name="RigidBody3D24" type="RigidBody3D" parent="lockbox_destruct" unique_id=2042559423]
