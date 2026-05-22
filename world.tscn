@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="17_wukud"]
 [ext_resource type="Texture2D" uid="uid://ddf0f6crcei8i" path="res://textures/Lighthouse/blue_metal_diffuse.png" id="18_1ew0l"]
 [ext_resource type="Texture2D" uid="uid://cjei3xh5knws1" path="res://textures/Lighthouse/grey_woor.png" id="18_qktwf"]
+[ext_resource type="AudioStream" uid="uid://ct85cv3qai3a4" path="res://sounds/strong-wind.wav" id="19_7qk3m"]
 [ext_resource type="Texture2D" uid="uid://dnf6q76f00m2u" path="res://textures/Lighthouse/grey_normal.png" id="19_bh8nc"]
 [ext_resource type="Texture2D" uid="uid://bwgcejc8nng8a" path="res://textures/Lighthouse/blue_metal_normal.png" id="19_ryup7"]
 [ext_resource type="Texture2D" uid="uid://cltcevqvy0ins" path="res://textures/Lighthouse/grey_wood.png" id="20_jjr1n"]
@@ -708,18 +709,20 @@ uv1_triplanar = true
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=421538233]
+[node name="AmbientAudio" type="AudioStreamPlayer" parent="." unique_id=421538233]
 stream = ExtResource("2_nx736")
 volume_db = -10.188
 autoplay = true
 bus = &"Ambience"
 
-[node name="GameManager" type="Node3D" parent="." unique_id=1948934005 node_paths=PackedStringArray("player", "puzzleHolder", "monster", "vr_fade")]
+[node name="GameManager" type="Node3D" parent="." unique_id=1948934005 node_paths=PackedStringArray("player", "puzzleHolder", "monster", "vr_fade", "gear_audio", "lighthouse_light")]
 script = ExtResource("23_il2jm")
 player = NodePath("../Player")
 puzzleHolder = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D")
 monster = NodePath("../Monster")
 vr_fade = NodePath("XRToolsFade")
+gear_audio = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/Gear/GearAudioStreamPlayer3D")
+lighthouse_light = NodePath("../RotatingLightCenter/RotatingSpotlight")
 
 [node name="XRToolsFade" type="Node3D" parent="GameManager" unique_id=1952421127]
 script = ExtResource("3_xpnt2")
@@ -756,7 +759,7 @@ script = ExtResource("2_7qk3m")
 [node name="RotatingSpotlight" type="SpotLight3D" parent="RotatingLightCenter" unique_id=1873142353]
 transform = Transform3D(0.15459298, -0.97606164, -0.15298578, -0.98768836, -0.15643443, -9.11022e-08, -0.023932157, 0.15110229, -0.9882284, 0, 11.417564, 0.05)
 light_color = Color(0.999999, 0.99989754, 0.81470966, 1)
-light_energy = 4.743
+light_energy = 5.0
 light_indirect_energy = 1.906
 light_specular = 0.0
 distance_fade_enabled = true
@@ -800,6 +803,14 @@ material_override = SubResource("StandardMaterial3D_wjb0r")
 [node name="Roof_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="5" unique_id=26312032]
 transform = Transform3D(1.1481339, 0, 0, 0, 1, 0, 0, 0, 1.1481339, -0.0034720898, 54.494564, -0.005399704)
 material_override = SubResource("StandardMaterial3D_il2jm")
+
+[node name="Wind" type="AudioStreamPlayer3D" parent="LighthouseStructure/Lighthouse/Roof_001" index="0" unique_id=1507488335]
+stream = ExtResource("19_7qk3m")
+attenuation_model = 2
+volume_db = -3.0
+autoplay = true
+max_distance = 10.0
+bus = &"SFX"
 
 [node name="Railing Viewing level_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="7" unique_id=121648206]
 material_override = SubResource("StandardMaterial3D_mc2jv")
@@ -1031,7 +1042,7 @@ shape = SubResource("ConcavePolygonShape3D_nx736")
 [node name="Fresnel128res" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="17" unique_id=941834532 instance=ExtResource("26_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" parent_id_path=PackedInt32Array(941834532, 2107011079) index="0" unique_id=1224455523]
+[node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" parent_id_path=PackedInt32Array(941834532, 1860017532) index="0" unique_id=1224455523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.89995193, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part/StaticBody3D" unique_id=1042996189]
@@ -1053,10 +1064,10 @@ material_override = SubResource("StandardMaterial3D_w4lh7")
 transform = Transform3D(0.60350025, 0, 0.7973628, 0, 1, 0, -0.7973628, 0, 0.60350025, -0.41093266, 0.921154, 0.07162273)
 stream = ExtResource("31_55kwu")
 attenuation_model = 2
-volume_db = -0.978
-unit_size = 3.3
+volume_db = -4.0
+unit_size = 4.5
 autoplay = true
-max_distance = 4.5
+max_distance = 6.0
 bus = &"SFX"
 
 [node name="Oil-lamp" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="5" unique_id=786476786]
@@ -1083,13 +1094,13 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 [node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="4" unique_id=319097456]
 material_override = SubResource("StandardMaterial3D_w44yn")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=893550325]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1458058797]
 material_override = SubResource("StandardMaterial3D_6ah6f")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 1729672906) index="4" unique_id=1373840888]
 material_override = SubResource("StandardMaterial3D_q42o5")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=893550325]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1458058797]
 material_override = SubResource("StandardMaterial3D_g1i3r")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 637408262) index="4" unique_id=67487599]
