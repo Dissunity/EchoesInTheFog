@@ -827,8 +827,9 @@ transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757,
 [node name="SmallCandle" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 43.714878, 2.5508676)
 
-[node name="Lockbox" parent="." unique_id=1685966090 instance=ExtResource("44_ruyqm")]
+[node name="Lockbox" parent="." unique_id=1685966090 node_paths=PackedStringArray("locked_object") instance=ExtResource("44_ruyqm")]
 transform = Transform3D(0.4716891, 0, 0.88176495, 0, 1, 0, -0.88176495, 0, 0.4716891, -1.9578016, 43.049534, -0.97437686)
+locked_object = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room")
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
 transform = Transform3D(0.4333918, 0, 0.9012057, 0, 1, 0, -0.9012057, 0, 0.4333918, -0.7797193, 42.88512, -0.79678434)
