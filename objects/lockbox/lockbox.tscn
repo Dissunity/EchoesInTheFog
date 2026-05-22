@@ -1001,28 +1001,33 @@ shape = SubResource("BoxShape3D_0sy2x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00091552734, -0.004272461, -0.23815918)
 shape = SubResource("BoxShape3D_dyd8o")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="lockbox/RigidBody3D" unique_id=896868659]
+[node name="lockbox_destructables" type="Node3D" parent="lockbox" unique_id=1855093775]
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="lockbox/lockbox_destructables" unique_id=607225860]
+collision_mask = 393221
+mass = 2.0
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="lockbox/lockbox_destructables/RigidBody3D2" unique_id=896868659]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012817383, -0.0032348633, 0.26229858)
 shape = SubResource("BoxShape3D_ah3ry")
 
-[node name="Door" type="MeshInstance3D" parent="lockbox/RigidBody3D" unique_id=1009717888]
+[node name="Door" type="MeshInstance3D" parent="lockbox/lockbox_destructables/RigidBody3D2" unique_id=1009717888]
 mesh = SubResource("ArrayMesh_l16k8")
 skeleton = NodePath("")
 
-[node name="Lock_latch" type="MeshInstance3D" parent="lockbox/RigidBody3D" unique_id=320956084]
+[node name="Lock_latch" type="MeshInstance3D" parent="lockbox/lockbox_destructables/RigidBody3D2" unique_id=320956084]
 mesh = SubResource("ArrayMesh_7ux8m")
 skeleton = NodePath("")
 
-[node name="Door_latch" type="MeshInstance3D" parent="lockbox/RigidBody3D" unique_id=1884670804]
+[node name="Door_latch" type="MeshInstance3D" parent="lockbox/lockbox_destructables/RigidBody3D2" unique_id=1884670804]
 mesh = SubResource("ArrayMesh_f78ly")
 skeleton = NodePath("")
 
-[node name="Lock" type="MeshInstance3D" parent="lockbox/RigidBody3D" unique_id=1435735661]
+[node name="Lock" type="MeshInstance3D" parent="lockbox/lockbox_destructables/RigidBody3D2" unique_id=1435735661]
 mesh = SubResource("ArrayMesh_7eops")
 skeleton = NodePath("")
 
 [node name="lockbox_destruct" type="Node3D" parent="." unique_id=1925961911]
-visible = false
 script = ExtResource("1_rugom")
 
 [node name="RigidBody3D24" type="RigidBody3D" parent="lockbox_destruct" unique_id=2042559423]
