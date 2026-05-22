@@ -778,6 +778,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")
 
 [node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
+visible = false
 spawn_radius = 7.0
 
 [node name="LighthouseStructure" parent="." unique_id=1498340944 instance=ExtResource("10_wse8f")]
@@ -1041,7 +1042,7 @@ shape = SubResource("ConcavePolygonShape3D_nx736")
 [node name="Fresnel128res" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="17" unique_id=941834532 instance=ExtResource("26_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" parent_id_path=PackedInt32Array(941834532, 1860017532) index="0" unique_id=1224455523]
+[node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" parent_id_path=PackedInt32Array(941834532, 2061020780) index="0" unique_id=1224455523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.89995193, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part/StaticBody3D" unique_id=1042996189]
@@ -1093,13 +1094,13 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 [node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="4" unique_id=319097456]
 material_override = SubResource("StandardMaterial3D_w44yn")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1458058797]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1307461933]
 material_override = SubResource("StandardMaterial3D_6ah6f")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 1729672906) index="4" unique_id=1373840888]
 material_override = SubResource("StandardMaterial3D_q42o5")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1458058797]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1307461933]
 material_override = SubResource("StandardMaterial3D_g1i3r")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 637408262) index="4" unique_id=67487599]
@@ -1140,7 +1141,7 @@ transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757,
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 52.254, 2.551)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3850415, 51.65958, 1.2605727)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2271044, 58.165306, 0.93616843)
 
 [node name="StairDetector" parent="Player/PlayerBody" parent_id_path=PackedInt32Array(1677439462, 694939654) index="0" unique_id=97997994 node_paths=PackedStringArray("bodies_to_react_to")]
 bodies_to_react_to = [NodePath("../../../LighthouseStructure/Lighthouse/Stairs_001/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Stairs+topfloor/Floor Viewing level fixed/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Mechanical room/StaticBody3D")]

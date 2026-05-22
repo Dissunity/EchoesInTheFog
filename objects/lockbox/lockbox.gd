@@ -66,15 +66,14 @@ func _physics_process(delta: float) -> void:
 	var overlapping_bodies = hit_box.get_overlapping_bodies()
 	for body in overlapping_bodies:
 		if body.is_in_group("Crowbar"):
-			if body is XRToolsPickable and body.is_picked_up():
-				hit_cooldown = true
-				
-				test_label.text = "Hit detected"
-				_hit()
-				
-				await get_tree().create_timer(0.5).timeout
-				hit_cooldown = false
-				break
+			hit_cooldown = true
+			
+			test_label.text = "Hit detected"
+			_hit()
+			
+			await get_tree().create_timer(0.5).timeout
+			hit_cooldown = false
+			break
 
 func _toggle_collisions(disable_mesh: bool):
 	lockbox_collision.disabled = disable_mesh
