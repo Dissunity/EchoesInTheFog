@@ -21,14 +21,19 @@ signal time_travel_ended
 ## Foghorn lever hinge which when pulled triggers the time travelling
 @export var hinge: XRToolsInteractableHinge
 
+##
+@export var puzzle_holder_collision_shape: CollisionShape3D
+
 ## Only enable this to easily test the time travelling effect
 ## When enabled, within a single press of ENTER, the time travel will happen
 @export var test: bool = false
 
 
+
 @onready var audio_stream_player = $AudioStreamPlayer
 
 @export_category("Time Traveling Sounds")
+@export var foghorn_sound: AudioStream
 @export var lights_out_sound: AudioStream
 @export var time_traveling_sound: AudioStream
 
@@ -36,19 +41,33 @@ var cooldown = 0
 
 func _ready():
 	hinge.hinge_moved.connect(_on_pull_lever_hinge_moved)
+	puzzle_holder_collision_shape.disabled = true
 
 func _time_travel():
 	time_travel_initiated.emit()
-	cooldown = 20
+	cooldown = 30
 	
 	
 	for obj in time_impacted_objects:
 		obj.toggle_time()
 	
+	for item in transferable_items:
+		if item.is_picked_up():
+			continue
+		else:
+			item.visible = !item.visible
+	
+	puzzle_holder_collision_shape.disabled = !puzzle_holder_collision_shape.disabled
+
+	
 	var old_light_values = []
 	var old_fog_light_energy = environment.environment.fog_light_energy
 	var old_ambient_light_sky_contribution = environment.environment.ambient_light_sky_contribution
 	
+	
+	audio_stream_player.stream = foghorn_sound
+	audio_stream_player.play()
+	await audio_stream_player.finished
 		
 	
 	audio_stream_player.stream = lights_out_sound

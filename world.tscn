@@ -44,7 +44,6 @@
 [ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="31_55kwu"]
 [ext_resource type="Texture2D" uid="uid://dvnb0gmcjlcrn" path="res://textures/Lighthouse/wood_table_rough.png" id="31_kkgr2"]
 [ext_resource type="Texture2D" uid="uid://cagub4v52ykwh" path="res://textures/Lighthouse/FresneltopNormal.png" id="33_ruyqm"]
-[ext_resource type="Script" uid="uid://swu1ri6h1e45" path="res://objects/crowbar/crowbar.gd" id="37_7qk3m"]
 [ext_resource type="Texture2D" uid="uid://nc3nbcbxxual" path="res://textures/Lighthouse/leather_diff.png" id="37_f3o6s"]
 [ext_resource type="Texture2D" uid="uid://ccbbwwqi4fyim" path="res://textures/Lighthouse/leather_normal.png" id="38_w4lh7"]
 [ext_resource type="Texture2D" uid="uid://y4vv30275ri3" path="res://textures/Lighthouse/leather_rough.png" id="39_k3lar"]
@@ -54,6 +53,8 @@
 [ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
 [ext_resource type="PackedScene" uid="uid://o5pxc06qt3b0" path="res://objects/crate/crate.glb" id="48_nx736"]
 [ext_resource type="Texture2D" uid="uid://cmmfnqbrsflg" path="res://textures/Lighthouse/wood_rough.png" id="50_w4lh7"]
+[ext_resource type="AudioStream" uid="uid://cawbn0fkg6k0s" path="res://sounds/foghorn.mp3" id="54_q42o5"]
+[ext_resource type="PackedScene" uid="uid://bwdf6ouaqmt63" path="res://objects/journal/journal_tester.tscn" id="55_b7btk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_55kwu"]
 
@@ -1641,7 +1642,7 @@ shape = SubResource("ConcavePolygonShape3D_nx736")
 [node name="Fresnel128res" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="17" unique_id=140850357 instance=ExtResource("26_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
 
-[node name="Frame top part" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="0" unique_id=1741441482]
+[node name="Frame top part" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="0" unique_id=676717347]
 material_override = SubResource("StandardMaterial3D_xpnt2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part" index="0" unique_id=1224455523]
@@ -1650,19 +1651,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.89995193, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LighthouseStructure/Lighthouse/Fresnel128res/Frame top part/StaticBody3D" unique_id=1042996189]
 shape = SubResource("CylinderShape3D_fnoqa")
 
-[node name="Middle planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="1" unique_id=2066354396]
+[node name="Middle planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="1" unique_id=1123440634]
 material_override = SubResource("StandardMaterial3D_ruyqm")
 lod_bias = 2.5
 
-[node name="Bottom planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="2" unique_id=1743812679]
+[node name="Bottom planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="2" unique_id=988500330]
 material_override = SubResource("StandardMaterial3D_c0wax")
 lod_bias = 2.5
 
-[node name="Top planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="3" unique_id=350668696]
+[node name="Top planes" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="3" unique_id=1768392829]
 material_override = SubResource("StandardMaterial3D_sedwk")
 lod_bias = 2.5
 
-[node name="Frame top part_001" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="4" unique_id=720107255]
+[node name="Frame top part_001" parent="LighthouseStructure/Lighthouse/Fresnel128res" index="4" unique_id=2006650681]
 material_override = SubResource("StandardMaterial3D_fnoqa")
 
 [node name="Circle" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="0" unique_id=1100336640]
@@ -1695,7 +1696,7 @@ surface_material_override/3 = SubResource("StandardMaterial3D_r5m4j")
 [node name="Oil-lamp-flame" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="6" unique_id=796280477]
 material_override = SubResource("StandardMaterial3D_eleh8")
 
-[node name="Puzzle-holder" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolder/MechanicalRoom_puzzleholder" parent_id_path=PackedInt32Array(1498340944, 367583270, 667914428) index="0" unique_id=1863864332]
+[node name="Puzzle-holder" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolder/MechanicalRoom_puzzleholder" parent_id_path=PackedInt32Array(1498340944, 367583270, 667914428) index="0" unique_id=323133435]
 material_override = SubResource("StandardMaterial3D_ynm8w")
 
 [node name="Puzzle_mechanical_room" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="8" unique_id=1968491663]
@@ -1716,14 +1717,14 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 [node name="Puzzle-Gear_004" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room/PuzzleMesh" parent_id_path=PackedInt32Array(1498340944, 367583270, 1136130312) index="4" unique_id=319097456]
 material_override = SubResource("StandardMaterial3D_w44yn")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1458058797]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=893550325]
 surface_material_override/0 = SubResource("StandardMaterial3D_rakx2")
 surface_material_override/1 = SubResource("StandardMaterial3D_3fh52")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 1729672906) index="4" unique_id=1373840888]
 material_override = SubResource("StandardMaterial3D_q42o5")
 
-[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1458058797]
+[node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=893550325]
 surface_material_override/0 = SubResource("StandardMaterial3D_8f1f8")
 surface_material_override/1 = SubResource("StandardMaterial3D_lxwtw")
 
@@ -1829,126 +1830,128 @@ material_override = SubResource("StandardMaterial3D_v27xk")
 
 [node name="Crowbar" parent="." unique_id=995516737 instance=ExtResource("42_fnoqa")]
 transform = Transform3D(0.95001566, -0.31220227, 1.3646794e-08, 0, -4.371139e-08, -1, 0.31220227, 0.95001566, -4.15265e-08, -2.196447, 51.51605, -0.34676522)
-script = ExtResource("37_7qk3m")
+
+[node name="XRToolsPickable" parent="Crowbar" index="0" unique_id=1145141031]
+visible = false
 
 [node name="BigCandle" parent="." unique_id=1271473146 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(0.009977315, 0, -0.00067318836, 0, 0.01, 0, 0.00067318836, 0, 0.009977315, -3.0181742, 52.20287, 0.42679507)
 
-[node name="base" parent="BigCandle" index="12" unique_id=2028475835]
+[node name="base" parent="BigCandle" index="12" unique_id=1818606283]
 material_override = SubResource("StandardMaterial3D_1hr04")
 
-[node name="holder" parent="BigCandle" index="13" unique_id=1561282469]
+[node name="holder" parent="BigCandle" index="13" unique_id=1807280936]
 material_override = SubResource("StandardMaterial3D_remcq")
 
-[node name="bottom cone" parent="BigCandle" index="14" unique_id=460496349]
+[node name="bottom cone" parent="BigCandle" index="14" unique_id=184305392]
 material_override = SubResource("StandardMaterial3D_kcilg")
 
-[node name="cube 4" parent="BigCandle" index="15" unique_id=918316197]
+[node name="cube 4" parent="BigCandle" index="15" unique_id=1116390826]
 material_override = SubResource("StandardMaterial3D_1amq5")
 
-[node name="cube 1" parent="BigCandle" index="16" unique_id=1216237909]
+[node name="cube 1" parent="BigCandle" index="16" unique_id=1853567294]
 material_override = SubResource("StandardMaterial3D_oosws")
 
-[node name="cube 2" parent="BigCandle" index="17" unique_id=281047167]
+[node name="cube 2" parent="BigCandle" index="17" unique_id=928311021]
 material_override = SubResource("StandardMaterial3D_l5hvu")
 
-[node name="cube 3" parent="BigCandle" index="18" unique_id=1001377755]
+[node name="cube 3" parent="BigCandle" index="18" unique_id=409315459]
 material_override = SubResource("StandardMaterial3D_lrosw")
 
 [node name="BigCandle3" parent="." unique_id=1663443393 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(0.00024125757, 0, -0.011997575, 0, 0.012, 0, 0.011997575, 0, 0.00024125757, -0.026468575, 52.348396, 3.3166306)
 
-[node name="base" parent="BigCandle3" index="12" unique_id=2028475835]
+[node name="base" parent="BigCandle3" index="12" unique_id=1818606283]
 material_override = SubResource("StandardMaterial3D_1hr04")
 
-[node name="holder" parent="BigCandle3" index="13" unique_id=1561282469]
+[node name="holder" parent="BigCandle3" index="13" unique_id=1807280936]
 material_override = SubResource("StandardMaterial3D_remcq")
 
-[node name="bottom cone" parent="BigCandle3" index="14" unique_id=460496349]
+[node name="bottom cone" parent="BigCandle3" index="14" unique_id=184305392]
 material_override = SubResource("StandardMaterial3D_kcilg")
 
-[node name="cube 4" parent="BigCandle3" index="15" unique_id=918316197]
+[node name="cube 4" parent="BigCandle3" index="15" unique_id=1116390826]
 material_override = SubResource("StandardMaterial3D_1amq5")
 
-[node name="cube 1" parent="BigCandle3" index="16" unique_id=1216237909]
+[node name="cube 1" parent="BigCandle3" index="16" unique_id=1853567294]
 material_override = SubResource("StandardMaterial3D_oosws")
 
-[node name="cube 2" parent="BigCandle3" index="17" unique_id=281047167]
+[node name="cube 2" parent="BigCandle3" index="17" unique_id=928311021]
 material_override = SubResource("StandardMaterial3D_l5hvu")
 
-[node name="cube 3" parent="BigCandle3" index="18" unique_id=1001377755]
+[node name="cube 3" parent="BigCandle3" index="18" unique_id=409315459]
 material_override = SubResource("StandardMaterial3D_lrosw")
 
 [node name="BigCandle4" parent="." unique_id=1060922012 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(-0.011811014, 0, -0.0021213058, 0, 0.011999999, 0, 0.0021213058, 0, -0.011811014, -1.7132131, 57.247993, -0.84196615)
 
-[node name="base" parent="BigCandle4" index="12" unique_id=2028475835]
+[node name="base" parent="BigCandle4" index="12" unique_id=1818606283]
 material_override = SubResource("StandardMaterial3D_1hr04")
 
-[node name="holder" parent="BigCandle4" index="13" unique_id=1561282469]
+[node name="holder" parent="BigCandle4" index="13" unique_id=1807280936]
 material_override = SubResource("StandardMaterial3D_remcq")
 
-[node name="bottom cone" parent="BigCandle4" index="14" unique_id=460496349]
+[node name="bottom cone" parent="BigCandle4" index="14" unique_id=184305392]
 material_override = SubResource("StandardMaterial3D_kcilg")
 
-[node name="cube 4" parent="BigCandle4" index="15" unique_id=918316197]
+[node name="cube 4" parent="BigCandle4" index="15" unique_id=1116390826]
 material_override = SubResource("StandardMaterial3D_1amq5")
 
-[node name="cube 1" parent="BigCandle4" index="16" unique_id=1216237909]
+[node name="cube 1" parent="BigCandle4" index="16" unique_id=1853567294]
 material_override = SubResource("StandardMaterial3D_oosws")
 
-[node name="cube 2" parent="BigCandle4" index="17" unique_id=281047167]
+[node name="cube 2" parent="BigCandle4" index="17" unique_id=928311021]
 material_override = SubResource("StandardMaterial3D_l5hvu")
 
-[node name="cube 3" parent="BigCandle4" index="18" unique_id=1001377755]
+[node name="cube 3" parent="BigCandle4" index="18" unique_id=409315459]
 material_override = SubResource("StandardMaterial3D_lrosw")
 
 [node name="BigCandle2" parent="." unique_id=20835305 instance=ExtResource("12_k3n1d")]
 transform = Transform3D(0.0059997356, 0, 0.008000199, 0, 0.010000001, 0, -0.008000199, 0, 0.0059997356, -2.6493382, 52.682816, 1.5926046)
 
-[node name="base" parent="BigCandle2" index="12" unique_id=2028475835]
+[node name="base" parent="BigCandle2" index="12" unique_id=1818606283]
 material_override = SubResource("StandardMaterial3D_1hr04")
 
-[node name="holder" parent="BigCandle2" index="13" unique_id=1561282469]
+[node name="holder" parent="BigCandle2" index="13" unique_id=1807280936]
 material_override = SubResource("StandardMaterial3D_remcq")
 
-[node name="bottom cone" parent="BigCandle2" index="14" unique_id=460496349]
+[node name="bottom cone" parent="BigCandle2" index="14" unique_id=184305392]
 material_override = SubResource("StandardMaterial3D_kcilg")
 
-[node name="cube 4" parent="BigCandle2" index="15" unique_id=918316197]
+[node name="cube 4" parent="BigCandle2" index="15" unique_id=1116390826]
 material_override = SubResource("StandardMaterial3D_1amq5")
 
-[node name="cube 1" parent="BigCandle2" index="16" unique_id=1216237909]
+[node name="cube 1" parent="BigCandle2" index="16" unique_id=1853567294]
 material_override = SubResource("StandardMaterial3D_oosws")
 
-[node name="cube 2" parent="BigCandle2" index="17" unique_id=281047167]
+[node name="cube 2" parent="BigCandle2" index="17" unique_id=928311021]
 material_override = SubResource("StandardMaterial3D_l5hvu")
 
-[node name="cube 3" parent="BigCandle2" index="18" unique_id=1001377755]
+[node name="cube 3" parent="BigCandle2" index="18" unique_id=409315459]
 material_override = SubResource("StandardMaterial3D_lrosw")
 
 [node name="SmallCandle" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, -0.6541897, 52.254, 3.3195221)
 
-[node name="Cylinder" parent="SmallCandle" index="0" unique_id=403676911]
+[node name="Cylinder" parent="SmallCandle" index="0" unique_id=1754346809]
 material_override = SubResource("StandardMaterial3D_fxrfj")
 
 [node name="SmallCandle2" parent="." unique_id=1993990660 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.66329926, 52.254, 3.3109255)
 
-[node name="Cylinder" parent="SmallCandle2" index="0" unique_id=403676911]
+[node name="Cylinder" parent="SmallCandle2" index="0" unique_id=1754346809]
 material_override = SubResource("StandardMaterial3D_fxrfj")
 
 [node name="SmallCandle4" parent="." unique_id=1024003393 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.262385, 57.252026, 0.014498651)
 
-[node name="Cylinder" parent="SmallCandle4" index="0" unique_id=403676911]
+[node name="Cylinder" parent="SmallCandle4" index="0" unique_id=1754346809]
 material_override = SubResource("StandardMaterial3D_fxrfj")
 
 [node name="SmallCandle3" parent="." unique_id=1608636291 instance=ExtResource("13_2o6r5")]
 transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 2.327586, 52.107513, -1.7730942)
 
-[node name="Cylinder" parent="SmallCandle3" index="0" unique_id=403676911]
+[node name="Cylinder" parent="SmallCandle3" index="0" unique_id=1754346809]
 material_override = SubResource("StandardMaterial3D_fxrfj")
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
@@ -2136,127 +2139,133 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15919673, 51.531174, -1.42
 [node name="crate" parent="." unique_id=1760873807 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -3.0027924, 51.72221, 0.51610434)
 
-[node name="Cube" parent="crate" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate3" parent="." unique_id=972352637 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.020905565, 0, 0.02151644, 0, 0.03, 0, -0.02151644, 0, 0.020905565, -2.1136425, 51.694054, -2.3614311)
 
-[node name="Cube" parent="crate3" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate3" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate3" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate3" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate4" parent="." unique_id=1478477633 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.028385948, 0, 0.009707612, 0, 0.029999997, 0, -0.009707612, 0, 0.028385948, -2.1136425, 52.408913, -2.3614311)
 
-[node name="Cube" parent="crate4" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate4" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate4" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate4" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate11" parent="." unique_id=1561405607 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.011804507, 0, 0.016144771, 0, 0.020000001, 0, -0.016144771, 0, 0.011804507, -1.3896102, 52.179836, -2.9032614)
 
-[node name="Cube" parent="crate11" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate11" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate11" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate11" index="1" unique_id=917536711]
 transform = Transform3D(1.1920929e-07, 0, -0.50000006, -1.4142138, 9.545942, -2.1073427e-08, 1.4142137, 9.545943, 2.2351742e-08, 10.181305, 0.111083984, 7.629318)
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate6" parent="." unique_id=2093159187 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.019934565, 0, 0.0016165032, 0, 0.02, 0, -0.0016165032, 0, 0.019934565, -2.617652, 52.31357, 1.5091414)
 
-[node name="Cube" parent="crate6" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate6" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate6" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate6" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate7" parent="." unique_id=166312486 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.016870268, 0, -0.010742166, 0, 0.020000001, 0, 0.010742166, 0, 0.016870268, -1.8239924, 56.384026, -0.93451416)
 
-[node name="Cube" parent="crate7" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate7" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate7" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate7" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate14" parent="." unique_id=295780818 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.005917161, 0, -0.019104637, 0, 0.019999998, 0, 0.019104637, 0, 0.005917161, -1.7202344, 56.857754, -0.85113215)
 
-[node name="Cube" parent="crate14" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate14" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate14" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate14" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate2" parent="." unique_id=69862878 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.02219633, 0, 0.020182243, 0, 0.03, 0, -0.020182243, 0, 0.02219633, -2.6747828, 51.72221, 1.4277959)
 
-[node name="Cube" parent="crate2" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate2" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate2" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate2" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate8" parent="." unique_id=883167904 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.028852813, 0, 0.008216765, 0, 0.03, 0, -0.008216765, 0, 0.028852813, -3.0233943, 51.72221, -0.4325745)
 
-[node name="Cube" parent="crate8" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate8" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate8" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate8" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate13" parent="." unique_id=1000259150 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.028852813, 0, 0.008216765, 0, 0.03, 0, -0.008216765, 0, 0.028852813, 2.418373, 51.69625, -1.8218579)
 
-[node name="Cube" parent="crate13" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate13" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate13" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate13" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate12" parent="." unique_id=425462908 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.028852813, 0, 0.008216765, 0, 0.03, 0, -0.008216765, 0, 0.028852813, -1.3073205, 51.589302, -2.5309644)
 
-[node name="Cube" parent="crate12" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate12" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate12" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate12" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate9" parent="." unique_id=1047100466 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.009935915, 0, -0.0011302968, 0, 0.009999999, 0, 0.0011302968, 0, 0.009935915, -3.0971673, 51.46057, -1.0869325)
 
-[node name="Cube" parent="crate9" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate9" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate9" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate9" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="crate10" parent="." unique_id=518078275 instance=ExtResource("48_nx736")]
 transform = Transform3D(0.009935915, 0, -0.0011302968, 0, 0.009999999, 0, 0.0011302968, 0, 0.009935915, -2.1483917, 52.87897, -2.3474877)
 
-[node name="Cube" parent="crate10" index="0" unique_id=1016393738]
+[node name="Cube" parent="crate10" index="0" unique_id=1374402862]
 material_override = SubResource("StandardMaterial3D_ir1d4")
 
-[node name="Cube_024" parent="crate10" index="1" unique_id=128769273]
+[node name="Cube_024" parent="crate10" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
-[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("time_travel_light", "environment", "lights_to_dim_on_time_travel", "hinge") instance=ExtResource("43_7htu6")]
+[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("time_travel_light", "environment", "lights_to_dim_on_time_travel", "transferable_items", "hinge", "puzzle_holder_collision_shape") instance=ExtResource("43_7htu6")]
 time_travel_light = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/TimeTravelLight")
 environment = NodePath("../WorldEnvironment")
-lights_to_dim_on_time_travel = [NodePath("../Moonlight"), NodePath("../RotatingLightCenter/RotatingSpotlight"), NodePath("../OmniLight3D"), NodePath("../OmniLight3D2"), NodePath("../OmniLight3D3")]
+lights_to_dim_on_time_travel = [NodePath("../Moonlight"), NodePath("../RotatingLightCenter/RotatingSpotlight"), NodePath("../OmniLight3D"), NodePath("../OmniLight3D2"), NodePath("../OmniLight3D3"), NodePath("../OmniLight3D4"), NodePath("../OmniLight3D5"), NodePath("../OmniLight3D6"), NodePath("../OmniLight3D7"), NodePath("../OmniLight3D8")]
+transferable_items = [NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room"), NodePath("../Crowbar/XRToolsPickable")]
 hinge = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever")
+puzzle_holder_collision_shape = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D/CollisionShape3D")
 test = true
+foghorn_sound = ExtResource("54_q42o5")
+
+[node name="JournalTester" parent="." unique_id=1440456365 node_paths=PackedStringArray("journal") instance=ExtResource("55_b7btk")]
+journal = NodePath("../JournalObject/Journal")
 
 [connection signal="crowbar_taken" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_crowbar_taken"]
 [connection signal="lockbox_opened" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_lockbox_opened"]
@@ -2275,6 +2284,7 @@ test = true
 [editable path="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
 [editable path="Chair"]
 [editable path="Table"]
+[editable path="Crowbar"]
 [editable path="BigCandle"]
 [editable path="BigCandle3"]
 [editable path="BigCandle4"]

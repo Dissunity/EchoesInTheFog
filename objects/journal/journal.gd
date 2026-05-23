@@ -1,4 +1,5 @@
 extends Node3D
+class_name Journal
 
 signal opened
 signal closed
@@ -9,7 +10,7 @@ var is_open = false
 @onready var decal_right: JournalTextDecal = $Armature/Skeleton3D/RightPageAttachment/Decal
 @onready var label_left: Label = $LeftPage/Label
 @onready var label_right: Label = $RightPage/Label
-@onready var shining_light = $JournalNotificationLight
+@onready var shining_light: OmniLight3D = $JournalNotificationLight
 @export var debug = false
 
 
@@ -59,7 +60,6 @@ func change_text(text_left: String, text_right: String):
 	label_right.text = text_right
 	await get_tree().create_timer(0.1).timeout
 	decal_left.update_text_projection()
-	current_stage = Stage.TO_GO_UP_STAIRS
 	decal_right.update_text_projection()
 	if !is_open:
 		shining_light.start_shining()
@@ -89,6 +89,7 @@ func _process(_delta: float) -> void:
 		close_journal()
 
 func _on_game_manager_time_travelled() -> void:
+	print("Journal: time travelled acknowledged")
 	if current_stage == Stage.TO_TIME_TRAVEL1:
 		current_stage = Stage.TO_PICK_UP_CROWBAR
 		change_text("There should be a crowbar somewhere in the lighthouse.", "Go downstairs and take the crowbar.")
@@ -100,20 +101,24 @@ func _on_game_manager_time_travelled() -> void:
 		change_text("Find the cabinet again.", "Put the mechanical part in the cabinet.")
 
 func _on_game_manager_crowbar_taken() -> void:
+	print("Journal: crowbar acknowledged")
 	if current_stage == Stage.TO_PICK_UP_CROWBAR:
 		current_stage = Stage.TO_TIME_TRAVEL2
 		change_text("There isn't a lockbox at this time.", "Take the crowbar with you and bring it to the present.")
 
 func _on_game_manager_lockbox_opened() -> void:
+	print("Journal: lockbox acknowledged")
 	if current_stage == Stage.TO_BREAK_LOCKBOX:
 		current_stage = Stage.TO_TIME_TRAVEL3
 		change_text("The cabinet where the mechanical part should go is broken.", "Take the mechanical part and bring it to the past by time travelling.")
 
 func _on_game_manager_puzzle_snapped() -> void:
+	print("Journal: snap acknowledged")
 	if current_stage == Stage.TO_SNAP_PUZZLE:
 		current_stage = Stage.TO_GO_UP_STAIRS
 		change_text("The mechanical part is now installed.", "There is something going on above. Go to the top floor.")
 
 func _on_game_manager_player_went_upstairs() -> void:
+	print("Journal: upstairs acknowledged")
 	if current_stage == Stage.TO_GO_UP_STAIRS:
 		return # no more hints, it is game over
