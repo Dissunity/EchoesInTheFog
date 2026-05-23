@@ -1,5 +1,5 @@
 extends Node3D
-@export var spawn_radius: float = 6.0
+@export var spawn_radius: float = 7.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
