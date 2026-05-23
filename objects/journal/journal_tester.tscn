@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bwdf6ouaqmt63"]
+
+[ext_resource type="Script" uid="uid://b71fjgfpm1wai" path="res://objects/journal/journal_tester.gd" id="1_akb5m"]
+
+[node name="JournalTester" type="Node" unique_id=1440456365]
+script = ExtResource("1_akb5m")
