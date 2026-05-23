@@ -28,7 +28,7 @@ func _ready() -> void:
 			push_error("GameManager is missing one or more nodes in the Inspector!")
 			return
 	
-	monster_audio.db = -80.0
+	monster_audio.volume_db = -80.0
 	gear_audio.volume_db = -80.0
 	lighthouse_light.light_energy = 0.0
 		
