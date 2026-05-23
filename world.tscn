@@ -669,6 +669,17 @@ emission_enabled = true
 emission = Color(0.98234254, 0.9823423, 0.9823424, 1)
 emission_energy_multiplier = 9.62
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynm8w"]
+albedo_texture = ExtResource("16_bc84e")
+metallic = 0.61
+metallic_specular = 0.58
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qktwf"]
 albedo_texture = ExtResource("23_6ah6f")
 metallic = 0.43
@@ -718,12 +729,24 @@ normal_texture = ExtResource("24_g1i3r")
 uv1_scale = Vector3(5, 5, 5)
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ah6f"]
-albedo_color = Color(0.6194887, 0.61948866, 0.6194887, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rakx2"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.050980393)
+metallic = 0.05
+metallic_specular = 0.56
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_texture = ExtResource("17_wukud")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3fh52"]
+albedo_color = Color(0.71004736, 0.71004736, 0.71004736, 1)
 albedo_texture = ExtResource("23_6ah6f")
-metallic = 0.32
+metallic = 0.38
+metallic_specular = 0.62
 roughness_texture = ExtResource("25_my276")
 normal_enabled = true
+normal_scale = 4.0
 normal_texture = ExtResource("24_g1i3r")
 uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
@@ -738,13 +761,24 @@ normal_texture = ExtResource("17_wukud")
 uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g1i3r"]
-albedo_color = Color(0.5609549, 0.5609549, 0.5609549, 1)
-albedo_texture = ExtResource("23_6ah6f")
-metallic = 0.32
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8f1f8"]
+transparency = 1
+blend_mode = 1
+albedo_color = Color(1, 1, 1, 0.03137255)
+metallic = 0.1
+metallic_specular = 0.47
 roughness_texture = ExtResource("25_my276")
 normal_enabled = true
-normal_scale = 4.0
+normal_texture = ExtResource("24_g1i3r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxwtw"]
+albedo_color = Color(0.74348193, 0.74348193, 0.74348193, 1)
+albedo_texture = ExtResource("23_6ah6f")
+metallic = 0.35
+metallic_specular = 0.54
+roughness_texture = ExtResource("25_my276")
+normal_enabled = true
+normal_scale = 3.0
 normal_texture = ExtResource("24_g1i3r")
 uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
@@ -1228,6 +1262,9 @@ surface_material_override/3 = SubResource("StandardMaterial3D_r5m4j")
 [node name="Oil-lamp-flame" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="6" unique_id=796280477]
 material_override = SubResource("StandardMaterial3D_eleh8")
 
+[node name="Puzzle-holder" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolder/MechanicalRoom_puzzleholder" parent_id_path=PackedInt32Array(1498340944, 367583270, 667914428) index="0" unique_id=1863864332]
+material_override = SubResource("StandardMaterial3D_ynm8w")
+
 [node name="Puzzle_mechanical_room" parent="LighthouseStructure/MechanicalRoom/MechanicalRoom" parent_id_path=PackedInt32Array(1498340944, 367583270, 1529749169) index="8" unique_id=1968491663]
 transform = Transform3D(0.6035001, 0, 0.7973626, 0, 0.99999976, 0, -0.7973626, 0, 0.6035001, -1.5618004, 43.049988, -0.77990365)
 
@@ -1247,13 +1284,15 @@ material_override = SubResource("StandardMaterial3D_gggvi")
 material_override = SubResource("StandardMaterial3D_w44yn")
 
 [node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 556890419) index="0" unique_id=1458058797]
-material_override = SubResource("StandardMaterial3D_6ah6f")
+surface_material_override/0 = SubResource("StandardMaterial3D_rakx2")
+surface_material_override/1 = SubResource("StandardMaterial3D_3fh52")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 1729672906) index="4" unique_id=1373840888]
 material_override = SubResource("StandardMaterial3D_q42o5")
 
 [node name="Turn mechanism_door 2_001" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(1498340944, 367583270, 1574274314) index="0" unique_id=1458058797]
-material_override = SubResource("StandardMaterial3D_g1i3r")
+surface_material_override/0 = SubResource("StandardMaterial3D_8f1f8")
+surface_material_override/1 = SubResource("StandardMaterial3D_lxwtw")
 
 [node name="HandleMesh" parent="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(1498340944, 367583270, 637408262) index="4" unique_id=67487599]
 material_override = SubResource("StandardMaterial3D_b7btk")
@@ -1317,7 +1356,7 @@ shadow_blur = 1.195
 omni_range = 11.796
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1389733909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6042273, 56.771225, 0.4817099)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8212225, 56.771225, -0.24069232)
 light_color = Color(0.7258298, 0.6066042, 0.27108586, 1)
 light_energy = 3.241
 light_indirect_energy = 0.813
