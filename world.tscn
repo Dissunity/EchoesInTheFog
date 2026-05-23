@@ -50,6 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ld251uv3hnc" path="res://objects/journal/journal_object.tscn" id="44_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
 [ext_resource type="PackedScene" uid="uid://o5pxc06qt3b0" path="res://objects/crate/crate.glb" id="48_nx736"]
+[ext_resource type="Texture2D" uid="uid://cmmfnqbrsflg" path="res://textures/Lighthouse/wood_rough.png" id="50_w4lh7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_55kwu"]
 
@@ -865,6 +866,22 @@ normal_texture = ExtResource("17_wukud")
 uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir1d4"]
+albedo_texture = ExtResource("18_qktwf")
+roughness_texture = ExtResource("50_w4lh7")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("19_bh8nc")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj74d"]
+albedo_texture = ExtResource("18_qktwf")
+metallic_specular = 0.07
+roughness_texture = ExtResource("50_w4lh7")
+normal_enabled = true
+normal_texture = ExtResource("19_bh8nc")
+
 [node name="World" type="Node3D" unique_id=691108467]
 script = ExtResource("1_036b0")
 
@@ -1377,7 +1394,13 @@ omni_range = 2.394
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15919673, 51.531174, -1.4216437)
 
 [node name="crate" parent="." unique_id=1760873807 instance=ExtResource("48_nx736")]
-transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -2.1183348, 51.4571, 1.0171839)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, -2.1183348, 51.72221, 1.0171839)
+
+[node name="Cube" parent="crate" index="0" unique_id=1016393738]
+material_override = SubResource("StandardMaterial3D_ir1d4")
+
+[node name="Cube_024" parent="crate" index="1" unique_id=128769273]
+material_override = SubResource("StandardMaterial3D_tj74d")
 
 [node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("time_travel_light", "environment", "lights_to_dim_on_time_travel", "hinge") instance=ExtResource("43_7htu6")]
 time_travel_light = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/TimeTravelLight")
@@ -1403,3 +1426,4 @@ test = true
 [editable path="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
 [editable path="Player"]
 [editable path="JournalObject"]
+[editable path="crate"]
