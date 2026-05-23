@@ -39,7 +39,10 @@
 [ext_resource type="PackedScene" uid="uid://bpeue4ksp23vg" path="res://world/lighthouse/Fresnel128res.glb" id="26_fnoqa"]
 [ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="28_ytpkv"]
 [ext_resource type="Texture2D" uid="uid://c5sn06n8ignjj" path="res://textures/Lighthouse/plaster_diffuse.png" id="29_fnoqa"]
+[ext_resource type="Texture2D" uid="uid://bs7ogjltewj8e" path="res://textures/Lighthouse/wood_table_diff.png" id="29_q42o5"]
+[ext_resource type="Texture2D" uid="uid://cuucjxlfin3t5" path="res://textures/Lighthouse/wood_table_nor.png" id="30_b7btk"]
 [ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="31_55kwu"]
+[ext_resource type="Texture2D" uid="uid://dvnb0gmcjlcrn" path="res://textures/Lighthouse/wood_table_rough.png" id="31_kkgr2"]
 [ext_resource type="Texture2D" uid="uid://cagub4v52ykwh" path="res://textures/Lighthouse/FresneltopNormal.png" id="33_ruyqm"]
 [ext_resource type="Script" uid="uid://swu1ri6h1e45" path="res://objects/crowbar/crowbar.gd" id="37_7qk3m"]
 [ext_resource type="Texture2D" uid="uid://nc3nbcbxxual" path="res://textures/Lighthouse/leather_diff.png" id="37_f3o6s"]
@@ -228,6 +231,13 @@ normal_texture = ExtResource("12_ikiii")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy5nj"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojkoy"]
 resource_name = "Dark metal"
 cull_mode = 2
@@ -363,6 +373,13 @@ points = PackedVector3Array(-0.7523675, 3.0563738, -0.07870146, -0.67753303, 3.2
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qm10a"]
 points = PackedVector3Array(0.32040322, 2.2580178, -0.7024437, -0.1535432, 2.6072426, -0.6775453, -0.028814286, 2.5323493, -0.7024681, -0.10366335, 2.4575393, -0.7523626, 0.22064354, 2.1831245, -0.6525858, 0.32040322, 2.3078773, -0.62762636, -0.20348164, 2.5572999, -0.652598, 0.12088385, 2.432547, -0.7523748, 0.22064354, 2.1831245, -0.7024437, 0.32040322, 2.1831245, -0.62762636, -0.20348164, 2.6072426, -0.7274154, -0.053783514, 2.3827705, -0.7024681, 0.3953109, 2.1831245, -0.6525858, 0.07100401, 2.357737, -0.7523748, -0.20348164, 2.5323493, -0.7274154, -0.1785124, 2.6072426, -0.652598, 0.37028307, 2.2580178, -0.67755747, -0.10366335, 2.5572999, -0.7523626, 0.24549553, 2.2829268, -0.7274154, 0.24549553, 2.2330673, -0.62762636, 0.3953109, 2.2330673, -0.62762636, -0.1535432, 2.6072426, -0.7274154)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5g01"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_l62a1"]
 _surfaces = [{
@@ -1025,6 +1042,7 @@ material_override = SubResource("StandardMaterial3D_ytpkv")
 
 [node name="Railing bottom" type="MeshInstance3D" parent="LighthouseStructure/Lighthouse/Stairs+topfloor" unique_id=327222635]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67012, 42.784393, 0)
+material_override = SubResource("StandardMaterial3D_yy5nj")
 mesh = SubResource("ArrayMesh_4vlh7")
 skeleton = NodePath("")
 
@@ -1128,6 +1146,7 @@ shape = SubResource("ConvexPolygonShape3D_qm10a")
 
 [node name="Railing Top" type="MeshInstance3D" parent="LighthouseStructure/Lighthouse/Stairs+topfloor" unique_id=1297727309]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67012, 46.820316, 0)
+material_override = SubResource("StandardMaterial3D_p5g01")
 mesh = SubResource("ArrayMesh_apgfp")
 skeleton = NodePath("")
 
@@ -1336,10 +1355,10 @@ material_override = SubResource("StandardMaterial3D_e77ka")
 material_override = SubResource("StandardMaterial3D_my276")
 
 [node name="Chair" parent="." unique_id=858333585 instance=ExtResource("7_wse8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21086228, 51.34724, 1.6437601)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21086228, 51.34724, 2.3432813)
 
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.332, 2.438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.332, 3.036395)
 
 [node name="Crowbar" parent="." unique_id=995516737 instance=ExtResource("42_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2.0613308, 51.70515, -0.24978772)
@@ -1349,7 +1368,7 @@ script = ExtResource("37_7qk3m")
 transform = Transform3D(0.007660445, 0, 0.0064278757, 0, 0.01, 0, -0.0064278757, 0, 0.007660445, -2.5580878, 51.669838, -0.611697)
 
 [node name="SmallCandle" parent="." unique_id=1277311220 instance=ExtResource("13_2o6r5")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 52.254, 2.551)
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0.01, 52.254, 3.1766777)
 
 [node name="Player" parent="." unique_id=1677439462 instance=ExtResource("9_wse8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2271044, 58.165306, 0.93616843)
@@ -1362,7 +1381,7 @@ transform = Transform3D(0.5660269, 0, 1.058118, 0, 1.2, 0, -1.058118, 0, 0.56602
 locked_object = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=526361758]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009957075, 52.672054, 2.550275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.610774, 52.672054, 1.1789252)
 light_color = Color(0.9262696, 0.80915624, 0.50088173, 1)
 light_energy = 4.984
 light_indirect_energy = 0.938
@@ -1425,5 +1444,6 @@ test = true
 [editable path="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
 [editable path="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
 [editable path="Player"]
+[editable path="Lockbox"]
 [editable path="JournalObject"]
 [editable path="crate"]
