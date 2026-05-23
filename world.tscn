@@ -40,11 +40,11 @@
 [ext_resource type="Script" uid="uid://mc4dmfy38nqa" path="res://addons/godot-xr-tools/audio/surface_audio.gd" id="27_fnoqa"]
 [ext_resource type="Script" uid="uid://bsk5funnj0084" path="res://addons/godot-xr-tools/audio/surface_audio_type.gd" id="28_nx736"]
 [ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="28_ytpkv"]
-[ext_resource type="AudioStream" path="res://sounds/walking on wooden floor.wav" id="29_f3o6s"]
-[ext_resource type="AudioStream" path="res://sounds/stair sound.mp3" id="30_w4lh7"]
+[ext_resource type="AudioStream" uid="uid://ccsqpgqrea2wn" path="res://sounds/walking on wooden floor.wav" id="29_f3o6s"]
+[ext_resource type="AudioStream" uid="uid://cvk54d6ah2665" path="res://sounds/freesound_community-steps-on-stairs-102729.mp3" id="30_w4lh7"]
 [ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="31_55kwu"]
-[ext_resource type="AudioStream" path="res://sounds/freesound_community-footsteps-metallic-muffled-108304.mp3" id="33_k3lar"]
-[ext_resource type="AudioStream" path="res://sounds/steps on stone.wav" id="33_w4lh7"]
+[ext_resource type="AudioStream" uid="uid://bwvll2c1y8kli" path="res://sounds/metallic foot steps.mp3" id="33_k3lar"]
+[ext_resource type="AudioStream" uid="uid://bom0u61snaih6" path="res://sounds/steps on stone.wav" id="34_k3lar"]
 [ext_resource type="Script" uid="uid://swu1ri6h1e45" path="res://objects/crowbar/crowbar.gd" id="37_7qk3m"]
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
 [ext_resource type="PackedScene" uid="uid://0xlsitpu17r1" path="res://addons/godot-xr-tools/functions/movement_footstep.tscn" id="42_ruyqm"]
@@ -534,7 +534,7 @@ data = PackedVector3Array(0.45369998, -1, -2.2826998, -0.4542, -1, -2.2826998, -
 
 [sub_resource type="Resource" id="Resource_olr1q"]
 script = ExtResource("28_nx736")
-walk_sounds = Array[AudioStream]([ExtResource("33_w4lh7")])
+walk_sounds = Array[AudioStream]([ExtResource("34_k3lar")])
 metadata/_custom_type_script = "uid://bsk5funnj0084"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fnoqa"]
@@ -854,7 +854,7 @@ material_override = SubResource("StandardMaterial3D_hiqwa")
 transform = Transform3D(1.048912, 0, 0, 0, 1, 0, 0, 0, 1.048912, 0.00018250008, 42.752712, -0.0025579338)
 material_override = SubResource("StandardMaterial3D_yx0jh")
 
-[node name="XRToolsSurfaceAudio" type="Node" parent="LighthouseStructure/Lighthouse/Floor Room_001/StaticBody3D" parent_id_path=PackedInt32Array(1498340944, 245602383) index="1" unique_id=208415708]
+[node name="XRToolsSurfaceAudio" type="Node" parent="LighthouseStructure/Lighthouse/Floor Room_001/StaticBody3D/Collision Shape floor lower room" parent_id_path=PackedInt32Array(1498340944, 198833819) index="0" unique_id=208415708]
 script = ExtResource("27_fnoqa")
 surface_audio_type = SubResource("Resource_55kwu")
 metadata/_custom_type_script = "uid://mc4dmfy38nqa"
@@ -869,7 +869,7 @@ shape = SubResource("CylinderShape3D_hiqwa")
 [node name="Stairs_001" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="13" unique_id=1445684434]
 material_override = SubResource("StandardMaterial3D_ryup7")
 
-[node name="XRToolsSurfaceAudio" type="Node" parent="LighthouseStructure/Lighthouse/Stairs_001/StaticBody3D" parent_id_path=PackedInt32Array(1498340944, 2007331517) index="1" unique_id=523850720]
+[node name="XRToolsSurfaceAudio" type="Node" parent="LighthouseStructure/Lighthouse/Stairs_001/StaticBody3D/Collision Shape Stairs" parent_id_path=PackedInt32Array(1498340944, 72993880) index="0" unique_id=523850720]
 script = ExtResource("27_fnoqa")
 surface_audio_type = SubResource("Resource_k3lar")
 metadata/_custom_type_script = "uid://mc4dmfy38nqa"
@@ -877,7 +877,7 @@ metadata/_custom_type_script = "uid://mc4dmfy38nqa"
 [node name="Mechanical room" parent="LighthouseStructure/Lighthouse" parent_id_path=PackedInt32Array(1498340944, 1007113173) index="15" unique_id=1866034699]
 material_override = SubResource("StandardMaterial3D_ytpkv")
 
-[node name="XRToolsSurfaceAudio" type="Node" parent="LighthouseStructure/Lighthouse/Mechanical room/StaticBody3D" parent_id_path=PackedInt32Array(1498340944, 440045356) index="1" unique_id=1894840797]
+[node name="XRToolsSurfaceAudio" type="Node" parent="LighthouseStructure/Lighthouse/Mechanical room/StaticBody3D/Collision Shape Mechanical Room" parent_id_path=PackedInt32Array(1498340944, 1870804674) index="0" unique_id=1894840797]
 script = ExtResource("27_fnoqa")
 surface_audio_type = SubResource("Resource_q42o5")
 metadata/_custom_type_script = "uid://mc4dmfy38nqa"
