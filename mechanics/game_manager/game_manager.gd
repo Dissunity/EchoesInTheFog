@@ -32,7 +32,6 @@ func _ready() -> void:
 		
 	# These objects emit a signal indicating when the conditions are met
 	player.reached_target_height.connect(_on_player_height_changed)
-	puzzleHolder.puzzle_piece_snapped.connect(_on_puzzle_piece_snapped)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -63,6 +62,7 @@ func _on_player_height_changed(is_high_enough: bool):
 	
 func _on_puzzle_piece_snapped() -> void:
 	puzzle_is_snapped = true
+	puzzle_snapped.emit()
 	#print("GameManager puzzleholder status changes to: ", puzzle_is_snapped)
 	if gear_audio and not gear_audio.playing:
 		gear_audio.play() # Start playing the silent track
