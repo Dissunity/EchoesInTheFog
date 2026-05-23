@@ -28,6 +28,7 @@ signal time_travel_ended
 ## When enabled, within a single press of ENTER, the time travel will happen
 @export var test: bool = false
 
+@export var lockbox: Lockbox
 
 
 @onready var audio_stream_player = $AudioStreamPlayer
@@ -59,6 +60,7 @@ func _time_travel():
 	
 	puzzle_holder_collision_shape.disabled = !puzzle_holder_collision_shape.disabled
 
+	lockbox.is_present = !lockbox.is_present
 	
 	var old_light_values = []
 	var old_fog_light_energy = environment.environment.fog_light_energy
@@ -106,7 +108,7 @@ func _time_travel():
 	time_travel_ended.emit()
 
 func _process(delta: float) -> void:
-	if test:
+	if test and cooldown <= 0:
 		if Input.is_action_just_pressed("ui_accept"):
 			_time_travel()
 	cooldown -= delta

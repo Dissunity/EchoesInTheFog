@@ -1,4 +1,5 @@
 extends Node3D
+class_name Lockbox
 
 signal lockbox_opened
 
@@ -17,6 +18,8 @@ var locked = true
 var hit_count = 0
 var hit_cooldown = false 
 var MIN_HITS = 3
+
+
 
 @onready var impact_list_1: Array = ["lockbox_destruct/RigidBody3D11", 
 "lockbox_destruct/RigidBody3D17", 
@@ -50,6 +53,8 @@ var MIN_HITS = 3
 	1: impact_list_2,
 	2: impact_list_3
 }
+
+var is_present = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -91,6 +96,9 @@ func _toggle_visibility(visible: bool):
 	lockbox_destruct.visible = not visible
 	
 func _hit():
+	
+	if !is_present:
+		return
 	
 	locked = hit_count < MIN_HITS
 	#print("Is locked: ", locked)

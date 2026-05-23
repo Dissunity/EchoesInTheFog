@@ -2254,7 +2254,7 @@ material_override = SubResource("StandardMaterial3D_ir1d4")
 [node name="Cube_024" parent="crate10" index="1" unique_id=917536711]
 material_override = SubResource("StandardMaterial3D_tj74d")
 
-[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("time_travel_light", "environment", "lights_to_dim_on_time_travel", "transferable_items", "hinge", "puzzle_holder_collision_shape") instance=ExtResource("43_7htu6")]
+[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("time_travel_light", "environment", "lights_to_dim_on_time_travel", "transferable_items", "hinge", "puzzle_holder_collision_shape", "lockbox") instance=ExtResource("43_7htu6")]
 time_travel_light = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/TimeTravelLight")
 environment = NodePath("../WorldEnvironment")
 lights_to_dim_on_time_travel = [NodePath("../Moonlight"), NodePath("../RotatingLightCenter/RotatingSpotlight"), NodePath("../OmniLight3D"), NodePath("../OmniLight3D2"), NodePath("../OmniLight3D3"), NodePath("../OmniLight3D4"), NodePath("../OmniLight3D5"), NodePath("../OmniLight3D6"), NodePath("../OmniLight3D7"), NodePath("../OmniLight3D8")]
@@ -2262,6 +2262,7 @@ transferable_items = [NodePath("../LighthouseStructure/MechanicalRoom/Mechanical
 hinge = NodePath("../LighthouseStructure/MechanicalRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever")
 puzzle_holder_collision_shape = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D/CollisionShape3D")
 test = true
+lockbox = NodePath("../Lockbox")
 foghorn_sound = ExtResource("54_q42o5")
 
 [node name="JournalTester" parent="." unique_id=1440456365 node_paths=PackedStringArray("journal") instance=ExtResource("55_b7btk")]
