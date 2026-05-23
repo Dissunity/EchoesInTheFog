@@ -206,7 +206,6 @@ albedo_texture = ExtResource("16_bc84e")
 roughness_texture = ExtResource("15_wukud")
 normal_enabled = true
 normal_texture = ExtResource("17_wukud")
-uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 0.06698606
 
@@ -883,6 +882,108 @@ normal_texture = ExtResource("17_wukud")
 uv1_scale = Vector3(4, 4, 4)
 uv1_triplanar = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl6gn"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjwlp"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfwfa"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qm10a"]
+albedo_texture = ExtResource("16_bc84e")
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fs00"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0aah"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_415my"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eewsi"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71tr8"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ngeen"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t55hq"]
+albedo_texture = ExtResource("16_bc84e")
+roughness_texture = ExtResource("15_wukud")
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("17_wukud")
+uv1_scale = Vector3(4, 4, 4)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtjyu"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vv6ac"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v27xk"]
+albedo_texture = ExtResource("29_q42o5")
+roughness_texture = ExtResource("31_kkgr2")
+normal_enabled = true
+normal_texture = ExtResource("30_b7btk")
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ir1d4"]
 albedo_texture = ExtResource("18_qktwf")
 roughness_texture = ExtResource("50_w4lh7")
@@ -1360,6 +1461,54 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21086228, 51.34724, 2.3432
 [node name="Table" parent="." unique_id=723022751 instance=ExtResource("9_k3n1d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.332, 3.036395)
 
+[node name="table" parent="Table" index="0" unique_id=2010079531]
+visible = false
+
+[node name="table_structure" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 1372069896) index="0" unique_id=1270337065]
+material_override = SubResource("StandardMaterial3D_fl6gn")
+
+[node name="leg_l_front" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 1372069896) index="1" unique_id=509651534]
+material_override = SubResource("StandardMaterial3D_gjwlp")
+
+[node name="table_drawers_top" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 1372069896) index="2" unique_id=828397317]
+material_override = SubResource("StandardMaterial3D_yfwfa")
+
+[node name="Knobs" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 1372069896) index="3" unique_id=1265720671]
+material_override = SubResource("StandardMaterial3D_qm10a")
+
+[node name="table_drawers_bottom" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 1372069896) index="4" unique_id=531473549]
+material_override = SubResource("StandardMaterial3D_7fs00")
+
+[node name="table_top" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 1372069896) index="5" unique_id=753060608]
+material_override = SubResource("StandardMaterial3D_e0aah")
+
+[node name="table_drawers_,middle" parent="Table/table/TableRigidBody3D" parent_id_path=PackedInt32Array(723022751, 1372069896) index="6" unique_id=1111668033]
+material_override = SubResource("StandardMaterial3D_415my")
+
+[node name="table_broken" parent="Table" index="1" unique_id=1950040690]
+visible = true
+
+[node name="table_structure" parent="Table/table_broken/RigidBody3D" parent_id_path=PackedInt32Array(723022751, 1702163884) index="0" unique_id=1509054403]
+material_override = SubResource("StandardMaterial3D_eewsi")
+
+[node name="leg_l_front" parent="Table/table_broken/RigidBody3D" parent_id_path=PackedInt32Array(723022751, 1702163884) index="1" unique_id=83559135]
+material_override = SubResource("StandardMaterial3D_71tr8")
+
+[node name="table_drawers_top" parent="Table/table_broken/RigidBody3D" parent_id_path=PackedInt32Array(723022751, 1702163884) index="2" unique_id=817563895]
+material_override = SubResource("StandardMaterial3D_ngeen")
+
+[node name="Knobs" parent="Table/table_broken/RigidBody3D" parent_id_path=PackedInt32Array(723022751, 1702163884) index="3" unique_id=920088561]
+material_override = SubResource("StandardMaterial3D_t55hq")
+
+[node name="table_drawers_bottom" parent="Table/table_broken/RigidBody3D" parent_id_path=PackedInt32Array(723022751, 1702163884) index="4" unique_id=1636644215]
+material_override = SubResource("StandardMaterial3D_jtjyu")
+
+[node name="table_drawers_,middle" parent="Table/table_broken/RigidBody3D" parent_id_path=PackedInt32Array(723022751, 1702163884) index="5" unique_id=2015193709]
+material_override = SubResource("StandardMaterial3D_vv6ac")
+
+[node name="table_top_broken" parent="Table/table_broken/RigidBody3D" parent_id_path=PackedInt32Array(723022751, 1702163884) index="6" unique_id=949464764]
+material_override = SubResource("StandardMaterial3D_v27xk")
+
 [node name="Crowbar" parent="." unique_id=995516737 instance=ExtResource("42_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -2.0613308, 51.70515, -0.24978772)
 script = ExtResource("37_7qk3m")
@@ -1381,9 +1530,9 @@ transform = Transform3D(0.5660269, 0, 1.058118, 0, 1.2, 0, -1.058118, 0, 0.56602
 locked_object = NodePath("../LighthouseStructure/MechanicalRoom/MechanicalRoom/Puzzle_mechanical_room")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=526361758]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.610774, 52.672054, 1.1789252)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.610774, 53.505867, 1.8029023)
 light_color = Color(0.9262696, 0.80915624, 0.50088173, 1)
-light_energy = 4.984
+light_energy = 10.604
 light_indirect_energy = 0.938
 light_size = 0.052
 light_bake_mode = 1
@@ -1443,6 +1592,7 @@ test = true
 [editable path="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolder/MechanicalRoom_puzzleholder"]
 [editable path="LighthouseStructure/MechanicalRoom/Door2Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
 [editable path="LighthouseStructure/MechanicalRoom/Door1Lever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
+[editable path="Table"]
 [editable path="Player"]
 [editable path="Lockbox"]
 [editable path="JournalObject"]
