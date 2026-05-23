@@ -2273,6 +2273,7 @@ journal = NodePath("../JournalObject/Journal")
 [connection signal="puzzle_snapped" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_puzzle_snapped"]
 [connection signal="time_travelled" from="GameManager" to="JournalObject/Journal" method="_on_game_manager_time_travelled"]
 [connection signal="area_entered" from="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" to="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" method="_on_area_entered"]
+[connection signal="puzzle_piece_snapped" from="LighthouseStructure/MechanicalRoom/MechanicalRoom/PuzzleHolderArea3D" to="GameManager" method="_on_puzzle_piece_snapped"]
 [connection signal="crowbar_taken" from="Crowbar" to="GameManager" method="_on_crowbar_taken"]
 [connection signal="unlocked" from="Lockbox" to="GameManager" method="_on_lockbow_opened"]
 [connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travelled"]
