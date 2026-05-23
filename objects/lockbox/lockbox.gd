@@ -1,7 +1,7 @@
 extends Node3D
 class_name Lockbox
 
-signal lockbox_opened
+signal unlocked
 
 @onready var lockbox: Node3D = $lockbox/RigidBody3D/lockbox_destructables
 @onready var lockbox_destruct: Node3D = $lockbox_destruct
@@ -12,7 +12,6 @@ signal lockbox_opened
 @export var locked_object: XRToolsPickable
 @export var INTENSITY:float = 12.0
 
-signal unlocked
 			
 var locked = true
 var hit_count = 0
@@ -123,7 +122,6 @@ func _hit():
 			# Puzzle is pickable
 			unlocked.emit()
 			locked_object.enabled = true
-			lockbox_opened.emit()
 
 
 func _freeze_all_pieces(should_freeze: bool):

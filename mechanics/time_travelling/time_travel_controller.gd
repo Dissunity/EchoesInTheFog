@@ -31,7 +31,7 @@ signal time_travel_ended
 @export var lockbox: Lockbox
 
 
-@onready var audio_stream_player = $AudioStreamPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export_category("Time Traveling Sounds")
 @export var foghorn_sound: AudioStream
@@ -68,9 +68,9 @@ func _time_travel():
 	
 	
 	audio_stream_player.stream = foghorn_sound
-	audio_stream_player.play()
-	await audio_stream_player.finished
-		
+	audio_stream_player.play(1.5)
+	#await audio_stream_player.finished
+	await get_tree().create_timer(3).timeout
 	
 	audio_stream_player.stream = lights_out_sound
 	audio_stream_player.play()
@@ -81,7 +81,7 @@ func _time_travel():
 		var light = lights_to_dim_on_time_travel[i]
 		old_light_values.append(light.light_energy)
 		tween.parallel().tween_property(light, "light_energy", 0, 2)
-	tween.tween_interval(2)
+	tween.tween_interval(1)
 	await tween.finished
 	
 	audio_stream_player.stream = time_traveling_sound

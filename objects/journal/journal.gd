@@ -104,13 +104,13 @@ func _on_game_manager_crowbar_taken() -> void:
 	print("Journal: crowbar acknowledged")
 	if current_stage == Stage.TO_PICK_UP_CROWBAR:
 		current_stage = Stage.TO_TIME_TRAVEL2
-		change_text("There isn't a lockbox at this time.", "Take the crowbar with you and bring it to the present.")
+		change_text("The lockbox is rusty at the present time. It should be easier to break it then.", "Take the crowbar with you and bring it to the present.")
 
 func _on_game_manager_lockbox_opened() -> void:
 	print("Journal: lockbox acknowledged")
 	if current_stage == Stage.TO_BREAK_LOCKBOX:
 		current_stage = Stage.TO_TIME_TRAVEL3
-		change_text("The cabinet where the mechanical part should go is broken.", "Take the mechanical part and bring it to the past by time travelling.")
+		change_text("The cabinet where the mechanical part should go is rusty at present time and cannot fit the mechanical part.", "Take the mechanical part and bring it to the past by time travelling.")
 
 func _on_game_manager_puzzle_snapped() -> void:
 	print("Journal: snap acknowledged")
