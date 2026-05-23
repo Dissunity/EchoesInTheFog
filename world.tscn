@@ -798,6 +798,7 @@ spot_angle = 71.17
 spot_angle_attenuation = 1.1486983
 
 [node name="Water" type="Node3D" parent="." unique_id=1904178162]
+visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Water" unique_id=162288658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
@@ -1196,7 +1197,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2271044, 58.165306, 0.93616
 bodies_to_react_to = [NodePath("../../../LighthouseStructure/Lighthouse/Stairs_001/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Stairs+topfloor/Floor Viewing level fixed/StaticBody3D"), NodePath("../../../LighthouseStructure/Lighthouse/Mechanical room/StaticBody3D")]
 
 [node name="MovementFootstep" parent="Player/PlayerBody" parent_id_path=PackedInt32Array(1677439462, 694939654) index="1" unique_id=113828670 instance=ExtResource("42_ruyqm")]
-walk_speed = 0.05
+walk_speed = 0.0
+steps_per_meter = 0.3
 
 [node name="Lockbox" parent="." unique_id=1685966090 node_paths=PackedStringArray("locked_object") instance=ExtResource("44_ruyqm")]
 transform = Transform3D(0.5660269, 0, 1.058118, 0, 1.2, 0, -1.058118, 0, 0.5660269, -1.9578016, 51.674286, -0.97437686)
