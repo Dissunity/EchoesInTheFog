@@ -66,7 +66,7 @@ const NEAR_GROUND_DISTANCE := 1.0
 @export var player_height_min : float = 0.6
 
 ## Maximum player height
-@export var player_height_max : float = 1.7
+@export var player_height_max : float = 2.5
 
 ## Slew-rate for player height overriding (button-crouch)
 @export var player_height_rate : float = 4.0

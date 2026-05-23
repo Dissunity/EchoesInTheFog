@@ -7,7 +7,7 @@ extends Node3D
 @export var steps : int = 32: set = set_steps
 
 @export var auto_adjust : bool = true: set = set_auto_adjust
-@export var auto_inner_radius : float = 0.35
+@export var auto_inner_radius : float = 0.7
 @export var auto_fade_out_factor : float = 1.5
 @export var auto_fade_delay : float = 1.0
 @export var auto_rotation_limit : float = 20.0: set = set_auto_rotation_limit
