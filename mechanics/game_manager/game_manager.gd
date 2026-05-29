@@ -6,12 +6,13 @@ signal lockbox_opened
 signal puzzle_snapped
 signal player_went_upstairs
 
+@export var time_travel_light: OmniLight3D
 
 @export var player: XROrigin3D
 @export var puzzleHolder: Area3D
 @export var monster: Node3D
-@export var vr_fade: Node3D 
 @export var gear_audio: AudioStreamPlayer3D
+@export var monster_audio: AudioStreamPlayer3D
 @export var lighthouse_light: SpotLight3D
 
 # To see whether the player is in the fresnel room
@@ -23,10 +24,11 @@ var puzzle_is_snapped: bool = false
 func _ready() -> void:
 	get_viewport().audio_listener_enable_3d = true
 	
-	if not player or not puzzleHolder or not monster or not gear_audio or not lighthouse_light:
+	if not player or not puzzleHolder or not monster or not gear_audio or not monster_audio or not lighthouse_light:
 			push_error("GameManager is missing one or more nodes in the Inspector!")
 			return
-		
+	
+	monster_audio.volume_db = -80.0
 	gear_audio.volume_db = -80.0
 	lighthouse_light.light_energy = 0.0
 		
@@ -40,8 +42,12 @@ func _process(delta: float) -> void:
 func _check_conditions():
 	if puzzle_is_snapped:
 		if player_is_high_enough:
-			#print("Monster should appear")
-			await get_tree().create_timer(2).timeout
+			await get_tree().create_timer(4).timeout
+			if monster_audio and not monster_audio.playing:
+				monster_audio.play() # Start playing the silent track
+				var audio_tween = create_tween()
+				# Fade from -80dB to -4dB over 2.5 seconds
+				audio_tween.tween_property(monster_audio, "volume_db", -4.0, 2.5)
 			monster.spawn()
 			_on_game_end()
 
@@ -80,21 +86,16 @@ func _on_puzzle_piece_snapped() -> void:
 func _on_game_end() -> void:
 	await get_tree().create_timer(3.0).timeout
 	
-	print("Fade-out to black...")
-	
-	var fade_tween = create_tween()
-	
-	fade_tween.tween_method(
-		func(alpha: float): 
-			XRToolsFade.set_fade(self, Color(0, 0, 0, alpha)), 
-		0.0, 
-		1.0, 
-		2.0
-	)
-	
-	await fade_tween.finished
+	var tween = get_tree().create_tween()
+	tween.tween_interval(0.5)
+	tween.tween_property(time_travel_light, "light_energy", 100, 3)
+	for i in range(20):
+		tween.tween_property(time_travel_light, "light_energy", 100, 0.2)
+		tween.tween_property(time_travel_light, "light_energy", 500, 0.2)
+
+	tween.tween_property(time_travel_light, "light_energy", 0, 2).set_ease(Tween.EASE_OUT)
+
 	
 	await get_tree().create_timer(1.0).timeout
 
-	print("Game ended. VR Application closing...")
 	get_tree().quit()
