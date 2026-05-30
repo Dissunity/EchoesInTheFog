@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cltcevqvy0ins"
 path.s3tc="res://.godot/imported/grey_wood.png-021b620b9bfd9c51b1bbe98cae753a60.s3tc.ctex"
+path.etc2="res://.godot/imported/grey_wood.png-021b620b9bfd9c51b1bbe98cae753a60.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Lighthouse/grey_wood.png"
-dest_files=["res://.godot/imported/grey_wood.png-021b620b9bfd9c51b1bbe98cae753a60.s3tc.ctex"]
+dest_files=["res://.godot/imported/grey_wood.png-021b620b9bfd9c51b1bbe98cae753a60.s3tc.ctex", "res://.godot/imported/grey_wood.png-021b620b9bfd9c51b1bbe98cae753a60.etc2.ctex"]
 
 [params]
 

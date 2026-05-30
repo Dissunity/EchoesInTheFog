@@ -4,15 +4,16 @@ importer="2d_array_texture"
 type="CompressedTexture2DArray"
 uid="uid://dfk6ppktpu8lt"
 path.bptc="res://.godot/imported/world.exr-27b71dd0ccac59be85953294face3ce4.bptc.ctexarray"
+path.astc="res://.godot/imported/world.exr-27b71dd0ccac59be85953294face3ce4.astc.ctexarray"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://lightmaps/world.exr"
-dest_files=["res://.godot/imported/world.exr-27b71dd0ccac59be85953294face3ce4.bptc.ctexarray"]
+dest_files=["res://.godot/imported/world.exr-27b71dd0ccac59be85953294face3ce4.bptc.ctexarray", "res://.godot/imported/world.exr-27b71dd0ccac59be85953294face3ce4.astc.ctexarray"]
 
 [params]
 

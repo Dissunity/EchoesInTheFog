@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwkvkq2sp8am1"
 path.s3tc="res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex"
+path.etc2="res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://objects/journal/journal_431.jpg"
-dest_files=["res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex"]
+dest_files=["res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.s3tc.ctex", "res://.godot/imported/journal_431.jpg-96466a29071fb3739ab239f061ece21e.etc2.ctex"]
 
 [params]
 

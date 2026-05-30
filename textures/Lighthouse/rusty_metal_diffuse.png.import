@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://os6iyr8nfpx"
 path.s3tc="res://.godot/imported/rusty_metal_diffuse.png-57e17bdd04335858c17de48351b285e1.s3tc.ctex"
+path.etc2="res://.godot/imported/rusty_metal_diffuse.png-57e17bdd04335858c17de48351b285e1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Lighthouse/rusty_metal_diffuse.png"
-dest_files=["res://.godot/imported/rusty_metal_diffuse.png-57e17bdd04335858c17de48351b285e1.s3tc.ctex"]
+dest_files=["res://.godot/imported/rusty_metal_diffuse.png-57e17bdd04335858c17de48351b285e1.s3tc.ctex", "res://.godot/imported/rusty_metal_diffuse.png-57e17bdd04335858c17de48351b285e1.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://r638g51ytrgn"
 path.s3tc="res://.godot/imported/rust_diff.png-68d7ae5cec4158ad33ab87418b9169ae.s3tc.ctex"
+path.etc2="res://.godot/imported/rust_diff.png-68d7ae5cec4158ad33ab87418b9169ae.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Lighthouse/rust_diff.png"
-dest_files=["res://.godot/imported/rust_diff.png-68d7ae5cec4158ad33ab87418b9169ae.s3tc.ctex"]
+dest_files=["res://.godot/imported/rust_diff.png-68d7ae5cec4158ad33ab87418b9169ae.s3tc.ctex", "res://.godot/imported/rust_diff.png-68d7ae5cec4158ad33ab87418b9169ae.etc2.ctex"]
 
 [params]
 

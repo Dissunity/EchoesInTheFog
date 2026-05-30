@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2fwi7d6a8yct"
 path.s3tc="res://.godot/imported/crate_plywood_nor_4k.png-8c34e8441d4ea9cbd452bb92dd965fd5.s3tc.ctex"
+path.etc2="res://.godot/imported/crate_plywood_nor_4k.png-8c34e8441d4ea9cbd452bb92dd965fd5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://objects/crate/crate_plywood_nor_4k.png"
-dest_files=["res://.godot/imported/crate_plywood_nor_4k.png-8c34e8441d4ea9cbd452bb92dd965fd5.s3tc.ctex"]
+dest_files=["res://.godot/imported/crate_plywood_nor_4k.png-8c34e8441d4ea9cbd452bb92dd965fd5.s3tc.ctex", "res://.godot/imported/crate_plywood_nor_4k.png-8c34e8441d4ea9cbd452bb92dd965fd5.etc2.ctex"]
 
 [params]
 

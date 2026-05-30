@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddf0f6crcei8i"
 path.s3tc="res://.godot/imported/blue_metal_diffuse.png-01b9094b45ade9f86eec59b1baa86ce5.s3tc.ctex"
+path.etc2="res://.godot/imported/blue_metal_diffuse.png-01b9094b45ade9f86eec59b1baa86ce5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Lighthouse/blue_metal_diffuse.png"
-dest_files=["res://.godot/imported/blue_metal_diffuse.png-01b9094b45ade9f86eec59b1baa86ce5.s3tc.ctex"]
+dest_files=["res://.godot/imported/blue_metal_diffuse.png-01b9094b45ade9f86eec59b1baa86ce5.s3tc.ctex", "res://.godot/imported/blue_metal_diffuse.png-01b9094b45ade9f86eec59b1baa86ce5.etc2.ctex"]
 
 [params]
 

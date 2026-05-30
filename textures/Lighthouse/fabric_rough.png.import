@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbma4vwkoahcu"
 path.s3tc="res://.godot/imported/fabric_rough.png-44407d36b8556c9c4fe89524229eb5b6.s3tc.ctex"
+path.etc2="res://.godot/imported/fabric_rough.png-44407d36b8556c9c4fe89524229eb5b6.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Lighthouse/fabric_rough.png"
-dest_files=["res://.godot/imported/fabric_rough.png-44407d36b8556c9c4fe89524229eb5b6.s3tc.ctex"]
+dest_files=["res://.godot/imported/fabric_rough.png-44407d36b8556c9c4fe89524229eb5b6.s3tc.ctex", "res://.godot/imported/fabric_rough.png-44407d36b8556c9c4fe89524229eb5b6.etc2.ctex"]
 
 [params]
 

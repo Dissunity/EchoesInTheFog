@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bahcg7lqv37og"
 path.s3tc="res://.godot/imported/lighthouse_roughness_2.jpg-e14543322da64d363f546d5a4eda7fa8.s3tc.ctex"
+path.etc2="res://.godot/imported/lighthouse_roughness_2.jpg-e14543322da64d363f546d5a4eda7fa8.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Lighthouse/lighthouse_roughness_2.jpg"
-dest_files=["res://.godot/imported/lighthouse_roughness_2.jpg-e14543322da64d363f546d5a4eda7fa8.s3tc.ctex"]
+dest_files=["res://.godot/imported/lighthouse_roughness_2.jpg-e14543322da64d363f546d5a4eda7fa8.s3tc.ctex", "res://.godot/imported/lighthouse_roughness_2.jpg-e14543322da64d363f546d5a4eda7fa8.etc2.ctex"]
 
 [params]
 
