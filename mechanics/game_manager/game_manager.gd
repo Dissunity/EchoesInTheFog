@@ -35,9 +35,6 @@ func _ready() -> void:
 	# These objects emit a signal indicating when the conditions are met
 	player.reached_target_height.connect(_on_player_height_changed)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _check_conditions():
 	if puzzle_is_snapped:
