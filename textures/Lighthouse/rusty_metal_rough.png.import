@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvnqlcjbxym27"
 path.s3tc="res://.godot/imported/rusty_metal_rough.png-c24665f84b497805e79053052f99e012.s3tc.ctex"
+path.etc2="res://.godot/imported/rusty_metal_rough.png-c24665f84b497805e79053052f99e012.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://textures/Lighthouse/rusty_metal_rough.png"
-dest_files=["res://.godot/imported/rusty_metal_rough.png-c24665f84b497805e79053052f99e012.s3tc.ctex"]
+dest_files=["res://.godot/imported/rusty_metal_rough.png-c24665f84b497805e79053052f99e012.s3tc.ctex", "res://.godot/imported/rusty_metal_rough.png-c24665f84b497805e79053052f99e012.etc2.ctex"]
 
 [params]
 
