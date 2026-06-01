@@ -10,7 +10,6 @@ signal time_travel_ended
 ## World environment which will be affected by time travelling
 @export var environment: WorldEnvironment
 
-
 ## All the objects which have their past and present variants which will switch upon time travel
 @export var time_impacted_objects: Array[TimeImpactedObject]
 
