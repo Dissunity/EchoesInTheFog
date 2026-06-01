@@ -2,8 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dw5deo661l4jw" path="res://world/monster/monster.gd" id="1_qtiog"]
 [ext_resource type="PackedScene" uid="uid://dkwv2luonhqyo" path="res://world/monster/monster.glb" id="1_wa7tq"]
+[ext_resource type="AudioStream" uid="uid://dnfgk7es7pjpt" path="res://sounds/monstergrowls.mp3" id="3_dxh5e"]
 
-[node name="Monster" type="Node3D" unique_id=1644163713]
+[node name="Monster" type="Node3D" unique_id=1575435924]
+transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, 0, 0, 0)
+visible = false
 script = ExtResource("1_qtiog")
 
-[node name="monster" parent="." unique_id=1881610555 instance=ExtResource("1_wa7tq")]
+[node name="monster" parent="." unique_id=19986690 instance=ExtResource("1_wa7tq")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1497762568]
+stream = ExtResource("3_dxh5e")
+attenuation_model = 2
+
+[editable path="monster"]

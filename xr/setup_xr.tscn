@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://vn6jwca8rabc"]
+
+[ext_resource type="Script" uid="uid://d7b7dn4reh42" path="res://xr/setup_xr.gd" id="1_pabcf"]
+
+[node name="SetupXR" type="Node" unique_id=611053310]
+script = ExtResource("1_pabcf")

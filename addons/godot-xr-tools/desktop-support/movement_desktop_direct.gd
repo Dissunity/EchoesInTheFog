@@ -27,14 +27,14 @@ extends XRToolsMovementProvider
 @export var input_left : String = "ui_left"
 @export var input_right : String = "ui_right"
 
-var world
+var setup_xr
 
 
 func _ready():
-	world = get_tree().root.get_node("World")
+	setup_xr = get_tree().root.get_node("World/SetupXR")
 
 func is_xr():
-	return world.is_xr
+	return setup_xr.is_xr
 
 
 # Add support for is_xr_class on XRTools classes

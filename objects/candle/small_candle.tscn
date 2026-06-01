@@ -187,32 +187,32 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_47767")
 
 [node name="SmallCandle" type="Node3D" unique_id=1208640922]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
 
 [node name="Cylinder" type="MeshInstance3D" parent="." unique_id=905753131]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_fxrfj")
 mesh = SubResource("ArrayMesh_j08qh")
 skeleton = NodePath("")
 
 [node name="body" type="MeshInstance3D" parent="." unique_id=1439149641]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2799098, 0)
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0.066, 0)
 mesh = SubResource("ArrayMesh_bt6bu")
 skeleton = NodePath("")
 
 [node name="light" type="MeshInstance3D" parent="." unique_id=991518437]
-transform = Transform3D(0.023738762, 0, 0, 0, 0.023738762, 0, 0, 0, 0.023738762, 1.8710175, 4.4700203, 0.03322512)
+transform = Transform3D(0.023738762, 0, 0, 0, 0.023738762, 0, 0, 0, 0.023738762, 0, 0.127, 0)
 mesh = SubResource("ArrayMesh_2i6ce")
 skeleton = NodePath("")
 
 [node name="Sphere" type="MeshInstance3D" parent="." unique_id=1306732456]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 5.915684, -0.1947455)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0.118, 0)
 mesh = SubResource("ArrayMesh_fscsq")
 skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=317539177]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, -0.020588696, 8.165686, 0.0021584332)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1476529, 0)
 light_color = Color(0.9262696, 0.80915624, 0.50088173, 1)
-light_energy = 5.141
+light_energy = 2.0
 light_indirect_energy = 0.938
 light_size = 0.052
 light_bake_mode = 1

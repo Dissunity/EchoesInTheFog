@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dmj5rgg7gsocn" path="res://player/player.gd" id="1_606se"]
 [ext_resource type="PackedScene" uid="uid://btknduttnmoxf" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_n7ghd"]
 [ext_resource type="PackedScene" uid="uid://cc6ngdqie8o8c" path="res://addons/godot-xr-tools/effects/vignette.tscn" id="2_e7oew"]
-[ext_resource type="PackedScene" uid="uid://42xbeno6pt3y" path="res://addons/godot-xr-tools/desktop-support/function_desktop_pointer.tscn" id="2_nvl01"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="3_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_dw050"]
 [ext_resource type="PackedScene" uid="uid://bq86r4yll8po" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_fullglove_low.tscn" id="4_2hs0m"]
@@ -33,11 +32,6 @@ current = true
 [node name="Vignette" parent="XRCamera3D" unique_id=743708042 instance=ExtResource("2_e7oew")]
 
 [node name="VRCommonShaderCache" parent="XRCamera3D" unique_id=1863258321 instance=ExtResource("1_n7ghd")]
-
-[node name="FunctionDesktopPointer" parent="XRCamera3D" unique_id=1188816737 instance=ExtResource("2_nvl01")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39999998, -0.5)
-visible = false
-active_button_action = "trigger"
 
 [node name="LeftHand" type="XRController3D" parent="." unique_id=1434391388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
@@ -107,6 +101,7 @@ push_rigid_bodies = false
 [node name="StairDetector" type="Area3D" parent="PlayerBody" unique_id=1280602891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32971746, 0)
 script = ExtResource("14_bwjto")
+group_to_detect = "climable"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/StairDetector" unique_id=521849759]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13318047, -0.12974943)

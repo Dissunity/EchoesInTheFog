@@ -798,113 +798,117 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3v8yt")
 
 [node name="BigCandle" type="Node3D" unique_id=1007756270]
-transform = Transform3D(0.00024125757, 0, -0.011997575, 0, 0.012, 0, 0.011997575, 0, 0.00024125757, 0, 0, 0)
+transform = Transform3D(0.020104798, 0, -0.9997979, 0, 1, 0, 0.9997979, 0, 0.020104798, 0, 0, 0)
 
-[node name="Wick 1" type="MeshInstance3D" parent="." unique_id=47571177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.547617, 4.8231597)
+[node name="Scale" type="Node3D" parent="." unique_id=1134580497]
+transform = Transform3D(0.012, 0, 0, 0, 0.012, 0, 0, 0, 0.012, 0, 0, 0)
+
+[node name="Wick 1" type="MeshInstance3D" parent="Scale" unique_id=47571177]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 18.547615, 4.823159)
 mesh = SubResource("ArrayMesh_qi2q0")
 skeleton = NodePath("")
 
-[node name="Candle 1" type="MeshInstance3D" parent="." unique_id=751021669]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7, 4.7)
+[node name="Candle 1" type="MeshInstance3D" parent="Scale" unique_id=751021669]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 13.699999, 4.7)
 mesh = SubResource("ArrayMesh_yqt7j")
 skeleton = NodePath("")
 
-[node name="Wick 3" type="MeshInstance3D" parent="." unique_id=1625997761]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.507065, -1.6838224)
+[node name="Wick 3" type="MeshInstance3D" parent="Scale" unique_id=1625997761]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 18.507063, -1.6838223)
 mesh = SubResource("ArrayMesh_hhehm")
 skeleton = NodePath("")
 
-[node name="Candle 3" type="MeshInstance3D" parent="." unique_id=857521851]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7, -1.7)
+[node name="Candle 3" type="MeshInstance3D" parent="Scale" unique_id=857521851]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 13.699999, -1.7)
 mesh = SubResource("ArrayMesh_mky57")
 skeleton = NodePath("")
 
-[node name="Wick 2" type="MeshInstance3D" parent="." unique_id=1846661191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.523647, 1.4870393)
+[node name="Wick 2" type="MeshInstance3D" parent="Scale" unique_id=1846661191]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 18.523645, 1.4870392)
 mesh = SubResource("ArrayMesh_larh5")
 skeleton = NodePath("")
 
-[node name="Candle 2" type="MeshInstance3D" parent="." unique_id=430539037]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7, 1.7)
+[node name="Candle 2" type="MeshInstance3D" parent="Scale" unique_id=430539037]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 13.699999, 1.7)
 mesh = SubResource("ArrayMesh_ft0fm")
 skeleton = NodePath("")
 
-[node name="Candle 4" type="MeshInstance3D" parent="." unique_id=587710796]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.7, -4.7)
+[node name="Candle 4" type="MeshInstance3D" parent="Scale" unique_id=587710796]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 13.699999, -4.7)
 mesh = SubResource("ArrayMesh_357sy")
 skeleton = NodePath("")
 
-[node name="Wick 4" type="MeshInstance3D" parent="." unique_id=87642879]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.45895, -4.7507277)
+[node name="Wick 4" type="MeshInstance3D" parent="Scale" unique_id=87642879]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 18.458948, -4.750727)
 mesh = SubResource("ArrayMesh_tmltq")
 skeleton = NodePath("")
 
-[node name="fire 3" type="MeshInstance3D" parent="." unique_id=1596976613]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.98057, 1.0724578)
+[node name="fire 3" type="MeshInstance3D" parent="Scale" unique_id=1596976613]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 18.98057, 1.0724577)
 mesh = SubResource("ArrayMesh_kfben")
 skeleton = NodePath("")
 
-[node name="fire 1" type="MeshInstance3D" parent="." unique_id=262898399]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.98057, -5.1730523)
+[node name="fire 1" type="MeshInstance3D" parent="Scale" unique_id=262898399]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 18.98057, -5.173052)
 mesh = SubResource("ArrayMesh_gwc3n")
 skeleton = NodePath("")
 
-[node name="fire 2" type="MeshInstance3D" parent="." unique_id=587086520]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.98057, -2.0591145)
+[node name="fire 2" type="MeshInstance3D" parent="Scale" unique_id=587086520]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 18.98057, -2.0591145)
 mesh = SubResource("ArrayMesh_y6my8")
 skeleton = NodePath("")
 
-[node name="fire 4" type="MeshInstance3D" parent="." unique_id=275893764]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.98057, 4.474896)
+[node name="fire 4" type="MeshInstance3D" parent="Scale" unique_id=275893764]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 18.98057, 4.4748955)
 mesh = SubResource("ArrayMesh_x4gtk")
 skeleton = NodePath("")
 
-[node name="base" type="MeshInstance3D" parent="." unique_id=890610127]
+[node name="base" type="MeshInstance3D" parent="Scale" unique_id=890610127]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_1hr04")
 mesh = SubResource("ArrayMesh_a8jfc")
 skeleton = NodePath("")
 
-[node name="holder" type="MeshInstance3D" parent="." unique_id=2094503281]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 8, 0)
+[node name="holder" type="MeshInstance3D" parent="Scale" unique_id=2094503281]
+transform = Transform3D(0.99999994, 0, 0, 0, 0, -0.99999994, 0, 0.99999994, 0, 0, 7.9999995, 0)
 material_override = SubResource("StandardMaterial3D_remcq")
 mesh = SubResource("ArrayMesh_h21wm")
 skeleton = NodePath("")
 
-[node name="bottom cone" type="MeshInstance3D" parent="." unique_id=1284476068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9, 0)
+[node name="bottom cone" type="MeshInstance3D" parent="Scale" unique_id=1284476068]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -9, 0)
 material_override = SubResource("StandardMaterial3D_kcilg")
 mesh = SubResource("ArrayMesh_iur1q")
 skeleton = NodePath("")
 
-[node name="cube 4" type="MeshInstance3D" parent="." unique_id=1939925569]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7, -4.7)
+[node name="cube 4" type="MeshInstance3D" parent="Scale" unique_id=1939925569]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 9.699999, -4.7)
 material_override = SubResource("StandardMaterial3D_1amq5")
 mesh = SubResource("ArrayMesh_0wd5y")
 skeleton = NodePath("")
 
-[node name="cube 1" type="MeshInstance3D" parent="." unique_id=1114881444]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7, 4.7)
+[node name="cube 1" type="MeshInstance3D" parent="Scale" unique_id=1114881444]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 9.699999, 4.7)
 material_override = SubResource("StandardMaterial3D_oosws")
 mesh = SubResource("ArrayMesh_p13kv")
 skeleton = NodePath("")
 
-[node name="cube 2" type="MeshInstance3D" parent="." unique_id=1451269880]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7, 1.7)
+[node name="cube 2" type="MeshInstance3D" parent="Scale" unique_id=1451269880]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 9.699999, 1.7)
 material_override = SubResource("StandardMaterial3D_l5hvu")
 mesh = SubResource("ArrayMesh_ugm4a")
 skeleton = NodePath("")
 
-[node name="cube 3" type="MeshInstance3D" parent="." unique_id=1186595884]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.7, -1.7)
+[node name="cube 3" type="MeshInstance3D" parent="Scale" unique_id=1186595884]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 9.699999, -1.7)
 material_override = SubResource("StandardMaterial3D_lrosw")
 mesh = SubResource("ArrayMesh_v1rhv")
 skeleton = NodePath("")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=44643147]
-transform = Transform3D(1, 0, 7.1525577e-09, 0, 1, 0, -7.1525577e-09, 0, 1, 0.05004929, 19.859468, -0.19876899)
+transform = Transform3D(1, 0, 1.1175871e-08, 0, 1, 0, -1.1175871e-08, 0, 1, -0.00090032315, 0.25419003, -0.0002653796)
 light_color = Color(0.9262696, 0.80915624, 0.50088173, 1)
-light_energy = 5.141
+light_energy = 3.0
 light_indirect_energy = 0.938
 light_size = 0.052
 light_bake_mode = 1

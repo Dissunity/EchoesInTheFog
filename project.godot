@@ -44,6 +44,7 @@ import/blender/enabled=false
 
 PuzzlePiece=""
 Crowbar=""
+climable="These PhysicsBodies will trigger the stair climbing upon walking into them."
 
 [input]
 
@@ -100,8 +101,7 @@ action_crouch={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=1
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=1
@@ -114,7 +114,9 @@ reflections/reflection_atlas/reflection_count=32
 [xr]
 
 openxr/enabled=true
+openxr/default_action_map="res://xr/openxr_action_map.tres"
 openxr/reference_space=2
-openxr/foveation_level=0
+openxr/foveation_level=2
+openxr/foveation_dynamic=true
 openxr/extensions/render_model=true
 shaders/enabled=true

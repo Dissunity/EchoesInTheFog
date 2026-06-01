@@ -2,4 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://bpeue4ksp23vg" path="res://world/lighthouse/Fresnel128res.glb" id="1_is7vr"]
 
-[node name="Fresnel128res" unique_id=941834532 instance=ExtResource("1_is7vr")]
+[node name="FresnelLens" unique_id=941834532 instance=ExtResource("1_is7vr")]
+
+[node name="Frame top part" parent="." index="0" unique_id=1991740780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49733353, 0)
+
+[node name="Middle planes" parent="." index="1" unique_id=362725253]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7544556, 0)
+
+[node name="Bottom planes" parent="." index="2" unique_id=478936704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7544556, 0)
+
+[node name="Top planes" parent="." index="3" unique_id=1547098259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49733353, 0)
+
+[node name="Frame top part_001" parent="." index="4" unique_id=1025710467]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49733353, 0)

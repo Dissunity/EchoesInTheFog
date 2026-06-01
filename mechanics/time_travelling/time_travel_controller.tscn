@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cf2ovgr7fksb3"]
 
 [ext_resource type="Script" uid="uid://cifhrntabjyxe" path="res://mechanics/time_travelling/time_travel_controller.gd" id="1_ck4hb"]
+[ext_resource type="AudioStream" uid="uid://cawbn0fkg6k0s" path="res://sounds/foghorn.mp3" id="2_0p1qh"]
 [ext_resource type="AudioStream" uid="uid://bq8e23pjol7ge" path="res://sounds/lights-out.mp3" id="2_8r1gf"]
 [ext_resource type="AudioStream" uid="uid://cvoolrn4ru6x7" path="res://sounds/time-traveling.mp3" id="2_d58ee"]
 
 [node name="TimeTravelController" type="Node" unique_id=535872741]
 script = ExtResource("1_ck4hb")
+foghorn_sound = ExtResource("2_0p1qh")
 lights_out_sound = ExtResource("2_8r1gf")
 time_traveling_sound = ExtResource("2_d58ee")
 

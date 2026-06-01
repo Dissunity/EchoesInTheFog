@@ -10,12 +10,6 @@ signal time_travel_ended
 ## World environment which will be affected by time travelling
 @export var environment: WorldEnvironment
 
-## All the objects which have their past and present variants which will switch upon time travel
-@export var time_impacted_objects: Array[TimeImpactedObject]
-
-## All items which can only be transfered between times by holding them
-@export var transferable_items: Array[XRToolsPickable]
-
 ## Foghorn lever hinge which when pulled triggers the time travelling
 @export var hinge: XRToolsInteractableHinge
 
@@ -42,16 +36,6 @@ func _ready():
 func _time_travel():
 	time_travel_initiated.emit()
 	cooldown = 30
-	
-	for obj in time_impacted_objects:
-		obj.toggle_time()
-	
-	for item in transferable_items:
-		if item.is_picked_up():
-			continue
-		else:
-			item.visible = !item.visible
-	
 	puzzle_holder_collision_shape.disabled = !puzzle_holder_collision_shape.disabled
 	lockbox.is_present = !lockbox.is_present
 

@@ -1,4 +1,4 @@
-extends Node3D
+extends Node
  
 signal focus_lost
 signal focus_gained
