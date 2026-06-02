@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cfqhtfywllb50"]
+
+[ext_resource type="PackedScene" uid="uid://bv2o4ssmlp1ys" path="res://objects/lantern/lantern.glb" id="1_i8fyr"]
+
+[node name="Sketchfab_Scene" unique_id=951213402 instance=ExtResource("1_i8fyr")]

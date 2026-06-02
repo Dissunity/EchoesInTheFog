@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://drln6icje1sai" path="res://world/water/water.tscn" id="6_ynm8w"]
 [ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="7_m0cxt"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
-[ext_resource type="PackedScene" uid="uid://s37yf8njhy2l" path="res://world/lighthouse/lighthouse.tscn" id="8_j34ew"]
+[ext_resource type="PackedScene" uid="uid://bt68mf03qi51m" path="res://world/lighthouse/lighthouse.tscn" id="8_j34ew"]
 [ext_resource type="PackedScene" uid="uid://0aetln7hwfhm" path="res://player/player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
+[ext_resource type="PackedScene" uid="uid://bv2o4ssmlp1ys" path="res://objects/lantern/lantern.glb" id="19_j34ew"]
 [ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
 [ext_resource type="PackedScene" uid="uid://xyuhf1juj266" path="res://objects/mechanical_part/mechanical_part.tscn" id="31_gwdna"]
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
@@ -65,7 +66,6 @@ audio_stream_player = NodePath("../TimeTravellingAudio")
 stream = ExtResource("2_nx736")
 volume_db = -10.188
 autoplay = true
-bus = &"Ambience"
 
 [node name="TimeTravellingAudio" type="AudioStreamPlayer" parent="." unique_id=1386185414]
 max_polyphony = 2
@@ -193,6 +193,9 @@ transform = Transform3D(0.91259885, 0, 0.40885615, 0, 1, 0, -0.40885615, 0, 0.91
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60.392387, 0)
 light_color = Color(1, 0, 0, 1)
 light_energy = 0.0
+
+[node name="Lantern" parent="." unique_id=951213402 instance=ExtResource("19_j34ew")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -1.767957, 51.357315, 2.3836317)
 
 [connection signal="game_progressed" from="GameManager" to="Lighthouse/Objects/Journal" method="_on_game_manager_game_progressed"]
 [connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]
