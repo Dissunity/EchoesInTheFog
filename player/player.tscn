@@ -44,7 +44,6 @@ ranged_distance = 0.0
 ranged_collision_mask = 327940
 
 [node name="FunctionTeleport" parent="LeftHand" unique_id=1001569563 instance=ExtResource("6_c35mf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
 
 [node name="LeftGlove" parent="LeftHand" unique_id=580629189 instance=ExtResource("4_2hs0m")]
 
@@ -109,7 +108,7 @@ shape = SubResource("BoxShape3D_606se")
 
 [node name="MovementFootstep" parent="PlayerBody" unique_id=1892920102 instance=ExtResource("18_65viv")]
 walk_speed = 0.0
-steps_per_meter = 0.3
+steps_per_meter = 0.25
 
 [editable path="LeftHand/FunctionPickup"]
 [editable path="PlayerBody"]

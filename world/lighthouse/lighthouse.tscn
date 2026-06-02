@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://s37yf8njhy2l"]
 
+[ext_resource type="Script" uid="uid://dklda3wwt7pd5" path="res://world/lighthouse/lighthouse.gd" id="1_be51w"]
 [ext_resource type="Texture2D" uid="uid://b6i65mvl7bnol" path="res://textures/Lighthouse/lighthouse_diffuse.png" id="1_nge7f"]
 [ext_resource type="Texture2D" uid="uid://803ceklrsdjh" path="res://textures/Lighthouse/lighthouse_normals.png" id="2_gpfqj"]
 [ext_resource type="Texture2D" uid="uid://bahcg7lqv37og" path="res://textures/Lighthouse/lighthouse_roughness_2.jpg" id="3_rxvov"]
@@ -33,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://cvk54d6ah2665" path="res://sounds/freesound_community-steps-on-stairs-102729.mp3" id="24_w2tqe"]
 [ext_resource type="Texture2D" uid="uid://bs7ogjltewj8e" path="res://textures/Lighthouse/wood_table_diff.png" id="25_67awc"]
 [ext_resource type="Texture2D" uid="uid://cuucjxlfin3t5" path="res://textures/Lighthouse/wood_table_nor.png" id="26_iyqqn"]
+[ext_resource type="Script" uid="uid://b38rv0j4gt8vu" path="res://world/rotating_light.gd" id="27_ng065"]
 [ext_resource type="Texture2D" uid="uid://dvnb0gmcjlcrn" path="res://textures/Lighthouse/wood_table_rough.png" id="27_r5ic4"]
 [ext_resource type="PackedScene" uid="uid://fqk8b8r0l3ga" path="res://world/lighthouse/fresnel_128_res.tscn" id="28_pphow"]
 [ext_resource type="Texture2D" uid="uid://c5sn06n8ignjj" path="res://textures/Lighthouse/plaster_diffuse.png" id="29_fawek"]
@@ -1927,6 +1929,7 @@ shadow_mesh = SubResource("ArrayMesh_mojb2")
 
 [node name="Lighthouse" type="Node3D" unique_id=307952408]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+script = ExtResource("1_be51w")
 
 [node name="Roof" type="Node3D" parent="." unique_id=1657832455]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -1960,7 +1963,7 @@ skeleton = NodePath("")
 transform = Transform3D(1.0412023, 0, 0, 0, 1.0412023, 0, 0, 0, 1.0412023, 0, 49.92235, 0)
 
 [node name="PullLever" type="Node3D" parent="TopRoom" unique_id=377040577]
-transform = Transform3D(0.9604281, 0, 0, 0, -4.1981647e-08, 0.9604281, 0, -0.9604281, -4.1981647e-08, -1.5837461, -0.98861694, 0)
+transform = Transform3D(0.9604281, 0, 0, 0, -4.1981647e-08, 0.9604281, 0, -0.9604281, -4.1981647e-08, -1.5837461, -0.9251762, -2.7730827e-09)
 
 [node name="LeverSmooth" type="Node3D" parent="TopRoom/PullLever" unique_id=894595369]
 
@@ -1988,8 +1991,6 @@ transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractableLever" type="Node3D" parent="TopRoom/PullLever/LeverSmooth/LeverOrigin" unique_id=874369582]
 script = ExtResource("8_7p3ct")
-hinge_limit_min = -10.0
-default_position = 30.0
 default_on_release = true
 
 [node name="HingeBody" type="StaticBody3D" parent="TopRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever" unique_id=555695787]
@@ -2097,11 +2098,26 @@ skeleton = NodePath("")
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_rakx2")
 
+[node name="RotatingSpotlight" type="SpotLight3D" parent="TopRoom" unique_id=593929224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89489126, 0)
+light_color = Color(0.999999, 0.99989754, 0.81470966, 1)
+light_energy = 5.546
+light_indirect_energy = 1.282
+light_specular = 0.0
+distance_fade_enabled = true
+distance_fade_begin = 0.0
+distance_fade_shadow = 0.0
+spot_range = 4.121
+spot_attenuation = -1.41
+spot_angle = 67.66
+spot_angle_attenuation = 1.1486983
+script = ExtResource("27_ng065")
+
 [node name="MiddleRoom" type="Node3D" parent="." unique_id=1045781463]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Walls" type="MeshInstance3D" parent="MiddleRoom" unique_id=479372949]
-transform = Transform3D(1.3333334, 0, 0, 0, 1, 0, 0, 0, 1.3333334, -0.572248, 47.5906, -0.5356262)
+transform = Transform3D(1.3333334, 0, 0, 0, 1, 0, 0, 0, 1.3333334, 0.14321493, 47.575184, 0.0138742775)
 material_override = SubResource("StandardMaterial3D_ytpkv")
 mesh = SubResource("ArrayMesh_yy5nj")
 skeleton = NodePath("")
@@ -2714,6 +2730,8 @@ material_override = SubResource("StandardMaterial3D_wukud")
 mesh = SubResource("ArrayMesh_37ykd")
 skeleton = NodePath("")
 
+[connection signal="hinge_moved" from="TopRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever" to="." method="_on_foghorn_hinge_moved"]
 [connection signal="area_exited" from="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" to="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" method="_on_area_exited"]
 [connection signal="body_entered" from="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" to="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" method="_on_body_entered"]
 [connection signal="body_exited" from="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" to="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" method="_on_body_exited"]
+[connection signal="puzzle_piece_snapped" from="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" to="." method="_on_puzzle_piece_snapped"]

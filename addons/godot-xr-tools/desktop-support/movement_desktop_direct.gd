@@ -31,7 +31,8 @@ var setup_xr
 
 
 func _ready():
-	setup_xr = get_tree().root.get_node("World/SetupXR")
+	if !Engine.is_editor_hint():
+		setup_xr = get_tree().root.get_node("World/SetupXR")
 
 func is_xr():
 	return setup_xr.is_xr

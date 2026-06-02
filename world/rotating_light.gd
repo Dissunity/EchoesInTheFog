@@ -1,4 +1,4 @@
-extends Node3D
+extends Light3D
 
 # The speed of the rotation. 
 # You can change this number right in the Godot Inspector!

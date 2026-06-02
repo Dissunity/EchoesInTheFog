@@ -7,6 +7,7 @@ signal reached_target_height(is_high_enough: bool)
 var was_above_height: bool = false
 
 @onready var xr_camera: XRCamera3D = $XRCamera3D
+@onready var player_body: XRToolsPlayerBody = $PlayerBody
 
 
 # Called when the node enters the scene tree for the first time.

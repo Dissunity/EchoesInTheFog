@@ -2,8 +2,22 @@
 
 [ext_resource type="PackedScene" uid="uid://cggkofnwypw3q" path="res://objects/journal/journal.glb" id="1_wir0b"]
 [ext_resource type="Script" uid="uid://cdcmttphary18" path="res://objects/journal/journal.gd" id="2_xic2l"]
-[ext_resource type="Script" path="res://objects/journal/journal_text_decal.gd" id="3_i6yj2"]
+[ext_resource type="Script" uid="uid://dr836q5npwll0" path="res://objects/journal/journal_text_decal.gd" id="3_i6yj2"]
+[ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="3_sj3mu"]
 [ext_resource type="Script" uid="uid://cffagca4hw5y0" path="res://objects/journal/journal_notification_light.gd" id="4_d05m8"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_dhxeb"]
+[ext_resource type="Animation" uid="uid://s1vqcxyqcvea" path="res://addons/godot-xr-tools/hands/animations/right/Grip 5.res" id="5_24co1"]
+[ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_22715"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_8thew"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g1kit"]
+size = Vector3(0.33712405, 0.20315704, 0.05)
+
+[sub_resource type="Resource" id="Resource_t30hx"]
+script = ExtResource("6_22715")
+open_pose = ExtResource("5_24co1")
+closed_pose = ExtResource("5_24co1")
+metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
 [sub_resource type="ImageTexture" id="ImageTexture_d05m8"]
 
@@ -12,7 +26,31 @@
 [node name="Journal" unique_id=278160710 instance=ExtResource("1_wir0b")]
 script = ExtResource("2_xic2l")
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(131347861) index="0" unique_id=488967036]
+[node name="RigidBody" type="RigidBody3D" parent="." index="0" unique_id=507363629]
+collision_layer = 4
+collision_mask = 196615
+mass = 0.25
+freeze_mode = 1
+script = ExtResource("3_sj3mu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody" index="0" unique_id=893948850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0013655275, 0.083558515, 0)
+shape = SubResource("BoxShape3D_g1kit")
+
+[node name="GrabPointHandLeft" parent="RigidBody" index="1" unique_id=448543769 instance=ExtResource("4_dhxeb")]
+transform = Transform3D(-4.371139e-08, -1, -6.513506e-16, 0.9659258, -4.222196e-08, 0.25881904, -0.25881904, 1.1313339e-08, 0.9659258, 0.047697872, -0.027627409, -0.06723953)
+mode = 1
+hand_pose = SubResource("Resource_t30hx")
+
+[node name="GrabPointHandRight" parent="RigidBody" index="2" unique_id=1760781694 instance=ExtResource("7_8thew")]
+transform = Transform3D(2.108471e-08, -1, -8.4443926e-08, -0.96592593, -4.222196e-08, 0.25881907, -0.25881907, 7.610944e-08, -0.96592593, 0.04251288, -0.027627409, 0.058341615)
+mode = 1
+hand_pose = SubResource("Resource_t30hx")
+
+[node name="Armature" parent="." index="1" unique_id=1903294297]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=1978132316]
 bones/1/rotation = Quaternion(0.99989015, 1.4075018e-16, 7.9886926e-17, -0.014828146)
 bones/2/rotation = Quaternion(0.008815043, 1.04734516e-17, 4.823106e-17, 0.99996114)
 bones/3/rotation = Quaternion(0.99989015, 2.4785891e-16, -3.2631226e-17, 0.014828146)
@@ -44,7 +82,7 @@ texture_albedo = SubResource("ImageTexture_i6yj2")
 script = ExtResource("3_i6yj2")
 target_viewport = NodePath("../../../../RightPage")
 
-[node name="LeftPage" type="SubViewport" parent="." index="2" unique_id=40513807]
+[node name="LeftPage" type="SubViewport" parent="." index="3" unique_id=40513807]
 transparent_bg = true
 size = Vector2i(800, 1100)
 render_target_update_mode = 4
@@ -61,7 +99,7 @@ text = "Something"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="RightPage" type="SubViewport" parent="." index="3" unique_id=439996216]
+[node name="RightPage" type="SubViewport" parent="." index="4" unique_id=439996216]
 transparent_bg = true
 size = Vector2i(800, 1100)
 render_target_update_mode = 4
@@ -78,7 +116,7 @@ text = "Something"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="JournalNotificationLight" type="OmniLight3D" parent="." index="4" unique_id=1891114505]
+[node name="JournalNotificationLight" type="OmniLight3D" parent="." index="5" unique_id=1891114505]
 light_color = Color(0.7066031, 0.458906, 1, 1)
 light_energy = 0.0
 omni_range = 1.0

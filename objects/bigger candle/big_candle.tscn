@@ -915,4 +915,5 @@ light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.393
 shadow_blur = 2.317
-omni_range = 5.278
+omni_range = 3.0
+omni_attenuation = 2.0

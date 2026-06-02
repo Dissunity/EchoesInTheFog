@@ -60,8 +60,9 @@ var _turn_step: float = 0.0
 var setup_xr
 
 func _ready():
-	var root = get_tree().root
-	setup_xr = root.get_node("World/SetupXR")
+	if !Engine.is_editor_hint():
+		var root = get_tree().root
+		setup_xr = root.get_node("World/SetupXR")
 
 func is_xr():
 	return setup_xr.is_xr
