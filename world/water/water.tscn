@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://drln6icje1sai"]
+
+[ext_resource type="Shader" uid="uid://71443hwokrce" path="res://world/water/water.gdshader" id="1_delex"]
+[ext_resource type="Texture2D" uid="uid://cp25sr3t8tybl" path="res://textures/water_normalmap_2.jpg" id="2_ho7eo"]
+[ext_resource type="Texture2D" uid="uid://bd4of45sgm3so" path="res://textures/water_normalmap_1.jpg" id="3_vy5aa"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
+size = Vector2(400, 400)
+subdivide_width = 400
+subdivide_depth = 400
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fj7yv"]
+render_priority = 0
+shader = ExtResource("1_delex")
+shader_parameter/normal_map_1 = ExtResource("2_ho7eo")
+shader_parameter/normal_map_2 = ExtResource("3_vy5aa")
+shader_parameter/color_deep = Color(0.0089846635, 0.09450225, 0.17750144, 1)
+shader_parameter/color_shallow = Color(0.10444861, 0.25518325, 0.4711396, 1)
+
+[node name="Water" type="Node3D" unique_id=1179493141]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=217280934]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7374315, -1.3579769, 1.4015522)
+mesh = SubResource("PlaneMesh_tlwt5")
+surface_material_override/0 = SubResource("ShaderMaterial_fj7yv")

@@ -57,14 +57,15 @@ var _last_plr_bd_status: bool = true
 var _turn_step: float = 0.0
 
 
-var world
+var setup_xr
 
 func _ready():
-	var root = get_tree().root
-	world = root.get_node("World")
+	if !Engine.is_editor_hint():
+		var root = get_tree().root
+		setup_xr = root.get_node("World/SetupXR")
 
 func is_xr():
-	return world.is_xr
+	return setup_xr.is_xr
 
 func _process(_delta: float) -> void:
 	if is_instance_valid(plr_body):

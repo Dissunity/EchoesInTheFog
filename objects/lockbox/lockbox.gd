@@ -55,7 +55,6 @@ var MIN_HITS = 3
 
 var is_present = true
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	test_label.text = "Hellow"
 	locked_object.enabled = false
@@ -64,8 +63,7 @@ func _ready() -> void:
 	_toggle_collisions(false)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if hit_cooldown or hit_count >= MIN_HITS:
 		return
 
@@ -83,27 +81,22 @@ func _physics_process(delta: float) -> void:
 
 func _toggle_collisions(disable_mesh: bool):
 	lockbox_collision.disabled = disable_mesh
-	#print("lockbox_collision is disabled: ", lockbox_collision.disabled)
 	
 	var lockbox_destruct_collision_shapes = lockbox_destruct.find_children("*", "CollisionShape3D")
 	for lockbox_destruct_shape in lockbox_destruct_collision_shapes:
 		lockbox_destruct_shape.disabled = not disable_mesh
-		#print("lockbox_destruct_shape is disabled: ", lockbox_destruct_shape.disabled )
 
-func _toggle_visibility(visible: bool):
-	lockbox.visible = visible
-	lockbox_destruct.visible = not visible
+func _toggle_visibility(new_visible: bool):
+	lockbox.visible = new_visible
+	lockbox_destruct.visible = not new_visible
 	
 func _hit():
-	
 	if !is_present:
 		return
 	
 	locked = hit_count < MIN_HITS
-	#print("Is locked: ", locked)
 
 	if hit_count == 0:
-		#print("Hitcount is 0 ")
 		_toggle_visibility(false)
 		_toggle_collisions(true)
 		
@@ -119,7 +112,6 @@ func _hit():
 		hit_count += 1
 		
 		if hit_count >= MIN_HITS:
-			# Puzzle is pickable
 			unlocked.emit()
 			locked_object.enabled = true
 
@@ -131,19 +123,6 @@ func _freeze_all_pieces(should_freeze: bool):
 			piece.freeze_mode = RigidBody3D.FREEZE_MODE_KINEMATIC
 			piece.freeze = should_freeze
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		#print("Button pressed")
 		_hit()
-
-
-	
-#func _on_hit_box_body_entered(body: Node3D) -> void:
-	#if body.is_in_group("Crowbar") and body.is_picked_up():
-		#if not hit_cooldown:
-			#hit_cooldown = true
-			#test_label.text = "Hit registered!"
-			#_hit()
-			#
-			#await get_tree().create_timer(0.5).timeout
-			#hit_cooldown = false

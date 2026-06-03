@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
+
+[ext_resource type="PackedScene" uid="uid://vn6jwca8rabc" path="res://xr/setup_xr.tscn" id="1_bfrib"]
+[ext_resource type="AudioStream" uid="uid://bfevky2u3pr4d" path="res://sounds/creepy_ambience.wav" id="2_nx736"]
+[ext_resource type="LightmapGIData" uid="uid://bpvhse0mf81bu" path="res://lightmaps/world.lmbake" id="6_r5m4j"]
+[ext_resource type="PackedScene" uid="uid://drln6icje1sai" path="res://world/water/water.tscn" id="6_ynm8w"]
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="7_m0cxt"]
+[ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
+[ext_resource type="PackedScene" uid="uid://s37yf8njhy2l" path="res://world/lighthouse/lighthouse.tscn" id="8_j34ew"]
+[ext_resource type="PackedScene" uid="uid://0aetln7hwfhm" path="res://player/player.tscn" id="9_wse8f"]
+[ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
+[ext_resource type="PackedScene" uid="uid://cfqhtfywllb50" path="res://objects/lantern/lantern.tscn" id="19_j34ew"]
+[ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
+[ext_resource type="PackedScene" uid="uid://xyuhf1juj266" path="res://objects/mechanical_part/mechanical_part.tscn" id="31_gwdna"]
+[ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
+[ext_resource type="PackedScene" uid="uid://cf2ovgr7fksb3" path="res://mechanics/time_travelling/time_travel_controller.tscn" id="43_7htu6"]
+[ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
+[ext_resource type="PackedScene" uid="uid://df7nahiuysdy6" path="res://objects/table/table.tscn" id="49_rur7c"]
+[ext_resource type="PackedScene" uid="uid://dkkj3qv4ykpec" path="res://objects/bigger candle/big_candle.tscn" id="57_y1rwn"]
+[ext_resource type="PackedScene" uid="uid://cjsn8uvn3es0b" path="res://objects/candle/small_candle.tscn" id="58_4rajv"]
+[ext_resource type="PackedScene" uid="uid://bx1lqpi36tf7c" path="res://objects/crate/crate.tscn" id="59_d36xh"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2o6r5"]
+sky_top_color = Color(0.002400443, 0.07285706, 0.16548955, 1)
+sky_horizon_color = Color(0.0061095553, 0.11536034, 0.21632108, 1)
+sky_curve = 0.09896313
+ground_bottom_color = Color(0.016194494, 0.0899444, 0.21669549, 1)
+ground_horizon_color = Color(0.009173829, 0.11976708, 0.23808646, 1)
+
+[sub_resource type="Sky" id="Sky_70uel"]
+sky_material = SubResource("ProceduralSkyMaterial_2o6r5")
+
+[sub_resource type="Environment" id="Environment_hiqwa"]
+background_mode = 2
+background_energy_multiplier = 0.84
+sky = SubResource("Sky_70uel")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.8
+reflected_light_source = 2
+tonemap_mode = 4
+tonemap_exposure = 0.94
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.01028716, 0.107588805, 0.23054966, 1)
+fog_sun_scatter = 0.03
+fog_density = 0.9319
+fog_depth_curve = 0.99999994
+fog_depth_begin = 4.0
+fog_depth_end = 80.0
+
+[node name="World" type="Node3D" unique_id=691108467]
+
+[node name="SetupXR" parent="." unique_id=611053310 instance=ExtResource("1_bfrib")]
+
+[node name="GameManager" type="Node" parent="." unique_id=826817354]
+script = ExtResource("23_il2jm")
+
+[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("time_travel_light", "environment", "lockbox", "audio_stream_player") instance=ExtResource("43_7htu6")]
+time_travel_light = NodePath("../TimeTravellingLight")
+environment = NodePath("../WorldEnvironment")
+test = true
+lockbox = NodePath("../Lighthouse/Objects/Lockbox")
+audio_stream_player = NodePath("../TimeTravellingAudio")
+
+[node name="AmbientAudio" type="AudioStreamPlayer" parent="." unique_id=421538233]
+stream = ExtResource("2_nx736")
+volume_db = -10.188
+autoplay = true
+
+[node name="TimeTravellingAudio" type="AudioStreamPlayer" parent="." unique_id=1386185414]
+max_polyphony = 2
+
+[node name="LightmapGI" type="LightmapGI" parent="." unique_id=1868391485]
+quality = 0
+light_data = ExtResource("6_r5m4j")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="." unique_id=1783849948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23127747, 62.179806, 0.1587143)
+size = Vector3(8.703461, 7.7504272, 10.306229)
+enable_shadows = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1791015796]
+environment = SubResource("Environment_hiqwa")
+
+[node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
+transform = Transform3D(0.6408201, -0.42923188, -0.6364823, 0, -0.8290865, 0.55912054, -0.7676912, -0.35829565, -0.5312952, -3.8790703, 50.00697, -4.3962145)
+light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
+light_energy = 0.92
+light_indirect_energy = 1.475
+light_specular = 1.238
+light_bake_mode = 1
+shadow_enabled = true
+shadow_bias = 0.217
+shadow_blur = 1.506
+directional_shadow_mode = 0
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.79
+directional_shadow_max_distance = 10.0
+directional_shadow_pancake_size = 8.9
+
+[node name="Lighthouse" parent="." unique_id=307952408 instance=ExtResource("8_j34ew")]
+
+[node name="Objects" type="Node" parent="Lighthouse" unique_id=463100901]
+
+[node name="Journal" parent="Lighthouse/Objects" unique_id=278160710 instance=ExtResource("7_m0cxt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8462105, 51.51514, 1.2617201)
+
+[node name="Crowbar" parent="Lighthouse/Objects" unique_id=995516737 instance=ExtResource("42_fnoqa")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.196447, 51.36845, -0.34676522)
+
+[node name="Lockbox" parent="Lighthouse/Objects" unique_id=704521865 node_paths=PackedStringArray("locked_object") instance=ExtResource("44_ruyqm")]
+transform = Transform3D(0.5660269, 0, 1.058118, 0, 1.2, 0, -1.058118, 0, 0.5660269, -1.9578016, 51.674286, -0.97437686)
+locked_object = NodePath("../MechanicalPart")
+
+[node name="MechanicalPart" parent="Lighthouse/Objects" unique_id=2140562873 instance=ExtResource("31_gwdna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9128832, 51.589466, -0.9011478)
+
+[node name="Candles" type="Node" parent="Lighthouse" unique_id=1140304616]
+
+[node name="BigCandle1" parent="Lighthouse/Candles" unique_id=1007756270 instance=ExtResource("57_y1rwn")]
+transform = Transform3D(0.020104798, 0, -0.9997979, 0, 1, 0, 0.9997979, 0, 0.020104798, -0.026468575, 52.348396, 3.3166306)
+
+[node name="BigCandle2" parent="Lighthouse/Candles" unique_id=990239910 instance=ExtResource("57_y1rwn")]
+transform = Transform3D(-0.89669514, 0, -0.44264868, 0, 1, 0, 0.44264868, 0, -0.89669514, -2.6879628, 52.84278, 1.561208)
+
+[node name="BigCandle3" parent="Lighthouse/Candles" unique_id=223475136 instance=ExtResource("57_y1rwn")]
+transform = Transform3D(0.020104798, 0, -0.9997979, 0, 1, 0, 0.9997979, 0, 0.020104798, -1.747895, 57.476246, -0.90572083)
+
+[node name="BigCandle4" parent="Lighthouse/Candles" unique_id=1428876122 instance=ExtResource("57_y1rwn")]
+transform = Transform3D(-0.9983468, 0, -0.057476927, 0, 1, 0, 0.057476927, 0, -0.9983468, -2.8691788, 52.237137, 0.4101665)
+
+[node name="SmallCandle1" parent="Lighthouse/Candles" unique_id=1208640922 instance=ExtResource("58_4rajv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6541897, 52.254, 3.3195221)
+
+[node name="SmallCandle2" parent="Lighthouse/Candles" unique_id=1435331591 instance=ExtResource("58_4rajv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6822554, 52.254, 3.3195221)
+
+[node name="SmallCandle3" parent="Lighthouse/Candles" unique_id=858599445 instance=ExtResource("58_4rajv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5046036, 52.112637, -1.7916915)
+
+[node name="SmallCandle4" parent="Lighthouse/Candles" unique_id=1318315077 instance=ExtResource("58_4rajv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2680638, 57.247475, 0.011747718)
+
+[node name="Crates" type="Node" parent="Lighthouse" unique_id=2057810007]
+
+[node name="Crate" parent="Lighthouse/Crates" unique_id=871520238 instance=ExtResource("59_d36xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0027924, 51.72221, 0.51610434)
+
+[node name="Crate9" parent="Lighthouse/Crates" unique_id=538950341 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.92919064, 0, -0.3696008, 0, 1, 0, 0.3696008, 0, 0.92919064, -2.9075854, 51.72221, -0.4496439)
+
+[node name="Crate8" parent="Lighthouse/Crates" unique_id=1966609267 instance=ExtResource("59_d36xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3290966, 51.72221, -1.7523428)
+
+[node name="Crate4" parent="Lighthouse/Crates" unique_id=1359060158 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.8117881, 0, 0.5839522, 0, 1, 0, -0.5839522, 0, 0.8117881, -2.6777732, 51.72221, 1.3940414)
+
+[node name="Crate5" parent="Lighthouse/Crates" unique_id=5631807 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.5296971, 0, 0.84818685, 0, 1, 0, -0.84818685, 0, 0.5296971, -2.5741916, 52.334896, 1.5044714)
+
+[node name="Crate2" parent="Lighthouse/Crates" unique_id=910758417 instance=ExtResource("59_d36xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1080723, 51.72221, -2.286251)
+
+[node name="Crate3" parent="Lighthouse/Crates" unique_id=397669979 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.63489234, 0, 0.77260065, 0, 1, 0, -0.77260065, 0, 0.63489234, -2.1080723, 52.4367, -2.286251)
+
+[node name="Crate6" parent="Lighthouse/Crates" unique_id=1611509309 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.63489234, 0, 0.77260065, 0, 1, 0, -0.77260065, 0, 0.63489234, -1.7819678, 56.514214, -0.81547004)
+
+[node name="Crate7" parent="Lighthouse/Crates" unique_id=422989829 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.06577817, 0, 0.59638345, 0, 0.6, 0, -0.59638345, 0, 0.06577817, -1.7819678, 57.098587, -0.81547004)
+
+[node name="Furniture" type="Node" parent="Lighthouse" unique_id=12209418]
+
+[node name="Chair" parent="Lighthouse/Furniture" unique_id=858333585 instance=ExtResource("7_wse8f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21086228, 51.34724, 2.3756595)
+
+[node name="Table" parent="Lighthouse/Furniture" unique_id=1169380483 instance=ExtResource("49_rur7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.332, 3.036395)
+
+[node name="Water" parent="." unique_id=1179493141 instance=ExtResource("6_ynm8w")]
+visible = true
+
+[node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
+transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
+visible = true
+
+[node name="Player" parent="." unique_id=998661826 instance=ExtResource("9_wse8f")]
+transform = Transform3D(0.91259885, 0, 0.40885615, 0, 1, 0, -0.40885615, 0, 0.91259885, 0.3347506, 51.641186, 1.042177)
+
+[node name="TimeTravellingLight" type="OmniLight3D" parent="." unique_id=270832323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60.392387, 0)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
+
+[node name="Lantern" parent="." unique_id=951213402 instance=ExtResource("19_j34ew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
+
+[connection signal="game_progressed" from="GameManager" to="Lighthouse/Objects/Journal" method="_on_game_manager_game_progressed"]
+[connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]
+[connection signal="foghorn_lever_pulled" from="Lighthouse" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
+[connection signal="mechanical_piece_snapped" from="Lighthouse" to="GameManager" method="_puzzle_snapped"]
+[connection signal="crowbar_taken" from="Lighthouse/Objects/Crowbar" to="GameManager" method="_on_crowbar_taken"]
+[connection signal="unlocked" from="Lighthouse/Objects/Lockbox" to="GameManager" method="_on_lockbow_opened"]
