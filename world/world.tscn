@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://s37yf8njhy2l" path="res://world/lighthouse/lighthouse.tscn" id="8_j34ew"]
 [ext_resource type="PackedScene" uid="uid://0aetln7hwfhm" path="res://player/player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
-[ext_resource type="PackedScene" uid="uid://bv2o4ssmlp1ys" path="res://objects/lantern/lantern.glb" id="19_j34ew"]
+[ext_resource type="PackedScene" uid="uid://cfqhtfywllb50" path="res://objects/lantern/lantern.tscn" id="19_j34ew"]
 [ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
 [ext_resource type="PackedScene" uid="uid://xyuhf1juj266" path="res://objects/mechanical_part/mechanical_part.tscn" id="31_gwdna"]
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
 [ext_resource type="PackedScene" uid="uid://cf2ovgr7fksb3" path="res://mechanics/time_travelling/time_travel_controller.tscn" id="43_7htu6"]
 [ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
-[ext_resource type="PackedScene" uid="uid://df7nahiuysdy6" path="res://objects/table.tscn" id="49_rur7c"]
+[ext_resource type="PackedScene" uid="uid://df7nahiuysdy6" path="res://objects/table/table.tscn" id="49_rur7c"]
 [ext_resource type="PackedScene" uid="uid://dkkj3qv4ykpec" path="res://objects/bigger candle/big_candle.tscn" id="57_y1rwn"]
 [ext_resource type="PackedScene" uid="uid://cjsn8uvn3es0b" path="res://objects/candle/small_candle.tscn" id="58_4rajv"]
 [ext_resource type="PackedScene" uid="uid://bx1lqpi36tf7c" path="res://objects/crate/crate.tscn" id="59_d36xh"]
@@ -194,7 +194,7 @@ light_color = Color(1, 0, 0, 1)
 light_energy = 0.0
 
 [node name="Lantern" parent="." unique_id=951213402 instance=ExtResource("19_j34ew")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -1.767957, 51.357315, 2.3836317)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
 
 [connection signal="game_progressed" from="GameManager" to="Lighthouse/Objects/Journal" method="_on_game_manager_game_progressed"]
 [connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]
