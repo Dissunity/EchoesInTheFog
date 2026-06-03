@@ -103,7 +103,7 @@ directional_shadow_pancake_size = 8.9
 [node name="Objects" type="Node" parent="Lighthouse" unique_id=463100901]
 
 [node name="Journal" parent="Lighthouse/Objects" unique_id=278160710 instance=ExtResource("7_m0cxt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.51514, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8462105, 51.51514, 1.2617201)
 
 [node name="Crowbar" parent="Lighthouse/Objects" unique_id=995516737 instance=ExtResource("42_fnoqa")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.196447, 51.36845, -0.34676522)
@@ -121,7 +121,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9128832, 51.589466, -0.901
 transform = Transform3D(0.020104798, 0, -0.9997979, 0, 1, 0, 0.9997979, 0, 0.020104798, -0.026468575, 52.348396, 3.3166306)
 
 [node name="BigCandle2" parent="Lighthouse/Candles" unique_id=990239910 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(-0.89669514, 0, -0.44264868, 0, 1, 0, 0.44264868, 0, -0.89669514, -2.6879628, 52.707493, 1.561208)
+transform = Transform3D(-0.89669514, 0, -0.44264868, 0, 1, 0, 0.44264868, 0, -0.89669514, -2.6879628, 52.84278, 1.561208)
 
 [node name="BigCandle3" parent="Lighthouse/Candles" unique_id=223475136 instance=ExtResource("57_y1rwn")]
 transform = Transform3D(0.020104798, 0, -0.9997979, 0, 1, 0, 0.9997979, 0, 0.020104798, -1.747895, 57.476246, -0.90572083)

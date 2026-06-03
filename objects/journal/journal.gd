@@ -6,11 +6,11 @@ signal closed
 
 var is_open = false
 
-@onready var decal_left: JournalTextDecal = $Armature/Skeleton3D/LeftPageAttachment/Decal
-@onready var decal_right: JournalTextDecal = $Armature/Skeleton3D/RightPageAttachment/Decal
+@onready var decal_left: JournalTextDecal = $RigidBody/Armature/Skeleton3D/LeftPageAttachment/Decal
+@onready var decal_right: JournalTextDecal = $RigidBody/Armature/Skeleton3D/RightPageAttachment/Decal
 @onready var label_left: Label = $LeftPage/Label
 @onready var label_right: Label = $RightPage/Label
-@onready var shining_light: OmniLight3D = $JournalNotificationLight
+@onready var shining_light: OmniLight3D = $RigidBody/JournalNotificationLight
 @export var debug = false
 
 @onready var pickable: XRToolsPickable = $RigidBody
