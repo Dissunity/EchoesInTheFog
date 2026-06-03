@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://drln6icje1sai" path="res://world/water/water.tscn" id="6_ynm8w"]
 [ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="7_m0cxt"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
-[ext_resource type="PackedScene" uid="uid://bt68mf03qi51m" path="res://world/lighthouse/lighthouse.tscn" id="8_j34ew"]
+[ext_resource type="PackedScene" uid="uid://s37yf8njhy2l" path="res://world/lighthouse/lighthouse.tscn" id="8_j34ew"]
 [ext_resource type="PackedScene" uid="uid://0aetln7hwfhm" path="res://player/player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://bv2o4ssmlp1ys" path="res://objects/lantern/lantern.glb" id="19_j34ew"]
@@ -177,7 +177,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21086228, 51.34724, 2.3756
 
 [node name="Table" parent="Lighthouse/Furniture" unique_id=1169380483 instance=ExtResource("49_rur7c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.332, 3.036395)
-script = null
 
 [node name="Water" parent="." unique_id=1179493141 instance=ExtResource("6_ynm8w")]
 visible = true
