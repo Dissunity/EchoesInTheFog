@@ -103,6 +103,7 @@ visible = true
 [node name="Past" type="Node3D" parent="." unique_id=1064658071]
 
 [node name="Lighthouse_Past" parent="Past" unique_id=307952408 instance=ExtResource("8_j34ew")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.7510767, 6.092289, 1.8681278)
 
 [node name="Candles" type="Node3D" parent="Past/Lighthouse_Past" unique_id=713294454]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -183,7 +184,7 @@ transform = Transform3D(0.47168905, 0, 0.8817649, 0, 0.99999994, 0, -0.8817649, 
 locked_object = NodePath("../MechanicalPart")
 
 [node name="MechanicalPart" parent="Past/Lighthouse_Past/Objects" unique_id=2140562873 instance=ExtResource("31_gwdna")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -1.5940691, 42.99122, -0.7509564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5940691, 42.99122, -0.7509564)
 
 [node name="LightmapGI_Past" type="LightmapGI" parent="Past" unique_id=1868391485]
 quality = 0
@@ -279,7 +280,7 @@ transform = Transform3D(0.47168905, 0, 0.8817649, 0, 0.99999994, 0, -0.8817649, 
 locked_object = NodePath("../MechanicalPart")
 
 [node name="MechanicalPart" parent="Present/Lighthouse_Present/Objects" unique_id=804427560 instance=ExtResource("31_gwdna")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -1.5940691, 42.99122, -0.7509564)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5940691, 42.99122, -0.7509564)
 
 [node name="Lantern" parent="Present" unique_id=951213402 instance=ExtResource("19_j34ew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
