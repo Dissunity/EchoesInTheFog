@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://vn6jwca8rabc" path="res://xr/setup_xr.tscn" id="1_bfrib"]
 [ext_resource type="AudioStream" uid="uid://bfevky2u3pr4d" path="res://sounds/creepy_ambience.wav" id="2_nx736"]
+[ext_resource type="LightmapGIData" uid="uid://bpvhse0mf81bu" path="res://lightmaps/world.lmbake" id="6_r5m4j"]
 [ext_resource type="PackedScene" uid="uid://drln6icje1sai" path="res://world/water/water.tscn" id="6_ynm8w"]
 [ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="7_m0cxt"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
 [ext_resource type="PackedScene" uid="uid://s37yf8njhy2l" path="res://world/lighthouse/lighthouse.tscn" id="8_j34ew"]
 [ext_resource type="PackedScene" uid="uid://0aetln7hwfhm" path="res://player/player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
-[ext_resource type="LightmapGIData" uid="uid://spqsvctcf2h3" path="res://lightmaps/past.lmbake" id="17_j34ew"]
 [ext_resource type="PackedScene" uid="uid://cfqhtfywllb50" path="res://objects/lantern/lantern.tscn" id="19_j34ew"]
 [ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
 [ext_resource type="PackedScene" uid="uid://xyuhf1juj266" path="res://objects/mechanical_part/mechanical_part.tscn" id="31_gwdna"]
@@ -85,8 +85,8 @@ environment = SubResource("Environment_hiqwa")
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
 transform = Transform3D(0.61144483, -0.5462646, -0.57247716, -0.2574227, -0.8214431, 0.5088857, -0.7482437, -0.16378696, -0.6428882, -8.069296, 63.79498, -6.8038125)
 light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
-light_energy = 0.998
-light_indirect_energy = 1.787
+light_energy = 0.686
+light_indirect_energy = 1.475
 light_specular = 1.082
 light_bake_mode = 1
 shadow_enabled = true
@@ -206,7 +206,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5940691, 42.99122, -0.7509
 
 [node name="LightmapGI_Past" type="LightmapGI" parent="Past" unique_id=1868391485]
 quality = 0
-light_data = ExtResource("17_j34ew")
+light_data = ExtResource("6_r5m4j")
 
 [node name="ReflectionProbe_Past" type="ReflectionProbe" parent="Past" unique_id=1783849948]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23127747, 62.179806, 0.1587143)
@@ -217,7 +217,7 @@ enable_shadows = true
 process_mode = 4
 visible = false
 
-[node name="Lighthouse_Present" parent="Present" unique_id=1597505770 instance=ExtResource("8_j34ew")]
+[node name="Lighthouse_Present" parent="Present" unique_id=1295569513 instance=ExtResource("8_j34ew")]
 
 [node name="Crates" type="Node3D" parent="Present/Lighthouse_Present" unique_id=969883654]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -261,7 +261,7 @@ transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0,
 [node name="Lantern" parent="Present" unique_id=951213402 instance=ExtResource("19_j34ew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
 
-[node name="Monster" parent="Present" unique_id=1575435924 instance=ExtResource("10_2o6r5")]
+[node name="Monster" parent="Present" unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
 visible = true
 
