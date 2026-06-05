@@ -217,104 +217,35 @@ enable_shadows = true
 
 [node name="Lighthouse_Present" parent="Present" unique_id=373673442 instance=ExtResource("8_j34ew")]
 
-[node name="Candles" type="Node3D" parent="Present/Lighthouse_Present" unique_id=1600218072]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="BigCandle1" parent="Present/Lighthouse_Present/Candles" unique_id=454767165 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(0.016753996, 0, -0.8331648, 0, 0.83333325, 0, 0.8331648, 0, 0.016753996, -0.022057144, 43.62366, 2.7638586)
-
-[node name="BigCandle2" parent="Present/Lighthouse_Present/Candles" unique_id=2139497909 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(-0.74724585, 0, -0.36887386, 0, 0.8333332, 0, 0.36887386, 0, -0.74724585, -2.0719733, 44.131977, 1.3010066)
-
-[node name="BigCandle3" parent="Present/Lighthouse_Present/Candles" unique_id=1211328429 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(0.016753996, 0, -0.8331648, 0, 0.83333325, 0, 0.8331648, 0, 0.016753996, -1.4565791, 47.896866, -0.7547673)
-
-[node name="BigCandle4" parent="Present/Lighthouse_Present/Candles" unique_id=1324751525 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(-0.8319556, 0, -0.047897436, 0, 0.83333325, 0, 0.047897436, 0, -0.8319556, -2.3909822, 43.530945, 0.3418054)
-
-[node name="SmallCandle1" parent="Present/Lighthouse_Present/Candles" unique_id=224647002 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -0.545158, 43.545, 2.7662683)
-
-[node name="SmallCandle2" parent="Present/Lighthouse_Present/Candles" unique_id=1889938451 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0.5685461, 43.545, 2.7662683)
-
-[node name="SmallCandle3" parent="Present/Lighthouse_Present/Candles" unique_id=307553147 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 2.0871694, 43.427193, -1.4930761)
-
-[node name="SmallCandle4" parent="Present/Lighthouse_Present/Candles" unique_id=1247541661 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0.2233865, 47.706223, 0.009789764)
-
-[node name="SmallCandle5" parent="Present/Lighthouse_Present/Candles" unique_id=380064499 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.8333332, 0, 0, 0, 0.8333332, 0, 0, 0, 0.8333332, 1.5339004, 47.182358, -1.0010343)
-
 [node name="Crates" type="Node3D" parent="Present/Lighthouse_Present" unique_id=251408233]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="Crate" parent="Present/Lighthouse_Present/Crates" unique_id=436730190 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -2.5023267, 43.101837, 0.4300869)
-
-[node name="Crate9" parent="Present/Lighthouse_Present/Crates" unique_id=960395525 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.77432543, 0, -0.30800065, 0, 0.83333325, 0, 0.30800065, 0, 0.77432543, -2.4229877, 43.101837, -0.37470323)
 
 [node name="Crate13" parent="Present/Lighthouse_Present/Crates" unique_id=1215460542 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.35246783, 0, -0.48555788, 0, 0.6, 0, 0.48555788, 0, 0.35246783, -2.180053, 42.98481, -1.0941867)
 
-[node name="Crate12" parent="Present/Lighthouse_Present/Crates" unique_id=1825138872 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.26711068, 0, -0.64703315, 0, 0.7, 0, 0.64703315, 0, 0.26711068, -1.9558679, 43.02176, 0.1566737)
-
-[node name="Crate8" parent="Present/Lighthouse_Present/Crates" unique_id=1452552891 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 1.9409136, 43.101837, -1.4602855)
-
-[node name="Crate4" parent="Present/Lighthouse_Present/Crates" unique_id=869287846 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.67649, 0, 0.48662677, 0, 0.83333325, 0, -0.48662677, 0, 0.67649, -2.2314775, 43.101837, 1.1617011)
-
 [node name="Crate5" parent="Present/Lighthouse_Present/Crates" unique_id=2126731119 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.44141424, 0, 0.70682234, 0, 0.8333332, 0, -0.70682234, 0, 0.44141424, -2.226964, 43.698742, 1.253726)
+transform = Transform3D(0.44141424, 0, 0.70682234, 0, 0.8333332, 0, -0.70682234, 0, 0.44141424, 0.63683224, 43.051476, -1.1945748)
 
 [node name="Crate2" parent="Present/Lighthouse_Present/Crates" unique_id=636830866 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -1.7567267, 43.101837, -1.9052091)
 
-[node name="Crate3" parent="Present/Lighthouse_Present/Crates" unique_id=441077386 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.5763978, 0, 0.16663025, 0, 0.59999996, 0, -0.16663025, 0, 0.5763978, -1.7567267, 43.613354, -1.9052091)
-
-[node name="Crate14" parent="Present/Lighthouse_Present/Crates" unique_id=659040567 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.2857331, 0, -0.091414414, 0, 0.29999995, 0, 0.091414414, 0, 0.2857331, -2.0028818, 43.37483, 0.21807136)
-
 [node name="Crate6" parent="Present/Lighthouse_Present/Crates" unique_id=2041535604 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.5290769, 0, 0.6438338, 0, 0.83333325, 0, -0.6438338, 0, 0.5290769, -1.484973, 47.095173, -0.6795583)
-
-[node name="Crate11" parent="Present/Lighthouse_Present/Crates" unique_id=1968777386 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.79881364, 0, 0.23736264, 0, 0.8333332, 0, -0.23736264, 0, 0.79881364, -0.9131188, 47.074677, -1.119916)
 
 [node name="Crate7" parent="Present/Lighthouse_Present/Crates" unique_id=1492666008 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.05481514, 0, 0.49698615, 0, 0.49999997, 0, -0.49698615, 0, 0.05481514, -1.484973, 47.58215, -0.6795583)
 
 [node name="Crate10" parent="Present/Lighthouse_Present/Crates" unique_id=1599970865 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.24203071, 0, 0.4375169, 0, 0.49999994, 0, -0.4375169, 0, 0.24203071, 1.650244, 46.956123, -1.0042839)
+transform = Transform3D(0.24203071, 0, 0.4375169, 0, 0.49999994, 0, -0.4375169, 0, 0.24203071, 0.20150693, 46.956123, -1.1061753)
 
 [node name="Furniture" type="Node3D" parent="Present/Lighthouse_Present" unique_id=1192530362]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Chair" parent="Present/Lighthouse_Present/Furniture" unique_id=685156212 instance=ExtResource("7_wse8f")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -0.17571855, 42.789364, 1.9797161)
+transform = Transform3D(-0.019763974, -0.8330989, 0, 0.8330989, -0.019763974, 0, 0, 0, 0.8333332, 1.2173431, 42.85502, 1.9797161)
 
 [node name="Table" parent="Present/Lighthouse_Present/Furniture" unique_id=662318344 instance=ExtResource("49_rur7c")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0, 42.776665, 2.530329)
-
-[node name="Objects" type="Node3D" parent="Present/Lighthouse_Present" unique_id=1031864444]
-
-[node name="Crowbar" parent="Present/Lighthouse_Present/Objects" unique_id=452710328 instance=ExtResource("42_fnoqa")]
-transform = Transform3D(0.83333313, 0, 0, 0, -3.6426155e-08, 0.83333313, 0, -0.83333313, -3.6426155e-08, -1.0055168, 47.378063, -0.8721284)
-
-[node name="Lockbox" parent="Present/Lighthouse_Present/Objects" unique_id=245903512 node_paths=PackedStringArray("locked_object") instance=ExtResource("44_ruyqm")]
-transform = Transform3D(0.47168905, 0, 0.8817649, 0, 0.99999994, 0, -0.8817649, 0, 0.47168905, -1.6315012, 43.0619, -0.81198066)
-locked_object = NodePath("../MechanicalPart")
-
-[node name="MechanicalPart" parent="Present/Lighthouse_Present/Objects" unique_id=992905560 instance=ExtResource("31_gwdna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5940691, 42.99122, -0.7509564)
-
-[node name="LightmapGI_Present" type="LightmapGI" parent="Present" unique_id=898789215]
-quality = 0
+transform = Transform3D(0.57026935, 0.60639644, -0.038990833, 0.034546945, 0.021030793, 0.8323511, 0.6066658, -0.5712137, -0.010747047, -2.082564, 43.132404, 1.2711926)
 
 [node name="ReflectionProbe_Present" type="ReflectionProbe" parent="Present" unique_id=622521113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23127747, 62.179806, 0.1587143)
@@ -322,7 +253,7 @@ size = Vector3(8.703461, 7.7504272, 10.306229)
 enable_shadows = true
 
 [node name="Lantern" parent="Present" unique_id=951213402 instance=ExtResource("19_j34ew")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 0.653846)
 
 [node name="Monster" parent="Present" unique_id=1644163713 instance=ExtResource("10_2o6r5")]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
@@ -336,5 +267,3 @@ visible = true
 [connection signal="unlocked" from="Past/Lighthouse_Past/Objects/Lockbox" to="GameManager" method="_on_lockbow_opened"]
 [connection signal="foghorn_lever_pulled" from="Present/Lighthouse_Present" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
 [connection signal="mechanical_piece_snapped" from="Present/Lighthouse_Present" to="GameManager" method="_puzzle_snapped"]
-[connection signal="crowbar_taken" from="Present/Lighthouse_Present/Objects/Crowbar" to="GameManager" method="_on_crowbar_taken"]
-[connection signal="unlocked" from="Present/Lighthouse_Present/Objects/Lockbox" to="GameManager" method="_on_lockbow_opened"]
