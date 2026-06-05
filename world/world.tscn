@@ -85,10 +85,8 @@ environment = SubResource("Environment_hiqwa")
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
 transform = Transform3D(0.61144483, -0.5462646, -0.57247716, -0.2574227, -0.8214431, 0.5088857, -0.7482437, -0.16378696, -0.6428882, -8.069296, 63.79498, -6.8038125)
 light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
-light_energy = 0.686
-light_indirect_energy = 1.475
+light_energy = 0.528
 light_specular = 1.082
-light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.217
 shadow_blur = 1.506
@@ -103,6 +101,13 @@ visible = true
 
 [node name="Journal" parent="." unique_id=278160710 instance=ExtResource("7_m0cxt")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.2148025, 52.390656, -0.089342475)
+
+[node name="Lantern" parent="." unique_id=951213402 instance=ExtResource("19_j34ew")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
+
+[node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
+transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
+visible = true
 
 [node name="Past" type="Node3D" parent="." unique_id=1064658071]
 
@@ -213,63 +218,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23127747, 62.179806, 0.158
 size = Vector3(8.703461, 7.7504272, 10.306229)
 enable_shadows = true
 
-[node name="Present" type="Node3D" parent="." unique_id=1900003568]
-process_mode = 4
-visible = false
-
-[node name="Lighthouse_Present" parent="Present" unique_id=1295569513 instance=ExtResource("8_j34ew")]
-
-[node name="Crates" type="Node3D" parent="Present/Lighthouse_Present" unique_id=969883654]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="Crate" parent="Present/Lighthouse_Present/Crates" unique_id=525328600 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -2.5023267, 43.101837, 0.4300869)
-
-[node name="Crate9" parent="Present/Lighthouse_Present/Crates" unique_id=1019641036 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.77432543, 0, -0.30800065, 0, 0.83333325, 0, 0.30800065, 0, 0.77432543, -2.4229877, 43.101837, -0.37470323)
-
-[node name="Crate8" parent="Present/Lighthouse_Present/Crates" unique_id=1449452815 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 1.9409136, 43.101837, -1.4602855)
-
-[node name="Crate4" parent="Present/Lighthouse_Present/Crates" unique_id=1011513616 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.67649, 0, 0.48662677, 0, 0.83333325, 0, -0.48662677, 0, 0.67649, -2.2314775, 43.101837, 1.1617011)
-
-[node name="Crate5" parent="Present/Lighthouse_Present/Crates" unique_id=1142798598 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.44141424, 0, 0.70682234, 0, 0.83333325, 0, -0.70682234, 0, 0.44141424, -2.1451595, 43.612408, 1.253726)
-
-[node name="Crate2" parent="Present/Lighthouse_Present/Crates" unique_id=1254999503 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -1.7567267, 43.101837, -1.9052091)
-
-[node name="Crate3" parent="Present/Lighthouse_Present/Crates" unique_id=1832429570 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.5290769, 0, 0.6438338, 0, 0.83333325, 0, -0.6438338, 0, 0.5290769, -1.7567267, 43.697247, -1.9052091)
-
-[node name="Crate6" parent="Present/Lighthouse_Present/Crates" unique_id=1258081307 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.5290769, 0, 0.6438338, 0, 0.83333325, 0, -0.6438338, 0, 0.5290769, -1.484973, 47.095173, -0.6795583)
-
-[node name="Crate7" parent="Present/Lighthouse_Present/Crates" unique_id=1385148004 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.05481514, 0, 0.49698615, 0, 0.49999997, 0, -0.49698615, 0, 0.05481514, -1.484973, 47.58215, -0.6795583)
-
-[node name="Furniture" type="Node3D" parent="Present/Lighthouse_Present" unique_id=644427056]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="Chair" parent="Present/Lighthouse_Present/Furniture" unique_id=685156212 instance=ExtResource("7_wse8f")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -0.17571855, 42.789364, 1.9797161)
-
-[node name="Table" parent="Present/Lighthouse_Present/Furniture" unique_id=662318344 instance=ExtResource("49_rur7c")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0, 42.776665, 2.530329)
-
-[node name="Lantern" parent="Present" unique_id=951213402 instance=ExtResource("19_j34ew")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
-
-[node name="Monster" parent="Present" unique_id=1644163713 instance=ExtResource("10_2o6r5")]
-transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
-visible = true
-
 [connection signal="game_progressed" from="GameManager" to="Journal" method="_on_game_manager_game_progressed"]
 [connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]
 [connection signal="foghorn_lever_pulled" from="Past/Lighthouse_Past" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
 [connection signal="mechanical_piece_snapped" from="Past/Lighthouse_Past" to="GameManager" method="_puzzle_snapped"]
 [connection signal="crowbar_taken" from="Past/Lighthouse_Past/Objects/Crowbar" to="GameManager" method="_on_crowbar_taken"]
 [connection signal="unlocked" from="Past/Lighthouse_Past/Objects/Lockbox" to="GameManager" method="_on_lockbow_opened"]
-[connection signal="foghorn_lever_pulled" from="Present/Lighthouse_Present" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
-[connection signal="mechanical_piece_snapped" from="Present/Lighthouse_Present" to="GameManager" method="_puzzle_snapped"]
