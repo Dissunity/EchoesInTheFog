@@ -202,14 +202,17 @@ transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.36654)
 
 [node name="Lantern_0" type="MeshInstance3D" parent="PickableObject/Sketchfab_model/Root/Lantern" unique_id=1774239835]
+gi_mode = 2
 mesh = SubResource("ArrayMesh_si6u6")
 skeleton = NodePath("")
 
 [node name="Lantern_1" type="MeshInstance3D" parent="PickableObject/Sketchfab_model/Root/Lantern" unique_id=1449154199]
+gi_mode = 2
 mesh = SubResource("ArrayMesh_i7r3y")
 skeleton = NodePath("")
 
 [node name="Lantern_2" type="MeshInstance3D" parent="PickableObject/Sketchfab_model/Root/Lantern" unique_id=1754415893]
+gi_mode = 2
 mesh = SubResource("ArrayMesh_5mewt")
 skeleton = NodePath("")
 
