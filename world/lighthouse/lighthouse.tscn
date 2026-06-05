@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dvnqlcjbxym27" path="res://textures/Lighthouse/rusty_metal_rough.png" id="8_layk7"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="9_s4voq"]
 [ext_resource type="AudioStream" uid="uid://ct85cv3qai3a4" path="res://sounds/strong-wind.wav" id="9_tnd57"]
+[ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="9_ym5lv"]
 [ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="10_g7lnn"]
 [ext_resource type="Texture2D" uid="uid://tldatsne7br0" path="res://textures/Lighthouse/plaster_normal.png" id="10_y6e0k"]
 [ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="11_8n38p"]
@@ -213,6 +214,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_3gpcr")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t6kcc"]
+albedo_texture = ExtResource("12_i8qa5")
+metallic = 0.55
+metallic_specular = 0.61
+roughness_texture = ExtResource("9_ym5lv")
+normal_enabled = true
+normal_texture = ExtResource("13_ddq0o")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_24uew"]
 _surfaces = [{
 "aabb": AABB(-0.07889603, -0.036742724, -3.4687206e-09, 0.15779206, 0.07348545, 0.036775354),
@@ -246,6 +255,10 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_24uew")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ym5lv"]
+albedo_color = Color(0.5429818, 0.5429818, 0.54298174, 1)
+metallic = 0.74
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ux7h"]
 resource_name = "Copper"
@@ -437,8 +450,9 @@ metadata/_custom_type_script = "uid://bsk5funnj0084"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o6r5"]
 transparency = 1
+blend_mode = 1
 cull_mode = 2
-albedo_color = Color(0.827451, 0.827451, 0.827451, 0.007843138)
+albedo_color = Color(0.827451, 0.827451, 0.827451, 0.039215688)
 albedo_texture = ExtResource("4_goqmn")
 metallic_specular = 0.56
 roughness = 0.07
@@ -484,17 +498,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7jv1l")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjb0r"]
-albedo_texture = ExtResource("6_gvf3n")
-metallic = 0.62
-metallic_specular = 0.7
-roughness_texture = ExtResource("8_layk7")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("7_0h0pw")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cl1ya"]
 resource_name = "Material.001"
 cull_mode = 2
@@ -533,16 +536,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c2lqi")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mc2jv"]
-albedo_texture = ExtResource("6_gvf3n")
-metallic = 0.4
-metallic_specular = 0.53
-roughness_texture = ExtResource("11_ciu11")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5o1ls"]
+albedo_color = Color(0.29586652, 0.2958665, 0.2958665, 1)
+albedo_texture = ExtResource("12_i8qa5")
+metallic = 0.48
+metallic_specular = 0.59
+roughness_texture = ExtResource("8_layk7")
 normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("10_y6e0k")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
+normal_texture = ExtResource("7_0h0pw")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_g2s2o"]
 _surfaces = [{
@@ -575,6 +576,15 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g2s2o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n7qn"]
+albedo_color = Color(0.25384274, 0.25384274, 0.25384274, 1)
+albedo_texture = ExtResource("12_i8qa5")
+metallic = 0.54
+metallic_specular = 0.55
+roughness_texture = ExtResource("8_layk7")
+normal_enabled = true
+normal_texture = ExtResource("7_0h0pw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nc7t"]
 
@@ -1979,10 +1989,12 @@ mesh = SubResource("BoxMesh_ad8bx")
 [node name="Circle" type="MeshInstance3D" parent="TopRoom/PullLever/LeverSmooth/Frame/pull_lever_foghorn" unique_id=631443867]
 mesh = SubResource("ArrayMesh_b834o")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_t6kcc")
 
 [node name="Circle_002" type="MeshInstance3D" parent="TopRoom/PullLever/LeverSmooth/Frame/pull_lever_foghorn" unique_id=1325005605]
 mesh = SubResource("ArrayMesh_qhmle")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ym5lv")
 
 [node name="LeverOrigin" type="Node3D" parent="TopRoom/PullLever/LeverSmooth" unique_id=599471891]
 transform = Transform3D(1, -1.06581e-14, 0, 1.06581e-14, 1, 0, 0, 0, 1, 0, 0, 0)
@@ -2066,22 +2078,22 @@ surface_audio_type = SubResource("Resource_olr1q")
 metadata/_custom_type_script = "uid://mc4dmfy38nqa"
 
 [node name="Glass" type="MeshInstance3D" parent="TopRoom" unique_id=1863879730]
-transform = Transform3D(0.9604281, 0, 0, 0, 0.9604281, 0, 0, 0, 0.9604281, 0, -0.031360626, 0)
+transform = Transform3D(0.9604281, 0, 0, 0, 0.9604281, 0, 0, 0, 0.9604281, 9.8319964e-05, -0.031147003, -5.056728e-05)
 material_override = SubResource("StandardMaterial3D_2o6r5")
 mesh = SubResource("ArrayMesh_1hvhf")
 skeleton = NodePath("")
 
 [node name="Frame" type="MeshInstance3D" parent="TopRoom" unique_id=1735298259]
 transform = Transform3D(1.0672209, 0, 0, 0, 0.9604281, 0, 0, 0, 1.0672209, 0, -0.031360626, 0)
-material_override = SubResource("StandardMaterial3D_wjb0r")
 mesh = SubResource("ArrayMesh_75cpn")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_5o1ls")
 
 [node name="Railing" type="MeshInstance3D" parent="TopRoom" unique_id=231889182]
 transform = Transform3D(1.0014186, 0, 0, 0, 1.0014186, 0, 0, 0, 1.0014186, 0, -0.030963898, 0)
-material_override = SubResource("StandardMaterial3D_mc2jv")
 mesh = SubResource("ArrayMesh_rakx2")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_0n7qn")
 
 [node name="Collission" type="StaticBody3D" parent="TopRoom" unique_id=507720550]
 transform = Transform3D(0.9604281, 0, 0, 0, 0.9604281, 0, 0, 0, 0.9604281, 0, -47.94683, 0)

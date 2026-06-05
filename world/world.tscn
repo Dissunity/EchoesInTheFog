@@ -24,29 +24,30 @@
 sky_top_color = Color(0.002400443, 0.07285706, 0.16548955, 1)
 sky_horizon_color = Color(0.0061095553, 0.11536034, 0.21632108, 1)
 sky_curve = 0.09896313
-ground_bottom_color = Color(0.016194494, 0.0899444, 0.21669549, 1)
-ground_horizon_color = Color(0.009173829, 0.11976708, 0.23808646, 1)
+ground_bottom_color = Color(0.011722924, 0.073605545, 0.18475819, 1)
+ground_horizon_color = Color(0.005539374, 0.09770625, 0.19944894, 1)
 
 [sub_resource type="Sky" id="Sky_70uel"]
 sky_material = SubResource("ProceduralSkyMaterial_2o6r5")
 
 [sub_resource type="Environment" id="Environment_hiqwa"]
 background_mode = 2
-background_energy_multiplier = 0.84
+background_energy_multiplier = 0.76
 sky = SubResource("Sky_70uel")
 ambient_light_source = 3
-ambient_light_sky_contribution = 0.8
+ambient_light_sky_contribution = 0.7
+ambient_light_energy = 0.84
 reflected_light_source = 2
 tonemap_mode = 4
 tonemap_exposure = 0.94
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.01028716, 0.107588805, 0.23054966, 1)
-fog_sun_scatter = 0.03
-fog_density = 0.9319
+fog_light_color = Color(0.005885597, 0.07728299, 0.17816538, 1)
+fog_light_energy = 0.84
+fog_sun_scatter = 0.04
+fog_density = 0.9979
 fog_depth_curve = 0.99999994
 fog_depth_begin = 4.0
-fog_depth_end = 80.0
 
 [node name="World" type="Node3D" unique_id=691108467]
 
@@ -82,11 +83,11 @@ autoplay = true
 environment = SubResource("Environment_hiqwa")
 
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
-transform = Transform3D(0.6408201, -0.42923188, -0.6364823, 0, -0.8290865, 0.55912054, -0.7676912, -0.35829565, -0.5312952, -3.8790703, 50.00697, -4.3962145)
+transform = Transform3D(0.61144483, -0.5462646, -0.57247716, -0.2574227, -0.8214431, 0.5088857, -0.7482437, -0.16378696, -0.6428882, -8.069296, 63.79498, -6.8038125)
 light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
-light_energy = 0.92
+light_energy = 0.686
 light_indirect_energy = 1.475
-light_specular = 1.238
+light_specular = 1.082
 light_bake_mode = 1
 shadow_enabled = true
 shadow_bias = 0.217
@@ -100,10 +101,12 @@ directional_shadow_pancake_size = 8.9
 [node name="Water" parent="." unique_id=1179493141 instance=ExtResource("6_ynm8w")]
 visible = true
 
+[node name="Journal" parent="." unique_id=278160710 instance=ExtResource("7_m0cxt")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.2148025, 52.390656, -0.089342475)
+
 [node name="Past" type="Node3D" parent="." unique_id=1064658071]
 
 [node name="Lighthouse_Past" parent="Past" unique_id=307952408 instance=ExtResource("8_j34ew")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.7510767, 6.092289, 1.8681278)
 
 [node name="Candles" type="Node3D" parent="Past/Lighthouse_Past" unique_id=713294454]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -112,7 +115,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0,
 transform = Transform3D(0.016753996, 0, -0.8331648, 0, 0.83333325, 0, 0.8331648, 0, 0.016753996, -0.022057144, 43.62366, 2.7638586)
 
 [node name="BigCandle2" parent="Past/Lighthouse_Past/Candles" unique_id=990239910 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(-0.74724585, 0, -0.36887386, 0, 0.83333325, 0, 0.36887386, 0, -0.74724585, -2.2399688, 44.03565, 1.3010066)
+transform = Transform3D(-0.74724585, 0, -0.36887386, 0, 0.8333332, 0, 0.36887386, 0, -0.74724585, -2.0719733, 44.131977, 1.3010066)
 
 [node name="BigCandle3" parent="Past/Lighthouse_Past/Candles" unique_id=223475136 instance=ExtResource("57_y1rwn")]
 transform = Transform3D(0.016753996, 0, -0.8331648, 0, 0.83333325, 0, 0.8331648, 0, 0.016753996, -1.4565791, 47.896866, -0.7547673)
@@ -132,6 +135,9 @@ transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 2.
 [node name="SmallCandle4" parent="Past/Lighthouse_Past/Candles" unique_id=1318315077 instance=ExtResource("58_4rajv")]
 transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0.2233865, 47.706223, 0.009789764)
 
+[node name="SmallCandle5" parent="Past/Lighthouse_Past/Candles" unique_id=1509591588 instance=ExtResource("58_4rajv")]
+transform = Transform3D(0.8333332, 0, 0, 0, 0.8333332, 0, 0, 0, 0.8333332, 1.5339004, 47.182358, -1.0010343)
+
 [node name="Crates" type="Node3D" parent="Past/Lighthouse_Past" unique_id=947773800]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
@@ -141,6 +147,12 @@ transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -2
 [node name="Crate9" parent="Past/Lighthouse_Past/Crates" unique_id=538950341 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.77432543, 0, -0.30800065, 0, 0.83333325, 0, 0.30800065, 0, 0.77432543, -2.4229877, 43.101837, -0.37470323)
 
+[node name="Crate13" parent="Past/Lighthouse_Past/Crates" unique_id=1011246632 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.35246783, 0, -0.48555788, 0, 0.6, 0, 0.48555788, 0, 0.35246783, -2.180053, 42.98481, -1.0941867)
+
+[node name="Crate12" parent="Past/Lighthouse_Past/Crates" unique_id=1740564941 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.26711068, 0, -0.64703315, 0, 0.7, 0, 0.64703315, 0, 0.26711068, -1.9558679, 43.02176, 0.1566737)
+
 [node name="Crate8" parent="Past/Lighthouse_Past/Crates" unique_id=1966609267 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 1.9409136, 43.101837, -1.4602855)
 
@@ -148,19 +160,28 @@ transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 1.
 transform = Transform3D(0.67649, 0, 0.48662677, 0, 0.83333325, 0, -0.48662677, 0, 0.67649, -2.2314775, 43.101837, 1.1617011)
 
 [node name="Crate5" parent="Past/Lighthouse_Past/Crates" unique_id=5631807 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.44141424, 0, 0.70682234, 0, 0.83333325, 0, -0.70682234, 0, 0.44141424, -2.1451595, 43.612408, 1.253726)
+transform = Transform3D(0.44141424, 0, 0.70682234, 0, 0.8333332, 0, -0.70682234, 0, 0.44141424, -2.226964, 43.698742, 1.253726)
 
 [node name="Crate2" parent="Past/Lighthouse_Past/Crates" unique_id=910758417 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -1.7567267, 43.101837, -1.9052091)
 
 [node name="Crate3" parent="Past/Lighthouse_Past/Crates" unique_id=397669979 instance=ExtResource("59_d36xh")]
-transform = Transform3D(0.5290769, 0, 0.6438338, 0, 0.83333325, 0, -0.6438338, 0, 0.5290769, -1.7567267, 43.697247, -1.9052091)
+transform = Transform3D(0.5763978, 0, 0.16663025, 0, 0.59999996, 0, -0.16663025, 0, 0.5763978, -1.7567267, 43.613354, -1.9052091)
+
+[node name="Crate14" parent="Past/Lighthouse_Past/Crates" unique_id=964183395 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.2857331, 0, -0.091414414, 0, 0.29999995, 0, 0.091414414, 0, 0.2857331, -2.0028818, 43.37483, 0.21807136)
 
 [node name="Crate6" parent="Past/Lighthouse_Past/Crates" unique_id=1611509309 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.5290769, 0, 0.6438338, 0, 0.83333325, 0, -0.6438338, 0, 0.5290769, -1.484973, 47.095173, -0.6795583)
 
+[node name="Crate11" parent="Past/Lighthouse_Past/Crates" unique_id=822978683 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.79881364, 0, 0.23736264, 0, 0.8333332, 0, -0.23736264, 0, 0.79881364, -0.9131188, 47.074677, -1.119916)
+
 [node name="Crate7" parent="Past/Lighthouse_Past/Crates" unique_id=422989829 instance=ExtResource("59_d36xh")]
 transform = Transform3D(0.05481514, 0, 0.49698615, 0, 0.49999997, 0, -0.49698615, 0, 0.05481514, -1.484973, 47.58215, -0.6795583)
+
+[node name="Crate10" parent="Past/Lighthouse_Past/Crates" unique_id=1973993985 instance=ExtResource("59_d36xh")]
+transform = Transform3D(0.24203071, 0, 0.4375169, 0, 0.49999994, 0, -0.4375169, 0, 0.24203071, 1.650244, 46.956123, -1.0042839)
 
 [node name="Furniture" type="Node3D" parent="Past/Lighthouse_Past" unique_id=1189035617]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -173,11 +194,8 @@ transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0,
 
 [node name="Objects" type="Node3D" parent="Past/Lighthouse_Past" unique_id=81887927]
 
-[node name="Journal" parent="Past/Lighthouse_Past/Objects" unique_id=278160710 instance=ExtResource("7_m0cxt")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -1.5385085, 42.92928, 1.0514333)
-
 [node name="Crowbar" parent="Past/Lighthouse_Past/Objects" unique_id=995516737 instance=ExtResource("42_fnoqa")]
-transform = Transform3D(0.83333325, 0, 0, 0, -3.6426155e-08, 0.83333325, 0, -0.83333325, -3.6426155e-08, -1.8303722, 42.807037, -0.28897098)
+transform = Transform3D(0.83333313, 0, 0, 0, -3.6426155e-08, 0.83333313, 0, -0.83333313, -3.6426155e-08, -1.0055168, 47.378063, -0.8721284)
 
 [node name="Lockbox" parent="Past/Lighthouse_Past/Objects" unique_id=704521865 node_paths=PackedStringArray("locked_object") instance=ExtResource("44_ruyqm")]
 transform = Transform3D(0.47168905, 0, 0.8817649, 0, 0.99999994, 0, -0.8817649, 0, 0.47168905, -1.6315012, 43.0619, -0.81198066)
@@ -200,33 +218,6 @@ process_mode = 4
 visible = false
 
 [node name="Lighthouse_Present" parent="Present" unique_id=1295569513 instance=ExtResource("8_j34ew")]
-
-[node name="Candles" type="Node3D" parent="Present/Lighthouse_Present" unique_id=674642967]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-
-[node name="BigCandle1" parent="Present/Lighthouse_Present/Candles" unique_id=467927645 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(0.016753996, 0, -0.8331648, 0, 0.83333325, 0, 0.8331648, 0, 0.016753996, -0.022057144, 43.62366, 2.7638586)
-
-[node name="BigCandle2" parent="Present/Lighthouse_Present/Candles" unique_id=992495912 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(-0.74724585, 0, -0.36887386, 0, 0.83333325, 0, 0.36887386, 0, -0.74724585, -2.2399688, 44.03565, 1.3010066)
-
-[node name="BigCandle3" parent="Present/Lighthouse_Present/Candles" unique_id=1336323761 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(0.016753996, 0, -0.8331648, 0, 0.83333325, 0, 0.8331648, 0, 0.016753996, -1.4565791, 47.896866, -0.7547673)
-
-[node name="BigCandle4" parent="Present/Lighthouse_Present/Candles" unique_id=1835489494 instance=ExtResource("57_y1rwn")]
-transform = Transform3D(-0.8319556, 0, -0.047897436, 0, 0.83333325, 0, 0.047897436, 0, -0.8319556, -2.3909822, 43.530945, 0.3418054)
-
-[node name="SmallCandle1" parent="Present/Lighthouse_Present/Candles" unique_id=1506986218 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -0.545158, 43.545, 2.7662683)
-
-[node name="SmallCandle2" parent="Present/Lighthouse_Present/Candles" unique_id=1872202394 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0.5685461, 43.545, 2.7662683)
-
-[node name="SmallCandle3" parent="Present/Lighthouse_Present/Candles" unique_id=1511856320 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 2.0871694, 43.427193, -1.4930761)
-
-[node name="SmallCandle4" parent="Present/Lighthouse_Present/Candles" unique_id=733891873 instance=ExtResource("58_4rajv")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0.2233865, 47.706223, 0.009789764)
 
 [node name="Crates" type="Node3D" parent="Present/Lighthouse_Present" unique_id=969883654]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -267,21 +258,6 @@ transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -0
 [node name="Table" parent="Present/Lighthouse_Present/Furniture" unique_id=662318344 instance=ExtResource("49_rur7c")]
 transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0, 42.776665, 2.530329)
 
-[node name="Objects" type="Node3D" parent="Present/Lighthouse_Present" unique_id=933322177]
-
-[node name="Journal" parent="Present/Lighthouse_Present/Objects" unique_id=1007110670 instance=ExtResource("7_m0cxt")]
-transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, -1.5385085, 42.92928, 1.0514333)
-
-[node name="Crowbar" parent="Present/Lighthouse_Present/Objects" unique_id=236195647 instance=ExtResource("42_fnoqa")]
-transform = Transform3D(0.83333325, 0, 0, 0, -3.6426155e-08, 0.83333325, 0, -0.83333325, -3.6426155e-08, -1.8303722, 42.807037, -0.28897098)
-
-[node name="Lockbox" parent="Present/Lighthouse_Present/Objects" unique_id=941731451 node_paths=PackedStringArray("locked_object") instance=ExtResource("44_ruyqm")]
-transform = Transform3D(0.47168905, 0, 0.8817649, 0, 0.99999994, 0, -0.8817649, 0, 0.47168905, -1.6315012, 43.0619, -0.81198066)
-locked_object = NodePath("../MechanicalPart")
-
-[node name="MechanicalPart" parent="Present/Lighthouse_Present/Objects" unique_id=804427560 instance=ExtResource("31_gwdna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5940691, 42.99122, -0.7509564)
-
 [node name="Lantern" parent="Present" unique_id=951213402 instance=ExtResource("19_j34ew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
 
@@ -289,7 +265,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
 visible = true
 
-[connection signal="game_progressed" from="GameManager" to="Past/Lighthouse_Past/Objects/Journal" method="_on_game_manager_game_progressed"]
+[connection signal="game_progressed" from="GameManager" to="Journal" method="_on_game_manager_game_progressed"]
 [connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]
 [connection signal="foghorn_lever_pulled" from="Past/Lighthouse_Past" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
 [connection signal="mechanical_piece_snapped" from="Past/Lighthouse_Past" to="GameManager" method="_puzzle_snapped"]
@@ -297,5 +273,3 @@ visible = true
 [connection signal="unlocked" from="Past/Lighthouse_Past/Objects/Lockbox" to="GameManager" method="_on_lockbow_opened"]
 [connection signal="foghorn_lever_pulled" from="Present/Lighthouse_Present" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
 [connection signal="mechanical_piece_snapped" from="Present/Lighthouse_Present" to="GameManager" method="_puzzle_snapped"]
-[connection signal="crowbar_taken" from="Present/Lighthouse_Present/Objects/Crowbar" to="GameManager" method="_on_crowbar_taken"]
-[connection signal="unlocked" from="Present/Lighthouse_Present/Objects/Lockbox" to="GameManager" method="_on_lockbow_opened"]
