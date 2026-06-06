@@ -206,14 +206,17 @@ transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.36654)
 
 [node name="Lantern_0" type="MeshInstance3D" parent="PickableObject/Sketchfab_model/Root/Lantern" unique_id=1774239835]
+gi_mode = 2
 mesh = SubResource("ArrayMesh_si6u6")
 skeleton = NodePath("")
 
 [node name="Lantern_1" type="MeshInstance3D" parent="PickableObject/Sketchfab_model/Root/Lantern" unique_id=1449154199]
+gi_mode = 2
 mesh = SubResource("ArrayMesh_i7r3y")
 skeleton = NodePath("")
 
 [node name="Lantern_2" type="MeshInstance3D" parent="PickableObject/Sketchfab_model/Root/Lantern" unique_id=1754415893]
+gi_mode = 2
 mesh = SubResource("ArrayMesh_5mewt")
 skeleton = NodePath("")
 
@@ -237,8 +240,10 @@ skeleton = NodePath("../Sketchfab_model")
 [node name="FlameLight" type="OmniLight3D" parent="PickableObject" unique_id=1288686375]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.1, 0)
 light_color = Color(0.8850307, 0.64447373, 0.39620206, 1)
+light_energy = 1.544
 shadow_bias = 0.393
 shadow_blur = 2.317
+omni_range = 4.222
 metadata/_edit_group_ = true
 
 [node name="HighlightRing" parent="PickableObject" unique_id=1976894517 instance=ExtResource("10_hmch4")]

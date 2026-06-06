@@ -1,8 +1,28 @@
 [gd_scene format=4 uid="uid://fqk8b8r0l3ga"]
 
 [ext_resource type="PackedScene" uid="uid://bpeue4ksp23vg" path="res://world/lighthouse/Fresnel128res.glb" id="1_is7vr"]
+[ext_resource type="Texture2D" uid="uid://cagub4v52ykwh" path="res://textures/Lighthouse/FresneltopNormal.png" id="2_ldapx"]
+[ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/Lighthouse/dirt.jpg" id="2_o3wnq"]
+[ext_resource type="Texture2D" uid="uid://r638g51ytrgn" path="res://textures/Lighthouse/rust_diff.png" id="2_s3e8u"]
+[ext_resource type="Texture2D" uid="uid://bhev61mfv31a8" path="res://textures/Lighthouse/rust_normal.png" id="3_n5hwx"]
+[ext_resource type="Texture2D" uid="uid://roaxinoy2yox" path="res://textures/Lighthouse/rust_rough.png" id="4_r8hhb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv10o"]
+albedo_texture = ExtResource("2_s3e8u")
+roughness_texture = ExtResource("4_r8hhb")
+normal_enabled = true
+normal_texture = ExtResource("3_n5hwx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjyv1"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.15686275)
+albedo_texture = ExtResource("2_o3wnq")
+metallic_specular = 0.25
+roughness_texture = ExtResource("2_o3wnq")
+normal_enabled = true
+normal_texture = ExtResource("2_ldapx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r8mj"]
 
@@ -37,21 +57,54 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r7ivd")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3wnq"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.15686275)
+albedo_texture = ExtResource("2_o3wnq")
+metallic_specular = 0.25
+roughness_texture = ExtResource("2_o3wnq")
+normal_enabled = true
+normal_texture = ExtResource("2_ldapx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tqj3"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.15686275)
+albedo_texture = ExtResource("2_o3wnq")
+metallic_specular = 0.25
+roughness_texture = ExtResource("2_o3wnq")
+normal_enabled = true
+normal_texture = ExtResource("2_ldapx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mxww"]
+albedo_texture = ExtResource("2_s3e8u")
+roughness_texture = ExtResource("4_r8hhb")
+normal_enabled = true
+normal_texture = ExtResource("3_n5hwx")
+uv2_triplanar = true
+
 [node name="FresnelLens" unique_id=941834532 instance=ExtResource("1_is7vr")]
 
-[node name="Frame top part" parent="." index="0" unique_id=1991740780]
+[node name="Frame top part" parent="." index="0" unique_id=912642609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49733353, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_cv10o")
 
-[node name="Middle planes" parent="." index="1" unique_id=362725253]
+[node name="Middle planes" parent="." index="1" unique_id=1235138243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7544556, 0)
 material_override = SubResource("StandardMaterial3D_qjyv1")
 mesh = SubResource("ArrayMesh_ldapx")
 
-[node name="Bottom planes" parent="." index="2" unique_id=478936704]
+[node name="Bottom planes" parent="." index="2" unique_id=31734428]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7544556, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_o3wnq")
 
-[node name="Top planes" parent="." index="3" unique_id=1547098259]
+[node name="Top planes" parent="." index="3" unique_id=148319354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49733353, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_6tqj3")
 
-[node name="Frame top part_001" parent="." index="4" unique_id=1025710467]
+[node name="Frame top part_001" parent="." index="4" unique_id=1310476504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49733353, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_0mxww")

@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://roaxinoy2yox"
-path.s3tc="res://.godot/imported/rust_rough.png-710a208c23a3ccd4df645868fa69e675.s3tc.ctex"
-path.etc2="res://.godot/imported/rust_rough.png-710a208c23a3ccd4df645868fa69e675.etc2.ctex"
+uid="uid://blsl214n60prr"
+path.s3tc="res://.godot/imported/worn_planks_nor_gl_1k.png-9e8c2354c539a35d3c449361c7415336.s3tc.ctex"
+path.etc2="res://.godot/imported/worn_planks_nor_gl_1k.png-9e8c2354c539a35d3c449361c7415336.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/Lighthouse/rust_rough.png"
-dest_files=["res://.godot/imported/rust_rough.png-710a208c23a3ccd4df645868fa69e675.s3tc.ctex", "res://.godot/imported/rust_rough.png-710a208c23a3ccd4df645868fa69e675.etc2.ctex"]
+source_file="res://textures/Lighthouse/worn_planks_nor_gl_1k.png"
+dest_files=["res://.godot/imported/worn_planks_nor_gl_1k.png-9e8c2354c539a35d3c449361c7415336.s3tc.ctex", "res://.godot/imported/worn_planks_nor_gl_1k.png-9e8c2354c539a35d3c449361c7415336.etc2.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://textures/Lighthouse/rust_rough.png"
+roughness/src_normal="res://textures/Lighthouse/worn_planks_nor_gl_1k.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

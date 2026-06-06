@@ -3,13 +3,35 @@ extends Node
 signal time_travel_initiated
 signal time_travel_ended(present: bool)
 
+@export_category("Global Nodes")
+@export var moonlight: DirectionalLight3D
+@export var water_node: Node3D
+
+@export_category("Timeline Folders")
+@export var past_folder: Node3D
+@export var present_folder: Node3D
+
+@export_category("Past Colors")
+@export var past_moon_color: Color = Color("b4c8ff")
+@export var past_fog_color: Color = Color("141b2b")
+@export var past_sky_top: Color = Color("040814")
+@export var past_sky_horizon: Color = Color("1a233a")
+@export var past_water_deep: Color = Color("0a1e3f")
+@export var past_water_shallow: Color = Color("1f4277")
+
+@export_category("Present Colors")
+@export var present_moon_color: Color = Color("b4c8ff")
+@export var present_fog_color: Color = Color("141b2b")
+@export var present_sky_top: Color = Color("040814")
+@export var present_sky_horizon: Color = Color("1a233a")
+@export var present_water_deep: Color = Color("0a1e3f")
+@export var present_water_shallow: Color = Color("1f4277")
 
 ## Light that will produce the time travel effect
 @export var time_travel_light: OmniLight3D
 
 ## World environment which will be affected by time travelling
 @export var environment: WorldEnvironment
-
 
 ## Only enable this to easily test the time travelling effect
 ## When enabled, within a single press of ENTER, the time travel will happen
@@ -22,8 +44,29 @@ signal time_travel_ended(present: bool)
 @export var lights_out_sound: AudioStream
 @export var time_traveling_sound: AudioStream
 
+var _water_material: ShaderMaterial 
+
 var cooldown = 0
 var _present: bool = true
+
+func _ready() -> void:
+	# Duplicate Environment & Sky resources so code doesn't permanently overwrite files
+	if environment and environment.environment:
+		environment.environment = environment.environment.duplicate()
+		if environment.environment.sky:
+			environment.environment.sky = environment.environment.sky.duplicate()
+			if environment.environment.sky.sky_material:
+				environment.environment.sky.sky_material = environment.environment.sky.sky_material.duplicate()
+				
+	# Find the MeshInstance3D inside the Water Node3D and duplicate its material
+	if water_node:
+		for child in water_node.get_children():
+			if child is MeshInstance3D:
+				var mat = child.get_surface_override_material(0)
+				if mat:
+					_water_material = mat.duplicate()
+					child.set_surface_override_material(0, _water_material)
+				break 
 
 
 func _time_travel():
@@ -55,12 +98,61 @@ func _time_travel():
 		tween.tween_property(time_travel_light, "light_energy", 100, 0.2)
 		tween.tween_property(time_travel_light, "light_energy", 500, 0.2)
 
+	# Swap the folders at the peak of the flash 
+	tween.tween_callback(func():
+		
+		if not past_folder or not present_folder:
+			print("One or both Node3Ds are not assigned in the inspector!")
+			return
+		
+		_present = !_present
+		print("Timeline swapping. Is it now the Present? ", _present)
+		
+		var sky_mat = null
+		if environment and environment.environment and environment.environment.sky:
+			sky_mat = environment.environment.sky.sky_material
+		
+		
+		if _present:
+			past_folder.visible = false
+			past_folder.process_mode = Node.PROCESS_MODE_DISABLED
+			present_folder.visible = true
+			present_folder.process_mode = Node.PROCESS_MODE_INHERIT
+			
+			# Colors
+			if moonlight: moonlight.light_color = present_moon_color
+			if environment: environment.environment.fog_light_color = present_fog_color
+			if sky_mat:
+				sky_mat.sky_top_color = present_sky_top
+				sky_mat.sky_horizon_color = present_sky_horizon
+			if _water_material:
+				_water_material.set_shader_parameter("color_deep", present_water_deep)
+				_water_material.set_shader_parameter("color_shallow", present_water_shallow)
+			
+		else:
+			past_folder.visible = true
+			past_folder.process_mode = Node.PROCESS_MODE_INHERIT
+			present_folder.visible = false
+			present_folder.process_mode = Node.PROCESS_MODE_DISABLED
+			
+			if moonlight: moonlight.light_color = past_moon_color
+			if environment: environment.environment.fog_light_color = past_fog_color
+			if sky_mat:
+				sky_mat.sky_top_color = past_sky_top
+				sky_mat.sky_horizon_color = past_sky_horizon
+			if _water_material:
+				_water_material.set_shader_parameter("color_deep", past_water_deep)
+				_water_material.set_shader_parameter("color_shallow", past_water_shallow)
+			
+		print("Swap logic executed successfully")
+	)
+
 	tween.tween_property(time_travel_light, "light_energy", 0, 2).set_ease(Tween.EASE_OUT)
 	tween.tween_property(environment.environment, "fog_light_energy", old_fog_light_energy, 7)
 	tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", old_ambient_light_sky_contribution, 7)
 	
 	await tween.finished
-	_present = !_present
+	
 	time_travel_ended.emit(_present)
 
 func _process(delta: float) -> void:
@@ -68,7 +160,6 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept"):
 			_time_travel()
 	cooldown -= delta
-
 
 func _on_lighthouse_foghorn_lever_pulled() -> void:
 	_time_travel()
