@@ -46,7 +46,9 @@
 [ext_resource type="Texture2D" uid="uid://roaxinoy2yox" path="res://textures/Lighthouse/rust_rough.png" id="34_4lx0w"]
 [ext_resource type="Script" uid="uid://covh58riffqx5" path="res://world/lighthouse/puzzle_area_3d.gd" id="34_v87tm"]
 [ext_resource type="Texture2D" uid="uid://cy7u2x2nhwr82" path="res://textures/Lighthouse/fabric_diffuse.png" id="35_qqgr2"]
+[ext_resource type="PackedScene" uid="uid://b1abuqx31o7x1" path="res://mechanics/sound_on_interaction/sound_on_spin.tscn" id="47_ombal"]
 [ext_resource type="PackedScene" uid="uid://8u287oi8wkti" path="res://mechanics/sound_on_interaction/sound_on_move.tscn" id="48_ixuci"]
+[ext_resource type="AudioStream" uid="uid://cf633lbyjv8hx" path="res://sounds/mechanism-spin.mp3" id="48_qnbjb"]
 [ext_resource type="Texture2D" uid="uid://c3t2utvjrfu0g" path="res://textures/Lighthouse/damaged_plaster_diff_1k.png" id="49_na1ia"]
 [ext_resource type="Texture2D" uid="uid://buwd6wk2yfox2" path="res://textures/Lighthouse/worn_planks_diff_1k.png" id="49_ombal"]
 [ext_resource type="Texture2D" uid="uid://dy7u8ky8mxlcw" path="res://textures/Lighthouse/damaged_plaster_nor_gl_1k.png" id="50_7ugif"]
@@ -2671,6 +2673,9 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft2")
 
 [node name="GrabPointRedirectRight2" parent="MiddleRoom/Mechanism/Cabinet/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=78086739 node_paths=PackedStringArray("target") instance=ExtResource("15_7sguj")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight2")
+
+[node name="SoundOnSpin" parent="MiddleRoom/Mechanism/Cabinet/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=247845359 instance=ExtResource("47_ombal")]
+stream = ExtResource("48_qnbjb")
 
 [node name="Door2" type="Node3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=253043712]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2, 47.264, 0.2)
