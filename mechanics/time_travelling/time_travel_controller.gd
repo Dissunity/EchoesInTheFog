@@ -36,7 +36,6 @@ signal time_travel_ended(present: bool)
 ## Only enable this to easily test the time travelling effect
 ## When enabled, within a single press of ENTER, the time travel will happen
 @export var test: bool = false
-@export var lockbox: Lockbox
 
 @export_category("Time Traveling Sounds")
 @export var audio_stream_player: AudioStreamPlayer
@@ -72,7 +71,6 @@ func _ready() -> void:
 func _time_travel():
 	time_travel_initiated.emit()
 	cooldown = 30
-	lockbox.is_present = !lockbox.is_present
 
 	var old_fog_light_energy = environment.environment.fog_light_energy
 	var old_ambient_light_sky_contribution = environment.environment.ambient_light_sky_contribution

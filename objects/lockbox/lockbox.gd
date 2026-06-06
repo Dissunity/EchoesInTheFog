@@ -53,8 +53,6 @@ var MIN_HITS = 3
 	2: impact_list_3
 }
 
-var is_present = true
-
 func _ready() -> void:
 	_freeze_all_pieces(locked)
 	_toggle_visibility(true)
@@ -89,8 +87,6 @@ func _toggle_visibility(new_visible: bool):
 	lockbox_destruct.visible = not new_visible
 	
 func _hit():
-	if !is_present:
-		return
 	
 	locked = hit_count < MIN_HITS
 

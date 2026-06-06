@@ -15,7 +15,7 @@ func _on_foghorn_hinge_moved(angle: Variant) -> void:
 		return
 	if _foghorn_cooldown_left > 0:
 		return
-	if abs(rad_to_deg(angle)) < 30:
+	if abs(angle) < 30:
 		return
 	_foghorn_cooldown_left = foghorn_cooldown
 	foghorn_lever_pulled.emit()

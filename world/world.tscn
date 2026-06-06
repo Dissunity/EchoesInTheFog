@@ -368,7 +368,7 @@ transform = Transform3D(0.91259885, 0, 0.40885615, 0, 1, 0, -0.40885615, 0, 0.91
 [node name="GameManager" type="Node" parent="." unique_id=826817354]
 script = ExtResource("23_il2jm")
 
-[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("moonlight", "water_node", "past_folder", "present_folder", "time_travel_light", "environment", "lockbox", "audio_stream_player") instance=ExtResource("43_7htu6")]
+[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("moonlight", "water_node", "past_folder", "present_folder", "time_travel_light", "environment", "audio_stream_player") instance=ExtResource("43_7htu6")]
 moonlight = NodePath("../Moonlight")
 water_node = NodePath("../Water")
 past_folder = NodePath("../Past")
@@ -382,7 +382,6 @@ past_water_shallow = Color(0.53490275, 0.5446598, 0.5093281, 1)
 time_travel_light = NodePath("../TimeTravellingLight")
 environment = NodePath("../WorldEnvironment")
 test = true
-lockbox = NodePath("../Past/Lighthouse_Past/Objects/Lockbox")
 audio_stream_player = NodePath("../TimeTravellingAudio")
 
 [node name="TimeTravellingAudio" type="AudioStreamPlayer" parent="." unique_id=1386185414]
@@ -596,7 +595,7 @@ transform = Transform3D(0.83333325, 0, 0, 0, 0.83333325, 0, 0, 0, 0.83333325, 0,
 [node name="Objects" type="Node3D" parent="Past/Lighthouse_Past" unique_id=81887927]
 
 [node name="Crowbar" parent="Past/Lighthouse_Past/Objects" unique_id=995516737 instance=ExtResource("42_fnoqa")]
-transform = Transform3D(0.83333313, 0, 0, 0, -3.6426155e-08, 0.83333313, 0, -0.83333313, -3.6426155e-08, -1.0055168, 47.378063, -0.8721284)
+transform = Transform3D(0.83333313, 0, 0, 0, -3.6426155e-08, 0.83333313, 0, -0.83333313, -3.6426155e-08, -1.0055168, 43.227364, -0.87212825)
 
 [node name="Lockbox" parent="Past/Lighthouse_Past/Objects" unique_id=704521865 node_paths=PackedStringArray("mechanical_part") instance=ExtResource("44_ruyqm")]
 transform = Transform3D(0.47168905, 0, 0.8817649, 0, 0.99999994, 0, -0.8817649, 0, 0.47168905, -1.6315012, 43.0619, -0.81198066)

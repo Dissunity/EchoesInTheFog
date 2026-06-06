@@ -16,7 +16,7 @@ var sound_cooldown = 0.2
 var cooldown_left = 0
 
 func _on_collission(_body: Node) -> void:
-	if rb_parent.linear_velocity.length() > 0.01:
+	if rb_parent.linear_velocity.length() > 0.001:
 		if cooldown_left > 0:
 			return
 		cooldown_left = sound_cooldown
