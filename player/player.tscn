@@ -40,6 +40,8 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"left_hand"
 
+[node name="LeftGlove" parent="LeftHand" unique_id=580629189 instance=ExtResource("4_2hs0m")]
+
 [node name="FunctionPickup" parent="LeftHand" unique_id=1932426240 instance=ExtResource("3_1jxqw")]
 grab_distance = 0.2
 grab_collision_mask = 327940
@@ -47,8 +49,6 @@ ranged_distance = 0.0
 ranged_collision_mask = 327940
 
 [node name="FunctionTeleport" parent="LeftHand" unique_id=1001569563 instance=ExtResource("6_c35mf")]
-
-[node name="LeftGlove" parent="LeftHand" unique_id=580629189 instance=ExtResource("4_2hs0m")]
 
 [node name="MovementDirect" parent="LeftHand" unique_id=1993870260 instance=ExtResource("3_dw050")]
 max_speed = 1.0
@@ -77,13 +77,13 @@ stair_detector = NodePath("../../PlayerBody/StairDetector")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"right_hand"
 
+[node name="RightGlove" parent="RightHand" unique_id=235765615 instance=ExtResource("6_1jxqw")]
+
 [node name="FunctionPickup" parent="RightHand" unique_id=1520610573 instance=ExtResource("3_1jxqw")]
 grab_distance = 0.2
 grab_collision_mask = 327940
 ranged_distance = 0.0
 ranged_collision_mask = 262404
-
-[node name="RightGlove" parent="RightHand" unique_id=235765615 instance=ExtResource("6_1jxqw")]
 
 [node name="MovementTurn" parent="RightHand" unique_id=87499563 instance=ExtResource("5_b26j0")]
 

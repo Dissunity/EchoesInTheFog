@@ -1,4 +1,6 @@
 extends Node3D
+class_name Monster
+
 @export var spawn_radius: float = 7.0
 
 # Called when the node enters the scene tree for the first time.
@@ -13,7 +15,7 @@ func _process(delta: float) -> void:
 		self.position.y += move * delta
 
 # The monster get's spawned in front of the player
-func spawn() -> void:
+func spawn():
 	var camera = get_viewport().get_camera_3d()
 	if not camera:
 		return
@@ -34,3 +36,13 @@ func spawn() -> void:
 	
 	var look_at_target = Vector3(player_pos.x, spawn_pos.y, player_pos.z)
 	self.look_at(look_at_target, Vector3.UP)
+	$AudioStreamPlayer3D.play()
+	
+	var tween = get_tree().create_tween()
+	tween.tween_interval(2)
+	tween.tween_property(self, "global_position", player_pos, 2)
+	await tween.finished
+	
+	get_tree().quit()
+	
+	

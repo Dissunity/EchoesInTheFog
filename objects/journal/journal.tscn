@@ -157,7 +157,7 @@ mode = 1
 hand_pose = SubResource("Resource_t30hx")
 
 [node name="Armature" type="Node3D" parent="RigidBody" unique_id=1903294297]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="RigidBody/Armature" unique_id=1978132316]
 bones/0/name = "Bone.003"

@@ -285,7 +285,7 @@ script = ExtResource("1_fr01u")
 
 [node name="RigidBody" type="RigidBody3D" parent="." unique_id=2140562873 groups=["PuzzlePiece"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 196611
 mass = 5.0
 freeze_mode = 1
 contact_monitor = true

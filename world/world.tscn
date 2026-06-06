@@ -72,7 +72,8 @@ fog_light_energy = 0.84
 fog_sun_scatter = 0.04
 fog_density = 0.9979
 fog_depth_curve = 0.99999994
-fog_depth_begin = 4.0
+fog_depth_begin = 5.0
+fog_depth_end = 150.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pnie"]
 albedo_texture = ExtResource("9_o1net")
@@ -368,9 +369,14 @@ transform = Transform3D(0.91259885, 0, 0.40885615, 0, 1, 0, -0.40885615, 0, 0.91
 [node name="GameManager" type="Node" parent="." unique_id=826817354]
 script = ExtResource("23_il2jm")
 
-[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("moonlight", "water_node", "past_folder", "present_folder", "time_travel_light", "environment", "audio_stream_player") instance=ExtResource("43_7htu6")]
+[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("moonlight", "water_node", "time_travel_light", "environment", "player", "monster", "past_lighthouse", "past_folder", "present_folder", "audio_stream_player") instance=ExtResource("43_7htu6")]
 moonlight = NodePath("../Moonlight")
 water_node = NodePath("../Water")
+time_travel_light = NodePath("../TimeTravellingLight")
+environment = NodePath("../WorldEnvironment")
+player = NodePath("../Player")
+monster = NodePath("../Monster")
+past_lighthouse = NodePath("../Past/Lighthouse_Past")
 past_folder = NodePath("../Past")
 present_folder = NodePath("../Present")
 past_moon_color = Color(0.7144409, 0.7148885, 0.68590194, 1)
@@ -379,8 +385,6 @@ past_sky_top = Color(0.75012076, 0.76376086, 0.76354367, 1)
 past_sky_horizon = Color(0.62139654, 0.64402914, 0.6385124, 1)
 past_water_deep = Color(0.17362976, 0.17083552, 0.16524729, 1)
 past_water_shallow = Color(0.53490275, 0.5446598, 0.5093281, 1)
-time_travel_light = NodePath("../TimeTravellingLight")
-environment = NodePath("../WorldEnvironment")
 test = true
 audio_stream_player = NodePath("../TimeTravellingAudio")
 
@@ -403,7 +407,7 @@ environment = SubResource("Environment_hiqwa")
 [node name="Moonlight" type="DirectionalLight3D" parent="." unique_id=1492743060]
 transform = Transform3D(0.61144483, -0.5462646, -0.57247716, -0.2574227, -0.8214431, 0.5088857, -0.7482437, -0.16378696, -0.6428882, -8.069296, 63.79498, -6.8038125)
 light_color = Color(0.65322006, 0.818041, 0.98202974, 1)
-light_energy = 0.528
+light_energy = 0.5
 light_specular = 1.082
 shadow_enabled = true
 shadow_bias = 0.217
@@ -417,6 +421,11 @@ directional_shadow_pancake_size = 8.9
 [node name="Water" parent="." unique_id=1179493141 instance=ExtResource("6_ynm8w")]
 visible = true
 
+[node name="Monster" parent="." unique_id=1644163713 instance=ExtResource("10_2o6r5")]
+transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
+visible = false
+spawn_radius = 9.0
+
 [node name="Journal" parent="." unique_id=278160710 instance=ExtResource("7_m0cxt")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.2148025, 52.390656, -0.089342475)
 
@@ -425,6 +434,7 @@ process_mode = 4
 visible = false
 
 [node name="Lighthouse_Past" parent="Past" unique_id=307952408 instance=ExtResource("8_j34ew")]
+foghorn_enabled = false
 
 [node name="Ceiling" parent="Past/Lighthouse_Past/Roof" parent_id_path=PackedInt32Array(307952408, 1657832455) index="0" unique_id=219711905]
 material_override = SubResource("StandardMaterial3D_0pnie")
@@ -654,10 +664,6 @@ enable_shadows = true
 
 [node name="Lantern" parent="Present" unique_id=951213402 instance=ExtResource("19_j34ew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 0.653846)
-
-[node name="Monster" parent="Present" unique_id=1644163713 instance=ExtResource("10_2o6r5")]
-transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, -6.0462923, 54.351013, -14.409763)
-visible = true
 
 [connection signal="game_progressed" from="GameManager" to="Journal" method="_on_game_manager_game_progressed"]
 [connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]

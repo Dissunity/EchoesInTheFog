@@ -1,4 +1,5 @@
 extends Node3D
+class_name Lighthouse
 
 signal foghorn_lever_pulled
 signal mechanical_piece_snapped
