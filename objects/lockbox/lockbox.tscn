@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://os6iyr8nfpx" path="res://textures/Lighthouse/rusty_metal_diffuse.png" id="2_dyd8o"]
 [ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="3_ah3ry"]
 [ext_resource type="Texture2D" uid="uid://dvnqlcjbxym27" path="res://textures/Lighthouse/rusty_metal_rough.png" id="4_c66b3"]
+[ext_resource type="AudioStream" uid="uid://cthuivohtqmoy" path="res://sounds/lockbox-break.mp3" id="5_c66b3"]
+[ext_resource type="Script" uid="uid://cvvsrddxrr47w" path="res://mechanics/sound_on_interaction/sound_on_break.gd" id="6_ehdc4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gwrr"]
 albedo_texture = ExtResource("2_dyd8o")
@@ -1178,10 +1180,9 @@ points = PackedVector3Array(-0.011054816, -0.09373266, 0.014851929, 0.009389505,
 [sub_resource type="BoxShape3D" id="BoxShape3D_c66b3"]
 size = Vector3(0.5005493, 0.4987793, 0.5557251)
 
-[node name="Lockbox" type="Node3D" unique_id=704521865 node_paths=PackedStringArray("locked_object")]
+[node name="Lockbox" type="Node3D" unique_id=704521865]
 transform = Transform3D(0.5660269, 0, 1.058118, 0, 1.2, 0, -1.058118, 0, 0.5660269, 0, 0, 0)
 script = ExtResource("1_ujqom")
-locked_object = NodePath("")
 
 [node name="lockbox" type="Node3D" parent="." unique_id=1556382769]
 
@@ -1536,3 +1537,7 @@ shape = SubResource("BoxShape3D_c66b3")
 
 [node name="TestLabel3D" type="Label3D" parent="." unique_id=1622131427]
 visible = false
+
+[node name="SoundOnBreak" type="AudioStreamPlayer3D" parent="." unique_id=1609746168]
+stream = ExtResource("5_c66b3")
+script = ExtResource("6_ehdc4")

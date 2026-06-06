@@ -104,6 +104,7 @@ func _hit():
 					piece.apply_impulse(piece.get_child(0).position *INTENSITY, self.global_position)
 		
 		hit_count += 1
+		$SoundOnBreak.play_sound(hit_count)
 		
 		if hit_count >= MIN_HITS:
 			unlocked.emit()

@@ -2492,7 +2492,7 @@ material_override = SubResource("StandardMaterial3D_ytpkv")
 mesh = SubResource("ArrayMesh_yy5nj")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MiddleRoom/Walls" unique_id=1037307139]
+[node name="StaticBody3D" type="StaticBody3D" parent="MiddleRoom/Walls" unique_id=1037307139 groups=["climable"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Collision Shape Mechanical Room" type="CollisionShape3D" parent="MiddleRoom/Walls/StaticBody3D" unique_id=172224613]
