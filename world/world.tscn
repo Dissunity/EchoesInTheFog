@@ -368,9 +368,17 @@ transform = Transform3D(0.91259885, 0, 0.40885615, 0, 1, 0, -0.40885615, 0, 0.91
 [node name="GameManager" type="Node" parent="." unique_id=826817354]
 script = ExtResource("23_il2jm")
 
-[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("past_folder", "present_folder", "time_travel_light", "environment", "lockbox", "audio_stream_player") instance=ExtResource("43_7htu6")]
+[node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("moonlight", "water_node", "past_folder", "present_folder", "time_travel_light", "environment", "lockbox", "audio_stream_player") instance=ExtResource("43_7htu6")]
+moonlight = NodePath("../Moonlight")
+water_node = NodePath("../Water")
 past_folder = NodePath("../Past")
 present_folder = NodePath("../Present")
+past_moon_color = Color(0.7144409, 0.7148885, 0.68590194, 1)
+past_fog_color = Color(0.48766226, 0.48766214, 0.48766214, 1)
+past_sky_top = Color(0.75012076, 0.76376086, 0.76354367, 1)
+past_sky_horizon = Color(0.62139654, 0.64402914, 0.6385124, 1)
+past_water_deep = Color(0.17362976, 0.17083552, 0.16524729, 1)
+past_water_shallow = Color(0.53490275, 0.5446598, 0.5093281, 1)
 time_travel_light = NodePath("../TimeTravellingLight")
 environment = NodePath("../WorldEnvironment")
 test = true
