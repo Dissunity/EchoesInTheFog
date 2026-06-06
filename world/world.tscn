@@ -59,7 +59,7 @@ script = ExtResource("23_il2jm")
 time_travel_light = NodePath("../TimeTravellingLight")
 environment = NodePath("../WorldEnvironment")
 test = true
-lockbox = NodePath("../Lighthouse/Objects/Lockbox")
+lockbox = NodePath("../Lockbox")
 audio_stream_player = NodePath("../TimeTravellingAudio")
 
 [node name="AmbientAudio" type="AudioStreamPlayer" parent="." unique_id=421538233]
@@ -101,19 +101,6 @@ directional_shadow_pancake_size = 8.9
 [node name="Lighthouse" parent="." unique_id=307952408 instance=ExtResource("8_j34ew")]
 
 [node name="Objects" type="Node" parent="Lighthouse" unique_id=463100901]
-
-[node name="Journal" parent="Lighthouse/Objects" unique_id=278160710 instance=ExtResource("7_m0cxt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8462105, 51.51514, 1.2617201)
-
-[node name="Crowbar" parent="Lighthouse/Objects" unique_id=995516737 instance=ExtResource("42_fnoqa")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -2.196447, 51.36845, -0.34676522)
-
-[node name="Lockbox" parent="Lighthouse/Objects" unique_id=704521865 node_paths=PackedStringArray("locked_object") instance=ExtResource("44_ruyqm")]
-transform = Transform3D(0.5660269, 0, 1.058118, 0, 1.2, 0, -1.058118, 0, 0.5660269, -1.9578016, 51.674286, -0.97437686)
-locked_object = NodePath("../MechanicalPart")
-
-[node name="MechanicalPart" parent="Lighthouse/Objects" unique_id=2140562873 instance=ExtResource("31_gwdna")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9128832, 51.589466, -0.9011478)
 
 [node name="Candles" type="Node" parent="Lighthouse" unique_id=1140304616]
 
@@ -196,9 +183,22 @@ light_energy = 0.0
 [node name="Lantern" parent="." unique_id=951213402 instance=ExtResource("19_j34ew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 2.0961199)
 
-[connection signal="game_progressed" from="GameManager" to="Lighthouse/Objects/Journal" method="_on_game_manager_game_progressed"]
+[node name="Journal" parent="." unique_id=278160710 instance=ExtResource("7_m0cxt")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -1.8462104, 51.515133, 1.2617201)
+
+[node name="Crowbar" parent="." unique_id=995516737 instance=ExtResource("42_fnoqa")]
+transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, 0.9999999, 0, -0.9999999, -4.371139e-08, -2.1964467, 51.368443, -0.3467652)
+
+[node name="Lockbox" parent="." unique_id=704521865 node_paths=PackedStringArray("mechanical_part") instance=ExtResource("44_ruyqm")]
+transform = Transform3D(0.56602687, 0, 1.0581179, 0, 1.1999998, 0, -1.0581179, 0, 0.56602687, -1.9578013, 51.67428, -0.97437686)
+mechanical_part = NodePath("../MechanicalPart")
+
+[node name="MechanicalPart" parent="." unique_id=2140562873 instance=ExtResource("31_gwdna")]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -1.9128829, 51.589466, -0.90114766)
+
+[connection signal="game_progressed" from="GameManager" to="Journal" method="_on_game_manager_game_progressed"]
 [connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]
 [connection signal="foghorn_lever_pulled" from="Lighthouse" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
 [connection signal="mechanical_piece_snapped" from="Lighthouse" to="GameManager" method="_puzzle_snapped"]
-[connection signal="crowbar_taken" from="Lighthouse/Objects/Crowbar" to="GameManager" method="_on_crowbar_taken"]
-[connection signal="unlocked" from="Lighthouse/Objects/Lockbox" to="GameManager" method="_on_lockbow_opened"]
+[connection signal="crowbar_taken" from="Crowbar" to="GameManager" method="_on_crowbar_taken"]
+[connection signal="unlocked" from="Lockbox" to="GameManager" method="_on_lockbow_opened"]

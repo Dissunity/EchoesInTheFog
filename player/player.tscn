@@ -33,6 +33,9 @@ current = true
 
 [node name="VRCommonShaderCache" parent="XRCamera3D" unique_id=1863258321 instance=ExtResource("1_n7ghd")]
 
+[node name="AudioListener3D" type="AudioListener3D" parent="XRCamera3D" unique_id=229031865]
+current = true
+
 [node name="LeftHand" type="XRController3D" parent="." unique_id=1434391388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"left_hand"

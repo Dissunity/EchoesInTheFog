@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dnf6q76f00m2u" path="res://textures/Lighthouse/grey_normal.png" id="15_y23hc"]
 [ext_resource type="Texture2D" uid="uid://cltcevqvy0ins" path="res://textures/Lighthouse/grey_wood.png" id="16_byoy4"]
 [ext_resource type="Script" uid="uid://mc4dmfy38nqa" path="res://addons/godot-xr-tools/audio/surface_audio.gd" id="17_atlx6"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="17_ym5lv"]
 [ext_resource type="Script" uid="uid://bsk5funnj0084" path="res://addons/godot-xr-tools/audio/surface_audio_type.gd" id="18_tx6gu"]
 [ext_resource type="AudioStream" uid="uid://ccsqpgqrea2wn" path="res://sounds/walking on wooden floor.wav" id="19_gpf77"]
 [ext_resource type="Texture2D" uid="uid://7p0e80wpa7sr" path="res://textures/Lighthouse/worn_floor_diffuse.png" id="21_47g4q"]
@@ -2046,6 +2047,10 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 [node name="GrabPointRedirectRight" parent="TopRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=448266738 node_paths=PackedStringArray("target") instance=ExtResource("15_7sguj")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
+[node name="HighlightRing" parent="TopRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1155618907 instance=ExtResource("17_ym5lv")]
+transform = Transform3D(0.9999998, 1.6940659e-21, 1.009742e-28, -1.6940659e-21, 0.9999998, 0, 5.04871e-29, 0, 0.9999998, -6.8878705e-22, 0.009828679, -0.020386377)
+skeleton = NodePath("../..")
+
 [node name="FresnelLens" parent="TopRoom" unique_id=941834532 instance=ExtResource("28_pphow")]
 transform = Transform3D(0.96042806, 0, 0, 0, 0.96042806, 0, 0, 0, 0.96042806, 0, 1.1062927, 0)
 
@@ -2365,6 +2370,9 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 visible = false
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
+[node name="HighlightRing" parent="MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1867179631 instance=ExtResource("17_ym5lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08497e-17, -0.024902811, -4.656613e-10)
+
 [node name="Door1" type="Node3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=1713652773]
 transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, 0.20209576, 47.264, -0.19872932)
 
@@ -2409,7 +2417,6 @@ mesh = SubResource("BoxMesh_0higs")
 
 [node name="HandleMesh" type="MeshInstance3D" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=67487599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2758817)
-visible = false
 mesh = SubResource("SphereMesh_hpls2")
 
 [node name="GrabPointHandLeft" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=775163489 instance=ExtResource("9_s4voq")]
@@ -2419,7 +2426,6 @@ hand_pose = SubResource("Resource_fah00")
 
 [node name="GrabPointHandRight" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=176524124 instance=ExtResource("12_tcao0")]
 transform = Transform3D(-4.7807912e-08, -1, -1.1888867e-07, -0.24102378, 1.269067e-07, -0.9705194, 0.9705194, -1.7743556e-08, -0.24102378, -0.049999237, 0.050839737, 0.064597264)
-visible = true
 snap_hand = false
 hand_pose = SubResource("Resource_f66pt")
 editor_preview_mode = 1
@@ -2442,6 +2448,9 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 
 [node name="GrabPointRedirectRight" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1497767419 node_paths=PackedStringArray("target") instance=ExtResource("15_7sguj")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
+
+[node name="HighlightRing" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=646838132 instance=ExtResource("17_ym5lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08497e-17, -0.024902811, -4.656613e-10)
 
 [node name="PuzzleSlotArea3D" type="Area3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=836480515 node_paths=PackedStringArray("target_position_node")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.185, -0.008)

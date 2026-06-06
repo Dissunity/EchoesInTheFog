@@ -109,6 +109,7 @@ lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=1
 reflections/reflection_atlas/reflection_size=128
 reflections/reflection_atlas/reflection_size.mobile=127
 reflections/reflection_atlas/reflection_count=32
+anti_aliasing/quality/msaa_3d=3
 
 [xr]
 

@@ -9,7 +9,7 @@ signal unlocked
 @onready var test_label:Label3D = $TestLabel3D
 @onready var hit_box:Area3D = $HitBoxArea3D
 
-@export var locked_object: XRToolsPickable
+@export var mechanical_part: MechanicalPart
 @export var INTENSITY:float = 12.0
 
 			
@@ -56,8 +56,6 @@ var MIN_HITS = 3
 var is_present = true
 
 func _ready() -> void:
-	test_label.text = "Hellow"
-	locked_object.enabled = false
 	_freeze_all_pieces(locked)
 	_toggle_visibility(true)
 	_toggle_collisions(false)
@@ -113,7 +111,7 @@ func _hit():
 		
 		if hit_count >= MIN_HITS:
 			unlocked.emit()
-			locked_object.enabled = true
+			mechanical_part.pickable.enabled = true
 
 
 func _freeze_all_pieces(should_freeze: bool):
