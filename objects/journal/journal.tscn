@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_interaction/sound_on_hit.tscn" id="12_22715"]
 [ext_resource type="AudioStream" uid="uid://d1n3iigoom3wi" path="res://sounds/book-hit.mp3" id="13_8thew"]
 [ext_resource type="AudioStream" uid="uid://op538ohv1h3e" path="res://sounds/book-opening.mp3" id="14_6wy1u"]
+[ext_resource type="PackedScene" uid="uid://bxdkes3uqv87p" path="res://mechanics/sound_on_interaction/sound_on_swish.tscn" id="15_a2iuq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g1kit"]
 size = Vector3(0.33712405, 0.20315704, 0.07634278)
@@ -240,6 +241,8 @@ stream = ExtResource("13_8thew")
 [node name="BookOpeningAudio" type="AudioStreamPlayer3D" parent="RigidBody" unique_id=726209582]
 stream = ExtResource("14_6wy1u")
 volume_db = 15.0
+
+[node name="SoundOnSwish" parent="RigidBody" unique_id=1009411001 instance=ExtResource("15_a2iuq")]
 
 [node name="LeftPage" type="SubViewport" parent="." unique_id=40513807]
 transparent_bg = true

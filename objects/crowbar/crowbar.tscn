@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_interaction/sound_on_hit.tscn" id="8_o2gqd"]
 [ext_resource type="AudioStream" uid="uid://dw5s1gj71nkso" path="res://sounds/wood-hit.mp3" id="9_66ig8"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="9_aod1o"]
+[ext_resource type="PackedScene" uid="uid://bxdkes3uqv87p" path="res://mechanics/sound_on_interaction/sound_on_swish.tscn" id="11_ggo0v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7camw"]
 size = Vector3(0.059814453, 0.39120483, 0.025756836)
@@ -87,5 +88,7 @@ stream = ExtResource("9_66ig8")
 
 [node name="HighlightRing" parent="XRToolsPickable" unique_id=1942498779 instance=ExtResource("9_aod1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016107738, -0.047809392, 0)
+
+[node name="SoundOnSwish" parent="XRToolsPickable" unique_id=1009411001 instance=ExtResource("11_ggo0v")]
 
 [connection signal="picked_up" from="XRToolsPickable" to="." method="_on_xr_tools_pickable_picked_up"]

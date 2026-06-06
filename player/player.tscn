@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://0xlsitpu17r1" path="res://addons/godot-xr-tools/functions/movement_footstep.tscn" id="18_65viv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_606se"]
-size = Vector3(0.25, 0.25, 0.25)
+size = Vector3(0.25, 0.34094238, 0.25)
 
 [node name="Player" type="XROrigin3D" unique_id=998661826]
 transform = Transform3D(0.91259885, 0, 0.40885615, 0, 1, 0, -0.40885615, 0, 0.91259885, 0, 0, 0)
@@ -106,12 +106,12 @@ script = ExtResource("14_bwjto")
 group_to_detect = "climable"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/StairDetector" unique_id=521849759]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13318047, -0.12974943)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08770928, -0.12974943)
 shape = SubResource("BoxShape3D_606se")
 
 [node name="MovementFootstep" parent="PlayerBody" unique_id=1892920102 instance=ExtResource("18_65viv")]
-walk_speed = 0.0
-steps_per_meter = 0.25
+walk_speed = 0.2
+steps_per_meter = 0.5
 
 [editable path="LeftHand/FunctionPickup"]
 [editable path="PlayerBody"]

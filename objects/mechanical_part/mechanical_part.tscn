@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_interaction/sound_on_hit.tscn" id="9_5046k"]
 [ext_resource type="AudioStream" uid="uid://dw5s1gj71nkso" path="res://sounds/wood-hit.mp3" id="10_xx4rh"]
 [ext_resource type="PackedScene" uid="uid://dpad1o37j6nmf" path="res://mechanics/sound_on_interaction/sound_on_roll.tscn" id="11_7sv51"]
+[ext_resource type="PackedScene" uid="uid://bxdkes3uqv87p" path="res://mechanics/sound_on_interaction/sound_on_swish.tscn" id="12_sdpm4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33exr"]
 resource_name = "Dark metal"
@@ -285,9 +286,7 @@ script = ExtResource("1_fr01u")
 [node name="RigidBody" type="RigidBody3D" parent="." unique_id=2140562873 groups=["PuzzlePiece"]]
 collision_layer = 4
 collision_mask = 3
-mass = 10.0
-center_of_mass_mode = 1
-center_of_mass = Vector3(0.08, 0, 0)
+mass = 5.0
 freeze_mode = 1
 contact_monitor = true
 max_contacts_reported = 1
@@ -367,3 +366,5 @@ editor_preview_mode = 1
 stream = ExtResource("10_xx4rh")
 
 [node name="SoundOnRoll" parent="RigidBody" unique_id=1752824688 instance=ExtResource("11_7sv51")]
+
+[node name="SoundOnSwish" parent="RigidBody" unique_id=1009411001 instance=ExtResource("12_sdpm4")]

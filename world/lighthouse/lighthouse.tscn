@@ -26,7 +26,6 @@
 [ext_resource type="Script" uid="uid://mc4dmfy38nqa" path="res://addons/godot-xr-tools/audio/surface_audio.gd" id="17_atlx6"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="17_ym5lv"]
 [ext_resource type="Script" uid="uid://bsk5funnj0084" path="res://addons/godot-xr-tools/audio/surface_audio_type.gd" id="18_tx6gu"]
-[ext_resource type="AudioStream" uid="uid://ccsqpgqrea2wn" path="res://sounds/walking on wooden floor.wav" id="19_gpf77"]
 [ext_resource type="Texture2D" uid="uid://7p0e80wpa7sr" path="res://textures/Lighthouse/worn_floor_diffuse.png" id="21_47g4q"]
 [ext_resource type="Texture2D" uid="uid://b27uya7rwvlto" path="res://textures/Lighthouse/worn_floor_roughness.png" id="22_7u22j"]
 [ext_resource type="AudioStream" uid="uid://bwvll2c1y8kli" path="res://sounds/metallic foot steps.mp3" id="23_pqru3"]
@@ -55,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://blsl214n60prr" path="res://textures/Lighthouse/worn_planks_nor_gl_1k.png" id="50_qnbjb"]
 [ext_resource type="Texture2D" uid="uid://fnu31xipfxf7" path="res://textures/Lighthouse/worn_planks_rough_1k.png" id="51_i6mkd"]
 [ext_resource type="Texture2D" uid="uid://cqpf6vabx21p3" path="res://textures/Lighthouse/damaged_plaster_rough_1k.png" id="51_qphek"]
+[ext_resource type="AudioStream" uid="uid://b1ivrn83dg2mr" path="res://sounds/footstep_wood.mp3" id="54_cacw0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il2jm"]
 albedo_texture = ExtResource("49_na1ia")
@@ -1777,7 +1777,7 @@ data = PackedVector3Array(-2.8260999, 0.024999999, 0.5622, -2.6620998, -0.045399
 
 [sub_resource type="Resource" id="Resource_55kwu"]
 script = ExtResource("18_tx6gu")
-walk_sounds = Array[AudioStream]([ExtResource("19_gpf77")])
+walk_sounds = Array[AudioStream]([ExtResource("54_cacw0")])
 metadata/_custom_type_script = "uid://bsk5funnj0084"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ew0l"]

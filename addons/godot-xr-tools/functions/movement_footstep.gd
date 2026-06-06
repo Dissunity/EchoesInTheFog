@@ -15,7 +15,7 @@ signal footstep(name)
 
 
 # Number of audio players to pool
-const AUDIO_POOL_SIZE := 3
+const AUDIO_POOL_SIZE := 5
 
 
 ## Movement provider order
