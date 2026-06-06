@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_yfa4o"]
 [ext_resource type="Animation" uid="uid://ccds2u22gbxn7" path="res://addons/godot-xr-tools/hands/animations/right/Grip.res" id="6_0syqe"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="10_hmch4"]
-[ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_hit/sound_on_hit.tscn" id="11_menp2"]
+[ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_interaction/sound_on_hit.tscn" id="11_menp2"]
+[ext_resource type="PackedScene" uid="uid://dpad1o37j6nmf" path="res://mechanics/sound_on_interaction/sound_on_roll.tscn" id="12_yfa4o"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_b464h"]
 height = 0.3190918
@@ -245,4 +246,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29141682, 0)
 
 [node name="SoundOnHit" parent="PickableObject" unique_id=1010556174 instance=ExtResource("11_menp2")]
 
-[connection signal="body_entered" from="PickableObject" to="PickableObject/SoundOnHit" method="_on_collission"]
+[node name="SoundOnRoll" parent="PickableObject" unique_id=1752824688 instance=ExtResource("12_yfa4o")]

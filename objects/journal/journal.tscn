@@ -11,11 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://dwkvkq2sp8am1" path="res://objects/journal/journal_431.jpg" id="7_dhxeb"]
 [ext_resource type="Texture2D" uid="uid://ba2buu7o83ilk" path="res://objects/journal/journal_leather-journal-cover-500x386.jpg" id="8_24co1"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="11_24co1"]
-[ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_hit/sound_on_hit.tscn" id="12_22715"]
+[ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_interaction/sound_on_hit.tscn" id="12_22715"]
 [ext_resource type="AudioStream" uid="uid://d1n3iigoom3wi" path="res://sounds/book-hit.mp3" id="13_8thew"]
+[ext_resource type="AudioStream" uid="uid://op538ohv1h3e" path="res://sounds/book-opening.mp3" id="14_6wy1u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g1kit"]
-size = Vector3(0.33712405, 0.20315704, 0.05)
+size = Vector3(0.33712405, 0.20315704, 0.07634278)
 
 [sub_resource type="Resource" id="Resource_t30hx"]
 script = ExtResource("6_22715")
@@ -141,7 +142,7 @@ max_contacts_reported = 1
 script = ExtResource("3_sj3mu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody" unique_id=893948850]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0013655275, 0.083558515, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0013655275, 0.083558515, 8.545164e-05)
 shape = SubResource("BoxShape3D_g1kit")
 
 [node name="GrabPointHandLeft" parent="RigidBody" unique_id=448543769 instance=ExtResource("4_dhxeb")]
@@ -236,6 +237,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0115232095, 0)
 [node name="SoundOnHit" parent="RigidBody" unique_id=1010556174 instance=ExtResource("12_22715")]
 stream = ExtResource("13_8thew")
 
+[node name="BookOpeningAudio" type="AudioStreamPlayer3D" parent="RigidBody" unique_id=726209582]
+stream = ExtResource("14_6wy1u")
+volume_db = 15.0
+
 [node name="LeftPage" type="SubViewport" parent="." unique_id=40513807]
 transparent_bg = true
 size = Vector2i(800, 1100)
@@ -273,5 +278,3 @@ autowrap_mode = 3
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=596896977]
 root_node = NodePath("../RigidBody")
 libraries/ = SubResource("AnimationLibrary_sxjbt")
-
-[connection signal="body_entered" from="RigidBody" to="RigidBody/SoundOnHit" method="_on_collission"]

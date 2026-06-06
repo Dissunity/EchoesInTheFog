@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://tnbh2ktsuop7"]
 
 [ext_resource type="AudioStream" uid="uid://bo6ckqu3dvuxt" path="res://sounds/floraphonic-metal-hit-90-200426.mp3" id="1_y1tct"]
-[ext_resource type="Script" uid="uid://bq7ctkq45ecpe" path="res://mechanics/sound_on_hit/sound_on_hit.gd" id="2_t0xrl"]
+[ext_resource type="Script" uid="uid://bq7ctkq45ecpe" path="res://mechanics/sound_on_interaction/sound_on_hit.gd" id="2_t0xrl"]
 
 [node name="SoundOnHit" type="AudioStreamPlayer3D" unique_id=1010556174]
 stream = ExtResource("1_y1tct")

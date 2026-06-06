@@ -8,8 +8,9 @@
 [ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_7sv51"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_sdpm4"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="7_mpyft"]
-[ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_hit/sound_on_hit.tscn" id="9_5046k"]
+[ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_interaction/sound_on_hit.tscn" id="9_5046k"]
 [ext_resource type="AudioStream" uid="uid://dw5s1gj71nkso" path="res://sounds/wood-hit.mp3" id="10_xx4rh"]
+[ext_resource type="PackedScene" uid="uid://dpad1o37j6nmf" path="res://mechanics/sound_on_interaction/sound_on_roll.tscn" id="11_7sv51"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33exr"]
 resource_name = "Dark metal"
@@ -242,14 +243,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0334u")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4dyds"]
-size = Vector3(0.1987671, 0.19286767, 0.2730957)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xx4rh"]
+height = 0.19171143
+radius = 0.096191406
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y84s8"]
-size = Vector3(0.038879395, 0.42552185, 0.05114746)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7sv51"]
+height = 0.043006897
+radius = 0.1381836
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eeir3"]
-size = Vector3(0.014224121, 0.26879883, 0.27593994)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sdpm4"]
+height = 0.38843727
+radius = 0.024414063
 
 [sub_resource type="Resource" id="Resource_vgpin"]
 script = ExtResource("5_7sv51")
@@ -324,16 +328,16 @@ mesh = SubResource("ArrayMesh_4g4l7")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody" unique_id=1055309378]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06471559, -0.0013160706, -0.07345636)
-shape = SubResource("BoxShape3D_4dyds")
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.067614734, -0.0013160707, -0.07345636)
+shape = SubResource("CylinderShape3D_xx4rh")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody" unique_id=734635397]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.014549255, 0.001033783, -0.0750643)
-shape = SubResource("BoxShape3D_y84s8")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody" unique_id=2017659430]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.14918101, -0.0013160611, -0.07345636)
+shape = SubResource("CylinderShape3D_7sv51")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody" unique_id=839332061]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14957398, -0.0030517578, -0.0753479)
-shape = SubResource("BoxShape3D_eeir3")
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody" unique_id=131067992]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.0007635355, -0.0013160678, -0.07345636)
+shape = SubResource("CylinderShape3D_sdpm4")
 
 [node name="HighlightRing" parent="RigidBody" unique_id=348652640 instance=ExtResource("2_fr01u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08519468, 0, -0.072280414)
@@ -362,4 +366,4 @@ editor_preview_mode = 1
 [node name="SoundOnHit" parent="RigidBody" unique_id=1010556174 instance=ExtResource("9_5046k")]
 stream = ExtResource("10_xx4rh")
 
-[connection signal="body_entered" from="RigidBody" to="RigidBody/SoundOnHit" method="_on_collission"]
+[node name="SoundOnRoll" parent="RigidBody" unique_id=1752824688 instance=ExtResource("11_7sv51")]

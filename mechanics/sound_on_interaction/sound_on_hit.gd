@@ -6,6 +6,7 @@ var rb_parent: RigidBody3D
 
 func _ready() -> void:
 	rb_parent = get_parent()
+	rb_parent.body_entered.connect(_on_collission)
 
 func _process(delta: float) -> void:
 	cooldown_left -= delta
