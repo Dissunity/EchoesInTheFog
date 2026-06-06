@@ -24,8 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://ccbbwwqi4fyim" path="res://textures/Lighthouse/leather_normal.png" id="15_sg63r"]
 [ext_resource type="Texture2D" uid="uid://y4vv30275ri3" path="res://textures/Lighthouse/leather_rough.png" id="16_ixuci"]
 [ext_resource type="Script" uid="uid://mc4dmfy38nqa" path="res://addons/godot-xr-tools/audio/surface_audio.gd" id="17_atlx6"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="17_ym5lv"]
 [ext_resource type="Script" uid="uid://bsk5funnj0084" path="res://addons/godot-xr-tools/audio/surface_audio_type.gd" id="18_tx6gu"]
-[ext_resource type="AudioStream" uid="uid://ccsqpgqrea2wn" path="res://sounds/walking on wooden floor.wav" id="19_gpf77"]
 [ext_resource type="Texture2D" uid="uid://7p0e80wpa7sr" path="res://textures/Lighthouse/worn_floor_diffuse.png" id="21_47g4q"]
 [ext_resource type="Texture2D" uid="uid://b27uya7rwvlto" path="res://textures/Lighthouse/worn_floor_roughness.png" id="22_7u22j"]
 [ext_resource type="AudioStream" uid="uid://bwvll2c1y8kli" path="res://sounds/metallic foot steps.mp3" id="23_pqru3"]
@@ -46,12 +46,19 @@
 [ext_resource type="Texture2D" uid="uid://roaxinoy2yox" path="res://textures/Lighthouse/rust_rough.png" id="34_4lx0w"]
 [ext_resource type="Script" uid="uid://covh58riffqx5" path="res://world/lighthouse/puzzle_area_3d.gd" id="34_v87tm"]
 [ext_resource type="Texture2D" uid="uid://cy7u2x2nhwr82" path="res://textures/Lighthouse/fabric_diffuse.png" id="35_qqgr2"]
+[ext_resource type="Script" uid="uid://fa07ub50ciux" path="res://world/lighthouse/upper_gear.gd" id="42_i6mkd"]
+[ext_resource type="PackedScene" uid="uid://b1abuqx31o7x1" path="res://mechanics/sound_on_interaction/sound_on_spin.tscn" id="47_ombal"]
+[ext_resource type="PackedScene" uid="uid://8u287oi8wkti" path="res://mechanics/sound_on_interaction/sound_on_move.tscn" id="48_ixuci"]
+[ext_resource type="AudioStream" uid="uid://cf633lbyjv8hx" path="res://sounds/mechanism-spin.mp3" id="48_qnbjb"]
 [ext_resource type="Texture2D" uid="uid://c3t2utvjrfu0g" path="res://textures/Lighthouse/damaged_plaster_diff_1k.png" id="49_na1ia"]
 [ext_resource type="Texture2D" uid="uid://buwd6wk2yfox2" path="res://textures/Lighthouse/worn_planks_diff_1k.png" id="49_ombal"]
 [ext_resource type="Texture2D" uid="uid://dy7u8ky8mxlcw" path="res://textures/Lighthouse/damaged_plaster_nor_gl_1k.png" id="50_7ugif"]
+[ext_resource type="AudioStream" uid="uid://dg3r5ha1kjxrl" path="res://sounds/puzzle-snap.mp3" id="50_cacw0"]
 [ext_resource type="Texture2D" uid="uid://blsl214n60prr" path="res://textures/Lighthouse/worn_planks_nor_gl_1k.png" id="50_qnbjb"]
 [ext_resource type="Texture2D" uid="uid://fnu31xipfxf7" path="res://textures/Lighthouse/worn_planks_rough_1k.png" id="51_i6mkd"]
 [ext_resource type="Texture2D" uid="uid://cqpf6vabx21p3" path="res://textures/Lighthouse/damaged_plaster_rough_1k.png" id="51_qphek"]
+[ext_resource type="AudioStream" uid="uid://b1ivrn83dg2mr" path="res://sounds/footstep_wood.mp3" id="54_cacw0"]
+[ext_resource type="AudioStream" uid="uid://dcxxg6n4wl4oc" path="res://sounds/gears.wav" id="54_na1ia"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il2jm"]
 albedo_texture = ExtResource("49_na1ia")
@@ -951,6 +958,14 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tf3by")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_na1ia"]
+height = 0.12670898
+radius = 0.31982422
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7ugif"]
+height = 1.0770111
+radius = 0.15332031
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_w63ex"]
 size = Vector3(0.049240112, 0.23588562, 0.065979004)
 
@@ -1774,7 +1789,7 @@ data = PackedVector3Array(-2.8260999, 0.024999999, 0.5622, -2.6620998, -0.045399
 
 [sub_resource type="Resource" id="Resource_55kwu"]
 script = ExtResource("18_tx6gu")
-walk_sounds = Array[AudioStream]([ExtResource("19_gpf77")])
+walk_sounds = Array[AudioStream]([ExtResource("54_cacw0")])
 metadata/_custom_type_script = "uid://bsk5funnj0084"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ew0l"]
@@ -2411,6 +2426,10 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 [node name="GrabPointRedirectRight" parent="TopRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=448266738 node_paths=PackedStringArray("target") instance=ExtResource("15_7sguj")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
+[node name="HighlightRing" parent="TopRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1155618907 instance=ExtResource("17_ym5lv")]
+transform = Transform3D(0.9999998, 1.6940659e-21, 1.009742e-28, -1.6940659e-21, 0.9999998, 0, 5.04871e-29, 0, 0.9999998, -6.8878705e-22, 0.009828679, -0.020386377)
+skeleton = NodePath("../..")
+
 [node name="FresnelLens" parent="TopRoom" unique_id=941834532 instance=ExtResource("28_pphow")]
 transform = Transform3D(0.96042806, 0, 0, 0, 0.96042806, 0, 0, 0, 0.96042806, 0, 1.1062927, 0)
 
@@ -2463,6 +2482,7 @@ shape = SubResource("ConcavePolygonShape3D_rakx2")
 
 [node name="RotatingSpotlight" type="SpotLight3D" parent="TopRoom" unique_id=593929224]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89489126, 0)
+visible = false
 light_color = Color(0.999999, 0.99989754, 0.81470966, 1)
 light_energy = 5.546
 light_indirect_energy = 1.282
@@ -2485,7 +2505,7 @@ material_override = SubResource("StandardMaterial3D_ytpkv")
 mesh = SubResource("ArrayMesh_yy5nj")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MiddleRoom/Walls" unique_id=1037307139]
+[node name="StaticBody3D" type="StaticBody3D" parent="MiddleRoom/Walls" unique_id=1037307139 groups=["climable"]]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Collision Shape Mechanical Room" type="CollisionShape3D" parent="MiddleRoom/Walls/StaticBody3D" unique_id=172224613]
@@ -2515,6 +2535,25 @@ skeleton = NodePath("")
 
 [node name="Cabinet" type="Node3D" parent="MiddleRoom/Mechanism" unique_id=532235579]
 
+[node name="CabinetRoofBody" type="StaticBody3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=1236377172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.609, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MiddleRoom/Mechanism/Cabinet/CabinetRoofBody" unique_id=160174396]
+shape = SubResource("CylinderShape3D_na1ia")
+
+[node name="CabinetFootBody" type="StaticBody3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=723677657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.886993, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MiddleRoom/Mechanism/Cabinet/CabinetFootBody" unique_id=1531147833]
+shape = SubResource("CylinderShape3D_na1ia")
+
+[node name="CabinetChimneyBody" type="StaticBody3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=2098706954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.9176, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MiddleRoom/Mechanism/Cabinet/CabinetChimneyBody" unique_id=1287813229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28209686, 0)
+shape = SubResource("CylinderShape3D_7ugif")
+
 [node name="PuzzleHolder" type="StaticBody3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=1285356868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.168, 0)
 collision_mask = 0
@@ -2530,6 +2569,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.206, 0, -0.073)
 shape = SubResource("BoxShape3D_kqbvg")
 
 [node name="Gear" type="Node3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=1367663806]
+script = ExtResource("42_i6mkd")
 
 [node name="Circle" type="MeshInstance3D" parent="MiddleRoom/Mechanism/Cabinet/Gear" unique_id=1100336640]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.49431, 0)
@@ -2665,6 +2705,9 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft2")
 [node name="GrabPointRedirectRight2" parent="MiddleRoom/Mechanism/Cabinet/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=78086739 node_paths=PackedStringArray("target") instance=ExtResource("15_7sguj")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight2")
 
+[node name="SoundOnSpin" parent="MiddleRoom/Mechanism/Cabinet/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=247845359 instance=ExtResource("47_ombal")]
+stream = ExtResource("48_qnbjb")
+
 [node name="Door2" type="Node3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=253043712]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -0.2, 47.264, 0.2)
 
@@ -2695,7 +2738,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 [node name="door2_lever_mechanical_room" parent="MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=556890419 instance=ExtResource("33_7sguj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.098507434)
 
-[node name="Turn mechanism_door 2_001" parent="MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" index="0" unique_id=54861717]
+[node name="Turn mechanism_door 2_001" parent="MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" index="0" unique_id=1668422925]
 mesh = SubResource("ArrayMesh_34rcq")
 surface_material_override/0 = SubResource("StandardMaterial3D_qnbjb")
 surface_material_override/1 = SubResource("StandardMaterial3D_i6mkd")
@@ -2750,6 +2793,11 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 visible = false
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
+[node name="HighlightRing" parent="MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1867179631 instance=ExtResource("17_ym5lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08497e-17, -0.024902811, -4.656613e-10)
+
+[node name="SoundOnMove" parent="MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1491811778 instance=ExtResource("48_ixuci")]
+
 [node name="Door1" type="Node3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=1713652773]
 transform = Transform3D(4.371139e-08, 1, -8.742278e-08, 1, -4.371139e-08, 0, -3.821371e-15, -8.742278e-08, -1, 0.20209576, 47.264, -0.19872932)
 
@@ -2780,7 +2828,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 [node name="door2_lever_mechanical_room" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" unique_id=1574274314 instance=ExtResource("33_7sguj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.098507434)
 
-[node name="Turn mechanism_door 2_001" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" index="0" unique_id=54861717]
+[node name="Turn mechanism_door 2_001" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" index="0" unique_id=1668422925]
 mesh = SubResource("ArrayMesh_na1ia")
 surface_material_override/0 = SubResource("StandardMaterial3D_7ugif")
 surface_material_override/1 = SubResource("StandardMaterial3D_qphek")
@@ -2809,7 +2857,6 @@ hand_pose = SubResource("Resource_fah00")
 
 [node name="GrabPointHandRight" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/HandleMesh" unique_id=176524124 instance=ExtResource("12_tcao0")]
 transform = Transform3D(-4.7807912e-08, -1, -1.1888867e-07, -0.24102378, 1.269067e-07, -0.9705194, 0.9705194, -1.7743556e-08, -0.24102378, -0.049999237, 0.050839737, 0.064597264)
-visible = true
 snap_hand = false
 hand_pose = SubResource("Resource_f66pt")
 editor_preview_mode = 1
@@ -2833,8 +2880,13 @@ target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandLeft")
 [node name="GrabPointRedirectRight" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=1497767419 node_paths=PackedStringArray("target") instance=ExtResource("15_7sguj")]
 target = NodePath("../../../HingeBody/HandleMesh/GrabPointHandRight")
 
+[node name="HighlightRing" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=646838132 instance=ExtResource("17_ym5lv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08497e-17, -0.024902811, -4.656613e-10)
+
+[node name="SoundOnMove" parent="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HandleOrigin/InteractableHandle" unique_id=664390469 instance=ExtResource("48_ixuci")]
+
 [node name="PuzzleSlotArea3D" type="Area3D" parent="MiddleRoom/Mechanism/Cabinet" unique_id=836480515 node_paths=PackedStringArray("target_position_node")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.185, -0.008)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 47.185, -0.0005393177)
 collision_mask = 4
 script = ExtResource("34_v87tm")
 target_position_node = NodePath("Marker3D")
@@ -2844,6 +2896,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, -0.044254303, -0.03171
 shape = SubResource("BoxShape3D_jh2n6")
 
 [node name="Marker3D" type="Marker3D" parent="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" unique_id=447942769]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" unique_id=932425837]
+stream = ExtResource("50_cacw0")
+
+[node name="MechanismAudio" type="AudioStreamPlayer3D" parent="MiddleRoom/Mechanism" unique_id=794028845]
+stream = ExtResource("54_na1ia")
+volume_db = 20.0
 
 [node name="BottomRoom" type="Node3D" parent="." unique_id=1406564065]
 
@@ -3123,6 +3182,7 @@ skeleton = NodePath("")
 [connection signal="body_entered" from="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" to="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" method="_on_body_entered"]
 [connection signal="body_exited" from="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" to="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" method="_on_body_exited"]
 [connection signal="puzzle_piece_snapped" from="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" to="." method="_on_puzzle_piece_snapped"]
+[connection signal="puzzle_piece_snapped" from="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D" to="MiddleRoom/Mechanism/Cabinet/PuzzleSlotArea3D/AudioStreamPlayer3D" method="play"]
 
 [editable path="MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]
 [editable path="MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]

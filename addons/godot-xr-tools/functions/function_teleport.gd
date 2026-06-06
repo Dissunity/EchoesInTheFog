@@ -455,22 +455,22 @@ func _update_target_texture():
 # Player height update handler
 func _update_player_height() -> void:
 	if collision_shape:
-		collision_shape.height = player_height - (2.0 * player_radius)
+		collision_shape.height = (player_height - (2.0 * player_radius)) * 0.8
 
 	if capsule:
-		capsule.mesh.height = player_height
+		capsule.mesh.height = player_height * 0.8
 		capsule.position = Vector3(0.0, player_height/2.0, 0.0)
 
 
 # Player radius update handler
 func _update_player_radius():
 	if collision_shape:
-		collision_shape.height = player_height
-		collision_shape.radius = player_radius
+		collision_shape.height = player_height * 0.8
+		collision_shape.radius = player_radius * 0.8
 
 	if capsule:
-		capsule.mesh.height = player_height
-		capsule.mesh.radius = player_radius
+		capsule.mesh.height = player_height * 0.8
+		capsule.mesh.radius = player_radius * 0.8
 
 
 # Update the player scene
@@ -486,7 +486,7 @@ func _update_player_scene() -> void:
 		$Target/Player_figure.add_child(player)
 
 	# Show the capsule mesh only if we have no player
-	capsule.visible = player == null
+	capsule.visible = false# player == null
 
 
 # Update player material

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://xyuhf1juj266"]
 
+[ext_resource type="Script" uid="uid://bhllplxxug3kj" path="res://objects/mechanical_part/mechanical_part.gd" id="1_fr01u"]
 [ext_resource type="Script" uid="uid://bfrlpbsqg5lqr" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ln8yh"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="2_fr01u"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_5046k"]
@@ -7,6 +8,10 @@
 [ext_resource type="Script" uid="uid://dvobm6vcfnqe8" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="5_7sv51"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="6_sdpm4"]
 [ext_resource type="Animation" uid="uid://daqddcrbpam0c" path="res://addons/godot-xr-tools/hands/animations/right/Grip 1.res" id="7_mpyft"]
+[ext_resource type="PackedScene" uid="uid://tnbh2ktsuop7" path="res://mechanics/sound_on_interaction/sound_on_hit.tscn" id="9_5046k"]
+[ext_resource type="AudioStream" uid="uid://dw5s1gj71nkso" path="res://sounds/wood-hit.mp3" id="10_xx4rh"]
+[ext_resource type="PackedScene" uid="uid://dpad1o37j6nmf" path="res://mechanics/sound_on_interaction/sound_on_roll.tscn" id="11_7sv51"]
+[ext_resource type="PackedScene" uid="uid://bxdkes3uqv87p" path="res://mechanics/sound_on_interaction/sound_on_swish.tscn" id="12_sdpm4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33exr"]
 resource_name = "Dark metal"
@@ -239,14 +244,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0334u")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4dyds"]
-size = Vector3(0.1987671, 0.19286767, 0.2730957)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xx4rh"]
+height = 0.19171143
+radius = 0.096191406
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y84s8"]
-size = Vector3(0.038879395, 0.42552185, 0.05114746)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7sv51"]
+height = 0.043006897
+radius = 0.1381836
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_eeir3"]
-size = Vector3(0.014224121, 0.26879883, 0.27593994)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sdpm4"]
+height = 0.38843727
+radius = 0.024414063
 
 [sub_resource type="Resource" id="Resource_vgpin"]
 script = ExtResource("5_7sv51")
@@ -272,79 +280,92 @@ open_pose = ExtResource("7_mpyft")
 closed_pose = ExtResource("7_mpyft")
 metadata/_custom_type_script = "uid://dvobm6vcfnqe8"
 
-[node name="MechanicalPart" type="RigidBody3D" unique_id=2140562873 groups=["PuzzlePiece"]]
+[node name="MechanicalPart" type="Node3D" unique_id=1347338589]
+script = ExtResource("1_fr01u")
+
+[node name="RigidBody" type="RigidBody3D" parent="." unique_id=2140562873 groups=["PuzzlePiece"]]
 collision_layer = 4
-collision_mask = 3
-mass = 10.0
-center_of_mass_mode = 1
-center_of_mass = Vector3(0.08, 0, 0)
+collision_mask = 196611
+mass = 5.0
 freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_ln8yh")
+enabled = false
 second_hand_grab = 1
 
-[node name="PuzzleMesh" type="Node3D" parent="." unique_id=2005052419]
+[node name="PuzzleMesh" type="Node3D" parent="RigidBody" unique_id=2005052419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.07472226)
 
-[node name="Puzzle-bar" type="MeshInstance3D" parent="PuzzleMesh" unique_id=1349836602]
+[node name="Puzzle-bar" type="MeshInstance3D" parent="RigidBody/PuzzleMesh" unique_id=1349836602]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013, 0, -0.074)
 gi_mode = 2
 mesh = SubResource("ArrayMesh_pflon")
 skeleton = NodePath("")
 
-[node name="Puzzle-Gear_001" type="MeshInstance3D" parent="PuzzleMesh" unique_id=1036184095]
+[node name="Puzzle-Gear_001" type="MeshInstance3D" parent="RigidBody/PuzzleMesh" unique_id=1036184095]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.047, 0, -0.074)
 gi_mode = 2
 mesh = SubResource("ArrayMesh_cyqnj")
 skeleton = NodePath("")
 
-[node name="Puzzle-Gear_002" type="MeshInstance3D" parent="PuzzleMesh" unique_id=390397867]
+[node name="Puzzle-Gear_002" type="MeshInstance3D" parent="RigidBody/PuzzleMesh" unique_id=390397867]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153, 0, -0.074)
 gi_mode = 2
 mesh = SubResource("ArrayMesh_ptud1")
 skeleton = NodePath("")
 
-[node name="Puzzle-Gear_003" type="MeshInstance3D" parent="PuzzleMesh" unique_id=45778744]
+[node name="Puzzle-Gear_003" type="MeshInstance3D" parent="RigidBody/PuzzleMesh" unique_id=45778744]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0, -0.074)
 gi_mode = 2
 mesh = SubResource("ArrayMesh_3ikhb")
 skeleton = NodePath("")
 
-[node name="Puzzle-Gear_004" type="MeshInstance3D" parent="PuzzleMesh" unique_id=38753365]
+[node name="Puzzle-Gear_004" type="MeshInstance3D" parent="RigidBody/PuzzleMesh" unique_id=38753365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.133, 0, -0.074)
 gi_mode = 2
 mesh = SubResource("ArrayMesh_4g4l7")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1055309378]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06471559, -0.0013160706, -0.07345636)
-shape = SubResource("BoxShape3D_4dyds")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody" unique_id=1055309378]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.067614734, -0.0013160707, 0.00044300407)
+shape = SubResource("CylinderShape3D_xx4rh")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=734635397]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.014549255, 0.001033783, -0.0750643)
-shape = SubResource("BoxShape3D_y84s8")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody" unique_id=2017659430]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -0.14918101, -0.0013160611, 0.00044300407)
+shape = SubResource("CylinderShape3D_7sv51")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=839332061]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14957398, -0.0030517578, -0.0753479)
-shape = SubResource("BoxShape3D_eeir3")
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="RigidBody" unique_id=131067992]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.0007635355, -0.0013160678, 0.00044300407)
+shape = SubResource("CylinderShape3D_sdpm4")
 
-[node name="HighlightRing" parent="." unique_id=348652640 instance=ExtResource("2_fr01u")]
+[node name="HighlightRing" parent="RigidBody" unique_id=348652640 instance=ExtResource("2_fr01u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08519468, 0, 0.0016189516)
 gi_mode = 2
 
-[node name="GrabPointHandLeft_Door1" parent="." unique_id=2066513588 instance=ExtResource("3_5046k")]
-transform = Transform3D(0.095320284, -0.99541456, -0.007990867, -0.9919352, -0.09565465, 0.08315567, -0.083538726, 0, -0.99650455, -0.13263449, -0.014080048, 0.006556481)
+[node name="GrabPointHandLeft_Door1" parent="RigidBody" unique_id=2066513588 instance=ExtResource("3_5046k")]
+transform = Transform3D(0.095320284, -0.99541456, -0.007990867, -0.9919352, -0.09565465, 0.08315567, -0.083538726, 0, -0.99650455, -0.1319702, -0.020993046, 0.08939912)
 hand_pose = SubResource("Resource_vgpin")
 editor_preview_mode = 1
 
-[node name="GrabPointHandRight_Door1" parent="." unique_id=1704990277 instance=ExtResource("6_sdpm4")]
-transform = Transform3D(0.11924629, 0.9928326, -0.007980952, 0.9906164, -0.119513065, -0.06630027, -0.066778906, 0, -0.9977678, -0.037815645, -0.0042419434, 0.00206206)
+[node name="GrabPointHandRight_Door1" parent="RigidBody" unique_id=1704990277 instance=ExtResource("6_sdpm4")]
+transform = Transform3D(0.11924629, 0.9928326, -0.007980952, 0.9906164, -0.119513065, -0.06630027, -0.066778906, 0, -0.9977678, -0.037114706, 0.0015809936, 0.08969276)
 hand_pose = SubResource("Resource_y7eq8")
 editor_preview_mode = 1
 
-[node name="GrabPointHandLeft_Door2" parent="." unique_id=1719835346 instance=ExtResource("3_5046k")]
-transform = Transform3D(-0.08052946, 0.9967522, 0, -0.9967522, -0.08052946, 0, 0, 0, 1, -0.03450927, -0.013408661, -0.1578809)
+[node name="GrabPointHandLeft_Door2" parent="RigidBody" unique_id=1719835346 instance=ExtResource("3_5046k")]
+transform = Transform3D(-0.08052946, 0.9967522, 0, -0.9967522, -0.08052946, 0, 0, 0, 1, -0.03450927, -0.013408661, -0.10092674)
 hand_pose = SubResource("Resource_jh2n6")
 editor_preview_mode = 1
 
-[node name="GrabPointHandRight_Door2" parent="." unique_id=1067721649 instance=ExtResource("6_sdpm4")]
-transform = Transform3D(-0.0685029, -0.9976509, 0, 0.9976509, -0.0685029, 0, 0, 0, 1, -0.13347091, -0.01228714, -0.15861386)
+[node name="GrabPointHandRight_Door2" parent="RigidBody" unique_id=1067721649 instance=ExtResource("6_sdpm4")]
+transform = Transform3D(-0.0685029, -0.9976509, 0, 0.9976509, -0.0685029, 0, 0, 0, 1, -0.13347091, -0.01228714, -0.10173617)
 hand_pose = SubResource("Resource_y84s8")
 editor_preview_mode = 1
+
+[node name="SoundOnHit" parent="RigidBody" unique_id=1010556174 instance=ExtResource("9_5046k")]
+stream = ExtResource("10_xx4rh")
+
+[node name="SoundOnRoll" parent="RigidBody" unique_id=1752824688 instance=ExtResource("11_7sv51")]
+
+[node name="SoundOnSwish" parent="RigidBody" unique_id=1009411001 instance=ExtResource("12_sdpm4")]

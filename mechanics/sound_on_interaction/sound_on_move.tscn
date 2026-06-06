@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8u287oi8wkti"]
+
+[ext_resource type="AudioStream" uid="uid://cjkgygvp5g5ul" path="res://sounds/creak.mp3" id="1_tfwfo"]
+[ext_resource type="Script" uid="uid://clhio06tbgvi7" path="res://mechanics/sound_on_interaction/sound_on_move.gd" id="2_6t62e"]
+
+[node name="SoundOnMove" type="AudioStreamPlayer3D" unique_id=1491811778]
+stream = ExtResource("1_tfwfo")
+script = ExtResource("2_6t62e")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dpad1o37j6nmf"]
+
+[ext_resource type="AudioStream" uid="uid://bt17gkbax2tip" path="res://sounds/roll-sound.mp3" id="1_6obfy"]
+[ext_resource type="Script" uid="uid://dfbs2nfdgve67" path="res://mechanics/sound_on_interaction/sound_on_roll.gd" id="2_t7m0h"]
+
+[node name="SoundOnRoll" type="AudioStreamPlayer3D" unique_id=1752824688]
+stream = ExtResource("1_6obfy")
+volume_db = 30.0
+script = ExtResource("2_t7m0h")

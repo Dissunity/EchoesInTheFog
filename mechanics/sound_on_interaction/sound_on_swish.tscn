@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bxdkes3uqv87p"]
+
+[ext_resource type="AudioStream" uid="uid://bha8xm5m4uuod" path="res://sounds/swish.mp3" id="1_nkwlm"]
+[ext_resource type="Script" uid="uid://cajfnvp1ka6a6" path="res://mechanics/sound_on_interaction/sound_on_swish.gd" id="2_hhwyw"]
+
+[node name="SoundOnSwish" type="AudioStreamPlayer3D" unique_id=1009411001]
+stream = ExtResource("1_nkwlm")
+pitch_scale = 0.5
+script = ExtResource("2_hhwyw")

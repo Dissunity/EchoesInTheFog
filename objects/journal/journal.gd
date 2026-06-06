@@ -25,6 +25,7 @@ func open_journal():
 	if is_open:
 		return
 	$AnimationPlayer.play("ArmatureAction")
+	$RigidBody/BookOpeningAudio.play()
 	is_open = true
 	opened.emit()
 	await get_tree().create_timer(0.1).timeout
@@ -38,6 +39,7 @@ func close_journal():
 	is_open = false
 	closed.emit()
 	await get_tree().create_timer(1.05).timeout
+	$RigidBody/BookOpeningAudio.play()
 	_turn_decal_off()
 
 func change_text(text_left: String, text_right: String):

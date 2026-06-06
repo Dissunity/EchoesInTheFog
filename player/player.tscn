@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://0xlsitpu17r1" path="res://addons/godot-xr-tools/functions/movement_footstep.tscn" id="18_65viv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_606se"]
-size = Vector3(0.25, 0.25, 0.25)
+size = Vector3(0.25, 0.34094238, 0.25)
 
 [node name="Player" type="XROrigin3D" unique_id=998661826]
 transform = Transform3D(0.91259885, 0, 0.40885615, 0, 1, 0, -0.40885615, 0, 0.91259885, 0, 0, 0)
@@ -33,9 +33,14 @@ current = true
 
 [node name="VRCommonShaderCache" parent="XRCamera3D" unique_id=1863258321 instance=ExtResource("1_n7ghd")]
 
+[node name="AudioListener3D" type="AudioListener3D" parent="XRCamera3D" unique_id=229031865]
+current = true
+
 [node name="LeftHand" type="XRController3D" parent="." unique_id=1434391388]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"left_hand"
+
+[node name="LeftGlove" parent="LeftHand" unique_id=580629189 instance=ExtResource("4_2hs0m")]
 
 [node name="FunctionPickup" parent="LeftHand" unique_id=1932426240 instance=ExtResource("3_1jxqw")]
 grab_distance = 0.2
@@ -44,8 +49,6 @@ ranged_distance = 0.0
 ranged_collision_mask = 327940
 
 [node name="FunctionTeleport" parent="LeftHand" unique_id=1001569563 instance=ExtResource("6_c35mf")]
-
-[node name="LeftGlove" parent="LeftHand" unique_id=580629189 instance=ExtResource("4_2hs0m")]
 
 [node name="MovementDirect" parent="LeftHand" unique_id=1993870260 instance=ExtResource("3_dw050")]
 max_speed = 1.0
@@ -74,13 +77,13 @@ stair_detector = NodePath("../../PlayerBody/StairDetector")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, -0.5)
 tracker = &"right_hand"
 
+[node name="RightGlove" parent="RightHand" unique_id=235765615 instance=ExtResource("6_1jxqw")]
+
 [node name="FunctionPickup" parent="RightHand" unique_id=1520610573 instance=ExtResource("3_1jxqw")]
 grab_distance = 0.2
 grab_collision_mask = 327940
 ranged_distance = 0.0
 ranged_collision_mask = 262404
-
-[node name="RightGlove" parent="RightHand" unique_id=235765615 instance=ExtResource("6_1jxqw")]
 
 [node name="MovementTurn" parent="RightHand" unique_id=87499563 instance=ExtResource("5_b26j0")]
 
@@ -103,12 +106,12 @@ script = ExtResource("14_bwjto")
 group_to_detect = "climable"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/StairDetector" unique_id=521849759]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13318047, -0.12974943)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.08770928, -0.12974943)
 shape = SubResource("BoxShape3D_606se")
 
 [node name="MovementFootstep" parent="PlayerBody" unique_id=1892920102 instance=ExtResource("18_65viv")]
-walk_speed = 0.0
-steps_per_meter = 0.25
+walk_speed = 0.2
+steps_per_meter = 0.5
 
 [editable path="LeftHand/FunctionPickup"]
 [editable path="PlayerBody"]

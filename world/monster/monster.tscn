@@ -6,19 +6,23 @@
 
 [node name="Monster" type="Node3D" unique_id=1575435924]
 transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.93419826, 0, 0, 0)
-visible = false
 script = ExtResource("1_qtiog")
 
 [node name="monster" parent="." unique_id=19986690 instance=ExtResource("1_wa7tq")]
 
-[node name="Middle eye" parent="monster/Armature/Skeleton3D/Monster_root_bone" parent_id_path=PackedInt32Array(19986690, 823148788) index="0" unique_id=1986235653]
+[node name="Middle eye" parent="monster/Armature/Skeleton3D/Monster_root_bone" parent_id_path=PackedInt32Array(19986690, 849260149) index="0" unique_id=1858035426]
 gi_mode = 2
 
-[node name="hp_body" parent="monster/Armature/Skeleton3D" parent_id_path=PackedInt32Array(19986690, 824251749) index="1" unique_id=2101348269]
+[node name="hp_body" parent="monster/Armature/Skeleton3D" parent_id_path=PackedInt32Array(19986690, 489345462) index="1" unique_id=1281642965]
 gi_mode = 2
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1497762568]
 stream = ExtResource("3_dxh5e")
 attenuation_model = 2
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1667034264]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.5337305)
+light_color = Color(1, 0.59607846, 1, 1)
+light_energy = 20.0
 
 [editable path="monster"]

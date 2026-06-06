@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b1abuqx31o7x1"]
+
+[ext_resource type="Script" uid="uid://cp6kbc0ramigw" path="res://mechanics/sound_on_interaction/sound_on_spin.gd" id="1_jg1e1"]
+
+[node name="SoundOnSpin" type="AudioStreamPlayer3D" unique_id=247845359]
+script = ExtResource("1_jg1e1")

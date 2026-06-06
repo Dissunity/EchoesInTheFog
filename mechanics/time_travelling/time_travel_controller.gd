@@ -6,6 +6,13 @@ signal time_travel_ended(present: bool)
 @export_category("Global Nodes")
 @export var moonlight: DirectionalLight3D
 @export var water_node: Node3D
+## Light that will produce the time travel effect
+@export var time_travel_light: OmniLight3D
+## World environment which will be affected by time travelling
+@export var environment: WorldEnvironment
+@export var player: Player
+@export var monster: Monster
+@export var past_lighthouse: Lighthouse
 
 @export_category("Timeline Folders")
 @export var past_folder: Node3D
@@ -27,16 +34,11 @@ signal time_travel_ended(present: bool)
 @export var present_water_deep: Color = Color("0a1e3f")
 @export var present_water_shallow: Color = Color("1f4277")
 
-## Light that will produce the time travel effect
-@export var time_travel_light: OmniLight3D
 
-## World environment which will be affected by time travelling
-@export var environment: WorldEnvironment
 
 ## Only enable this to easily test the time travelling effect
 ## When enabled, within a single press of ENTER, the time travel will happen
 @export var test: bool = false
-@export var lockbox: Lockbox
 
 @export_category("Time Traveling Sounds")
 @export var audio_stream_player: AudioStreamPlayer
@@ -71,65 +73,47 @@ func _ready() -> void:
 
 func _time_travel():
 	time_travel_initiated.emit()
+	_present = !_present
 	cooldown = 30
-	lockbox.is_present = !lockbox.is_present
 
 	var old_fog_light_energy = environment.environment.fog_light_energy
 	var old_ambient_light_sky_contribution = environment.environment.ambient_light_sky_contribution
 	
 	audio_stream_player.stream = foghorn_sound
 	audio_stream_player.play(1.5)
-	await get_tree().create_timer(3).timeout
-	
+	await audio_stream_player.finished
+	audio_stream_player.pitch_scale = 0.5
+	audio_stream_player.play()
+	await audio_stream_player.finished
+	audio_stream_player.pitch_scale = 1
 	audio_stream_player.stream = lights_out_sound
 	audio_stream_player.play()
 	var tween = get_tree().create_tween()
 	tween.tween_property(environment.environment, "fog_light_energy", 0, 2)
 	tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", 0, 2)
+	tween.parallel().tween_property(moonlight, "light_energy", 0, 2)
 	tween.tween_interval(1)
 	await tween.finished
+	past_lighthouse.rotating_spotlight.visible = false
 	
 	audio_stream_player.stream = time_traveling_sound
 	audio_stream_player.play()
+	player.disable_movement()
 	tween = get_tree().create_tween()
 	tween.tween_interval(0.5)
-	tween.tween_property(time_travel_light, "light_energy", 100, 3)
+	tween.tween_property(time_travel_light, "light_energy", 20, 3)
 	for i in range(20):
-		tween.tween_property(time_travel_light, "light_energy", 100, 0.2)
-		tween.tween_property(time_travel_light, "light_energy", 500, 0.2)
+		tween.tween_property(time_travel_light, "light_energy", 1, 0.2)
+		tween.tween_property(time_travel_light, "light_energy", 20, 0.2)
 
 	# Swap the folders at the peak of the flash 
 	tween.tween_callback(func():
-		
-		if not past_folder or not present_folder:
-			print("One or both Node3Ds are not assigned in the inspector!")
-			return
-		
-		_present = !_present
-		print("Timeline swapping. Is it now the Present? ", _present)
-		
 		var sky_mat = null
 		if environment and environment.environment and environment.environment.sky:
 			sky_mat = environment.environment.sky.sky_material
 		
-		
-		if _present:
-			past_folder.visible = false
-			past_folder.process_mode = Node.PROCESS_MODE_DISABLED
-			present_folder.visible = true
-			present_folder.process_mode = Node.PROCESS_MODE_INHERIT
-			
-			# Colors
-			if moonlight: moonlight.light_color = present_moon_color
-			if environment: environment.environment.fog_light_color = present_fog_color
-			if sky_mat:
-				sky_mat.sky_top_color = present_sky_top
-				sky_mat.sky_horizon_color = present_sky_horizon
-			if _water_material:
-				_water_material.set_shader_parameter("color_deep", present_water_deep)
-				_water_material.set_shader_parameter("color_shallow", present_water_shallow)
-			
-		else:
+
+		if not _present:
 			past_folder.visible = true
 			past_folder.process_mode = Node.PROCESS_MODE_INHERIT
 			present_folder.visible = false
@@ -143,15 +127,22 @@ func _time_travel():
 			if _water_material:
 				_water_material.set_shader_parameter("color_deep", past_water_deep)
 				_water_material.set_shader_parameter("color_shallow", past_water_shallow)
-			
-		print("Swap logic executed successfully")
 	)
 
-	tween.tween_property(time_travel_light, "light_energy", 0, 2).set_ease(Tween.EASE_OUT)
-	tween.tween_property(environment.environment, "fog_light_energy", old_fog_light_energy, 7)
-	tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", old_ambient_light_sky_contribution, 7)
+	if not _present:
+		player.enable_movement()
+		tween.tween_property(time_travel_light, "light_energy", 0, 2).set_ease(Tween.EASE_OUT)
+		tween.tween_property(environment.environment, "fog_light_energy", old_fog_light_energy, 7)
+		tween.tween_property(moonlight, "light_energy", 0.5, 7)
+		tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", old_ambient_light_sky_contribution, 7)
 	
 	await tween.finished
+	
+	if _present:
+		monster.spawn()
+		await get_tree().create_timer(1.75).timeout
+		past_folder.visible = false
+		return
 	
 	time_travel_ended.emit(_present)
 
