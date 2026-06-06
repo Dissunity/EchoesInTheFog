@@ -77,8 +77,11 @@ func _time_travel():
 	
 	audio_stream_player.stream = foghorn_sound
 	audio_stream_player.play(1.5)
-	await get_tree().create_timer(3).timeout
-	
+	await audio_stream_player.finished
+	audio_stream_player.pitch_scale = 0.5
+	audio_stream_player.play()
+	await audio_stream_player.finished
+	audio_stream_player.pitch_scale = 1
 	audio_stream_player.stream = lights_out_sound
 	audio_stream_player.play()
 	var tween = get_tree().create_tween()
@@ -91,10 +94,10 @@ func _time_travel():
 	audio_stream_player.play()
 	tween = get_tree().create_tween()
 	tween.tween_interval(0.5)
-	tween.tween_property(time_travel_light, "light_energy", 100, 3)
+	tween.tween_property(time_travel_light, "light_energy", 20, 3)
 	for i in range(20):
-		tween.tween_property(time_travel_light, "light_energy", 100, 0.2)
-		tween.tween_property(time_travel_light, "light_energy", 500, 0.2)
+		tween.tween_property(time_travel_light, "light_energy", 1, 0.2)
+		tween.tween_property(time_travel_light, "light_energy", 20, 0.2)
 
 	# Swap the folders at the peak of the flash 
 	tween.tween_callback(func():

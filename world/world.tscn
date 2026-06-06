@@ -475,7 +475,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_kvuv0")
 surface_material_override/0 = SubResource("StandardMaterial3D_behgl")
 surface_material_override/1 = SubResource("StandardMaterial3D_k83x5")
 
-[node name="Structure" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet" parent_id_path=PackedInt32Array(307952408, 532235579) index="2" unique_id=1240149120]
+[node name="Structure" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet" parent_id_path=PackedInt32Array(307952408, 532235579) index="5" unique_id=1240149120]
 material_override = SubResource("StandardMaterial3D_hnpqp")
 surface_material_override/0 = null
 

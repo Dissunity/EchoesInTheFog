@@ -1,4 +1,5 @@
 extends Area3D
+class_name PuzzleArea
 
 @export var target_position_node: Marker3D
 @export var snap_duration: float = 0.4
@@ -7,9 +8,16 @@ signal puzzle_piece_snapped
 
 var current_piece: Node3D = null
 var is_solved: bool = false
+var is_spinning: bool = false
+
+func turn_spinning_on():
+	is_spinning = true
 
 
-
+func _process(delta: float) -> void:
+	if not is_spinning:
+		return
+	rotate_x(delta)
 
 func _on_area_entered(_area: Area3D) -> void:
 	print("Area entered")

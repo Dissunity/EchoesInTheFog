@@ -6,6 +6,7 @@ room_size = 0.27
 damping = 0.79
 
 [resource]
+bus/0/bypass_fx = true
 bus/1/name = &"Ambience"
 bus/1/solo = false
 bus/1/mute = false
