@@ -3,13 +3,15 @@ extends Node
 signal time_travel_initiated
 signal time_travel_ended(present: bool)
 
+@export_category("Timeline Folders")
+@export var past_folder: Node3D
+@export var present_folder: Node3D
 
 ## Light that will produce the time travel effect
 @export var time_travel_light: OmniLight3D
 
 ## World environment which will be affected by time travelling
 @export var environment: WorldEnvironment
-
 
 ## Only enable this to easily test the time travelling effect
 ## When enabled, within a single press of ENTER, the time travel will happen
@@ -24,7 +26,6 @@ signal time_travel_ended(present: bool)
 
 var cooldown = 0
 var _present: bool = true
-
 
 func _time_travel():
 	time_travel_initiated.emit()
@@ -55,12 +56,36 @@ func _time_travel():
 		tween.tween_property(time_travel_light, "light_energy", 100, 0.2)
 		tween.tween_property(time_travel_light, "light_energy", 500, 0.2)
 
+	# Swap the folders at the peak of the flash 
+	tween.tween_callback(func():
+		
+		if not past_folder or not present_folder:
+			print("One or both Node3Ds are not assigned in the inspector!")
+			return
+		
+		_present = !_present
+		print("Timeline swapping. Is it now the Present? ", _present)
+		
+		if _present:
+			past_folder.visible = false
+			past_folder.process_mode = Node.PROCESS_MODE_DISABLED
+			present_folder.visible = true
+			present_folder.process_mode = Node.PROCESS_MODE_INHERIT
+		else:
+			past_folder.visible = true
+			past_folder.process_mode = Node.PROCESS_MODE_INHERIT
+			present_folder.visible = false
+			present_folder.process_mode = Node.PROCESS_MODE_DISABLED
+			
+		print("Swap logic executed successfully")
+	)
+
 	tween.tween_property(time_travel_light, "light_energy", 0, 2).set_ease(Tween.EASE_OUT)
 	tween.tween_property(environment.environment, "fog_light_energy", old_fog_light_energy, 7)
 	tween.parallel().tween_property(environment.environment, "ambient_light_sky_contribution", old_ambient_light_sky_contribution, 7)
 	
 	await tween.finished
-	_present = !_present
+	
 	time_travel_ended.emit(_present)
 
 func _process(delta: float) -> void:
@@ -68,7 +93,6 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept"):
 			_time_travel()
 	cooldown -= delta
-
 
 func _on_lighthouse_foghorn_lever_pulled() -> void:
 	_time_travel()
