@@ -61,7 +61,7 @@ func center_player_on(p_transform : Transform3D):
 	# direction, we must offset this transform using the cameras transform.
 
 	# So we get our current camera transform in local space
-	var camera_transform = $XROrigin3D/XRCamera3D.transform
+	var camera_transform = $Player/XRCamera3D.transform
 
 	# We obtain our view direction and zero out our height
 	var view_direction = camera_transform.basis.z
@@ -74,10 +74,10 @@ func center_player_on(p_transform : Transform3D):
 	transform.origin.y = 0
 
 	# And now update our origin point
-	$XROrigin3D.global_transform = (p_transform * transform.inverse()).orthonormalized()
+	$Player.global_transform = (p_transform * transform.inverse()).orthonormalized()
 
 	# If we have a player body, we need to set its starting position too.
-	var player_body : XRToolsPlayerBody = XRToolsPlayerBody.find_instance($XROrigin3D)
+	var player_body : XRToolsPlayerBody = XRToolsPlayerBody.find_instance($Player)
 	if player_body:
 		player_body.global_transform = p_transform
 
@@ -98,8 +98,8 @@ func scene_loaded(user_data = null):
 	# Called after scene is loaded
 
 	# Make sure our camera becomes the current camera
-	$XROrigin3D/XRCamera3D.current = true
-	$XROrigin3D.current = true
+	$Player/XRCamera3D.current = true
+	$Player.current = true
 
 	# Start by assuming the user_data contains spawn position information.
 	var spawn_position = user_data
@@ -116,7 +116,7 @@ func scene_loaded(user_data = null):
 	# - String name of a Node3D to spawn at
 	# - Vector3 to spawn at
 	# - Transform3D to spawn at
-	var spawn_transform : Transform3D = $XROrigin3D.global_transform
+	var spawn_transform : Transform3D = $Player.global_transform
 	match typeof(spawn_position):
 		TYPE_STRING: # Name of Node3D to spawn at
 			var node = find_child(spawn_position)

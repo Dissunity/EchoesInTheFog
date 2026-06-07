@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4frtv7b1qxyc"]
 
-[ext_resource type="PackedScene" uid="uid://vn6jwca8rabc" path="res://xr/setup_xr.tscn" id="1_bfrib"]
+[ext_resource type="Script" uid="uid://177gygw2xqqu" path="res://addons/godot-xr-tools/staging/scene_base.gd" id="1_33qpb"]
 [ext_resource type="AudioStream" uid="uid://bfevky2u3pr4d" path="res://sounds/creepy_ambience.wav" id="2_nx736"]
 [ext_resource type="PackedScene" uid="uid://drln6icje1sai" path="res://world/water/water.tscn" id="6_ynm8w"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
@@ -28,7 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://roaxinoy2yox" path="res://textures/Lighthouse/rust_rough.png" id="20_hm5b2"]
 [ext_resource type="Texture2D" uid="uid://be7xkpke8bq10" path="res://textures/Lighthouse/metal_grate_rusty_diff_1k.png" id="21_avd5l"]
 [ext_resource type="Texture2D" uid="uid://bjr5cpc3hsc4t" path="res://textures/Lighthouse/metal_grate_rusty_nor_gl_1k.png" id="22_ll3gq"]
-[ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
 [ext_resource type="Texture2D" uid="uid://dhb2mkywm85ej" path="res://textures/Lighthouse/metal_grate_rusty_rough_1k.png" id="23_jgi7c"]
 [ext_resource type="PackedScene" uid="uid://xyuhf1juj266" path="res://objects/mechanical_part/mechanical_part.tscn" id="31_gwdna"]
 [ext_resource type="PackedScene" uid="uid://6rtotc0sq5c3" path="res://objects/journal/journal_variants/lockbox_journal.tscn" id="38_33qpb"]
@@ -49,13 +48,13 @@ sky_curve = 0.09896313
 ground_bottom_color = Color(0.011722924, 0.073605545, 0.18475819, 1)
 ground_horizon_color = Color(0.005539374, 0.09770625, 0.19944894, 1)
 
-[sub_resource type="Sky" id="Sky_70uel"]
+[sub_resource type="Sky" id="Sky_hnpqp"]
 sky_material = SubResource("ProceduralSkyMaterial_2o6r5")
 
 [sub_resource type="Environment" id="Environment_hiqwa"]
 background_mode = 2
 background_energy_multiplier = 0.76
-sky = SubResource("Sky_70uel")
+sky = SubResource("Sky_hnpqp")
 ambient_light_source = 3
 ambient_light_sky_contribution = 0.7
 ambient_light_energy = 0.84
@@ -176,15 +175,12 @@ normal_texture = ExtResource("10_3ljsx")
 uv1_scale = Vector3(0.1, 0.1, 0.1)
 uv1_triplanar = true
 
-[node name="World" type="Node3D" unique_id=691108467]
+[node name="World" type="Node3D" unique_id=200176059]
+script = ExtResource("1_33qpb")
+metadata/_custom_type_script = "uid://177gygw2xqqu"
 
 [node name="Player" parent="." unique_id=998661826 instance=ExtResource("9_wse8f")]
 transform = Transform3D(0.91259885, 0, 0.40885615, 0, 1, 0, -0.40885615, 0, 0.91259885, 0.3347506, 51.641186, 1.042177)
-
-[node name="SetupXR" parent="." unique_id=611053310 instance=ExtResource("1_bfrib")]
-
-[node name="GameManager" type="Node" parent="." unique_id=826817354]
-script = ExtResource("23_il2jm")
 
 [node name="TimeTravelController" parent="." unique_id=535872741 node_paths=PackedStringArray("moonlight", "water_node", "time_travel_light", "environment", "player", "monster", "past_lighthouse", "past_folder", "present_folder", "audio_stream_player") instance=ExtResource("43_7htu6")]
 moonlight = NodePath("../Moonlight")
@@ -493,13 +489,8 @@ enable_shadows = true
 [node name="Lantern" parent="Present" unique_id=951213402 instance=ExtResource("19_j34ew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 0.653846)
 
-[connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]
 [connection signal="foghorn_lever_pulled" from="Past/Lighthouse_Past" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
-[connection signal="mechanical_piece_snapped" from="Past/Lighthouse_Past" to="GameManager" method="_puzzle_snapped"]
-[connection signal="crowbar_taken" from="Past/Lighthouse_Past/Objects/Crowbar" to="GameManager" method="_on_crowbar_taken"]
-[connection signal="unlocked" from="Past/Lighthouse_Past/Objects/Lockbox" to="GameManager" method="_on_lockbow_opened"]
 [connection signal="foghorn_lever_pulled" from="Present/Lighthouse_Present" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
-[connection signal="mechanical_piece_snapped" from="Present/Lighthouse_Present" to="GameManager" method="_puzzle_snapped"]
 
 [editable path="Past/Lighthouse_Past"]
 [editable path="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room"]

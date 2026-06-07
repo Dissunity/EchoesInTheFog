@@ -27,15 +27,6 @@ extends XRToolsMovementProvider
 @export var input_left : String = "ui_left"
 @export var input_right : String = "ui_right"
 
-var setup_xr
-
-
-func _ready():
-	if !Engine.is_editor_hint():
-		setup_xr = get_tree().root.get_node("World/SetupXR")
-
-func is_xr():
-	return setup_xr.is_xr
 
 
 # Add support for is_xr_class on XRTools classes
@@ -45,9 +36,7 @@ func is_xr_class(xr_name:  String) -> bool:
 
 # Perform jump movement
 func physics_movement(_delta: float, player_body: XRToolsPlayerBody, _disabled: bool):
-	# Skip if the controller isn't active
-	if is_xr():
-		return
+
 
 	#Calculate input vector
 	var input_dir = Input.get_vector(input_left, input_right, input_backward, input_forward)

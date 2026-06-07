@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba8sldaff6lcr"
-path.s3tc="res://.godot/imported/monster_scribble.png-3d12228c8402d47d47d4b62c6c32d850.s3tc.ctex"
-path.etc2="res://.godot/imported/monster_scribble.png-3d12228c8402d47d47d4b62c6c32d850.etc2.ctex"
+uid="uid://3s6kgney2cam"
+path.s3tc="res://.godot/imported/monster_scribble_white.png-cf152d876397bae11a4d973206ceb6f7.s3tc.ctex"
+path.etc2="res://.godot/imported/monster_scribble_white.png-cf152d876397bae11a4d973206ceb6f7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://objects/journal/drawings/monster_scribble.png"
-dest_files=["res://.godot/imported/monster_scribble.png-3d12228c8402d47d47d4b62c6c32d850.s3tc.ctex", "res://.godot/imported/monster_scribble.png-3d12228c8402d47d47d4b62c6c32d850.etc2.ctex"]
+source_file="res://objects/journal/drawings/monster_scribble_white.png"
+dest_files=["res://.godot/imported/monster_scribble_white.png-cf152d876397bae11a4d973206ceb6f7.s3tc.ctex", "res://.godot/imported/monster_scribble_white.png-cf152d876397bae11a4d973206ceb6f7.etc2.ctex"]
 
 [params]
 

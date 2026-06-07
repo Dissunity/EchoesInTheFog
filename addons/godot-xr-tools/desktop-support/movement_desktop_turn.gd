@@ -57,21 +57,11 @@ var _last_plr_bd_status: bool = true
 var _turn_step: float = 0.0
 
 
-var setup_xr
-
-func _ready():
-	if !Engine.is_editor_hint():
-		var root = get_tree().root
-		setup_xr = root.get_node("World/SetupXR")
-
-func is_xr():
-	return setup_xr.is_xr
 
 func _process(_delta: float) -> void:
 	if is_instance_valid(plr_body):
 		if (
 				not plr_body.enabled
-				and not is_xr()
 				and _last_plr_bd_status != plr_body.enabled
 		):
 			if clear_mouse_move_when_body_not_active:
@@ -107,7 +97,7 @@ func physics_movement(
 ) -> void:
 	# Skip if the player body isn't active
 	plr_body = player_body
-	if not player_body.enabled or is_xr():
+	if not player_body.enabled:
 		if clear_mouse_move_when_body_not_active:
 			mouse_move_vector = Vector2.ZERO
 		return
