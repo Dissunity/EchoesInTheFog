@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cqx24u5roig85"]
+
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="1_hbkws"]
+[ext_resource type="Texture2D" uid="uid://c4p27lntwichn" path="res://objects/journal/drawings/time_travel_sketch.png" id="2_26ltx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e72h5"]
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[node name="TimeTravelJournal" unique_id=278160710 instance=ExtResource("1_hbkws")]
+
+[node name="Label5" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="0" unique_id=926253451]
+offset_left = 90.0
+offset_top = 100.0
+offset_right = 735.0
+offset_bottom = 357.0
+rotation = -0.05235988
+text = "My keys, my glasses, my toothbrush,..."
+label_settings = SubResource("LabelSettings_e72h5")
+
+[node name="Label4" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="1" unique_id=1623361755]
+offset_left = 30.0
+offset_top = 300.0
+offset_right = 914.0
+offset_bottom = 453.0
+rotation = 0.34906584
+text = "It fucking brought me BACK AGAIN. I lost everything."
+label_settings = SubResource("LabelSettings_e72h5")
+
+[node name="Label3" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="2" unique_id=244937529]
+offset_left = 90.0
+offset_top = 700.0
+offset_right = 709.0
+offset_bottom = 957.0
+rotation = -0.05235988
+text = "The beast breathes tomorrow,
+It swallows the clock.
+I am running backward,
+I step off the rock.
+                         - M.N."
+label_settings = SubResource("LabelSettings_e72h5")
+
+[node name="TextureRect2" type="TextureRect" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="0" unique_id=93446677]
+offset_left = -400.0
+offset_top = 200.0
+offset_right = 600.0
+offset_bottom = 881.0
+texture = ExtResource("2_26ltx")

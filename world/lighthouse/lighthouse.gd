@@ -38,7 +38,7 @@ func _on_foghorn_hinge_moved(angle: Variant) -> void:
 		return
 	if _foghorn_cooldown_left > 0:
 		return
-	if abs(angle) < 30:
+	if abs(angle) < 20:
 		return
 	_foghorn_cooldown_left = foghorn_cooldown
 	foghorn_lever_pulled.emit()
@@ -49,7 +49,7 @@ func _process(delta: float) -> void:
 	if _puzzle_snapped and new_turn_lever_position != _turn_lever_last_position:
 		_amount_spun += delta
 	_turn_lever_last_position = new_turn_lever_position
-	if _amount_spun > 3:
+	if _amount_spun > 1.5:
 		_turn_mechanism_on()
 
 

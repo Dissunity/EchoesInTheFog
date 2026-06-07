@@ -1,7 +1,7 @@
 extends OmniLight3D
 class_name ShiningLight
 
-var _shining = false
+var _shining = true
 
 
 func start_shining():

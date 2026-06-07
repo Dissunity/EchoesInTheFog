@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://6rtotc0sq5c3"]
+
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="1_bv2n6"]
+[ext_resource type="Texture2D" uid="uid://dbo4iegx7wxow" path="res://objects/journal/drawings/lockbox_sketch.png" id="2_k06me"]
+[ext_resource type="Texture2D" uid="uid://bqusxn846rwna" path="res://objects/journal/drawings/mystery_generic.png" id="3_jp2b8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8yke"]
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+
+[node name="LockboxJournal" unique_id=278160710 instance=ExtResource("1_bv2n6")]
+
+[node name="Description" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="0" unique_id=213731373]
+offset_left = 350.0
+offset_top = -700.0
+offset_right = 850.0
+offset_bottom = 419.0
+rotation = 0.23387411
+text = "There! Stay in the lockbox. Nothing but great force can free you now. Imprisoned, just like me...."
+label_settings = SubResource("LabelSettings_y8yke")
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="1" unique_id=1673572094]
+offset_left = 200.0
+offset_top = 400.0
+offset_right = 1200.0
+offset_bottom = 1081.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_k06me")
+
+[node name="Description2" type="Label" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="0" unique_id=778907666]
+offset_left = 150.0
+offset_top = -700.0
+offset_right = 650.0
+offset_bottom = 419.0
+rotation = -0.17453292
+text = "DO NOT USE IT! You will wake it up again."
+label_settings = SubResource("LabelSettings_y8yke")
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="1" unique_id=1388773769]
+offset_top = 300.0
+offset_right = 1000.0
+offset_bottom = 981.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_jp2b8")

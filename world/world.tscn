@@ -3,43 +3,40 @@
 [ext_resource type="PackedScene" uid="uid://vn6jwca8rabc" path="res://xr/setup_xr.tscn" id="1_bfrib"]
 [ext_resource type="AudioStream" uid="uid://bfevky2u3pr4d" path="res://sounds/creepy_ambience.wav" id="2_nx736"]
 [ext_resource type="PackedScene" uid="uid://drln6icje1sai" path="res://world/water/water.tscn" id="6_ynm8w"]
-[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="7_m0cxt"]
 [ext_resource type="PackedScene" uid="uid://b5edpgebynxxd" path="res://objects/chair/chair.tscn" id="7_wse8f"]
 [ext_resource type="PackedScene" uid="uid://s37yf8njhy2l" path="res://world/lighthouse/lighthouse.tscn" id="8_j34ew"]
+[ext_resource type="PackedScene" uid="uid://61wnd1rb83j2" path="res://objects/journal/journal_variants/foghorn_manual.tscn" id="8_k83x5"]
 [ext_resource type="Texture2D" uid="uid://b6i65mvl7bnol" path="res://textures/Lighthouse/lighthouse_diffuse.png" id="9_o1net"]
 [ext_resource type="PackedScene" uid="uid://0aetln7hwfhm" path="res://player/player.tscn" id="9_wse8f"]
 [ext_resource type="PackedScene" uid="uid://ifjticyj27bj" path="res://world/monster/monster.tscn" id="10_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://803ceklrsdjh" path="res://textures/Lighthouse/lighthouse_normals.png" id="10_3ljsx"]
+[ext_resource type="PackedScene" uid="uid://b5nccq3b5i3bv" path="res://objects/journal/journal_variants/mechanism_manual.tscn" id="10_en1oy"]
 [ext_resource type="Texture2D" uid="uid://bahcg7lqv37og" path="res://textures/Lighthouse/lighthouse_roughness_2.jpg" id="11_gi7ib"]
 [ext_resource type="Texture2D" uid="uid://ddf0f6crcei8i" path="res://textures/Lighthouse/blue_metal_diffuse.png" id="12_0pnie"]
 [ext_resource type="Texture2D" uid="uid://bwgcejc8nng8a" path="res://textures/Lighthouse/blue_metal_normal.png" id="13_llyeo"]
 [ext_resource type="Texture2D" uid="uid://carb0m1o2u8yv" path="res://textures/Lighthouse/blue_metal_roughness.png" id="14_2tavo"]
 [ext_resource type="Texture2D" uid="uid://ctix6chdvbtqr" path="res://textures/Lighthouse/rust_coarse_01_diff_1k.png" id="15_bwxdu"]
 [ext_resource type="Texture2D" uid="uid://cjei3xh5knws1" path="res://textures/Lighthouse/grey_woor.png" id="15_k8wd0"]
-[ext_resource type="Texture2D" uid="uid://gacruruajxnf" path="res://textures/Lighthouse/dirt.jpg" id="15_k83x5"]
 [ext_resource type="Texture2D" uid="uid://dnf6q76f00m2u" path="res://textures/Lighthouse/grey_normal.png" id="16_j7vgi"]
 [ext_resource type="Texture2D" uid="uid://cw0mker2v7bmb" path="res://textures/Lighthouse/rust_coarse_01_nor_gl_1k.png" id="16_lwhbe"]
 [ext_resource type="Texture2D" uid="uid://cpdyl0y6606mh" path="res://textures/Lighthouse/rust_coarse_01_rough_1k.png" id="17_ftqqi"]
 [ext_resource type="Texture2D" uid="uid://cltcevqvy0ins" path="res://textures/Lighthouse/grey_wood.png" id="17_inp7a"]
 [ext_resource type="LightmapGIData" uid="uid://spqsvctcf2h3" path="res://lightmaps/past.lmbake" id="17_j34ew"]
-[ext_resource type="Texture2D" uid="uid://os6iyr8nfpx" path="res://textures/Lighthouse/rusty_metal_diffuse.png" id="18_behgl"]
 [ext_resource type="Texture2D" uid="uid://r638g51ytrgn" path="res://textures/Lighthouse/rust_diff.png" id="18_cqwbg"]
 [ext_resource type="PackedScene" uid="uid://cfqhtfywllb50" path="res://objects/lantern/lantern.tscn" id="19_j34ew"]
-[ext_resource type="Texture2D" uid="uid://u0p0ipan4jhj" path="res://textures/Lighthouse/rusty_metal_normal.png" id="19_k83x5"]
 [ext_resource type="Texture2D" uid="uid://bhev61mfv31a8" path="res://textures/Lighthouse/rust_normal.png" id="19_q3kex"]
-[ext_resource type="Texture2D" uid="uid://dvnqlcjbxym27" path="res://textures/Lighthouse/rusty_metal_rough.png" id="20_b8tmp"]
 [ext_resource type="Texture2D" uid="uid://roaxinoy2yox" path="res://textures/Lighthouse/rust_rough.png" id="20_hm5b2"]
 [ext_resource type="Texture2D" uid="uid://be7xkpke8bq10" path="res://textures/Lighthouse/metal_grate_rusty_diff_1k.png" id="21_avd5l"]
 [ext_resource type="Texture2D" uid="uid://bjr5cpc3hsc4t" path="res://textures/Lighthouse/metal_grate_rusty_nor_gl_1k.png" id="22_ll3gq"]
 [ext_resource type="Script" uid="uid://eaanrwavljt3" path="res://mechanics/game_manager/game_manager.gd" id="23_il2jm"]
 [ext_resource type="Texture2D" uid="uid://dhb2mkywm85ej" path="res://textures/Lighthouse/metal_grate_rusty_rough_1k.png" id="23_jgi7c"]
-[ext_resource type="Texture2D" uid="uid://nc3nbcbxxual" path="res://textures/Lighthouse/leather_diff.png" id="24_en1oy"]
-[ext_resource type="Texture2D" uid="uid://ccbbwwqi4fyim" path="res://textures/Lighthouse/leather_normal.png" id="25_pfbnl"]
-[ext_resource type="Texture2D" uid="uid://y4vv30275ri3" path="res://textures/Lighthouse/leather_rough.png" id="26_gwdna"]
 [ext_resource type="PackedScene" uid="uid://xyuhf1juj266" path="res://objects/mechanical_part/mechanical_part.tscn" id="31_gwdna"]
+[ext_resource type="PackedScene" uid="uid://6rtotc0sq5c3" path="res://objects/journal/journal_variants/lockbox_journal.tscn" id="38_33qpb"]
+[ext_resource type="PackedScene" uid="uid://cqx24u5roig85" path="res://objects/journal/journal_variants/time_travel_journal.tscn" id="40_ifjjt"]
 [ext_resource type="PackedScene" uid="uid://b1e3ngyppghuq" path="res://objects/crowbar/crowbar.tscn" id="42_fnoqa"]
 [ext_resource type="PackedScene" uid="uid://cf2ovgr7fksb3" path="res://mechanics/time_travelling/time_travel_controller.tscn" id="43_7htu6"]
 [ext_resource type="PackedScene" uid="uid://co51fptjewgm2" path="res://objects/lockbox/lockbox.tscn" id="44_ruyqm"]
+[ext_resource type="PackedScene" uid="uid://c0km4kniuepsc" path="res://objects/journal/journal_variants/monster_journal.tscn" id="45_b8tmp"]
 [ext_resource type="PackedScene" uid="uid://df7nahiuysdy6" path="res://objects/table/table.tscn" id="49_rur7c"]
 [ext_resource type="PackedScene" uid="uid://dkkj3qv4ykpec" path="res://objects/bigger candle/big_candle.tscn" id="57_y1rwn"]
 [ext_resource type="PackedScene" uid="uid://cjsn8uvn3es0b" path="res://objects/candle/small_candle.tscn" id="58_4rajv"]
@@ -95,58 +92,6 @@ normal_texture = ExtResource("13_llyeo")
 uv1_scale = Vector3(2, 2, 2)
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mip0j"]
-albedo_texture = ExtResource("12_0pnie")
-roughness_texture = ExtResource("14_2tavo")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("13_llyeo")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6135"]
-albedo_texture = ExtResource("15_k8wd0")
-roughness_texture = ExtResource("17_inp7a")
-normal_enabled = true
-normal_scale = 4.0
-normal_texture = ExtResource("16_j7vgi")
-uv1_scale = Vector3(4, 4, 4)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7xkw"]
-albedo_texture = ExtResource("12_0pnie")
-roughness_texture = ExtResource("14_2tavo")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("13_llyeo")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfrib"]
-albedo_texture = ExtResource("24_en1oy")
-roughness_texture = ExtResource("26_gwdna")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("25_pfbnl")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvuuk"]
-albedo_texture = ExtResource("12_0pnie")
-roughness_texture = ExtResource("14_2tavo")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("13_llyeo")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b8tmp"]
-transparency = 1
-blend_mode = 1
-albedo_color = Color(1, 1, 1, 0.02745098)
-albedo_texture = ExtResource("15_k83x5")
-roughness_texture = ExtResource("15_k83x5")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8wd0"]
 albedo_texture = ExtResource("12_0pnie")
 metallic = 0.1
@@ -175,140 +120,12 @@ normal_texture = ExtResource("16_lwhbe")
 uv1_scale = Vector3(0.7, 0.7, 0.7)
 uv1_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en1oy"]
-albedo_texture = ExtResource("18_cqwbg")
-roughness_texture = ExtResource("20_hm5b2")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("19_q3kex")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pfbnl"]
-transparency = 1
-blend_mode = 1
-albedo_color = Color(1, 1, 1, 0.5803922)
-albedo_texture = ExtResource("20_hm5b2")
-emission_enabled = true
-emission = Color(0.83137256, 0.83137256, 0.5294118, 1)
-normal_enabled = true
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gwdna"]
-albedo_texture = ExtResource("18_cqwbg")
-roughness_texture = ExtResource("20_hm5b2")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("19_q3kex")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4vgh"]
-albedo_color = Color(0.69342947, 0.6934295, 0.69342947, 1)
-albedo_texture = ExtResource("18_behgl")
-roughness_texture = ExtResource("20_b8tmp")
-normal_enabled = true
-normal_texture = ExtResource("19_k83x5")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvuv0"]
-albedo_texture = ExtResource("18_behgl")
-roughness_texture = ExtResource("20_b8tmp")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("19_k83x5")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_behgl"]
-albedo_texture = ExtResource("18_behgl")
-roughness_texture = ExtResource("20_b8tmp")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("19_k83x5")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k83x5"]
-albedo_texture = ExtResource("18_behgl")
-roughness_texture = ExtResource("20_b8tmp")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("19_k83x5")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hnpqp"]
 albedo_color = Color(0.7350987, 0.73509866, 0.73509866, 1)
 albedo_texture = ExtResource("18_cqwbg")
 roughness_texture = ExtResource("20_hm5b2")
 normal_enabled = true
 normal_scale = 3.0
-normal_texture = ExtResource("19_q3kex")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg5c8"]
-albedo_texture = ExtResource("24_en1oy")
-roughness_texture = ExtResource("26_gwdna")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("25_pfbnl")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vu62d"]
-albedo_texture = ExtResource("12_0pnie")
-roughness_texture = ExtResource("14_2tavo")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("13_llyeo")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58wjt"]
-albedo_texture = ExtResource("12_0pnie")
-roughness_texture = ExtResource("14_2tavo")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("13_llyeo")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp8ul"]
-albedo_texture = ExtResource("18_behgl")
-roughness_texture = ExtResource("20_b8tmp")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("19_k83x5")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33qpb"]
-transparency = 1
-blend_mode = 1
-albedo_color = Color(1, 1, 1, 0.0627451)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifjjt"]
-albedo_color = Color(0.83033526, 0.8303351, 0.8303351, 1)
-albedo_texture = ExtResource("18_cqwbg")
-roughness_texture = ExtResource("20_hm5b2")
-normal_enabled = true
-normal_scale = 3.0
-normal_texture = ExtResource("19_q3kex")
-uv1_scale = Vector3(3, 3, 3)
-uv1_triplanar = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3kex"]
-transparency = 1
-blend_mode = 1
-albedo_color = Color(1, 1, 1, 0.08235294)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hm5b2"]
-albedo_color = Color(0.83889705, 0.83889705, 0.838897, 1)
-albedo_texture = ExtResource("18_cqwbg")
-roughness_texture = ExtResource("20_hm5b2")
-normal_enabled = true
 normal_texture = ExtResource("19_q3kex")
 uv1_scale = Vector3(3, 3, 3)
 uv1_triplanar = true
@@ -426,9 +243,6 @@ transform = Transform3D(-0.93419826, 0, -0.35675433, 0, 1, 0, 0.35675433, 0, -0.
 visible = false
 spawn_radius = 9.0
 
-[node name="Journal" parent="." unique_id=278160710 instance=ExtResource("7_m0cxt")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.2148025, 52.390656, -0.089342475)
-
 [node name="Past" type="Node3D" parent="." unique_id=1064658071]
 process_mode = 4
 visible = false
@@ -443,18 +257,15 @@ material_override = SubResource("StandardMaterial3D_0pnie")
 material_override = SubResource("StandardMaterial3D_llyeo")
 
 [node name="Circle" parent="Past/Lighthouse_Past/TopRoom/PullLever/LeverSmooth/Frame/pull_lever_foghorn" parent_id_path=PackedInt32Array(307952408, 367173600) index="0" unique_id=631443867]
-surface_material_override/0 = SubResource("StandardMaterial3D_mip0j")
+surface_material_override/0 = null
 
 [node name="Circle_002" parent="Past/Lighthouse_Past/TopRoom/PullLever/LeverSmooth/Frame/pull_lever_foghorn" parent_id_path=PackedInt32Array(307952408, 367173600) index="1" unique_id=1325005605]
-surface_material_override/0 = SubResource("StandardMaterial3D_l6135")
+surface_material_override/0 = null
 
 [node name="Circle_001" parent="Past/Lighthouse_Past/TopRoom/PullLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(307952408, 555695787) index="0" unique_id=1724534017]
-surface_material_override/0 = SubResource("StandardMaterial3D_o7xkw")
-surface_material_override/1 = SubResource("StandardMaterial3D_bfrib")
-surface_material_override/2 = SubResource("StandardMaterial3D_uvuuk")
-
-[node name="Glass" parent="Past/Lighthouse_Past/TopRoom" parent_id_path=PackedInt32Array(307952408, 686649410) index="3" unique_id=1863879730]
-surface_material_override/0 = SubResource("StandardMaterial3D_b8tmp")
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
 
 [node name="Frame" parent="Past/Lighthouse_Past/TopRoom" parent_id_path=PackedInt32Array(307952408, 686649410) index="4" unique_id=1735298259]
 material_override = SubResource("StandardMaterial3D_k8wd0")
@@ -468,40 +279,42 @@ surface_material_override/0 = null
 material_override = SubResource("StandardMaterial3D_avd5l")
 
 [node name="Glass" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Lamp" parent_id_path=PackedInt32Array(307952408, 1287390168) index="0" unique_id=786476786]
-surface_material_override/1 = SubResource("StandardMaterial3D_en1oy")
-surface_material_override/2 = SubResource("StandardMaterial3D_pfbnl")
-surface_material_override/3 = SubResource("StandardMaterial3D_gwdna")
+surface_material_override/1 = null
+surface_material_override/2 = null
+surface_material_override/3 = null
+surface_material_override/4 = null
 
 [node name="Circle" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Gear" parent_id_path=PackedInt32Array(307952408, 1367663806) index="0" unique_id=1100336640]
-surface_material_override/0 = SubResource("StandardMaterial3D_h4vgh")
+surface_material_override/0 = null
 
 [node name="Circle_001" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Gear" parent_id_path=PackedInt32Array(307952408, 1367663806) index="1" unique_id=949112408]
 surface_material_override/0 = null
 
 [node name="Gear" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Gear" parent_id_path=PackedInt32Array(307952408, 1367663806) index="2" unique_id=811916278]
-surface_material_override/0 = SubResource("StandardMaterial3D_kvuv0")
+surface_material_override/0 = null
 
 [node name="Gear_006" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Gear" parent_id_path=PackedInt32Array(307952408, 1367663806) index="3" unique_id=2113376817]
-surface_material_override/0 = SubResource("StandardMaterial3D_behgl")
-surface_material_override/1 = SubResource("StandardMaterial3D_k83x5")
+surface_material_override/0 = null
+surface_material_override/1 = null
 
 [node name="Structure" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet" parent_id_path=PackedInt32Array(307952408, 532235579) index="5" unique_id=1240149120]
 material_override = SubResource("StandardMaterial3D_hnpqp")
 surface_material_override/0 = null
 
 [node name="turning-lever_001" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/TurnLever/LeverSmooth/LeverOrigin/InteractableLever/HingeBody" parent_id_path=PackedInt32Array(307952408, 539045129) index="1" unique_id=1671252395]
-surface_material_override/0 = SubResource("StandardMaterial3D_sg5c8")
-surface_material_override/2 = SubResource("StandardMaterial3D_vu62d")
-surface_material_override/3 = SubResource("StandardMaterial3D_58wjt")
-surface_material_override/4 = SubResource("StandardMaterial3D_dp8ul")
+surface_material_override/0 = null
+surface_material_override/1 = null
+surface_material_override/2 = null
+surface_material_override/3 = null
+surface_material_override/4 = null
 
 [node name="Turn mechanism_door 2_001" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(307952408, 556890419) index="0" unique_id=1668422925]
-surface_material_override/0 = SubResource("StandardMaterial3D_33qpb")
-surface_material_override/1 = SubResource("StandardMaterial3D_ifjjt")
+surface_material_override/0 = null
+surface_material_override/1 = null
 
 [node name="Turn mechanism_door 2_001" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(307952408, 1574274314) index="0" unique_id=1668422925]
-surface_material_override/0 = SubResource("StandardMaterial3D_q3kex")
-surface_material_override/1 = SubResource("StandardMaterial3D_hm5b2")
+surface_material_override/0 = null
+surface_material_override/1 = null
 
 [node name="Walls" parent="Past/Lighthouse_Past/BottomRoom" parent_id_path=PackedInt32Array(307952408, 1406564065) index="0" unique_id=469056755]
 material_override = SubResource("StandardMaterial3D_o1net")
@@ -614,6 +427,18 @@ mechanical_part = NodePath("../MechanicalPart")
 [node name="MechanicalPart" parent="Past/Lighthouse_Past/Objects" unique_id=2140562873 instance=ExtResource("31_gwdna")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5940691, 42.99122, -0.7509564)
 
+[node name="FoghornManual" parent="Past/Lighthouse_Past/Objects" unique_id=278160710 instance=ExtResource("8_k83x5")]
+transform = Transform3D(0.83333325, 0, 0, 0, -3.6426155e-08, 0.83333325, 0, -0.83333325, -3.6426155e-08, -1.4849293, 48.921146, -0.6611472)
+
+[node name="MonsterJournal" parent="Past/Lighthouse_Past/Objects" unique_id=1319134480 instance=ExtResource("45_b8tmp")]
+transform = Transform3D(0.4881133, 0.1341253, -0.66196686, 0.30665445, 0.6836967, 0.36464536, 0.6017913, -0.45718005, 0.35110956, -1.3589736, 43.404385, -0.061422445)
+
+[node name="MechanismManual" parent="Past/Lighthouse_Past/Objects" unique_id=266823773 instance=ExtResource("10_en1oy")]
+transform = Transform3D(0.83333325, 0, 0, 0, -3.6426155e-08, 0.8333332, 0, -0.83333325, -3.642615e-08, -0.75195485, 47.22031, 0.81528395)
+
+[node name="LockboxJournal" parent="Past/Lighthouse_Past/Objects" unique_id=1333064099 instance=ExtResource("38_33qpb")]
+transform = Transform3D(0.83333325, 0, 0, 0, 0.8033432, 0.22154912, 0, -0.22154912, 0.8033432, 0.25073746, 47.614555, -1.1328012)
+
 [node name="LightmapGI_Past" type="LightmapGI" parent="Past" unique_id=1868391485]
 quality = 0
 light_data = ExtResource("17_j34ew")
@@ -657,6 +482,9 @@ transform = Transform3D(-0.019763974, -0.8330989, 0, 0.8330989, -0.019763974, 0,
 [node name="Table" parent="Present/Lighthouse_Present/Furniture" unique_id=662318344 instance=ExtResource("49_rur7c")]
 transform = Transform3D(0.57026935, 0.60639644, -0.038990833, 0.034546945, 0.021030793, 0.8323511, 0.6066658, -0.5712137, -0.010747047, -2.082564, 43.132404, 1.2711926)
 
+[node name="TimeTravelJournal" parent="Present/Lighthouse_Present" unique_id=2130600671 instance=ExtResource("40_ifjjt")]
+transform = Transform3D(0.83333325, 0, 0, 0, 0.37418553, 0.74460024, 0, -0.74460024, 0.37418553, -1.2875267, 49.35066, 0.47240135)
+
 [node name="ReflectionProbe_Present" type="ReflectionProbe" parent="Present" unique_id=622521113]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23127747, 62.179806, 0.1587143)
 size = Vector3(8.703461, 7.7504272, 10.306229)
@@ -665,7 +493,6 @@ enable_shadows = true
 [node name="Lantern" parent="Present" unique_id=951213402 instance=ExtResource("19_j34ew")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4255059, 51.361008, 0.653846)
 
-[connection signal="game_progressed" from="GameManager" to="Journal" method="_on_game_manager_game_progressed"]
 [connection signal="time_travel_ended" from="TimeTravelController" to="GameManager" method="_on_time_travel_controller_time_travel_ended"]
 [connection signal="foghorn_lever_pulled" from="Past/Lighthouse_Past" to="TimeTravelController" method="_on_lighthouse_foghorn_lever_pulled"]
 [connection signal="mechanical_piece_snapped" from="Past/Lighthouse_Past" to="GameManager" method="_puzzle_snapped"]
