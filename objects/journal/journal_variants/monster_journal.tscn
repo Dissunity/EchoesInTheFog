@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c0km4kniuepsc"]
+
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="1_l6i5p"]
+[ext_resource type="Texture2D" uid="uid://ba8sldaff6lcr" path="res://objects/journal/drawings/monster_scribble.png" id="2_l6i5p"]
+[ext_resource type="Texture2D" uid="uid://cv2guic02s5ft" path="res://objects/journal/drawings/foghorn_monster.png" id="3_e72h5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e72h5"]
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[node name="MonsterJournal" unique_id=278160710 instance=ExtResource("1_l6i5p")]
+
+[node name="TextureRect" type="TextureRect" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="0" unique_id=839045817]
+offset_left = -500.0
+offset_top = 200.0
+offset_right = 500.0
+offset_bottom = 881.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_l6i5p")
+
+[node name="Label3" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="1" unique_id=244937529]
+offset_left = 90.0
+offset_top = 140.0
+offset_right = 594.0
+offset_bottom = 293.0
+rotation = -0.05235988
+text = "No one believes me!
+   but you WILL"
+label_settings = SubResource("LabelSettings_e72h5")
+
+[node name="TextureRect2" type="TextureRect" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="0" unique_id=93446677]
+offset_left = -400.0
+offset_top = 200.0
+offset_right = 600.0
+offset_bottom = 881.0
+texture = ExtResource("3_e72h5")
+
+[node name="Label" type="Label" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="1" unique_id=1866135049]
+offset_left = 100.0
+offset_top = 150.0
+offset_right = 569.0
+offset_bottom = 303.0
+rotation = -0.286234
+text = "The foghorn... it calls for it...
+Mistakes it for a lovely mate...
+God please help me!"
+label_settings = SubResource("LabelSettings_e72h5")
+
+[node name="Label2" type="Label" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="2" unique_id=2090815706]
+offset_left = 100.0
+offset_top = 800.0
+offset_right = 661.0
+offset_bottom = 953.0
+rotation = 0.20943952
+text = "I shall not use it! It brings DEMISE"
+label_settings = SubResource("LabelSettings_e72h5")

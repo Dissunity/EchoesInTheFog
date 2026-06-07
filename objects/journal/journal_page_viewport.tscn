@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dcox5l201yrgm"]
+
+[node name="Page" type="SubViewport" unique_id=763784987]
+transparent_bg = true
+size = Vector2i(800, 1100)
+render_target_update_mode = 4

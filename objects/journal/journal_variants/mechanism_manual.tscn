@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b5nccq3b5i3bv"]
+
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="1_wgq8y"]
+[ext_resource type="Texture2D" uid="uid://bl6by7rbb0082" path="res://objects/journal/drawings/mechanical_guide.png" id="2_wgq8y"]
+[ext_resource type="Texture2D" uid="uid://me4m16p08glh" path="res://objects/journal/drawings/mechanicalpiece2.png" id="3_lnpou"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwr2y"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8yke"]
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+
+[node name="MechanismManual" unique_id=278160710 instance=ExtResource("1_wgq8y")]
+
+[node name="Title" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="0" unique_id=1206663761]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 110.0
+grow_horizontal = 2
+text = "Lightkeeper's Manual:
+Chapter 2: Mechanism"
+label_settings = SubResource("LabelSettings_uwr2y")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="1" unique_id=1673572094]
+offset_left = 180.0
+offset_top = 200.0
+offset_right = 1180.0
+offset_bottom = 881.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_wgq8y")
+
+[node name="Description2" type="Label" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="0" unique_id=167012959]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 525.0
+grow_horizontal = 2
+text = "The mechanism fuels the light and the foghorn of the lighthouse. It transfers energy through the key mechanical part. The part is easily installed by putting it into the cabinet. The mechanism is then started up by turning the lever next to it."
+label_settings = SubResource("LabelSettings_y8yke")
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="1" unique_id=2117329449]
+offset_left = 220.0
+offset_top = 220.0
+offset_right = 1220.0
+offset_bottom = 901.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_lnpou")

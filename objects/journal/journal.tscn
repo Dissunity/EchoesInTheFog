@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://d1n3iigoom3wi" path="res://sounds/book-hit.mp3" id="13_8thew"]
 [ext_resource type="AudioStream" uid="uid://op538ohv1h3e" path="res://sounds/book-opening.mp3" id="14_6wy1u"]
 [ext_resource type="PackedScene" uid="uid://bxdkes3uqv87p" path="res://mechanics/sound_on_interaction/sound_on_swish.tscn" id="15_a2iuq"]
+[ext_resource type="PackedScene" uid="uid://dcox5l201yrgm" path="res://objects/journal/journal_page_viewport.tscn" id="16_gc3w6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g1kit"]
 size = Vector3(0.33712405, 0.20315704, 0.07634278)
@@ -206,7 +207,7 @@ bone_name = "Bone.006"
 bone_idx = 4
 
 [node name="Decal" type="Decal" parent="RigidBody/Armature/Skeleton3D/LeftPageAttachment" unique_id=1085006931 node_paths=PackedStringArray("target_viewport")]
-transform = Transform3D(1.9106857e-15, -4.3711402e-08, 1.0000001, -1.0000001, -4.3711402e-08, 0, 4.3711392e-08, -1.0000004, -4.3711392e-08, 0, 0, -0.05)
+transform = Transform3D(1.9106857e-15, -4.3711402e-08, 1.0000001, -1.0000001, -4.3711402e-08, 0, 4.3711392e-08, -1.0000004, -4.3711392e-08, -3.638047e-12, 0.04066993, -0.05)
 visible = false
 size = Vector3(0.8, 0.1, 1.1)
 texture_albedo = SubResource("ImageTexture_d05m8")
@@ -219,7 +220,7 @@ bone_name = "Bone.007"
 bone_idx = 2
 
 [node name="Decal" type="Decal" parent="RigidBody/Armature/Skeleton3D/RightPageAttachment" unique_id=1018378483 node_paths=PackedStringArray("target_viewport")]
-transform = Transform3D(-1.9106855e-15, -4.371139e-08, 1, 1, -4.4703484e-08, 0, -4.4703484e-08, -1, -4.3711392e-08, 0, 0, 0.05)
+transform = Transform3D(-1.9106855e-15, -4.371139e-08, 1, 1, -4.4703484e-08, 0, -4.4703484e-08, -1, -4.3711392e-08, -7.123096e-17, 0.055196658, 0.049999997)
 visible = false
 size = Vector3(0.8, 0.1, 1.1)
 texture_albedo = SubResource("ImageTexture_i6yj2")
@@ -244,40 +245,10 @@ volume_db = 15.0
 
 [node name="SoundOnSwish" parent="RigidBody" unique_id=1009411001 instance=ExtResource("15_a2iuq")]
 
-[node name="LeftPage" type="SubViewport" parent="." unique_id=40513807]
-transparent_bg = true
-size = Vector2i(800, 1100)
-render_target_update_mode = 4
-
-[node name="Label" type="Label" parent="LeftPage" unique_id=1308176237]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-text = "Something"
-horizontal_alignment = 1
-autowrap_mode = 3
-
-[node name="RightPage" type="SubViewport" parent="." unique_id=439996216]
-transparent_bg = true
-size = Vector2i(800, 1100)
-render_target_update_mode = 4
-
-[node name="Label" type="Label" parent="RightPage" unique_id=1797766593]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 60
-text = "Something"
-horizontal_alignment = 1
-autowrap_mode = 3
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=596896977]
 root_node = NodePath("../RigidBody")
 libraries/ = SubResource("AnimationLibrary_sxjbt")
+
+[node name="LeftPage" parent="." unique_id=763784987 instance=ExtResource("16_gc3w6")]
+
+[node name="RightPage" parent="." unique_id=7477637 instance=ExtResource("16_gc3w6")]

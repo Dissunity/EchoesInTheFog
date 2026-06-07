@@ -8,12 +8,10 @@ var is_open = false
 
 @onready var decal_left: JournalTextDecal = $RigidBody/Armature/Skeleton3D/LeftPageAttachment/Decal
 @onready var decal_right: JournalTextDecal = $RigidBody/Armature/Skeleton3D/RightPageAttachment/Decal
-@onready var label_left: Label = $LeftPage/Label
-@onready var label_right: Label = $RightPage/Label
 @onready var shining_light: OmniLight3D = $RigidBody/JournalNotificationLight
-@export var debug = false
-
 @onready var pickable: XRToolsPickable = $RigidBody
+@onready var left_page: SubViewport = $LeftPage
+@onready var right_page: SubViewport = $RightPage
 
 func toggle_open():
 	if is_open:
@@ -38,18 +36,11 @@ func close_journal():
 	$AnimationPlayer.play_backwards("ArmatureAction")
 	is_open = false
 	closed.emit()
-	await get_tree().create_timer(1.05).timeout
+	await get_tree().create_timer(0.7).timeout
 	$RigidBody/BookOpeningAudio.play()
+	await get_tree().create_timer(0.35).timeout
 	_turn_decal_off()
 
-func change_text(text_left: String, text_right: String):
-	label_left.text = text_left
-	label_right.text = text_right
-	await get_tree().create_timer(0.1).timeout
-	decal_left.update_text_projection()
-	decal_right.update_text_projection()
-	if !is_open:
-		shining_light.start_shining()
 
 func _turn_decal_off():
 	decal_left.visible = false
@@ -72,6 +63,3 @@ func _process(_delta: float) -> void:
 		open_journal()
 	elif !pickable.is_picked_up() and is_open:
 		close_journal()
-
-func _on_game_manager_game_progressed(new_stage: GameManager.Stage) -> void:
-	change_text(str(new_stage), "")
