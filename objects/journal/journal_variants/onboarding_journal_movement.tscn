@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b24f5j30ih8qu"]
+
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="1_k0dwr"]
+[ext_resource type="Script" uid="uid://bq05yhqwpydjj" path="res://objects/journal/journal_variants/onboarding_journal.gd" id="2_myw3c"]
+[ext_resource type="Texture2D" uid="uid://mbeieom1w4q1" path="res://objects/journal/drawings/locomotion_no_bg.png" id="3_0chqw"]
+[ext_resource type="Texture2D" uid="uid://23lcbo6l7f1h" path="res://objects/journal/drawings/teleporting_no_bg.png" id="4_163ep"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_myw3c"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_356tm"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="OnboardingJournalMovement" unique_id=278160710 instance=ExtResource("1_k0dwr")]
+script = ExtResource("2_myw3c")
+
+[node name="RigidBody" parent="." index="0" unique_id=507363629]
+enabled = false
+
+[node name="Label" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="0" unique_id=336515647]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 55.0
+grow_horizontal = 2
+text = "Locomotion"
+label_settings = SubResource("LabelSettings_myw3c")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="1" unique_id=445757140]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -139.0
+offset_top = 200.0
+offset_right = 139.0
+offset_bottom = 296.0
+grow_horizontal = 2
+text = "Use controller
+joysticks/thumbsticks
+to move and turn."
+label_settings = SubResource("LabelSettings_356tm")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="2" unique_id=1300440413]
+offset_left = 50.0
+offset_top = 500.0
+offset_right = 1452.0
+offset_bottom = 1622.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_0chqw")
+
+[node name="Label" type="Label" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="0" unique_id=829370868]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 69.0
+grow_horizontal = 2
+text = "Teleporting"
+label_settings = SubResource("LabelSettings_myw3c")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="1" unique_id=1172963931]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -139.0
+offset_top = 200.0
+offset_right = 139.0
+offset_bottom = 313.0
+grow_horizontal = 2
+text = "Alternatively to movement,
+use the left index finger button
+or \"trigger\" button to teleport."
+label_settings = SubResource("LabelSettings_356tm")
+horizontal_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="2" unique_id=2028874487]
+offset_left = 50.0
+offset_top = 500.0
+offset_right = 1452.0
+offset_bottom = 1622.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_163ep")

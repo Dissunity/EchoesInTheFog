@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://btd2tv6fuumfa"]
+
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="1_8me6k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e72h5"]
+font_size = 35
+font_color = Color(0, 0, 0, 1)
+
+[node name="EndJournal" unique_id=278160710 instance=ExtResource("1_8me6k")]
+
+[node name="Label3" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="0" unique_id=244937529]
+offset_left = 90.0
+offset_top = 700.0
+offset_right = 709.0
+offset_bottom = 957.0
+rotation = -0.05235988
+text = "The beast breathes tomorrow,
+It swallows the clock.
+I am running backward,
+I step off the rock.
+                         - You"
+label_settings = SubResource("LabelSettings_e72h5")
+
+[node name="Label4" type="Label" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="0" unique_id=905003425]
+offset_left = 90.0
+offset_top = 150.0
+offset_right = 709.0
+offset_bottom = 300.0
+rotation = 0.12217305
+text = "Game over.
+There's only one thing left to do.
+"
+label_settings = SubResource("LabelSettings_e72h5")

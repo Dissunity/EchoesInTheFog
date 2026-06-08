@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cmehn7iuekqg3"]
+
+[ext_resource type="PackedScene" uid="uid://bnqnnnet4dw12" path="res://addons/godot-xr-tools/staging/staging.tscn" id="1_o8iqb"]
+
+[node name="Staging" unique_id=2136125926 instance=ExtResource("1_o8iqb")]
+main_scene = "uid://dnqqhj1q7ho8m"
+prompt_for_continue = false

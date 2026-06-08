@@ -43,6 +43,7 @@ func spawn():
 	tween.tween_property(self, "global_position", player_pos, 2)
 	await tween.finished
 	
-	get_tree().quit()
+	var staging: XRToolsStaging = get_tree().root.get_node("Staging")
+	staging.load_scene("res://intro_outro/outro.tscn")
 	
 	

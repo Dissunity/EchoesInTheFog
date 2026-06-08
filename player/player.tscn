@@ -62,6 +62,7 @@ input_forward = "move_forward"
 input_backward = "move_back"
 input_left = "move_left"
 input_right = "move_right"
+enabled = false
 
 [node name="MovementStairClimbing" parent="LeftHand" unique_id=623875204 node_paths=PackedStringArray("stair_detector") groups=["movement_providers"] instance=ExtResource("13_urp6f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0416784, 0.5)
@@ -89,9 +90,11 @@ ranged_collision_mask = 262404
 
 [node name="XRToolsDesktopMovementTurn" type="Node3D" parent="RightHand" unique_id=12465607 groups=["movement_providers"]]
 script = ExtResource("9_urp6f")
+enabled = false
 metadata/_custom_type_script = "uid://bjqk58f7j3hgl"
 
 [node name="MovementDesktopCrouch" parent="RightHand" unique_id=941089310 instance=ExtResource("11_urp6f")]
+enabled = false
 
 [node name="MovementCrouch" parent="RightHand" unique_id=1181964157 instance=ExtResource("12_bwjto")]
 crouch_button_action = "action_crouch"

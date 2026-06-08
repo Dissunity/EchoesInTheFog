@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://x02elf0852n2"]
+
+[ext_resource type="PackedScene" uid="uid://b6j78x05dqew5" path="res://objects/journal/journal.tscn" id="1_jwmjq"]
+[ext_resource type="Script" uid="uid://cywls2mac36ff" path="res://objects/journal/journal_variants/story_journal.gd" id="2_jwmjq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwr2y"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8yke"]
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+
+[node name="StoryJournal" unique_id=278160710 instance=ExtResource("1_jwmjq")]
+script = ExtResource("2_jwmjq")
+
+[node name="JournalNotificationLight" parent="RigidBody" parent_id_path=PackedInt32Array(507363629) index="4" unique_id=1891114505]
+visible = false
+
+[node name="Title" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="0" unique_id=1206663761]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 110.0
+grow_horizontal = 2
+text = "The Story"
+label_settings = SubResource("LabelSettings_uwr2y")
+horizontal_alignment = 1
+
+[node name="Description2" type="Label" parent="LeftPage" parent_id_path=PackedInt32Array(763784987) index="1" unique_id=167012959]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -328.5
+offset_bottom = 328.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You are sent by the government to an old lighthouse. The last lighthouse keeper operating the lighthouse mysteriously vanished.
+
+Just before his disappearance, he started acting- odd.
+
+Your job is to repair the lighthouse mechanism and find out what happened."
+label_settings = SubResource("LabelSettings_y8yke")
+vertical_alignment = 2
+autowrap_mode = 2
+
+[node name="Description" type="Label" parent="RightPage" parent_id_path=PackedInt32Array(7477637) index="0" unique_id=213731373]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -64.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "When you're ready to start, throw this book into the ocean."
+label_settings = SubResource("LabelSettings_y8yke")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
