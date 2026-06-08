@@ -102,9 +102,9 @@ func _time_travel():
 	tween = get_tree().create_tween()
 	tween.tween_interval(0.5)
 	tween.tween_property(time_travel_light, "light_energy", 20, 3)
-	for i in range(20):
-		tween.tween_property(time_travel_light, "light_energy", 1, 0.2)
-		tween.tween_property(time_travel_light, "light_energy", 20, 0.2)
+	for i in range(16):
+		tween.tween_property(time_travel_light, "light_energy", 1, 0.25)
+		tween.tween_property(time_travel_light, "light_energy", 20, 0.25)
 
 	# Swap the folders at the peak of the flash 
 	tween.tween_callback(func():

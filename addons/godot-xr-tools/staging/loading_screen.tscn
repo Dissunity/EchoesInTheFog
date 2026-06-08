@@ -28,14 +28,14 @@ albedo_texture = SubResource("GradientTexture2D_2lren")
 [sub_resource type="ShaderMaterial" id="18"]
 render_priority = 0
 shader = ExtResource("3")
-shader_parameter/bar_color = Color(0.6393398, 0.27190632, 0.18848953, 1)
+shader_parameter/bar_color = Color(1, 0.44705883, 0.3882353, 1)
 shader_parameter/bar_texture = ExtResource("4")
 shader_parameter/cutout = Vector3(4.85, 0.33, 0)
-shader_parameter/progress = 0.0
+shader_parameter/progress = 0.5
 
 [sub_resource type="PlaneMesh" id="3"]
 material = SubResource("18")
-size = Vector2(10, 1)
+size = Vector2(0, 1)
 
 [sub_resource type="QuadMesh" id="19"]
 size = Vector2(9.25, 1)
