@@ -540,7 +540,7 @@ mechanical_part = NodePath("../MechanicalPart")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5940691, 42.99122, -0.7509564)
 
 [node name="FoghornManual" parent="Past/Lighthouse_Past/Objects" unique_id=278160710 instance=ExtResource("8_k83x5")]
-transform = Transform3D(0.83333325, 0, 0, 0, -3.6426155e-08, 0.83333325, 0, -0.83333325, -3.6426155e-08, -1.4849293, 48.921146, -0.6611472)
+transform = Transform3D(0.83333325, 0, 0, 0, -3.6426155e-08, 0.83333325, 0, -0.83333325, -3.6426155e-08, 1.3593326, 48.921146, 0.9878416)
 
 [node name="MonsterJournal" parent="Past/Lighthouse_Past/Objects" unique_id=1319134480 instance=ExtResource("45_b8tmp")]
 transform = Transform3D(0.4881133, 0.1341253, -0.66196686, 0.30665445, 0.6836967, 0.36464536, 0.6017913, -0.45718005, 0.35110956, -1.3589736, 43.404385, -0.061422445)
