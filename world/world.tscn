@@ -355,6 +355,7 @@ spawn_radius = 9.0
 
 [node name="Past" type="Node3D" parent="." unique_id=1064658071]
 process_mode = 4
+visible = false
 
 [node name="Lighthouse_Past" parent="Past" unique_id=307952408 instance=ExtResource("8_j34ew")]
 foghorn_enabled = false
@@ -417,12 +418,12 @@ surface_material_override/2 = SubResource("StandardMaterial3D_dp8ul")
 surface_material_override/3 = SubResource("StandardMaterial3D_o7xkw")
 surface_material_override/4 = SubResource("StandardMaterial3D_bfrib")
 
-[node name="Turn mechanism_door 2_001" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(307952408, 556890419) index="0" unique_id=54861717]
+[node name="Turn mechanism_door 2_001" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Door2/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(307952408, 556890419) index="0" unique_id=1668422925]
 transform = Transform3D(1, 0, -1.4210855e-14, -1.7763568e-15, -1.0000001, 8.940697e-08, 1.4210855e-14, -8.940697e-08, -1.0000001, 0, 2.9295683e-05, -0.00012847781)
 surface_material_override/0 = SubResource("StandardMaterial3D_33qpb")
 surface_material_override/1 = SubResource("StandardMaterial3D_ifjjt")
 
-[node name="Turn mechanism_door 2_001" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(307952408, 1574274314) index="0" unique_id=54861717]
+[node name="Turn mechanism_door 2_001" parent="Past/Lighthouse_Past/MiddleRoom/Mechanism/Cabinet/Door1/LeverSmooth/LeverOrigin/InteractableLever/HingeBody/door2_lever_mechanical_room" parent_id_path=PackedInt32Array(307952408, 1574274314) index="0" unique_id=1668422925]
 transform = Transform3D(0.9999998, 4.6784704e-15, 2.554195e-15, 8.412085e-15, -1, 7.4505806e-08, 2.5215752e-14, -7.4505806e-08, -1, -0.00049972534, 7.6919794e-05, -5.4478645e-05)
 surface_material_override/0 = SubResource("StandardMaterial3D_behgl")
 surface_material_override/1 = SubResource("StandardMaterial3D_k83x5")
@@ -560,7 +561,6 @@ size = Vector3(8.703461, 7.7504272, 10.306229)
 enable_shadows = true
 
 [node name="Present" type="Node3D" parent="." unique_id=550109713]
-visible = false
 
 [node name="Lighthouse_Present" parent="Present" unique_id=373673442 instance=ExtResource("8_j34ew")]
 
