@@ -777,7 +777,7 @@ horizontal_alignment = 1
 transform = Transform3D(1, 0, 0, 0, 0.6142577, 0.78910553, 0, -0.78910553, 0.6142577, 2.0351288, 3.1271849, -0.09851153)
 
 [node name="StoryJournal" parent="." unique_id=796993326 instance=ExtResource("18_vsmfr")]
-transform = Transform3D(0.17387162, 0, -0.98476833, 0, 1, 0, 0.98476833, 0, 0.17387162, -2.3466, 3.8132572, -4.70318)
+transform = Transform3D(0.1738716, 0.2843003, -0.94283724, -3.7252903e-09, 0.95742035, 0.28869766, 0.98476833, -0.050196324, 0.16646823, -2.4241405, 3.8370001, -4.6894894)
 
 [node name="Wind" type="AudioStreamPlayer" parent="." unique_id=693463329]
 stream = ExtResource("36_keqvn")
